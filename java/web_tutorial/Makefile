@@ -45,14 +45,6 @@ style:
 	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) 
 
 
-to_html:
-	/bin/sh ./to_html_creds.sh
-
-to_srcs:
-	/bin/sh ./to_srcs.sh
-	
-	
-	
 
 array: array.o
 	$(CC) -g -o array array.o $(LDFLAGS) $(LIBS)
