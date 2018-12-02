@@ -5,7 +5,8 @@ public class mllist {
 	public static void main(String[] args) throws Exception {
 
 		//create the Bridges object
-		Bridges bridges = new Bridges(7, "YOUR_USER_ID", "YOUR_API_KEY");
+		//Bridges bridges = new Bridges (2, "YOUR_USER_ID", "YOUR_API_KEY");
+		Bridges bridges = new Bridges (2, args[0], args[1]);
 
 		bridges.setTitle("A Multilist Example");
 

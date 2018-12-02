@@ -25,7 +25,8 @@ public class color_grid {
                 // We will build a checker grid using two different colors
 
                                                 // initialize BRIDGES
-		Bridges bridges = new Bridges(14, "YOUR_USER_ID", "YOUR_API_KEY");
+		//Bridges bridges = new Bridges (2, "YOUR_USER_ID", "YOUR_API_KEY");
+		Bridges bridges = new Bridges (2, args[0], args[1]);
 
                                                 // set title for visualization
 		bridges.setTitle("A CheckerBoard Example Using Grid Type");
