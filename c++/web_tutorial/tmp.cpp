@@ -16,8 +16,6 @@ int main(int argc, char **argv) {
 	if (argc == 4)		// Server type provided
 		bridges->setServer(argv[3]);
 		
-	//Bridges::initialize(8, "YOUR_USER_ID", "YOUR_API_KEY");
-
 	TreeElement<string> *t0 = new TreeElement<string>("Hello", "Hello");
 	TreeElement<string> *t2 = new TreeElement<string>("This", "This");
 	TreeElement<string> *t3 = new TreeElement<string>("is", "is");
@@ -51,11 +49,11 @@ int main(int argc, char **argv) {
 	t0->getVisualizer()->setColor(Color("red"));
 	t0->getVisualizer()->setOpacity(0.3f);
 
-	Bridges::setTitle("A General Tree Example");
+	bridges->setTitle("A General Tree Example");
 	// provide BRIDGES the  handle to the tree structure
-	Bridges::setDataStructure(t0);
+	bridges->setDataStructure(t0);
 
-	Bridges::visualize();
+	bridges->visualize();
 
 	return 0;
 }

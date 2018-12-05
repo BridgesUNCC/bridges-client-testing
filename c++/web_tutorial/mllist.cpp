@@ -17,7 +17,7 @@ int main(int argc, char **argv)  {
 	if (argc == 4)		// Server type provided
 		bridges->setServer(argv[2]);
 	
-	Bridges::setTitle("A Trivial Multilist Example");
+	bridges->setTitle("A Trivial Multilist Example");
 
 	//create  a linked list
 
@@ -64,8 +64,8 @@ int main(int argc, char **argv)  {
 
 	el0->getVisualizer()->setColor(Color("red"));
 	//set visualizer type
-	Bridges::setDataStructure(el0);
+	bridges->setDataStructure(el0);
 
 	// visualize the list
-	Bridges::visualize();
+	bridges->visualize();
 }

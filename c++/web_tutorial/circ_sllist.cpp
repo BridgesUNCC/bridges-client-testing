@@ -100,7 +100,7 @@ int main (int argc, char **argv) {
 
 
 	// set data structure to point to head
-	Bridges::setDataStructure(head);
+	bridges->setDataStructure(head);
 	// visualize the circular list
-	Bridges::visualize();
+	bridges->visualize();
 }
