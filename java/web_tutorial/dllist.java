@@ -5,7 +5,9 @@ public class dllist {
 
 	public static void main(String[] args) throws Exception {
 
-		//Bridges bridges = new Bridges (2, "YOUR_USER_ID", "YOUR_API_KEY");
+		if (args.length < 2)
+			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
+
 		Bridges bridges = new Bridges (2, args[0], args[1]);
 
 		// load student info

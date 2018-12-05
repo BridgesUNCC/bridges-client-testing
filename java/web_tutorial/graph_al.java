@@ -10,8 +10,10 @@ import bridges.data_src_dependent.ActorMovieIMDB;
 public class graph_al {
 	public static void main(String[] args) throws Exception {
 
+		if (args.length < 2)
+			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
+		
 		// initialize Bridges
-		//Bridges bridges = new Bridges (2, "YOUR_USER_ID", "YOUR_API_KEY");
 		Bridges bridges = new Bridges (2, args[0], args[1]);
 
 		// set a title for the visualization

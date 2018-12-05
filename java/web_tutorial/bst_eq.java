@@ -8,8 +8,10 @@ import java.util.List;
 public class bst_eq {
 	public static void main(String[] args) throws Exception{
     	
-   					//create the Bridges object
-		//Bridges bridges = new Bridges (2, "YOUR_USER_ID", "YOUR_API_KEY");
+		if (args.length < 2)
+			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");   		
+
+		//create the Bridges object
 		Bridges bridges = new Bridges (2, args[0], args[1]);
 
 		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
