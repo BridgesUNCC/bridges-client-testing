@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 	if (argc == 4)		// Server type provided
 		bridges->setServer(argv[3]);
 
-	Bridges::setTitle("An Example Circular Doubly Linked List");
+	bridges->setTitle("An Example Circular Doubly Linked List");
 
 	// create the linked list elements with
 	// student data
@@ -111,9 +111,9 @@ int main(int argc, char **argv) {
 	}  while (current != head);
 
 	// set data structure to point to head
-	Bridges::setDataStructure(head);
+	bridges->setDataStructure(head);
 	// visualize the circular list
-	Bridges::visualize();
+	bridges->visualize();
 
 	return 0;
 }

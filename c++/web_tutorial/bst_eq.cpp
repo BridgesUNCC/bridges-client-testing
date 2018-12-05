@@ -26,9 +26,8 @@ int main(int argc, char **argv) {
 	if (argc == 4)		// Server type provided
 		bridges->setServer(argv[3]);
 		
-//	Bridges::initialize(14, "YOUR_USER_ID", "YOUR_API_KEY");
 								// read the earth quake  data and build the BST
-	Bridges::setTitle("Recent Earthquakes (USGIS Data)");
+	bridges->setTitle("Recent Earthquakes (USGIS Data)");
 
     vector<EarthquakeUSGS> eq_list = DataSource::getEarthquakeData(max_quakes);
 
@@ -40,8 +39,8 @@ int main(int argc, char **argv) {
 	}
 
 					// visualize the binary search tree
-	Bridges::setDataStructure(bst->getRoot());
-	Bridges::visualize();
+	bridges->setDataStructure(bst->getRoot());
+	bridges->visualize();
 
 	return 0;
 }

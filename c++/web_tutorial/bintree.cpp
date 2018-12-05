@@ -14,10 +14,8 @@ int main(int argc, char **argv) {
 	if (argc == 4)		// Server type provided
 		bridges->setServer(argv[3]);
 		
-//	Bridges::initialize(9, "YOUR_USER_ID", "YOUR_API_KEY");
-
-	Bridges::setTitle("A Huffman Coding Tree Example");
-	Bridges::setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2");
+	bridges->setTitle("A Huffman Coding Tree Example");
+	bridges->setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2");
 
 
 	BinTreeElement<int> *t0 = new BinTreeElement<int>(0, "306");
@@ -64,9 +62,9 @@ int main(int argc, char **argv) {
 	t14->getVisualizer()->setColor(Color("orange"));
 
 	// provide BRIDGES the  handle to the tree structure
-	Bridges::setDataStructure(t0);
+	bridges->setDataStructure(t0);
 
-	Bridges::visualize();
+	bridges->visualize();
 
 	return 0;
 }
