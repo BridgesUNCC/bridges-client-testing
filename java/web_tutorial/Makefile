@@ -14,16 +14,16 @@ ASTYLE_PARAMS = -A2 -T4 -xn -xc -xV -C -S -N -xU  -Y -p -xg -H -y -xb
 
 TARGET =  all
 
+OBJS = $(SRCS:.java=.class)
+
 
 SRCS = arr1d.java arr2d.java arr3d.java sllist.java dllist.java csllist.java \
 		cdllist.java  mllist.java tree.java bintree.java bst.java avl.java \
 		graph_al.java graph_am.java color_grid.java
 
-BRIDGES_TESTING_USER_NAME = kalpathi60
-BRIDGES_TESTING_API_KEY =  486749122386
-BRIDGES_SERVER = local
-
-EXECUTABLES = $(SRCS:.cpp=)
+BRIDGES_TESTING_USER_NAME = bridges_testing
+BRIDGES_TESTING_API_KEY =  404667590237
+BRIDGES_SERVER = clone
 
 all : 
 	javac $(SRCS)
@@ -96,10 +96,7 @@ graph_amatrix: graph_amatrix.o
 	$(CC) -g -o graph_amatrix graph_amatrix.o $(LDFLAGS) $(LIBS)
 
 clean:
-	rm $(OBJS)  $(EXECUTABLES)
-
-depend: $(SRCS)
-	gcc -MD  $(IFLAGS) $(SRCS)
+	rm $(OBJS) 
 
 backup:
 	tar cvfz bridges_cxx.tgz  src docs Makefile 
