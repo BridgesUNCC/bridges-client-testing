@@ -104,6 +104,6 @@ int main (int argc, char **argv) {
 		currentElement = currentElement->getNext();
 	}
 
-	Bridges::setDataStructure(el0);
-	Bridges::visualize();
+	bridges->setDataStructure(el0);
+	bridges->visualize();
 }
