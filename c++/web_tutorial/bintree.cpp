@@ -3,9 +3,18 @@
 
 using namespace bridges;
 
-int main() {
-
-	Bridges::initialize(9, "YOUR_USER_ID", "YOUR_API_KEY");
+int main(int argc, char **argv) {
+	if (argc < 3) {
+		cout << "Must provide both user id and api key as command line arguments. Terminating.." 
+								<< endl;
+		exit (-1);
+	}	
+	Bridges *bridges = new Bridges(9, argv[1], argv[2]);
+	
+	if (argc == 4)		// Server type provided
+		bridges->setServer(argv[3]);
+		
+//	Bridges::initialize(9, "YOUR_USER_ID", "YOUR_API_KEY");
 
 	Bridges::setTitle("A Huffman Coding Tree Example");
 	Bridges::setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2");

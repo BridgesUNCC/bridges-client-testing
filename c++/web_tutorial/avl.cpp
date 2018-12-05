@@ -6,10 +6,19 @@
 using namespace std;
 using namespace bridges;
 
-int main() {
+int main(int argc, char **argv) {
+	if (argc < 3) {
+		cout << "Must provide both user id and api key as command line arguments. Terminating.." 
+								<< endl;
+		exit (-1);
+	}	
+	Bridges *bridges = new Bridges(11, argv[1], argv[2]);
+	
+	if (argc == 4)		// Server type provided
+		bridges->setServer(argv[3]);
+		
 
-
-	Bridges::initialize(11, "YOUR_USER_ID", "YOUR_API_KEY");
+//	Bridges::initialize(11, "YOUR_USER_ID", "YOUR_API_KEY");
 
 	AVLTreeElement<int, string> *tle0 =
 		new AVLTreeElement<int, string>(10, "10", "10");
