@@ -9,7 +9,9 @@ public class cdllist {
 			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 
 		Bridges bridges = new Bridges (2, args[0], args[1]);
-
+		if (args.length == 3)	// If user provides server
+			bridges.setServer(args[2]);
+		
 		StudentInfo[] students = {
 			new StudentInfo(
 				"00000000000",

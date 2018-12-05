@@ -17,7 +17,9 @@ public class graph_am {
 		
 		// initialize Bridges
 		Bridges bridges = new Bridges (2, args[0], args[1]);
-
+		if (args.length == 3)	// If user provides server
+			bridges.setServer(args[2]);
+		
 		// set a title for the visualization
 		bridges.setTitle("A Simple Graph (Adjacency Matrix)  Example using IMDB Actor/Movie Data");
 

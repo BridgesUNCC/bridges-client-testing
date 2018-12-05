@@ -14,7 +14,9 @@ public class bst {
 	
 		//create the Bridges object
 		Bridges bridges = new Bridges (2, args[0], args[1]);
-
+		if (args.length == 3)	// If user provides server
+			bridges.setServer(args[2]);
+		
 		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
 
 		// Retrieve a list of 10 earthquake  records  from USGS using the BRIDGES API

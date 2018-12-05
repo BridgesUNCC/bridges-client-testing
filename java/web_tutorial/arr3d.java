@@ -11,7 +11,9 @@ public class arr3d {
 		//create the Bridges object
 
 		Bridges bridges = new Bridges (2, args[0], args[1]);
-
+		if (args.length == 3)	// If user provides server
+			bridges.setServer(args[2]);
+		
 		// specify array dimensions and create 3D array
 		int num_slices = 4, num_rows = 4, num_cols = 4;
 		Array<Integer> my_array = new Array<Integer> (num_slices, num_rows, num_cols);

@@ -11,6 +11,9 @@ public class avl {
 		//create the Bridges object
 		Bridges bridges = new Bridges (2, args[0], args[1]);
 
+		if (args.length == 3)	// If user provides server
+			bridges.setServer(args[2]);
+		
 		//create  an  AVL tree elements
 		AVLTreeElement<Integer, String> avl_root = new AVLTreeElement<Integer, String>(50,
 			"Hello");

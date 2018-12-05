@@ -9,7 +9,9 @@ public class mllist {
 
 		//create the Bridges object
 		Bridges bridges = new Bridges (2, args[0], args[1]);
-
+		if (args.length == 3)	// If user provides server
+			bridges.setServer(args[2]);
+			
 		bridges.setTitle("A Multilist Example");
 
 		//create  nodes for the main list

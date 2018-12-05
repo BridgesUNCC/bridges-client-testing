@@ -27,7 +27,8 @@ public class color_grid {
 
                                                 // initialize BRIDGES
 		Bridges bridges = new Bridges (2, args[0], args[1]);
-
+		if (args.length == 3)	// If user provides server
+			bridges.setServer(args[2]);
                                                 // set title for visualization
 		bridges.setTitle("A CheckerBoard Example Using Grid Type");
 
