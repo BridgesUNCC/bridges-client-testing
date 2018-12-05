@@ -32,9 +32,9 @@ int main(int argc, char **argv) {
 	arr->getElement(2, 2).getVisualizer()->setColor(Color("yellow"));
 
 
-	Bridges::setTitle("Array Example");
-	Bridges::setDataStructure(arr);
-	Bridges::visualize();
+	bridges->setTitle("Array Example");
+	bridges->setDataStructure(arr);
+	bridges->visualize();
 
 	return 0;
 }
