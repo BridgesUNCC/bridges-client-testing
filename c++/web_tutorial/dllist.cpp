@@ -88,8 +88,8 @@ int main(int argc, char **argv) {
 		curr = curr->getNext();
 	}
 
-	Bridges::setDataStructure(head);
-	Bridges::visualize();
+	bridges->setDataStructure(head);
+	bridges->visualize();
 
 	return 0;
 }

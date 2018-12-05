@@ -17,9 +17,6 @@ int main(int argc, char **argv) {
 	if (argc == 4)		// Server type provided
 		bridges->setServer(argv[3]);
 		
-
-//	Bridges::initialize(11, "YOUR_USER_ID", "YOUR_API_KEY");
-
 	AVLTreeElement<int, string> *tle0 =
 		new AVLTreeElement<int, string>(10, "10", "10");
 	AVLTreeElement<int, string> *tle1 =
@@ -56,12 +53,11 @@ int main(int argc, char **argv) {
 	tle2->setLabel(std::to_string(tle2->getBalanceFactor()));
 	tle3->setLabel(std::to_string(tle3->getBalanceFactor()));
 
-	Bridges::setTitle("AVL Tree Example");
+	bridges->setTitle("AVL Tree Example");
 	// provide BRIDGES the  handle to the tree structure
-	Bridges::setDataStructure(tle0);
+	bridges->setDataStructure(tle0);
 
-
-	Bridges::visualize();
+	bridges->visualize();
 
 	return 0;
 }

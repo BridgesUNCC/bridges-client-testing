@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
 	if (argc == 4)		// Server type provided
 		bridges->setServer(argv[3]);
 		
-	Bridges::setTitle("Graph Adj List Example: IMDB Data");
+	bridges->setTitle("Graph Adj List Example: IMDB Data");
 	vector<ActorMovieIMDB> actor_list = DataSource::getActorMovieIMDBData(1800);
 
 	GraphAdjList<string, string> graph;
@@ -85,9 +85,9 @@ int main(int argc, char **argv) {
 	}
 
 	// provide BRIDGES the  handle to the tree structure
-	Bridges::setDataStructure(&graph);
+	bridges->setDataStructure(&graph);
 	// Visualize the graph
-	Bridges::visualize();
+	bridges->visualize();
 
 	return 0;
 }

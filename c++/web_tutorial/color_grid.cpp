@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 		bridges->setServer(argv[3]);
 		
 	// set title for visualization
-	Bridges::setTitle("A Color Grid Example");
+	bridges->setTitle("A Color Grid Example");
 
 	int width = 200, height = 200;
 
@@ -59,9 +59,9 @@ int main(int argc, char **argv) {
 					cg->set(x, y, Color(col));
 		}
 
-	Bridges::setDataStructure(cg);
+	bridges->setDataStructure(cg);
 
-	Bridges::visualize();
+	bridges->visualize();
 
 	return 0;
 }

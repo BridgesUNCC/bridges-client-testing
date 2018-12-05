@@ -17,8 +17,6 @@ int main(int argc, char **argv) {
 	if (argc == 4)		// Server type provided
 		bridges->setServer(argv[3]);
 		
-//	Bridges::initialize(2, "YOUR_USER_ID", "YOUR_API_KEY");
-
 	Array<string> *arr = new Array<string>(4, 4, 4);
 
 	arr->getElement(0, 0, 0).getVisualizer()->setColor(Color("red"));
@@ -28,9 +26,9 @@ int main(int argc, char **argv) {
 	arr->getElement(1, 1, 0).getVisualizer()->setColor(Color("cyan"));
 	arr->getElement(2, 2, 0).getVisualizer()->setColor(Color("yellow"));
 
-	Bridges::setTitle("3D Array Example");
-	Bridges::setDataStructure(arr);
-	Bridges::visualize();
+	bridges->setTitle("3D Array Example");
+	bridges->setDataStructure(arr);
+	bridges->visualize();
 
 	return 0;
 }

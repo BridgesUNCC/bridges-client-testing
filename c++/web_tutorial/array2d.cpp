@@ -7,7 +7,6 @@ using namespace bridges;
 
 int main(int argc, char **argv) {
 
-	//Bridges::initialize(1, "YOUR_USER_ID", "YOUR_API_KEY");
 	if (argc < 3) {
 		cout << "Must provide both user id and api key as command line arguments. Terminating.." 
 								<< endl;
