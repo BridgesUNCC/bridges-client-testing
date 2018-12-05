@@ -5,13 +5,15 @@ using namespace bridges;
 
 int main(int argc, char **argv) {
 
-	if (argc == 1) {
+	if (argc < 3) {
 		cout << "Must provide both user id and api key as command line arguments. Terminating.." 
 								<< endl;
 		exit (-1);
 	}
-	cout << argv[0] << endl << argv[1] << endl << argv[2] << endl;
 	Bridges *bridges =  new Bridges(0, argv[1], argv[2]);
+
+	if (argc == 4)			// server type provided
+		bridges->setServer(argv[3]);
 
 	Array<int> *arr = new Array<int>(10);
 
