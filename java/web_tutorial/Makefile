@@ -21,10 +21,6 @@ SRCS = arr1d.java arr2d.java arr3d.java sllist.java dllist.java csllist.java \
 		cdllist.java  mllist.java tree.java bintree.java bst.java avl.java \
 		graph_al.java graph_am.java color_grid.java
 
-BRIDGES_TESTING_USER_NAME = bridges_testing
-BRIDGES_TESTING_API_KEY =  404667590237
-BRIDGES_SERVER = clone
-
 all : 
 	javac $(SRCS)
 
