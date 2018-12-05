@@ -9,8 +9,9 @@ public class sllist {
 
 	public static void main(String[] args) throws Exception {
 
+		if (args.length < 2)
+			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 		// note: you must fill in with your Bridges credentials
-		//Bridges bridges = new Bridges (2, "YOUR_USER_ID", "YOUR_API_KEY");
 		Bridges bridges = new Bridges (2, args[0], args[1]);
 
 		// create the linked list elements with

@@ -1,6 +1,5 @@
 import bridges.connect.Bridges;
 import bridges.base.Array;
-import bridges.base.Element;
 
 public class arr1d {
 	public static void main(String[] args) throws Exception {

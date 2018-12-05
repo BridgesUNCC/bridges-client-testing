@@ -19,13 +19,13 @@ import bridges.base.ColorGrid;
 public class color_grid {
 
 	public static void main(String[] args) throws Exception {
-
+		if (args.length < 2)
+			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 
                 // This example illustrates using the Bridges color grid
                 // We will build a checker grid using two different colors
 
                                                 // initialize BRIDGES
-		//Bridges bridges = new Bridges (2, "YOUR_USER_ID", "YOUR_API_KEY");
 		Bridges bridges = new Bridges (2, args[0], args[1]);
 
                                                 // set title for visualization
