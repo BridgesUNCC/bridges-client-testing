@@ -4,11 +4,23 @@
 #
 CC = clang++
 HOME = /Users/kalpathi
-BRIDGES_INCL = $(HOME)/gr/bridges/client/cxx/bridges17/src
-CURL_INCL = /usr/local/curl760/include
-CURL_LIB_PATH = /usr/local/curl760/lib
+
+BRIDGES_HOME = $(HOME)/gr/bridges/client/
+BRIDGES_INCL = $(BRIDGES_HOME)/cxx/src
+
+CURL_HOME = /usr/local/curl760
+CURL_INCL = $(CURL_HOME)/include
+CURL_LIB_PATH = $(CURL_HOME)/lib
 CURL_LIB = curl
-RAPID_JSON_INCL = /usr/local/rapidjson/include
+
+
+RAPID_JSON_HOME = /usr/local/rapidjson/
+RAPID_JSON_INCL = $(RAPID_JSON_HOME)/include
+
+BRIDGES_TESTING_USER_NAME = bridges_testing
+BRIDGES_TESTING_API_KEY =  
+BRIDGES_SERVER = live
+
 
 #
 #

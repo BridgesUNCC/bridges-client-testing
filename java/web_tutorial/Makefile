@@ -3,6 +3,7 @@
 #Platform specific variables
 #
 CC = javac
+
 HOME = /Users/krs
 
 #
@@ -18,6 +19,9 @@ SRCS = arr1d.java arr2d.java arr3d.java sllist.java dllist.java csllist.java \
 		cdllist.java  mllist.java tree.java bintree.java bst.java avl.java \
 		graph_al.java graph_am.java color_grid.java
 
+BRIDGES_TESTING_USER_NAME = kalpathi60
+BRIDGES_TESTING_API_KEY =  486749122386
+BRIDGES_SERVER = local
 
 EXECUTABLES = $(SRCS:.cpp=)
 
@@ -25,21 +29,21 @@ all :
 	javac $(SRCS)
 
 run:
-	java arr1d;
-	java arr2d;
-	java arr3d;
-	java sllist;
-	java dllist;
-	java csllist;
-	java cdllist;
-	java mllist;
-	java tree;
-	java bintree;
-	java bst;
-	java avl;
-	java graph_al;
-	java graph_am;
-	java color_grid;
+	java arr1d $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
+	java arr2d $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java arr3d $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java sllist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java dllist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java csllist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java cdllist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java mllist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java tree $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java bintree $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java bst $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java avl $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java graph_al $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java graph_am $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java color_grid $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
 
 style:  
 	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) 
