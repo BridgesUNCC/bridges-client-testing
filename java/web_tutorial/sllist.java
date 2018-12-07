@@ -12,7 +12,7 @@ public class sllist {
 		if (args.length < 2)
 			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 		// note: you must fill in with your Bridges credentials
-		Bridges bridges = new Bridges (14, args[0], args[1]);
+		Bridges bridges = new Bridges (3, args[0], args[1]);
 		if (args.length == 3)	// If user provides server
 			bridges.setServer(args[2]);
 		

@@ -8,7 +8,7 @@ public class tree {
 			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 
 		//create the Bridges object
-		Bridges bridges = new Bridges (15, args[0], args[1]);
+		Bridges bridges = new Bridges (8, args[0], args[1]);
 		if (args.length == 3)	// If user provides server
 			bridges.setServer(args[2]);
 		

@@ -26,7 +26,7 @@ public class color_grid {
                 // We will build a checker grid using two different colors
 
                                                 // initialize BRIDGES
-		Bridges bridges = new Bridges (8, args[0], args[1]);
+		Bridges bridges = new Bridges (14, args[0], args[1]);
 		if (args.length == 3)	// If user provides server
 			bridges.setServer(args[2]);
                                                 // set title for visualization

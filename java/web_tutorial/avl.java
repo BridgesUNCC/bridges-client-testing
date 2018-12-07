@@ -9,7 +9,7 @@ public class avl {
 			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 		
 		//create the Bridges object
-		Bridges bridges = new Bridges (3, args[0], args[1]);
+		Bridges bridges = new Bridges (11, args[0], args[1]);
 
 		if (args.length == 3)	// If user provides server
 			bridges.setServer(args[2]);
