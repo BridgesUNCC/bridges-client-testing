@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 								<< endl;
 		exit (-1);
 	}
-	Bridges *bridges = new Bridges(0, argv[1], argv[2]);
+	Bridges *bridges = new Bridges(1, argv[1], argv[2]);
 	if (argc == 4)	// Server type provided
 		bridges->setServer(argv[3]);
 	
@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
 	arr->getElement(2, 2).getVisualizer()->setColor(Color("yellow"));
 
 
-	bridges->setTitle("Array Example");
+	bridges->setTitle("2D Array Example");
 	bridges->setDataStructure(arr);
 	bridges->visualize();
 

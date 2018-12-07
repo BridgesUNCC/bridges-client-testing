@@ -1,1 +1,3 @@
 *.class
+*.o
+env_vars.mk

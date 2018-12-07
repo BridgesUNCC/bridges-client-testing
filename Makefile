@@ -7,14 +7,11 @@ TARGET =  all
 all : make_java make_c++ make_python
 
 make_java:
-	cd java; sh to_krs.sh; make; make run; sh to_site.sh;
+	cd java; make; make run; 
 
 make_c++:
-	cd c++; sh to_krs.sh; make; make run; sh to_site.sh;
+	cd c++; make; make run;
 
 make_python:
-	cd python; sh to_krs.sh; make; make run; sh to_site.sh;
-
-to_html:
-	/bin/sh ./to_html_creds.sh
+	cd python; make; make run; 
 

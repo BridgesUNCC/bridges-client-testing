@@ -20,7 +20,9 @@ int main(int argc, char **argv) {
 		bridges->setServer(argv[3]);
 		
 	bridges->setTitle("Graph Adj Matrix Example: IMDB Data");
-	vector<ActorMovieIMDB> actor_list = DataSource::getActorMovieIMDBData(1813);
+	
+	DataSource *ds = new DataSource;
+	vector<ActorMovieIMDB> actor_list = ds->getActorMovieIMDBData(1813);
 
 	GraphAdjMatrix<string, string> graph;
 

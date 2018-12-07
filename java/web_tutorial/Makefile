@@ -6,6 +6,8 @@ CC = javac
 
 HOME = /Users/krs
 
+include ../../env_vars.mk
+
 #
 #
 

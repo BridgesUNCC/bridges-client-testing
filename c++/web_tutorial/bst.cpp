@@ -31,7 +31,9 @@ int main(int argc, char **argv) {
 	// read the earth quake  data and build the BST
 	bridges->setTitle("Recent Earthquakes (USGIS Data)");
 
-	vector<EarthquakeUSGS> eq_list = DataSource::getEarthquakeUSGSData(max_quakes);
+	DataSource *ds = new DataSource;
+
+	vector<EarthquakeUSGS> eq_list = ds->getEarthquakeUSGSData(max_quakes);
 
 	BSTElement<float, EarthquakeUSGS> *root = nullptr;
 
