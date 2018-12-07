@@ -8,7 +8,7 @@ public class dllist {
 		if (args.length < 2)
 			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 
-		Bridges bridges = new Bridges (2, args[0], args[1]);
+		Bridges bridges = new Bridges (10, args[0], args[1]);
 
 		if (args.length == 3)	// If user provides server
 			bridges.setServer(args[2]);
