@@ -7,7 +7,7 @@ import java.util.ArrayList;
 public class GridSquareFill {
 
     public static void main(String[] args) throws Exception {
-        Bridges bridges = new Bridges(6, "bridges_testing", "1321549621122");
+        Bridges bridges = new Bridges(6, args[0], args[1]);
 
         // max color grid size, may take a minute or two
         int rows = 480;

@@ -14,7 +14,7 @@ public class bst_book {
 	public static void main(String[] args) throws Exception{
 	
     						// Instantiate a Bridges object 
-		Bridges bridges = new Bridges (21, "bridges_testing", "1321549621122");
+		Bridges bridges = new Bridges (21, args[0], args[1]);
 		bridges.setTitle("GutenBerg Book Collection(Meta Data Only)");
 
 

@@ -14,7 +14,7 @@ public class bst_game {
 	public static void main(String[] args) throws Exception{
 	
     						// Instantiate a Bridges object 
-		Bridges bridges = new Bridges (23, "bridges_testing", "1321549621122");
+		Bridges bridges = new Bridges (23, args[0], args[1]);
 		bridges.setTitle("Binary Search Tree with IGN Game Data");
 
 							// Retrieve Game Data

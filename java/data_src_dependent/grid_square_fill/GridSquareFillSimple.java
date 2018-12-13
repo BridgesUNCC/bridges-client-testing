@@ -6,7 +6,7 @@ import bridges.connect.Bridges;
 public class GridSquareFillSimple {
 
     public static void main(String[] args) throws Exception {
-        Bridges bridges = new Bridges(27, "bridges_testing", "1321549621122");
+        Bridges bridges = new Bridges(27, args[0], args[1]);
 
         int rows = 100;
         int columns = 100;

@@ -24,7 +24,7 @@ public class GraphEQ {
     }
 
     public static void main(String[] args) throws Exception {
-        Bridges bridges = new Bridges(25, "bridges_testing", "1321549621122");
+        Bridges bridges = new Bridges(25, args[0], args[1]);
 
         GraphAdjListSimple<String> graph = new GraphAdjListSimple<>();
 

@@ -117,7 +117,7 @@ public class GridLyrics {
 
 
 	public static void main(String[] args) throws Exception {
-		Bridges bridges = new Bridges(26, "bridges_testing", "1321549621122");
+		Bridges bridges = new Bridges(26, args[0], args[1]);
 		String song = Bridges.getSong("Delicate").getLyrics();
 		String[] lyrics = splitLyrics(song);									                // returns already split and cleaned array of the lyrics
 
