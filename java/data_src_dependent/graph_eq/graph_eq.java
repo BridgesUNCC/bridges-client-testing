@@ -6,7 +6,7 @@ import bridges.data_src_dependent.EarthquakeUSGS;
 import java.util.Comparator;
 import java.util.List;
 
-public class GraphEQ {
+public class graph_eq {
 
     public static double calcDistance(double la1, double lo1, double la2, double lo2) {
         final int R = 6371; // Radius of the earth in km
@@ -25,6 +25,7 @@ public class GraphEQ {
 
     public static void main(String[] args) throws Exception {
         Bridges bridges = new Bridges(25, args[0], args[1]);
+		bridges.setServer (args[2]);
 
         GraphAdjListSimple<String> graph = new GraphAdjListSimple<>();
 

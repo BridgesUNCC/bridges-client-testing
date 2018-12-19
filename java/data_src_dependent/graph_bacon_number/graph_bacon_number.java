@@ -14,11 +14,12 @@ import bridges.data_src_dependent.ActorMovieIMDB;
 
 
 
-public class GraphBaconNumber {
+public class graph_bacon_number {
 	public static void main(String[] args) throws Exception {
 		
 		// Initialize BRIDGES with your credentials
 		Bridges bridges = new Bridges(24, args[0], args[1]);
+		bridges.setServer(args[2]);
 		// set title for visualization
 		bridges.setTitle("Bacon Number: IMDB Actor-Movie Data");
 
@@ -85,7 +86,6 @@ public class GraphBaconNumber {
 
 		int d = getBaconNumber(gr, "Kevin_Bacon_(I)", "Cate_Blanchett", 
 										mark, dist, parent);
-		System.out.println ("Bacon Number[Kevin Bacon to Cate Blanchett: " + d);
 
 		bridges.setDataStructure(gr);
 		bridges.visualize();

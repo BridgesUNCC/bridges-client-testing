@@ -16,6 +16,7 @@ public class bst_eq {
 	
     							// Instantiate a Bridges object */
 		Bridges bridges = new Bridges (20, args[0], args[1]);
+		bridges.setServer (args[2]);
 		bridges.setTitle("Recent Earthquakes(USGIS Data)");
 
 								// Retrieve a list of (maxElements) Tweets */	

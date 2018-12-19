@@ -4,14 +4,15 @@ import bridges.base.ColorGrid;
 
 import java.util.ArrayList;
 
-public class GridSquareFill {
+public class grid_square_fill {
 
     public static void main(String[] args) throws Exception {
-        Bridges bridges = new Bridges(6, args[0], args[1]);
+        Bridges bridges = new Bridges(27, args[0], args[1]);
+		bridges.setServer (args[2]);
 
         // max color grid size, may take a minute or two
-        int rows = 480;
-        int columns = 640;
+        int rows = 200;
+        int columns = 200;
 
         ColorGrid grid = new ColorGrid(rows, columns, new Color("white"));
 

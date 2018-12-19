@@ -8,13 +8,15 @@ import bridges.base.BSTElement;
 import bridges.data_src_dependent.GutenbergBook;
 import java.util.ArrayList;
 
-public class bst_book {
+public class bst_gutenberg {
 	public static final int maxElements = 100; //number of tweets
 
 	public static void main(String[] args) throws Exception{
 	
     						// Instantiate a Bridges object 
-		Bridges bridges = new Bridges (21, args[0], args[1]);
+		Bridges bridges = new Bridges (22, args[0], args[1]);
+		bridges.setServer (args[2]);
+
 		bridges.setTitle("GutenBerg Book Collection(Meta Data Only)");
 
 

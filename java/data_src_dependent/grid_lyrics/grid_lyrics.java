@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Hashtable;
 
-public class GridLyrics {
+public class grid_lyrics {
 
     public static String[] splitLyrics(String lyrics) {				// splits raw lyrics string into a parsable array
 		lyrics = lyrics.replaceAll("\\[.+\\]","");	        // removes the titles of song stage ex [Intro]
@@ -118,6 +118,7 @@ public class GridLyrics {
 
 	public static void main(String[] args) throws Exception {
 		Bridges bridges = new Bridges(26, args[0], args[1]);
+		bridges.setServer(args[2]);
 		String song = Bridges.getSong("Delicate").getLyrics();
 		String[] lyrics = splitLyrics(song);									                // returns already split and cleaned array of the lyrics
 
