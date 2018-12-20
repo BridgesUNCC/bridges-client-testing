@@ -1,0 +1,11 @@
+c++ -c -g -I/Users/kalpathi/gr/bridges/client/cxx/bridges17/src -I../shaffer_incl  -I/usr/local/curl750/include -std=c++11 -stdlib=libc++  bn.cpp -o bn.o
+bn.cpp:125:48: error: member reference type 'unordered_map<std::__1::basic_string<char>, Element<std::__1::basic_string<char> > *> *' is a pointer; did you mean to use '->'?
+                                                el = (Element<string>*) gr->getVertices().at(p);
+                                                                        ~~~~~~~~~~~~~~~~~^
+                                                                                         ->
+bn.cpp:132:50: error: member reference type 'unordered_map<std::__1::basic_string<char>, Element<std::__1::basic_string<char> > *> *' is a pointer; did you mean to use '->'?
+                                                        el2 = (Element<string>*) gr->getVertices().at(p);
+                                                                                 ~~~~~~~~~~~~~~~~~^
+                                                                                                  ->
+2 errors generated.
+make: *** [bn.o] Error 1

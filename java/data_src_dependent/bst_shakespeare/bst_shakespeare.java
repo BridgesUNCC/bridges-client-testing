@@ -14,7 +14,7 @@ public class bst_shakespeare {
 	public static void main(String[] args) throws Exception{
 	
     						// Instantiate a Bridges object 
-		Bridges  bridges = new Bridges (23, args[0], args[1]);
+		Bridges  bridges = new Bridges (107, args[0], args[1]);
 		bridges.setServer (args[2]);
 
 		bridges.setTitle("Shakespeare Sonnets, Poems, Plays");

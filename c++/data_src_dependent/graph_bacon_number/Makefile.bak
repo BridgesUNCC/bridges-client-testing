@@ -1,0 +1,35 @@
+CC = c++
+
+TARGET = bn
+
+SRCS = bn.cpp
+OBJS = $(SRCS:.cpp=.o)
+
+INCLUDES = Element.h SLelement.h DLelement.h TreeElement.h BSTElement.h \
+		ArrayElement.h GraphAdjMatrix.h GraphAdjList.h Edge.h \
+		Bridges.h ADTVisualizer.h Connector.h ElementVisualizer.h LinkVisualizer.h\
+		Validation.h
+
+IFLAGS = -I$(HOME)/gr/bridges/cxx/git-cxx/src -I../shaffer_incl  -I/usr/local/curl750/include
+CPPFLAGS = -c -g $(IFLAGS) -std=c++11 -stdlib=libc++
+
+LDFLAGS =  -L/usr/local/curl750/lib
+LIBS =  -lcurl
+
+.SUFFIXES: .cpp
+
+.cpp.o:  
+	$(CC) $(CPPFLAGS)  $< -o $@
+
+TARGET: $(OBJS) 
+	$(CC) -g -o $(TARGET) $(OBJS) $(LDFLAGS) $(LIBS)
+
+depend:
+	makedepend -- $(CPPFLAGS) -- $(SRCS)
+
+clean: 
+	rm $(OBJS) $(TARGET)
+
+
+# DO NOT DELETE
+

@@ -15,7 +15,7 @@ int main(int argc, char **argv) {
 								<< endl;
 		exit (-1);
 	}	
-	Bridges *bridges = new Bridges(4, argv[1], argv[2]);
+	Bridges *bridges = new Bridges(54, argv[1], argv[2]);
 	
 	if (argc == 4)		// Server type provided
 		bridges->setServer(argv[3]);

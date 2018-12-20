@@ -49,4 +49,4 @@ style:
 
 
 clean: 
-	/bin/rm  *.class
+	/bin/rm -f  *.class

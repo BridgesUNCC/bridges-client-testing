@@ -8,15 +8,19 @@ all : make_java make_c++ make_python
 
 make_java:
 	cd java/web_tutorial; make; make run; 
+	cd java/data_src_dependent; make; make run;
 
 make_c++:
 	cd c++/web_tutorial; make; make run;
+	cd c++/data_src_dependent; make; make run;
 
 make_python:
 #	cd python/web_tutorial; make; make run; 
 
 clean:
 	cd java/web_tutorial; make clean;
+	cd java/data_src_dependent; make clean;
 	cd c++/web_tutorial; make clean;
+	cd c++/data_src_dependent; make clean;
 	
 

@@ -79,17 +79,10 @@ run:
 	graph_amatrix $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
 	color_grid $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
 
-style:  
-	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) $(STYLE_INCLUDES)
 
 
-to_html:
-	/bin/sh ./to_html_creds.sh
-
-to_srcs:
-	/bin/sh ./to_srcs.sh
-	
-	
+clean:
+	rm -f $(EXECUTABLES) $(OBJS)
 	
 
 array: array.o
@@ -139,9 +132,6 @@ circ_dllist: circ_dllist.o
 
 graph_amatrix: graph_amatrix.o
 	$(CC) -g -o graph_amatrix graph_amatrix.o $(LDFLAGS) $(LIBS)
-
-clean:
-	rm $(OBJS)  $(EXECUTABLES)
 
 depend: $(SRCS)
 	gcc -MD  $(IFLAGS) $(SRCS)
