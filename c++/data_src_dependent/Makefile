@@ -15,6 +15,8 @@ all :
 	cd grid_square_fill;  make;
 	cd bst_games; make;
 	cd bst_shakespeare; make;
+	cd list_eq; make;
+	cd list_imdb; make;
 
 run:
 
@@ -26,6 +28,8 @@ run:
 	cd grid_square_fill;   grid_square_fill $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
 	cd bst_games; bst_games $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
 	cd bst_shakespeare;   bst_shakespeare $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
+	cd list_eq;   list_eq $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
+	cd list_imdb;   list_imdb $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
 	
 
 clean:
@@ -37,5 +41,7 @@ clean:
 	cd grid_square_fill; make clean;
 	cd bst_games; make clean;
 	cd bst_gutenberg; make clean;
+	cd list_eq; make clean;
+	cd list_imdb; make clean;
 	
 

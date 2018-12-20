@@ -5,7 +5,6 @@ TARGET =  all
 
 # Incude and Library paths
 
-
 all : 
 	cd bst_eq; javac *.java;
 	cd bst_gutenberg; javac *.java;
@@ -15,6 +14,8 @@ all :
 	cd grid_square_fill; javac *.java;
 	cd bst_games; javac *.java;
 	cd bst_shakespeare; javac *.java;
+	cd list_eq; javac list_eq.java;
+	cd list_imdb; javac list_imdb.java;
 
 run:
 
@@ -26,6 +27,8 @@ run:
 	cd grid_square_fill; java  grid_square_fill $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
 	cd bst_games; java  bst_games $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
 	cd bst_shakespeare; java  bst_shakespeare $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
+	cd list_eq; java  list_eq $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
+	cd list_imdb; java  list_imdb $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
 	
 
 clean:
@@ -37,5 +40,7 @@ clean:
 	cd grid_square_fill; rm -f *.class;
 	cd bst_games; rm -f *.class;
 	cd bst_gutenberg; rm -f *.class;
+	cd list_eq; rm -f *.class;
+	cd list_imdb; rm -f *.class;
 	
 
