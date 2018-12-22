@@ -78,6 +78,10 @@ run:
 	graph_alist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
 	graph_amatrix $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
 	color_grid $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
+	kdt $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
+
+style:  
+	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) $(STYLE_INCLUDES)
 
 
 
@@ -106,8 +110,8 @@ dllist: dllist.o
 bst: bst.o
 	$(CC) -g -o bst bst.o $(LDFLAGS) $(LIBS)
 
-bst2: bst2.o
-	$(CC) -g -o bst2 bst2.o $(LDFLAGS) $(LIBS)
+kdt: kdt.o
+	$(CC) -g -o kdt kdt.o $(LDFLAGS) $(LIBS)
 
 color_grid: color_grid.o
 	$(CC) -g -o color_grid color_grid.o $(LDFLAGS) $(LIBS)
