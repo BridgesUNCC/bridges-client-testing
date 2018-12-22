@@ -28,9 +28,18 @@ int main(int argc, char **argv) {
 	t0->setLeft(t1);
 	t0->setRight(t2);
 	t1->setLeft(t3);
+	t1->setLabel("X");
 	t1->setRight(t4);
 	t2->setLeft(t5);
 	t2->setRight(t6);
+
+	t0->setLabel("X");
+	t1->setLabel("Y");
+	t2->setLabel("Y");
+	t3->setLabel("X");
+	t4->setLabel("X");
+	t5->setLabel("X");
+	t6->setLabel("X");
 
 	t0->getVisualizer()->setColor(Color("red"));
 	// color the leaf nodes that represent the code letters
@@ -42,7 +51,6 @@ int main(int argc, char **argv) {
 	// provide BRIDGES the  handle to the tree structure
 	bridges->setDataStructure(t0);
 
-	bridges->setVisualizeJSONFlag(true);
 	bridges->visualize();
 
 	return 0;
