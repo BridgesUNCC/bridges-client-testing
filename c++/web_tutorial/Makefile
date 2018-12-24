@@ -17,7 +17,7 @@ TARGET =  all
 
 SRCS = array.cpp array2d.cpp array3d.cpp sllist.cpp dllist.cpp circ_sllist.cpp \
 		circ_dllist.cpp  mllist.cpp tree.cpp bintree.cpp bst.cpp avl.cpp \
-		graph_alist.cpp graph_amatrix.cpp  color_grid.cpp
+		graph_alist.cpp graph_amatrix.cpp  color_grid.cpp shape_collection.cpp
 
 
 OBJS = $(SRCS:.cpp=.o)
@@ -28,6 +28,8 @@ INCLUDES = 	DataStructure.h Array.h Element.h SLelement.h DLelement.h \
 			CircSLelement.h CircDLelement.h MLelement.h \
 			TreeElement.h BTElement.h BSTElement.h AVLTreeElement.h \
 			GraphAdjList.h GraphAdjMatrix.h \
+			SymbolCollection.h Symbol.h \
+			Rectangle.h Circle.h Polygon.h Label.h \
 			ElementVisualizer.h	LinkVisualizer.h Color.h Edge.h base64.h\
 			Bridges.h Connector.h \
 			data_src/ActorMovieIMDB.h \
@@ -79,6 +81,7 @@ run:
 	graph_amatrix $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
 	color_grid $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
 	kdt $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
+	shape_collection  $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
 
 style:  
 	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) $(STYLE_INCLUDES)
@@ -136,6 +139,9 @@ circ_dllist: circ_dllist.o
 
 graph_amatrix: graph_amatrix.o
 	$(CC) -g -o graph_amatrix graph_amatrix.o $(LDFLAGS) $(LIBS)
+
+shape_collection: shape_collection.o
+	$(CC) -g -o shape_collection shape_collection.o $(LDFLAGS) $(LIBS)
 
 depend: $(SRCS)
 	gcc -MD  $(IFLAGS) $(SRCS)
