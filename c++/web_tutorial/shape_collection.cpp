@@ -14,25 +14,26 @@ int main() {
 	bridges->setDescription("Some Shapes and Symbols");
 
 	SymbolCollection *sc = new SymbolCollection(); 
-	Rectangle *s1 = new Rectangle(50, 50);
+	Rectangle *s1 = new Rectangle(-25, 0, 50, 50);
 	s1->setFillColor(Color("red"));
-	s1->setLocation(-25, 0);
 	sc->addSymbol(s1);
 
-	Circle *s2 = new Circle(25);
+	Circle *s2 = new Circle(25, 0, 25);
 	s2->setFillColor(Color("green"));
-	s2->setLocation(25, 0);
 	sc->addSymbol(s2);
 	
 
-	Polygon *s3 = new Polygon;
+	Polygon *s3 = new Polygon();
+//	vector<float> pts = {-100.0, 0.0, 100.0, 0.0, 0.0, 0.0, 0.0, -100.0, 0.0, 100.0, 0.0, 0.0};
+//	s3->setPolygon (pts);
+
 	s3->addPoint(-100, 0);
 	s3->addPoint(100, 0);
 	s3->addPoint(0, 0);
 	s3->addPoint(0, -100);
 	s3->addPoint(0, 100);
 	s3->addPoint(0, 0);
-	s3->setStrokeColor(Color("black"));
+	s3->setStrokeColor(Color("magenta"));
 	sc->addSymbol(s3);
 
 	Label *l = new Label();
