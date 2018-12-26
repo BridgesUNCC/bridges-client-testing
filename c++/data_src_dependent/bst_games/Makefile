@@ -1,6 +1,6 @@
 CC = c++
 
-TARGET = bst_games
+TARGET = bst_game
 
 SRCS = bst_game.cpp
 OBJS = $(SRCS:.cpp=.o)
