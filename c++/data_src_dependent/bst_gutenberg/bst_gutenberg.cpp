@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
 			def_color = "green",
 			end_color = "red";
 		
-	Bridges *bridges = new Bridges(201, argv[1], argv[2]);
+	Bridges *bridges = new Bridges(301, argv[1], argv[2]);
 	bridges->setServer (argv[3]);
 								// read the earth quake  data and build the BST
 

@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 			end_color = "red";
 		
 	// Initialize BRIDGES with your credentials
-	Bridges *bridges = new Bridges(202, argv[1], argv[2]);
+	Bridges *bridges = new Bridges(302, argv[1], argv[2]);
 	bridges->setServer (argv[3]);
 
 	// set title for visualization
