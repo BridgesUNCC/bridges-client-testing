@@ -40,6 +40,7 @@ clean:
 	cd graph_eq; make clean;
 	cd grid_square_fill; make clean;
 	cd bst_games; make clean;
+	cd bst_shakespeare; make clean;
 	cd bst_gutenberg; make clean;
 	cd list_eq; make clean;
 	cd list_imdb; make clean;

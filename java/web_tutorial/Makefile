@@ -21,7 +21,7 @@ OBJS = $(SRCS:.java=.class)
 
 SRCS = arr1d.java arr2d.java arr3d.java sllist.java dllist.java csllist.java \
 		cdllist.java  mllist.java tree.java bintree.java bst.java avl.java \
-		graph_al.java graph_am.java color_grid.java
+		graph_al.java graph_am.java color_grid.java kdt.java shape_collection.java
 
 all : 
 	javac $(SRCS)
@@ -42,6 +42,8 @@ run:
 	java graph_al $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
 	java graph_am $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
 	java color_grid $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java kdt $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
+	java shape_collection $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER);
 
 style:  
 	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) 

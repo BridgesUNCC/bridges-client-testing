@@ -17,7 +17,7 @@ TARGET =  all
 
 SRCS = array.cpp array2d.cpp array3d.cpp sllist.cpp dllist.cpp circ_sllist.cpp \
 		circ_dllist.cpp  mllist.cpp tree.cpp bintree.cpp bst.cpp avl.cpp \
-		graph_alist.cpp graph_amatrix.cpp  color_grid.cpp shape_collection.cpp
+		graph_alist.cpp graph_amatrix.cpp  color_grid.cpp shape_collection.cpp kdt.cpp
 
 
 OBJS = $(SRCS:.cpp=.o)
@@ -49,7 +49,7 @@ STYLE_INCLUDES = BST.h StudentInfo.h
 
 # Include and library flags
 
-IFLAGS = -I$(BRIDGES_INCL)  -I$(CURL_INCL)  -I$(RAPID_JSON_INCL)
+IFLAGS = -I$(BRIDGES_INCL)  -I$(CURL_INCL)  -I$(RAPID_JSON_INCL) -DTESTING=1
 LDFLAGS =  -L$(CURL_LIB_PATH)
 CPPFLAGS = -c -g $(IFLAGS) -std=c++11 -stdlib=libc++
 
