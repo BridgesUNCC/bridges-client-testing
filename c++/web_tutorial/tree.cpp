@@ -6,17 +6,16 @@ using namespace std;
 using namespace bridges;
 
 int main(int argc, char **argv) {
+#if TESTING
+                        // command line args provide credentials and server to test on
+    Bridges *bridges =  new Bridges(108, argv[1], argv[2]);
+    bridges->setServer(argv[3]);
+#else
+    Bridges *bridges =  new Bridges(108, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
 
-	if (argc < 3) {
-		cout << "Must provide both user id and api key as command line arguments. Terminating.." 
-								<< endl;
-		exit (-1);
-	}
-	Bridges *bridges = new Bridges(58, argv[1], argv[2]);
-	
-	if (argc == 4)		// Server type provided
-		bridges->setServer(argv[3]);
-	//Bridges::initialize(8, "YOUR_USER_ID", "YOUR_API_KEY");
+
+	bridges->setTitle("A General Tree Example");
 
 	TreeElement<string> *t0 = new TreeElement<string>("Hello", "Hello");
 	TreeElement<string> *t2 = new TreeElement<string>("This", "This");

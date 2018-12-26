@@ -8,10 +8,10 @@ int main(int argc, char **argv) {
 
 #if TESTING
 						// command line args provide credentials and server to test on
-	Bridges *bridges =  new Bridges(100, argv[1], argv[2]);
+	Bridges *bridges =  new Bridges(50, argv[1], argv[2]);
 	bridges->setServer(argv[3]);
 #else
-	Bridges *bridges =  new Bridges(100, "YOUR_USER_ID", "YOUR_API_KEY");
+	Bridges *bridges =  new Bridges(50, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
 	Array<int> *arr = new Array<int>(10);

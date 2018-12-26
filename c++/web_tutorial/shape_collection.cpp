@@ -7,9 +7,15 @@
 
 using namespace bridges;
 
-int main() {
-    Bridges *bridges = new Bridges(65, "kalpathi60", "486749122386");
-	bridges->setServer("clone");
+int main(int argc, char **argv) {
+#if TESTING
+                        // command line args provide credentials and server to test on
+    Bridges *bridges =  new Bridges(116, argv[1], argv[2]);
+    bridges->setServer(argv[3]);
+#else
+    Bridges *bridges =  new Bridges(116, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
+
 	bridges->setTitle("Symbol Collection");
 	bridges->setDescription("Some Shapes and Symbols");
 
@@ -24,8 +30,6 @@ int main() {
 	
 
 	Polygon *s3 = new Polygon();
-//	vector<float> pts = {-100.0, 0.0, 100.0, 0.0, 0.0, 0.0, 0.0, -100.0, 0.0, 100.0, 0.0, 0.0};
-//	s3->setPolygon (pts);
 
 	s3->addPoint(-100, 0);
 	s3->addPoint(100, 0);

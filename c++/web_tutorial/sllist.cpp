@@ -10,14 +10,13 @@
 using namespace bridges;
 
 int main (int argc, char **argv) {
-	if (argc < 3) {
-		cout << "Must provide both user id and api key as command line arguments. Terminating.." 
-								<< endl;
-		exit (-1);
-	}
-	Bridges *bridges = new Bridges(53, argv[1], argv[2]);
-	if (argc == 4)	// Server type provided
-		bridges->setServer(argv[3]);
+#if TESTING
+                        // command line args provide credentials and server to test on
+    Bridges *bridges =  new Bridges(103, argv[1], argv[2]);
+    bridges->setServer(argv[3]);
+#else
+    Bridges *bridges =  new Bridges(103, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
 
 	// note: you must fill in with your Bridges credentials
 	//Bridges::initialize(3, "YOUR_USER_ID", "YOUR_API_KEY");

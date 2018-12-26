@@ -4,18 +4,15 @@
 using namespace bridges;
 
 int main(int argc, char **argv) {
-	if (argc < 3) {
-		cout << "Must provide both user id and api key as command line arguments. Terminating.." 
-								<< endl;
-		exit (-1);
-	}	
-	Bridges *bridges = new Bridges(15, argv[1], argv[2]);
-	
-	if (argc == 4)		// Server type provided
-		bridges->setServer(argv[3]);
-		
-	bridges->setTitle("A Kd Tree Example");
+#if TESTING
+                        // command line args provide credentials and server to test on
+    Bridges *bridges =  new Bridges(115, argv[1], argv[2]);
+    bridges->setServer(argv[3]);
+#else
+    Bridges *bridges =  new Bridges(115, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
 
+	bridges->setTitle("A Kd Tree Example");
 
 	KdTreeElement<int, int> *t0 = new KdTreeElement<int, int>(50, 0);
 	KdTreeElement<int, int> *t1 = new KdTreeElement<int, int>(25, 1);

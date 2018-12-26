@@ -15,18 +15,18 @@ using namespace bridges;
 
 
 int main(int argc, char **argv) {
+#if TESTING
+                        // command line args provide credentials and server to test on
+    Bridges *bridges =  new Bridges(50, argv[1], argv[2]);
+    bridges->setServer(argv[3]);
+#else
+    Bridges *bridges =  new Bridges(50, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
+
 	string hilite_color = "orange", 
 			def_color = "green",
 			end_color = "red";
 
-	if (argc < 3) {
-		cout << "Must provide both user id and api key as command line arguments. Terminating.." 
-								<< endl;
-		exit (-1);
-	}	
-	Bridges *bridges = new Bridges(10, argv[1], argv[2]);
-	if (argc == 4)
-		bridges->setServer(argv[3]);
 								// read the earth quake  data and build the BST
 
 	bridges->setTitle("BST Example: IMDB Data");

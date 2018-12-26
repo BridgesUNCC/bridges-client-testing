@@ -7,18 +7,17 @@ using namespace bridges;
 
 // helper function
 
-DLelement<StudentInfo> *insertFront(DLelement<StudentInfo> *front,
-	DLelement<StudentInfo> *new_el);
+DLelement<StudentInfo> *insertFront(DLelement<StudentInfo> *front, DLelement<StudentInfo> *new_el);
+
 int main(int argc, char **argv) {
-	if (argc < 3) {
-		cout << "Must provide both user id and api key as command line arguments. Terminating.." 
-								<< endl;
-		exit (-1);
-	}	
-	Bridges *bridges = new Bridges(54, argv[1], argv[2]);
-	
-	if (argc == 4)		// Server type provided
-		bridges->setServer(argv[3]);
+#if TESTING
+                        // command line args provide credentials and server to test on
+    Bridges *bridges =  new Bridges(104, argv[1], argv[2]);
+    bridges->setServer(argv[3]);
+#else
+    Bridges *bridges =  new Bridges(104, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
+
 		
 
 	// load student info
