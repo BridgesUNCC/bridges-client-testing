@@ -10,7 +10,7 @@ public class list_imdb {
 	public static void main(String[] args) throws Exception {
 
 		/* Initialize a Bridges connection with your credentials */
-		Bridges bridges = new Bridges(109, args[0], args[1]);
+		Bridges bridges = new Bridges(409, args[0], args[1]);
 		bridges.setServer(args[2]);
 
 		/* Set an assignment title */

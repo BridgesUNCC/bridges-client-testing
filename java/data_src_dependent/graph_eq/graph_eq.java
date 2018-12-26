@@ -24,7 +24,7 @@ public class graph_eq {
     }
 
     public static void main(String[] args) throws Exception {
-        Bridges bridges = new Bridges(104, args[0], args[1]);
+        Bridges bridges = new Bridges(404, args[0], args[1]);
 		bridges.setServer (args[2]);
 
         GraphAdjListSimple<String> graph = new GraphAdjListSimple<>();

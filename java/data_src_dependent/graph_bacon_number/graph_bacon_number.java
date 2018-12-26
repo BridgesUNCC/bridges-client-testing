@@ -18,7 +18,7 @@ public class graph_bacon_number {
 	public static void main(String[] args) throws Exception {
 		
 		// Initialize BRIDGES with your credentials
-		Bridges bridges = new Bridges(102, args[0], args[1]);
+		Bridges bridges = new Bridges(402, args[0], args[1]);
 		bridges.setServer(args[2]);
 		// set title for visualization
 		bridges.setTitle("Bacon Number: IMDB Actor-Movie Data");
