@@ -8,15 +8,11 @@ import java.util.List;
 public class bst {
 	public static void main(String[] args) throws Exception {
 
-		if (args.length < 2)
-			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 
-	
 		//create the Bridges object
-		Bridges bridges = new Bridges (10, args[0], args[1]);
-		if (args.length == 3)	// If user provides server
-			bridges.setServer(args[2]);
-		
+		Bridges bridges = new Bridges (210, args[0], args[1]);
+		bridges.setServer(args[2]);
+
 		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
 
 		// Retrieve a list of 10 earthquake  records  from USGS using the BRIDGES API

@@ -5,14 +5,11 @@ import bridges.base.Element;
 public class arr2d {
 	public static void main(String[] args) throws Exception {
 
-		if (args.length < 2)
-			throw new IllegalArgumentException("Need to provide user id and api key as command-line arguments!");
 		//create the Bridges object
-		Bridges bridges = new Bridges(1, args[0], args[1]);
+		Bridges bridges = new Bridges(201, args[0], args[1]);
 
-		if (args.length == 3)	// If user provides server
-			bridges.setServer(args[2]);
-		
+		bridges.setServer(args[2]);
+
 		//  for 2D array 5x5
 		int num_rows = 4, num_cols = 4;
 		Array<Integer> my_array = new Array<Integer> (num_rows, num_cols);

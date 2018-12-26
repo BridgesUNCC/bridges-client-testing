@@ -9,13 +9,10 @@ public class sllist {
 
 	public static void main(String[] args) throws Exception {
 
-		if (args.length < 2)
-			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 		// note: you must fill in with your Bridges credentials
-		Bridges bridges = new Bridges (3, args[0], args[1]);
-		if (args.length == 3)	// If user provides server
-			bridges.setServer(args[2]);
-		
+		Bridges bridges = new Bridges (203, args[0], args[1]);
+		bridges.setServer(args[2]);
+
 		// create the linked list elements with
 		// student data
 		SLelement<StudentInfo> el0 = new SLelement<StudentInfo>( "",

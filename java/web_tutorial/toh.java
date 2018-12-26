@@ -12,18 +12,19 @@ public class shape_collection {
 
 	public static void main(String[] args) throws Exception {
 
-		if (args.length < 2)
-			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
-		// note: you must fill in with your Bridges credentials
-		Bridges bridges = new Bridges (216, args[0], args[1]);
-		if (args.length == 3)   // If user provides server
+        if (args.length < 2)
+            throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
+        // note: you must fill in with your Bridges credentials
+        Bridges bridges = new Bridges (3, args[0], args[1]);
+        if (args.length == 3)   // If user provides server
 			bridges.setServer(args[2]);
 
-
-		bridges.setTitle("Symbol Collection");
+		
+		bridges.setTitle("Towers of Hanoi");
 		bridges.setDescription("Some Shapes and Symbols");
 
-		SymbolCollection sc = new SymbolCollection();
+		SymbolCollection sc = new SymbolCollection(); 
+		Rectangle t1[3];
 		Rectangle s1 = new Rectangle(-25.0f, 0.0f, 50, 50);
 		s1.setFillColor(new Color("red"));
 		sc.addSymbol(s1);
@@ -31,11 +32,11 @@ public class shape_collection {
 		Circle s2 = new Circle(25.0f, 0.0f, 25);
 		s2.setFillColor(new Color("green"));
 		sc.addSymbol(s2);
-
+	
 
 		Polygon s3 = new Polygon();
-		//	vector<float> pts = {-100.0, 0.0, 100.0, 0.0, 0.0, 0.0, 0.0, -100.0, 0.0, 100.0, 0.0, 0.0};
-		//	s3->setPolygon (pts);
+//	vector<float> pts = {-100.0, 0.0, 100.0, 0.0, 0.0, 0.0, 0.0, -100.0, 0.0, 100.0, 0.0, 0.0};
+//	s3->setPolygon (pts);
 
 		s3.addPoint(-100, 0);
 		s3.addPoint(100, 0);
@@ -47,7 +48,7 @@ public class shape_collection {
 		sc.addSymbol(s3);
 
 		Label l = new Label();
-		l.setLocation(0, 25);
+		l.setLocation(0,25);
 		l.setFontSize(12);
 		l.setStrokeWidth(1.0f);
 		l.setLabel("test label");
@@ -55,10 +56,10 @@ public class shape_collection {
 		sc.addSymbol(l);
 
 
-		// set visualizer type
+	// set visualizer type
 
 		bridges.setDataStructure(sc);
-		// visualize the JSON and Collection
+				// visualize the JSON and Collection
 		bridges.visualize();
 	}
 }

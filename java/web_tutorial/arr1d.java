@@ -6,12 +6,8 @@ public class arr1d {
 
 		//create the Bridges object, set credentials
 
-		if (args.length < 2) {
-			throw new IllegalArgumentException("Need to provide user id and api key as commandline arguments!");
-		}
-		Bridges bridges = new Bridges(0, args[0], args[1]);
-		if (args.length == 3)   // server provided
-			bridges.setServer(args[2]);
+		Bridges bridges = new Bridges(200, args[0], args[1]);
+		bridges.setServer(args[2]);
 
 		//  set array dimensions, allocate array of elements
 		int arraySize = 10;

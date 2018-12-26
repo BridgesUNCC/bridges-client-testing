@@ -5,14 +5,11 @@ public class dllist {
 
 	public static void main(String[] args) throws Exception {
 
-		if (args.length < 2)
-			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 
-		Bridges bridges = new Bridges (4, args[0], args[1]);
+		Bridges bridges = new Bridges (204, args[0], args[1]);
 
-		if (args.length == 3)	// If user provides server
-			bridges.setServer(args[2]);
-		
+		bridges.setServer(args[2]);
+
 		// load student info
 		StudentInfo[] students = {
 			new StudentInfo(

@@ -12,14 +12,10 @@ import bridges.data_src_dependent.ActorMovieIMDB;
 public class graph_am {
 	public static void main(String[] args) throws Exception {
 
-		if (args.length < 2)
-			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");		
-		
 		// initialize Bridges
-		Bridges bridges = new Bridges (13, args[0], args[1]);
-		if (args.length == 3)	// If user provides server
-			bridges.setServer(args[2]);
-		
+		Bridges bridges = new Bridges (213, args[0], args[1]);
+		bridges.setServer(args[2]);
+
 		// set a title for the visualization
 		bridges.setTitle("A Simple Graph (Adjacency Matrix)  Example using IMDB Actor/Movie Data");
 

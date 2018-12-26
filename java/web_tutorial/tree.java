@@ -4,14 +4,11 @@ import bridges.base.TreeElement;
 public class tree {
 	public static void main(String[] args) throws Exception {
 
-		if (args.length < 2)
-			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 
 		//create the Bridges object
-		Bridges bridges = new Bridges (8, args[0], args[1]);
-		if (args.length == 3)	// If user provides server
-			bridges.setServer(args[2]);
-		
+		Bridges bridges = new Bridges (208, args[0], args[1]);
+		bridges.setServer(args[2]);
+
 		//create   tree nodes
 		TreeElement<String> t0 = new TreeElement<String>("Hello");
 		TreeElement<String> t2 = new TreeElement<String>("This");

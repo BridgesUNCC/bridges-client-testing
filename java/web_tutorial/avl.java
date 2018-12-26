@@ -5,15 +5,11 @@ import bridges.base.AVLTreeElement;
 public class avl {
 	public static void main(String[] args) throws Exception {
 
-		if (args.length < 2)
-			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
-		
 		//create the Bridges object
-		Bridges bridges = new Bridges (11, args[0], args[1]);
+		Bridges bridges = new Bridges (211, args[0], args[1]);
 
-		if (args.length == 3)	// If user provides server
-			bridges.setServer(args[2]);
-		
+		bridges.setServer(args[2]);
+
 		//create  an  AVL tree elements
 		AVLTreeElement<Integer, String> avl_root = new AVLTreeElement<Integer, String>(50,
 			"Hello");
