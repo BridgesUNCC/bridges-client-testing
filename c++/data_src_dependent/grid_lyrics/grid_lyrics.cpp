@@ -63,7 +63,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	//create the Bridges object, set credentials
-	Bridges *bridges = new Bridges(203, argv[1], argv[2]);
+	Bridges *bridges = new Bridges(303, argv[1], argv[2]);
 	bridges->setServer (argv[3]);
 	
 

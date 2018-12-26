@@ -9,7 +9,7 @@ using namespace bridges;
 int main(int argc, char **argv) {
 
 	//create the Bridges object, set credentials
-	Bridges *bridges = new Bridges(209, argv[1], argv[2]);
+	Bridges *bridges = new Bridges(309, argv[1], argv[2]);
 	bridges->setServer(argv[3]);
 	
 	bridges->setTitle("List with  IMDB Actor/Movie Data");

@@ -68,7 +68,7 @@ void setProperties(SLelement<EarthquakeUSGS>* el) {
 int main(int argc, char **argv) {
 
 	//create the Bridges object, set credentials
-	Bridges *bridges = new Bridges(208, argv[1], argv[2]);
+	Bridges *bridges = new Bridges(308, argv[1], argv[2]);
 	bridges->setServer(argv[3]);
 	
 	bridges->setTitle("Linked List with Earthquake Data");

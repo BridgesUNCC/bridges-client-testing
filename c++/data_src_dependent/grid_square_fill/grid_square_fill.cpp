@@ -7,7 +7,7 @@
 using namespace bridges;
 
 int main(int  argc, char **argv) {
-    Bridges *bridges = new Bridges(205, argv[1], argv[2]);
+    Bridges *bridges = new Bridges(305, argv[1], argv[2]);
 	bridges->setServer(argv[3]);
 
     int rows = 100;

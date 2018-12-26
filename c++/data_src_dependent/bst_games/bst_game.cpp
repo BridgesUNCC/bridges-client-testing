@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 			def_color = "green",
 			end_color = "red";
 		
-	Bridges *bridges = new Bridges(206, argv[1], argv[2]);
+	Bridges *bridges = new Bridges(306, argv[1], argv[2]);
 	bridges->setServer (argv[3]);
 
 	bridges->setTitle("BST Example: IGN Game Data");
