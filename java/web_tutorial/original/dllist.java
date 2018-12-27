@@ -6,8 +6,13 @@ public class dllist {
 	public static void main(String[] args) throws Exception {
 
 
+#if TESTING
 		Bridges bridges = new Bridges(arg[0], args[1], args[2]);
 		bridges.setServer(args[3]);
+#else
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
+										"YOUR_API_KEY");
+#endif
 		// load student info
 		StudentInfo[] students = {
 			new StudentInfo(

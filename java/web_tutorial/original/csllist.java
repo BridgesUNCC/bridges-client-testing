@@ -1,13 +1,18 @@
-import bridges.base.CircDLelement;
+import bridges.base.CircSLelement;
 import bridges.connect.Bridges;
 
-public class cdllist {
+public class csllist {
 
 	public static void main(String[] args) throws Exception {
 
 
+#if TESTING
 		Bridges bridges = new Bridges(arg[0], args[1], args[2]);
 		bridges.setServer(args[3]);
+#else
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
+										"YOUR_API_KEY");
+#endif
 
 		StudentInfo[] students = {
 			new StudentInfo(
@@ -54,47 +59,41 @@ public class cdllist {
 				15.0)
 		};
 
-		//initializing all student elements
-		CircDLelement<StudentInfo> head = null;
+		CircSLelement<StudentInfo> head = new CircSLelement<StudentInfo>("", students[0]);
+		CircSLelement<StudentInfo> current = head;
 
-		for (int i = 0; i < students.length; i++) {
-			if (i > 0)
-				head = insertFront(head, new CircDLelement<StudentInfo>("", students[i]));
-			else
-				head = new CircDLelement<StudentInfo>("", students[i]);
+		for (int i = 1; i < students.length; i++) {
+			current.setNext(new CircSLelement<StudentInfo>("", students[i]));
+
+			//handle the last element
+			if (i == students.length - 1) {
+				//getting the last element
+				current = current.getNext();
+
+				//	point the last element to the first element,
+				// 	so the list becomes circular.
+				current.getNext().setNext(head);
+			}
+
+			//set the current element to be the next element
+			current = current.getNext();
 		}
 
-		CircDLelement<StudentInfo> current = head;
+
+		current = head;
+
 		// add visual attributes
 		do {
 			current.setLabel(current.getValue().getStudentLabel());
 			current.getVisualizer().setColor(current.getValue().getFavoriteColor());
 
 			current.getLinkVisualizer(current.getNext()).setColor(current.getValue().getDislikeColor());
-			current.getLinkVisualizer(current.getNext()).setThickness(current.getValue().getStudentCreditHours() * .2);
-
-			current.getLinkVisualizer(current.getPrev()).setColor(current.getValue().getDislikeColor());
-			current.getLinkVisualizer(current.getPrev()).setThickness(current.getValue().getStudentCreditHours() * .2);
+			current.getLinkVisualizer(current.getNext()).setThickness(current.getValue().getStudentCreditHours() * 0.3);
 
 			current = current.getNext();
-		}	while (current != head);
+		}	while (current.getIdentifier() != head.getIdentifier());
 
 		bridges.setDataStructure(head);
-
 		bridges.visualize();
-	}
-
-	public static CircDLelement<StudentInfo> insertFront(
-		CircDLelement<StudentInfo> tailElement,
-		CircDLelement<StudentInfo> newElement) {
-		CircDLelement<StudentInfo> tailNextElement = tailElement.getNext();
-
-		newElement.setNext(tailNextElement);
-		newElement.setPrev(tailElement);
-
-		tailNextElement.setPrev(newElement);
-		tailElement.setNext(newElement);
-
-		return tailElement;
 	}
 }

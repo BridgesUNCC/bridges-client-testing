@@ -12,8 +12,13 @@ public class bst_eq {
 			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");   		
 
 		//create the Bridges object
+#if TESTING
 		Bridges bridges = new Bridges(arg[0], args[1], args[2]);
 		bridges.setServer(args[3]);
+#else
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
+										"YOUR_API_KEY");
+#endif
 		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
 
 					// Retrieve a list of 10 earthquake  records  from USGS using the BRIDGES API

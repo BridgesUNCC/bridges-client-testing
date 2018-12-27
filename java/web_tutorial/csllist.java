@@ -6,8 +6,8 @@ public class csllist {
 	public static void main(String[] args) throws Exception {
 
 
-		Bridges bridges = new Bridges (205, args[0], args[1]);
-		bridges.setServer(args[2]);
+		Bridges bridges = new Bridges(arg[0], args[1], args[2]);
+		bridges.setServer(args[3]);
 
 		StudentInfo[] students = {
 			new StudentInfo(
