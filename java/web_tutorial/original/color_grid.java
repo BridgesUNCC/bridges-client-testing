@@ -24,8 +24,13 @@ public class color_grid {
 		// We will build a checker grid using two different colors
 
 		// initialize BRIDGES
+#if TESTING
 		Bridges bridges = new Bridges(arg[0], args[1], args[2]);
 		bridges.setServer(args[3]);
+#else
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
+										"YOUR_API_KEY");
+#endif
 		// set title for visualization
 		bridges.setTitle("A CheckerBoard Example Using Grid Type");
 

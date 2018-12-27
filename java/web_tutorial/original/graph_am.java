@@ -13,8 +13,13 @@ public class graph_am {
 	public static void main(String[] args) throws Exception {
 
 		// initialize Bridges
+#if TESTING
         Bridges bridges = new Bridges(arg[0], args[1], args[2]);
         bridges.setServer(args[3]);
+#else
+        Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
+                                        "YOUR_API_KEY");
+#endif
 
 		// set a title for the visualization
 		bridges.setTitle("A Simple Graph (Adjacency Matrix)  Example using IMDB Actor/Movie Data");
