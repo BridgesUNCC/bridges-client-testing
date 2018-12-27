@@ -9,16 +9,14 @@ using namespace bridges;
 int main(int argc, char **argv) {
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(111, argv[1], argv[2]);
-    bridges->setServer(argv[3]);
+    Bridges *bridges =  new Bridges(argv[1], argv[2], argv[3]);
+    if (argc > 4)
+        bridges->setServer(argv[4]);
 #else
-    Bridges *bridges =  new Bridges(111, "YOUR_USER_ID", "YOUR_API_KEY");
+    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+                                "YOUR_API_KEY");
 #endif
 
-	
-	if (argc == 4)		// Server type provided
-		bridges->setServer(argv[3]);
-		
 	AVLTreeElement<int, string> *tle0 =
 		new AVLTreeElement<int, string>(10, "10", "10");
 	AVLTreeElement<int, string> *tle1 =

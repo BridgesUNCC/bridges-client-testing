@@ -20,9 +20,15 @@ int main(int argc, char **argv) {
 			def_color = "green",
 			end_color = "red";
 		
-	Bridges *bridges = new Bridges(300, argv[1], argv[2]);
-	bridges->setServer(argv[3]);
-
+#if TESTING
+                        // command line args provide credentials and server to test on
+    Bridges *bridges =  new Bridges(argv[1], argv[2], argv[3]);
+    if (argc > 4)
+        bridges->setServer(argv[4]);
+#else
+    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+                                "YOUR_API_KEY");
+#endif
 								// read the earth quake  data and build the BST
 	bridges->setTitle("Recent Earthquakes (USGIS Data)");
 

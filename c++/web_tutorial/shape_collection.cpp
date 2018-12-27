@@ -10,10 +10,12 @@ using namespace bridges;
 int main(int argc, char **argv) {
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(116, argv[1], argv[2]);
-    bridges->setServer(argv[3]);
+    Bridges *bridges =  new Bridges(argv[1], argv[2], argv[3]);
+    if (argc > 4)
+        bridges->setServer(argv[4]);
 #else
-    Bridges *bridges =  new Bridges(116, "YOUR_USER_ID", "YOUR_API_KEY");
+    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+                                "YOUR_API_KEY");
 #endif
 
 	bridges->setTitle("Symbol Collection");
