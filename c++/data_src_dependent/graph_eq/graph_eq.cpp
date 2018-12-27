@@ -31,8 +31,16 @@ double calcDistance(double la1, double lo1, double la2, double lo2) {
 int main(int argc, char **argv) {
 
 	//create the Bridges object, set credentials
-	Bridges *bridges = new Bridges(304, argv[1], argv[2]);
-	bridges->setServer(argv[3]);
+#if TESTING
+                        // command line args provide credentials and server to test on
+    Bridges *bridges =  new Bridges(argv[1], argv[2], argv[3]);
+    if (argc > 4)
+        bridges->setServer(argv[4]);
+#else
+    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+                                "YOUR_API_KEY");
+#endif
+
 	
 	bridges->setTitle("Graph : Earthquake Data (USGS)");
 

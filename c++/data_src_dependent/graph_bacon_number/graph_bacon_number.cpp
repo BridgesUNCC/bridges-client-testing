@@ -24,8 +24,16 @@ int main(int argc, char **argv) {
 			end_color = "red";
 		
 	// Initialize BRIDGES with your credentials
-	Bridges *bridges = new Bridges(302, argv[1], argv[2]);
-	bridges->setServer (argv[3]);
+#if TESTING
+                        // command line args provide credentials and server to test on
+    Bridges *bridges =  new Bridges(argv[1], argv[2], argv[3]);
+    if (argc > 4)
+        bridges->setServer(argv[4]);
+#else
+    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+                                "YOUR_API_KEY");
+#endif
+
 
 	// set title for visualization
 	bridges->setTitle("Bacon Number: IMDB Actor-Movie Data");

@@ -6,13 +6,14 @@ using namespace bridges;
 int main(int argc, char **argv) {
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(109, argv[1], argv[2]);
-    bridges->setServer(argv[3]);
+    Bridges *bridges =  new Bridges(argv[1], argv[2], argv[3]);
+    if (argc > 4)
+        bridges->setServer(argv[4]);
 #else
-    Bridges *bridges =  new Bridges(109, "YOUR_USER_ID", "YOUR_API_KEY");
+    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+                                "YOUR_API_KEY");
 #endif
 
-		
 	bridges->setTitle("A Huffman Coding Tree Example");
 	bridges->setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2");
 

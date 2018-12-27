@@ -16,10 +16,16 @@ int main(int argc, char **argv) {
 	string hilite_color = "orange", 
 			def_color = "green",
 			end_color = "red";
+#if TESTING
+                        // command line args provide credentials and server to test on
+    Bridges *bridges =  new Bridges(argv[1], argv[2], argv[3]);
+    if (argc > 4)
+        bridges->setServer(argv[4]);
+#else
+    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+                                "YOUR_API_KEY");
+#endif
 		
-	Bridges *bridges = new Bridges(306, argv[1], argv[2]);
-	bridges->setServer (argv[3]);
-
 	bridges->setTitle("BST Example: IGN Game Data");
 								// read the data and build the BST
 
