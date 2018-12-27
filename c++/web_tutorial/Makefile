@@ -2,8 +2,6 @@
 #
 #Platform specific variables
 #
-CC = clang++
-
 include ../../env_vars.mk
 
 #
@@ -50,98 +48,39 @@ STYLE_INCLUDES = BST.h StudentInfo.h
 # Include and library flags
 
 IFLAGS = -I$(BRIDGES_INCL)  -I$(CURL_INCL)  -I$(RAPID_JSON_INCL) -DTESTING=1
-LDFLAGS =  -L$(CURL_LIB_PATH)
-CPPFLAGS = -c -g $(IFLAGS) -std=c++11 -stdlib=libc++
+LDFLAGS =  -L$(CURL_LIB_PATH) $(LOCALLDFLAGS)
+CXXFLAGS = -g $(IFLAGS) -std=c++11 $(LOCALCXXFLAGS)
 
 # Libraries
 
 LIBS = -l$(CURL_LIB)
 
-.SUFFIXES: .cpp
+.SUFFIXES: .cpp .o
 
-.cpp.o:  
-	$(CC) $(CPPFLAGS)  $< -o $@
+%: %.cpp
+	$(CXX) -g -o $@ $< $(CXXFLAGS) $(LDFLAGS) $(LIBS)
+
+.o:
+	$(LD) $(LDFLAGS)  $< -o $@ $(LIBS)
+
+.cpp.o:
+	$(CXX) -c -g -o $@ $< $(CXXFLAGS)
+
 
 all : $(EXECUTABLES)
 
 run:
-	array $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	array2d $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	array3d $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	sllist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	dllist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	circ_sllist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	circ_dllist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	mllist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	tree $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	bintree $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	bst $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	avl $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	graph_alist $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	graph_amatrix $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	color_grid $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	kdt $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
-	shape_collection  $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER);
+	for BINARY in $(EXECUTABLES); do \
+		./$$BINARY $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER); \
+	done
 
 style:  
 	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) $(STYLE_INCLUDES)
 
-
-
 clean:
 	rm -f $(EXECUTABLES) $(OBJS)
-	
 
-array: array.o
-	$(CC) -g -o array array.o $(LDFLAGS) $(LIBS)
 
-array2d: array2d.o
-	$(CC) -g -o array2d array2d.o $(LDFLAGS) $(LIBS)
-
-array3d: array3d.o
-	$(CC) -g -o array3d array3d.o $(LDFLAGS) $(LIBS)
-
-sllist: sllist.o
-	$(CC) -g -o sllist sllist.o $(LDFLAGS) $(LIBS)
-
-mllist: mllist.o
-	$(CC) -g -o mllist mllist.o $(LDFLAGS) $(LIBS)
-
-dllist: dllist.o
-	$(CC) -g -o dllist dllist.o $(LDFLAGS) $(LIBS)
-
-bst: bst.o
-	$(CC) -g -o bst bst.o $(LDFLAGS) $(LIBS)
-
-kdt: kdt.o
-	$(CC) -g -o kdt kdt.o $(LDFLAGS) $(LIBS)
-
-color_grid: color_grid.o
-	$(CC) -g -o color_grid color_grid.o $(LDFLAGS) $(LIBS)
-
-avl: avl.o
-	$(CC) -g -o avl avl.o $(LDFLAGS) $(LIBS)
-
-bintree: bintree.o
-	$(CC) -g -o bintree bintree.o $(LDFLAGS) $(LIBS)
-
-tree: tree.o
-	$(CC) -g -o tree tree.o $(LDFLAGS) $(LIBS)
-
-graph_alist: graph_alist.o
-	$(CC) -g -o graph_alist graph_alist.o $(LDFLAGS) $(LIBS)
-
-circ_sllist: circ_sllist.o
-	$(CC) -g -o circ_sllist circ_sllist.o $(LDFLAGS) $(LIBS)
-
-circ_dllist: circ_dllist.o
-	$(CC) -g -o circ_dllist circ_dllist.o $(LDFLAGS) $(LIBS)
-
-graph_amatrix: graph_amatrix.o
-	$(CC) -g -o graph_amatrix graph_amatrix.o $(LDFLAGS) $(LIBS)
-
-shape_collection: shape_collection.o
-	$(CC) -g -o shape_collection shape_collection.o $(LDFLAGS) $(LIBS)
 
 depend: $(SRCS)
 	gcc -MD  $(IFLAGS) $(SRCS)
