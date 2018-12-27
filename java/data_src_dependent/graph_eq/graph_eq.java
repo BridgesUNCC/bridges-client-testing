@@ -24,8 +24,10 @@ public class graph_eq {
     }
 
     public static void main(String[] args) throws Exception {
-        Bridges bridges = new Bridges(404, args[0], args[1]);
-		bridges.setServer (args[2]);
+
+
+        Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
+        bridges.setServer (args[3]);
 
         GraphAdjListSimple<String> graph = new GraphAdjListSimple<>();
 

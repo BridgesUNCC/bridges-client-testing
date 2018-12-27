@@ -10,7 +10,7 @@ public class sllist {
 	public static void main(String[] args) throws Exception {
 
 		// note: you must fill in with your Bridges credentials
-        Bridges bridges = new Bridges(arg[0], args[1], args[2]);
+        Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 		// create the linked list elements with
 		// student data

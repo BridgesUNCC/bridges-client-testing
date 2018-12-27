@@ -6,7 +6,7 @@ public class arr1d {
 
 		//create the Bridges object, set credentials
 
-		Bridges bridges = new Bridges(arg[0], args[1], args[2]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
 		//  set array dimensions, allocate array of elements

@@ -11,7 +11,7 @@ public class graph_al {
 	public static void main(String[] args) throws Exception {
 
 		// initialize Bridges
-        Bridges bridges = new Bridges(arg[0], args[1], args[2]);
+        Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
 		// set a title for the visualization

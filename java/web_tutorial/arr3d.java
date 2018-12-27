@@ -7,7 +7,7 @@ public class arr3d {
 
 		//create the Bridges object
 
-		Bridges bridges = new Bridges(arg[0], args[1], args[2]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 		// specify array dimensions and create 3D array
 		int num_slices = 4, num_rows = 4, num_cols = 4;

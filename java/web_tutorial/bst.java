@@ -10,7 +10,7 @@ public class bst {
 
 
 		//create the Bridges object
-		Bridges bridges = new Bridges(arg[0], args[1], args[2]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
 

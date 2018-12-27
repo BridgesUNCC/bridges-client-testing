@@ -6,7 +6,7 @@ public class arr2d {
 	public static void main(String[] args) throws Exception {
 
 		//create the Bridges object
-		Bridges bridges = new Bridges(arg[0], args[1], args[2]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 		//  for 2D array 5x5
 		int num_rows = 4, num_cols = 4;

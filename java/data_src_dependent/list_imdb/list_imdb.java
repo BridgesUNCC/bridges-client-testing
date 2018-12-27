@@ -10,8 +10,8 @@ public class list_imdb {
 	public static void main(String[] args) throws Exception {
 
 		/* Initialize a Bridges connection with your credentials */
-		Bridges bridges = new Bridges(409, args[0], args[1]);
-		bridges.setServer(args[2]);
+        Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
+        bridges.setServer (args[3]);
 
 		/* Set an assignment title */
 		bridges.setTitle("Linked  List using IMDB Actor/Movie Data");

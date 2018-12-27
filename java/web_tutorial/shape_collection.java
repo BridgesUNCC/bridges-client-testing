@@ -15,7 +15,7 @@ public class shape_collection {
 		if (args.length < 2)
 			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 		// note: you must fill in with your Bridges credentials
-        Bridges bridges = new Bridges(arg[0], args[1], args[2]);
+        Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
 		bridges.setTitle("Symbol Collection");
