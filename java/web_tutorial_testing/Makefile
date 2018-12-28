@@ -30,8 +30,9 @@ run:
 	done
 
 style:  
-	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) 
-
+#	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS)
+	echo "You should run the styling from the master copy and not the testing copy!!!!!"
+	exit -1
 
 
 clean: 
