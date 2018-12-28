@@ -1,6 +1,6 @@
 #!/bin/sh
 
-TESTING_MODE=0
+TESTING_MODE=1
 
 for file in *.java
 do
