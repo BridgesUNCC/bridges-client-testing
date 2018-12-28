@@ -23,7 +23,7 @@ all :
 	javac $(SRCS)
 
 run:
-	ASSIGNMENTID=200 ; for TEST in $(SRCS:.java=); do \
+	ASSIGNMENTID=2000 ; for TEST in $(SRCS:.java=); do \
 		java $$TEST $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER) ; \
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done

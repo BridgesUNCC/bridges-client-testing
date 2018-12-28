@@ -5,42 +5,33 @@ TARGET =  all
 
 # Incude and Library paths
 
-all : 
-	cd bst_eq; javac *.java;
-	cd bst_gutenberg; javac *.java;
-	cd graph_bacon_number; javac *.java;
-	cd grid_lyrics; javac *.java;
-	cd graph_eq; javac *.java;
-	cd grid_square_fill; javac *.java;
-	cd bst_games; javac *.java;
-	cd bst_shakespeare; javac *.java;
-	cd list_eq; javac list_eq.java;
-	cd list_imdb; javac list_imdb.java;
+DIRS=$(sort $(shell find * -maxdepth 0 -mindepth 0 -type d))
+
+testing:
+	echo $(DIRS)
+
+all:
+	for dir in $(DIRS); do \
+		echo "cd $$dir; javac *.java;" ; \
+		     ( cd $$dir; javac *.java; );  \
+	done
 
 run:
+	ASSIGNMENTID=2100 ; for TEST in $(DIRS); do \
+		echo Testing $$TEST; \
+		( \
+			cd $$TEST; \
+			java $$TEST $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER) ; \
+		) ; \
+		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
+	done
 
-	cd bst_eq; java  bst_eq $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
-	cd bst_gutenberg; java  bst_gutenberg $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
-	cd graph_bacon_number; java  graph_bacon_number $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
-	cd grid_lyrics; java  grid_lyrics $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
-	cd graph_eq; java  graph_eq $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
-	cd grid_square_fill; java  grid_square_fill $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
-	cd bst_games; java  bst_games $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
-	cd bst_shakespeare; java  bst_shakespeare $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
-	cd list_eq; java  list_eq $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
-	cd list_imdb; java  list_imdb $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
-	
+
+
 
 clean:
-	cd bst_eq; rm -f *.class;
-	cd bst_gutenberg; rm -f *.class;
-	cd graph_bacon_number; rm -f *.class;
-	cd grid_lyrics; rm -f *.class;
-	cd graph_eq; rm -f *.class;
-	cd grid_square_fill; rm -f *.class;
-	cd bst_games; rm -f *.class;
-	cd bst_gutenberg; rm -f *.class;
-	cd list_eq; rm -f *.class;
-	cd list_imdb; rm -f *.class;
-	
+	for dir in $(DIRS); do \
+		echo "cd $$dir; rm *.class;" ; \
+		( cd $$dir; rm *.class ) ; \
+	done
 
