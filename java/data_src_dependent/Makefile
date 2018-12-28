@@ -7,8 +7,6 @@ TARGET =  all
 
 DIRS=$(sort $(shell find * -maxdepth 0 -mindepth 0 -type d))
 
-testing:
-	echo $(DIRS)
 
 all:
 	for dir in $(DIRS); do \
@@ -26,6 +24,8 @@ run:
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done
 
+testing:
+	echo $(DIRS)
 
 
 

@@ -32,7 +32,7 @@ public class graph_eq {
         GraphAdjListSimple<String> graph = new GraphAdjListSimple<>();
 
         // grabs most recent 10000 earthquakes
-        List<EarthquakeUSGS> eqList = Bridges.getEarthquakeUSGSData(10000);
+        List<EarthquakeUSGS> eqList = Bridges.getEarthquakeUSGSData(5000);
 
         // sorts list by magnitude in descending order
         eqList.sort(Comparator.comparingDouble(EarthquakeUSGS::getMagnitude).reversed());
