@@ -7,8 +7,8 @@ public class bintree {
 
 
 		//create the Bridges object
-		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
-		bridges.setServer(args[3]);
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
+										"YOUR_API_KEY");
 
 		bridges.setTitle("A Huffman Coding Tree Example");
 		bridges.setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2");
