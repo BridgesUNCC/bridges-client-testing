@@ -13,7 +13,7 @@ ASTYLE_PARAMS = -A2 -T4 -xn -xc -xV -C -S -N -xU  -Y -p -xg -H -y -xb
 TARGET =  all
 
 
-
+SRCS=$(wildcard *.cpp)
 
 OBJS = $(SRCS:.cpp=.o)
 
