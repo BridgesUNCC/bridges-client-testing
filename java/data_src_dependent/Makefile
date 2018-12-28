@@ -24,11 +24,6 @@ run:
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done
 
-testing:
-	echo $(DIRS)
-
-
-
 clean:
 	for dir in $(DIRS); do \
 		echo "cd $$dir; rm *.class;" ; \
