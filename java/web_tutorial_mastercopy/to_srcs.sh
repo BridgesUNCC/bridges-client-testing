@@ -1,7 +1,7 @@
 #!/bin/sh
 
-for i in *.java
+for file in *.java
 do
-	unifdef -DTESTING=1  $i > test.java
-	mv test.java ../$i
+	unifdef -DTESTING=1 ${file} -o ../web_tutorial_fortheweb/${file}
+
 done
