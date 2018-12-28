@@ -19,8 +19,10 @@ SRCS = $(sort $(shell grep -l public\ static\ void\ main *.java ) )
 OBJS = $(SRCS:.java=.class)
 
 
-all : 
-	javac $(SRCS)
+all : $(OBJS)
+
+%.class: %.java
+	javac $<
 
 run:
 	ASSIGNMENTID=2000 ; for TEST in $(SRCS:.java=); do \
