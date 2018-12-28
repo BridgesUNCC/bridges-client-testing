@@ -9,17 +9,15 @@ OBJS = $(SRCS:.java=.class)
 
 all: testing webversion
 
-testing:
-	for file in *.java; \
-	do \
-		unifdef -x2 -DTESTING=1 $$file -o ../web_tutorial_testing/$$file ; \
-	done
+../web_tutorial_testing/%.java: %.java
+	unifdef -x2 -DTESTING=1 $< -o ../web_tutorial_testing/$< 
 
-webversion:
-	for file in *.java; \
-	do \
-		unifdef -x2 -DTESTING=0 $$file -o ../web_tutorial_fortheweb/$$file ; \
-	done
+testing: $(patsubst %,../web_tutorial_testing/%,$(SRCS))
+
+../web_tutorial_fortheweb/%.java: %.java
+	unifdef -x2 -DTESTING=0 $< -o ../web_tutorial_fortheweb/$< 
+
+webversion: $(patsubst %,../web_tutorial_fortheweb/%,$(SRCS))
 
 
 style:  
