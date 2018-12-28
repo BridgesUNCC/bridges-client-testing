@@ -20,6 +20,13 @@ run:
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done
 
+style:
+	for dir in $(DIRS); do \
+		echo "cd $$dir; make style;" ; \
+		    ( cd $$dir; make style; );  \
+	done
+
+
 clean:
 	for dir in $(DIRS); do \
 		echo "cd $$dir; make clean;" ; \
