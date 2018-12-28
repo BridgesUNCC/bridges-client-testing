@@ -7,8 +7,20 @@ SRCS = $(sort $(shell grep -l public\ static\ void\ main *.java ) )
 
 OBJS = $(SRCS:.java=.class)
 
+all: testing webversion
 
-all:
+testing:
+	for file in *.java; \
+	do \
+		unifdef -x2 -DTESTING=1 $$file -o ../web_tutorial_testing/$$file ; \
+	done
+
+webversion:
+	for file in *.java; \
+	do \
+		unifdef -x2 -DTESTING=0 $$file -o ../web_tutorial_fortheweb/$$file ; \
+	done
+
 
 style:  
 	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) 
