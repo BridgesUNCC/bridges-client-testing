@@ -7,10 +7,10 @@ class array2d:
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
-    bridges = Bridges(args[1], args[2], args[3])
+    bridges = Bridges(int(args[0]), args[1], args[2])
 
-    if len(args)>3:
-        bridges.connector.set_server(args[4])
+    if len(args) > 3:
+        bridges.connector.set_server(args[3])
 
     # for 2D array 4x4
     num_rows = 4

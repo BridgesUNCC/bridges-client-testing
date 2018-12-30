@@ -8,10 +8,10 @@ class SLListtutorial:
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
-    bridges = Bridges(args[1], args[2], args[3])
+    bridges = Bridges(int(args[0]), args[1], args[2])
 
     if len(args) > 3:
-        bridges.connector.set_server(args[4])
+        bridges.connector.set_server(args[3])
 
     # create the linked list elements with student data
 

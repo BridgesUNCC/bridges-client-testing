@@ -30,7 +30,7 @@ SRCS = array1d.py sllist.py dllist.py circ_sllist.py circ_dllist.py	\
 all : $(SRCS)
 
 run:
-	ASSIGNMENTID=3000 ; for TEST in $(SRCS:.py=); do \
+	ASSIGNMENTID=3000 ; for TEST in $(SRCS); do \
 		echo "python $$TEST $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER)" ; \
 		      python $$TEST $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER) ; \
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
