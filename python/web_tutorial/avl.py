@@ -1,11 +1,15 @@
 from Bridges.Bridges import *
 from Bridges.AVLTreeElement import *
-
+import sys
 
 class AVLTreetutorial:
+    args = sys.argv[1:]
 
-    # create a bridges object
-    bridges = Bridges(11, "YOUR_USER_ID", "YOUR_API_KEY")
+    # create the Bridges object, set credentials
+    bridges = Bridges(args[1], args[2], args[3])
+
+    if len(args) > 3:
+        bridges.connector.set_server(args[4])
 
     # create an AVL tree elements
     avl_root = AVLTreeElement(50, "Hello")

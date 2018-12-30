@@ -1,12 +1,15 @@
 from Bridges.Bridges import *
 from Bridges.TreeElement import *
-
-
+import sys
 
 class tutorial:
+    args = sys.argv[1:]
 
-    # create bridges object
-    bridges = Bridges(8, "YOUR_USER_ID", "YOUR_API_KEY")
+    # create the Bridges object, set credentials
+    bridges = Bridges(args[1], args[2], args[3])
+
+    if len(args) > 3:
+        bridges.connector.set_server(args[4])
 
     # create tree nodes
     t0 = TreeElement(e = "Hello")

@@ -2,9 +2,12 @@
 #
 #Platform specific variables
 #
+
+include ../../env_vars.mk
+
 CC = clang++
-HOME = /Users/krs
-BRIDGES_INCL = $(HOME)/gr/bridges/bridges17/cxx/src
+HOME = C:/Users/mrm27
+BRIDGES_INCL = $(HOME)/Desktop/bridges-python/Bridges
 CURL_INCL = /usr/local/curl760/include
 CURL_LIB_PATH = /usr/local/curl760/lib
 CURL_LIB = curl
@@ -27,21 +30,11 @@ SRCS = array1d.py sllist.py dllist.py circ_sllist.py circ_dllist.py	\
 all : $(SRCS)
 
 run:
-	python array1d.py;
-	python array2d.py;
-	python array3d.py;
-	python sllist.py;
-	python dllist.py;
-	python circ_sllist.py;
-	python circ_dllist.py;
-	python mllist.py;
-	python tree.py;
-	python bintree.py;
-	python bst.py;
-	python avl.py;
-	python graph_alist.py;
-	python graph_amatrix.py;
-	python color_grid.py;
+	ASSIGNMENTID=3000 ; for TEST in $(SRCS:.py=); do \
+		echo "python $$TEST $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER)" ; \
+		      python $$TEST $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER) ; \
+		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
+	done
 
 
 to_html:
@@ -59,7 +52,7 @@ to_site:
 
 backup:
 	tar cvfz bridges_python.tgz  src docs Makefile 
-	cp bridges_cxx.tgz ~/Dropbox/.
+	cp bridges_python.tgz ~/Dropbox/.
 
 
 # DO NOT DELETE

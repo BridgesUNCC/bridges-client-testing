@@ -1,10 +1,15 @@
 from Bridges.Bridges import *
 from Bridges.MLelement import *
+import sys
 
 class MLtutorial:
+    args = sys.argv[1:]
 
-    # create the bridges object
-    bridges = Bridges(7, "YOUR_USER_ID", "YOUR_API_KEY")
+    # create the Bridges object, set credentials
+    bridges = Bridges(args[1], args[2], args[3])
+
+    if len(args) > 3:
+        bridges.connector.set_server(args[4])
 
     # create multi linked list
     el0 = MLelement("0", "0")

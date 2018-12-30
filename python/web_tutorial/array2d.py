@@ -1,10 +1,16 @@
 from Bridges.Bridges import *
 from Bridges.Array import *
+import sys
 
 class array2d:
 
-    #create the Bridges object
-    bridges = Bridges(1, "YOUR_USER_ID", "YOUR_API_KEY")
+    args = sys.argv[1:]
+
+    # create the Bridges object, set credentials
+    bridges = Bridges(args[1], args[2], args[3])
+
+    if len(args)>3:
+        bridges.connector.set_server(args[4])
 
     # for 2D array 4x4
     num_rows = 4
