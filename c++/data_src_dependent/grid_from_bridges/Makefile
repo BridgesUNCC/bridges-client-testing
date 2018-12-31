@@ -1,0 +1,65 @@
+
+#
+#Platform specific variables
+#
+include ../../../env_vars.mk
+
+#
+#
+
+ASTYLE = astyle
+ASTYLE_PARAMS = -A2 -T4 -xn -xc -xV -C -S -N -xU  -Y -p -xg -H -y -xb
+
+TARGET =  all
+
+
+SRCS=$(wildcard *.cpp)
+
+OBJS = $(SRCS:.cpp=.o)
+
+EXECUTABLES = $(SRCS:.cpp=)
+
+
+STYLE_INCLUDES=$(wildcard *.h)
+
+# Incude and Library paths
+
+
+
+# Include and library flags
+
+IFLAGS = -I$(BRIDGES_INCL)  -I$(CURL_INCL)  -I$(RAPID_JSON_INCL) -DTESTING=1
+LDFLAGS =  -L$(CURL_LIB_PATH) $(LOCALLDFLAGS)
+CXXFLAGS = -g $(IFLAGS) -std=c++11 $(LOCALCXXFLAGS)
+
+# Libraries
+
+LIBS = -l$(CURL_LIB)
+
+.SUFFIXES: .cpp .o
+
+%: %.cpp
+	$(CXX) -g -o $@ $< $(CXXFLAGS) $(LDFLAGS) $(LIBS)
+
+.o:
+	$(LD) $(LDFLAGS)  $< -o $@ $(LIBS)
+
+.cpp.o:
+	$(CXX) -c -g -o $@ $< $(CXXFLAGS)
+
+
+
+
+style:  
+	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) $(STYLE_INCLUDES)
+
+clean:
+	rm -f $(EXECUTABLES) $(OBJS)
+
+
+
+depend: $(SRCS)
+	gcc -MD  $(IFLAGS) $(SRCS)
+
+
+# DO NOT DELETE
