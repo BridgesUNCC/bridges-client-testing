@@ -15,7 +15,7 @@ all:
 
 run:
 	ASSIGNMENTID=1100 ; for dir in $(DIRS); do \
-		echo "cd $$dir; make $$dir;" ; \
+		echo "cd $$dir; ./$$dir $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER) ;" ; \
 		    ( cd $$dir; ./$$dir $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER) ; );  \
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done
