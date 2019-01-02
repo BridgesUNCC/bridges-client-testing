@@ -12,7 +12,8 @@ make_java:
 	cd java/data_src_dependent; make; make run;
 
 make_c++:
-	cd c++/web_tutorial; make; make run;
+	cd c++/web_tutorial_mastercopy; make testing;
+	cd c++/web_tutorial_testing; make; make run;
 	cd c++/data_src_dependent; make; make run;
 
 make_python:

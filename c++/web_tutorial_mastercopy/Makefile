@@ -13,31 +13,12 @@ ASTYLE_PARAMS = -A2 -T4 -xn -xc -xV -C -S -N -xU  -Y -p -xg -H -y -xb
 TARGET =  all
 
 
-SRCS = array.cpp array2d.cpp array3d.cpp sllist.cpp dllist.cpp circ_sllist.cpp \
-		circ_dllist.cpp  mllist.cpp tree.cpp bintree.cpp bst.cpp avl.cpp \
-		graph_alist.cpp graph_amatrix.cpp  color_grid.cpp shape_collection.cpp kdt.cpp
+SRCS = $(wildcard *.cpp *.h)
 
 
 OBJS = $(SRCS:.cpp=.o)
 
 EXECUTABLES = $(SRCS:.cpp=)
-
-INCLUDES = 	DataStructure.h Array.h Element.h SLelement.h DLelement.h \
-			CircSLelement.h CircDLelement.h MLelement.h \
-			TreeElement.h BTElement.h BSTElement.h AVLTreeElement.h \
-			GraphAdjList.h GraphAdjMatrix.h \
-			SymbolCollection.h Symbol.h \
-			Rectangle.h Circle.h Polygon.h Label.h \
-			ElementVisualizer.h	LinkVisualizer.h Color.h Edge.h base64.h\
-			Bridges.h Connector.h \
-			data_src/ActorMovieIMDB.h \
-			data_src/EarthquakeUSGS.h \
-			data_src/Book.h \
-			data_src/Game.h \
-			data_src/CancerIncidence.h \
-			data_src/GutenbergBook.h \
-			data_src/Shakespeare.h \
-			data_src/Song.h
 
 STYLE_INCLUDES = BST.h StudentInfo.h
 
@@ -61,9 +42,16 @@ all: testing webversion
 ../web_tutorial_testing/%.cpp: %.cpp
 	unifdef -x2 -DTESTING=1 $< -o ../web_tutorial_testing/$< 
 
+../web_tutorial_testing/%.h: %.h
+	unifdef -x2 -DTESTING=1 $< -o ../web_tutorial_testing/$< 
+
+
 testing: $(patsubst %,../web_tutorial_testing/%,$(SRCS))
 
 ../web_tutorial_fortheweb/%.cpp: %.cpp
+	unifdef -x2 -DTESTING=0 $< -o ../web_tutorial_fortheweb/$< 
+
+../web_tutorial_fortheweb/%.h: %.h
 	unifdef -x2 -DTESTING=0 $< -o ../web_tutorial_fortheweb/$< 
 
 webversion: $(patsubst %,../web_tutorial_fortheweb/%,$(SRCS))
