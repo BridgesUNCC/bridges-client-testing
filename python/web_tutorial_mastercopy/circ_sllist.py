@@ -1,33 +1,23 @@
 from Bridges.Bridges import *
-from Bridges.CircDLelement import *
 from python.web_tutorial.StudentInfo import *
+from Bridges.CircSLelement import *
 import sys
 
-#helper funtction
-def insertFront(tailElement, newElement):
-    tailNextElement = tailElement.get_next()
-
-    newElement.set_next(tailNextElement)
-    newElement.set_prev(tailElement)
-
-    tailNextElement.set_prev(newElement)
-    tailElement.set_next(newElement)
-
-    return tailElement
-
-
-class CircDLtutorial:
+class CircSLtutorial:
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
+#if TESTING
     bridges = Bridges(int(args[0]), args[1], args[2])
 
     if len(args) > 3:
         bridges.connector.set_server(args[3])
+#else
+    bridges = Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
 
     students = []
 
-    # create a list of student data
     students.append(Student("00000000000",
                             "Gretel Chaney",
                             "CS",
@@ -68,31 +58,37 @@ class CircDLtutorial:
                             "cyan",
                             15.0))
 
-    head = None
 
-    # init all student elements
-    for i in range(len(students)):
-        if i > 0:
-            head = insertFront(head, CircDLelement(label = "", e = students[i]))
-        else:
-            head = CircDLelement(label = "", e = students[i])
+    head = CircSLelement(label = "", e = students[0])
+    current = head
+
+    for i in range(1, len(students)):
+        current.set_next(CircSLelement(label = "", e = students[i]))
+
+        #handle the last element
+        if i is len(students)-1:
+            #getting the last element
+            current = current.get_next()
+
+            # point the last element to the first element
+            # so the list becomes circular
+            current.set_next(head)
+        # set the current element to be the next element
+        current = current.get_next()
 
     current = head
 
     # add visual attributes
     for i in range(len(students)):
+
         current.set_label(current.get_value().getName())
         current.get_visualizer().set_color(current.get_value().getLikeColor())
 
         current.get_link_visualizer(current.get_next()).set_color(current.get_value().getDislikeColor())
-        current.get_link_visualizer(current.get_next()).set_thickness(current.get_value().getCreditHours()*.2)
 
-        current.get_link_visualizer(current.get_prev()).set_color(current.get_value().getDislikeColor())
-        current.get_link_visualizer(current.get_prev()).set_thickness(current.get_value().getCreditHours()*.2)
+        current.get_link_visualizer(current.get_next()).set_thickness(current.get_value().getCreditHours() *.03)
 
         current = current.get_next()
 
-    # set data structure to point to head
     bridges.set_data_structure(head)
-    # visualize the circular list
     bridges.visualize()

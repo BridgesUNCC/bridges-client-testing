@@ -7,10 +7,14 @@ class GraphAdjMatrixtutorial:
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
+#if TESTING
     bridges = Bridges(int(args[0]), args[1], args[2])
 
     if len(args) > 3:
         bridges.connector.set_server(args[3])
+#else
+    bridges = Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
 
     # set a title for the visualization
     bridges.setTitle("A Simple Graph (Adjacency Matrix) Example using IMDB Actor/Movie Data")
