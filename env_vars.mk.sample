@@ -1,0 +1,21 @@
+CC=g++
+CXX=g++
+LD=g++
+
+BRIDGES_INCL=/home/erik/work/bridges/bridges-cxx/src/
+CURL_LIB_PATH=/home/erik/prgs/curl/lib
+CURL_INCL=/home/erik/prgs/curl/include
+RAPID_JSON_INCL=/home/erik/prgs/rapidjson/include
+CURL_LIB=curl
+
+BRIDGES_SERVER=live
+
+BRIDGES_TESTING_USER_NAME=bridges_testing
+BRIDGES_TESTING_API_KEY=SecretAPIKey
+
+BRIDGES_PUBLIC_USER_NAME=bridges_public
+BRIDGES_PUBLIC_API_KEY=SecretAPIKey
+
+
+export CLASSPATH=~/work/bridges/bridges/build/libs/bridges-2.3.3.jar:.
+export PYTHONPATH=~/work/bridges/bridges-python/:
