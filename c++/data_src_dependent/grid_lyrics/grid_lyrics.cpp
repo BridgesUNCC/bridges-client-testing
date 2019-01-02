@@ -48,20 +48,6 @@ int main(int argc, char* argv[]) {
 	std::string author = "Daft Punk";
 	std::string title = "Harder Faster Better Stronger";
 
-	if (argc == 5) {
-		title = atoi(argv[1]);
-		author = "";
-	}
-	if (argc > 5) {
-		title = atoi(argv[1]);
-		author = argv[2];
-	}
-
-	int assignment_id = 107;
-	if (argc > 3) {
-		assignment_id = atoi(argv[3]);
-	}
-
 	//create the Bridges object, set credentials
 #if TESTING
 	// command line args provide credentials and server to test on
