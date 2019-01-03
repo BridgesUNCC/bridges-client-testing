@@ -1,3 +1,4 @@
 *.class
 *.o
+*.dSYM
 env_vars.mk
