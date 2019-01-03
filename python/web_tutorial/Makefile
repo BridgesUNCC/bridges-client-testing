@@ -5,13 +5,6 @@
 
 include ../../env_vars.mk
 
-CC = clang++
-HOME = C:/Users/mrm27
-BRIDGES_INCL = $(HOME)/Desktop/bridges-python/Bridges
-CURL_INCL = /usr/local/curl760/include
-CURL_LIB_PATH = /usr/local/curl760/lib
-CURL_LIB = curl
-RAPID_JSON_INCL = /usr/local/rapidjson/include
 
 #
 #
@@ -36,19 +29,6 @@ run:
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done
 
-
-to_html:
-	/bin/sh ./to_html_creds.sh
-
-to_srcs:
-	/bin/sh ./to_krs.sh
-
-to_site:
-	/bin/sh ./to_site.sh
-	zip bridges-python-1.0.zip 
-	
-	
-	
 
 backup:
 	tar cvfz bridges_python.tgz  src docs Makefile 
