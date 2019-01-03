@@ -1,6 +1,6 @@
-from Bridges.Bridges import *
-from Bridges.BSTElement import *
-from Bridges.data_src_dependent.DataSource import *
+from Bridges.bridges import *
+from Bridges.bst_element import *
+from Bridges.data_src_dependent.data_source import *
 import sys
 
 # recursive insert method to insert nodes into a binary search tree

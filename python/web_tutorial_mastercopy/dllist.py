@@ -1,5 +1,5 @@
-from Bridges.DLelement import *
-from Bridges.Bridges import *
+from Bridges.dl_element import *
+from Bridges.bridges import *
 from python.web_tutorial.StudentInfo import *
 import sys
 

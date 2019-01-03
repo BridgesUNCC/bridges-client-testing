@@ -1,6 +1,6 @@
-from Bridges.ColorGrid import *
-from Bridges.Bridges import *
-from Bridges.Color import *
+from Bridges.color_grid import *
+from Bridges.bridges import *
+from Bridges.color import *
 import sys
 
 def main():
