@@ -2,6 +2,8 @@ CC=g++
 CXX=g++
 LD=g++
 
+PYTHON=python3
+
 BRIDGES_INCL=/home/erik/work/bridges/bridges-cxx/src/
 CURL_LIB_PATH=/home/erik/prgs/curl/lib
 CURL_INCL=/home/erik/prgs/curl/include
