@@ -40,19 +40,19 @@ LIBS = -l$(CURL_LIB)
 all: testing webversion
 
 ../web_tutorial_testing/%.cpp: %.cpp
-	unifdef -x2 -DTESTING=1 $< -o ../web_tutorial_testing/$< 
+	unifdef -DTESTING=1 $< -o ../web_tutorial_testing/$< ; [ $$? != 2 ]
 
 ../web_tutorial_testing/%.h: %.h
-	unifdef -x2 -DTESTING=1 $< -o ../web_tutorial_testing/$< 
+	unifdef -DTESTING=1 $< -o ../web_tutorial_testing/$< ; [ $$? != 2 ]
 
 
 testing: $(patsubst %,../web_tutorial_testing/%,$(SRCS))
 
 ../web_tutorial_fortheweb/%.cpp: %.cpp
-	unifdef -x2 -DTESTING=0 $< -o ../web_tutorial_fortheweb/$< 
+	unifdef -DTESTING=0 $< -o ../web_tutorial_fortheweb/$< ; [ $$? != 2 ]
 
 ../web_tutorial_fortheweb/%.h: %.h
-	unifdef -x2 -DTESTING=0 $< -o ../web_tutorial_fortheweb/$< 
+	unifdef -DTESTING=0 $< -o ../web_tutorial_fortheweb/$< ; [ $$? != 2 ]
 
 webversion: $(patsubst %,../web_tutorial_fortheweb/%,$(SRCS))
 
