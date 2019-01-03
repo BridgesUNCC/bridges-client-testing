@@ -2,7 +2,8 @@ from Bridges.Bridges import *
 from Bridges.TreeElement import *
 import sys
 
-class tutorial:
+def main():
+
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -50,3 +51,7 @@ class tutorial:
 
     # visualize the tree
     bridges.visualize()
+
+if __name__ == "__main__":
+    main()
+

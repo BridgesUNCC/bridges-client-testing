@@ -4,7 +4,8 @@ from Bridges.SLelement import *
 import sys
 
 
-class SLListtutorial:
+def main():
+
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -90,3 +91,7 @@ class SLListtutorial:
     bridges.set_data_structure(e01)
     # visualize the data structure
     bridges.visualize()
+
+if __name__ == "__main__":
+    main()
+
