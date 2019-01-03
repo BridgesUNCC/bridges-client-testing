@@ -9,10 +9,9 @@ include ../../env_vars.mk
 
 TARGET =  all
 
+#SRCS should only be the python codes with a main function
+SRCS = $(sort $(shell grep -l def\ main $(wildcard *.py)))
 
-SRCS = array1d.py sllist.py dllist.py circ_sllist.py circ_dllist.py	\
-		mllist.py tree.py bintree.py bst.py	avl.py	graph_alist.py \
-		graph_amatrix.py StudentInfo.py color_grid.py
 
 
 ASSIGNMENTIDSTART=3000
