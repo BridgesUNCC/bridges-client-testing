@@ -22,23 +22,6 @@ OBJS = $(SRCS:.cpp=.o)
 
 EXECUTABLES = $(SRCS:.cpp=)
 
-INCLUDES = 	DataStructure.h Array.h Element.h SLelement.h DLelement.h \
-			CircSLelement.h CircDLelement.h MLelement.h \
-			TreeElement.h BTElement.h BSTElement.h AVLTreeElement.h \
-			GraphAdjList.h GraphAdjMatrix.h \
-			SymbolCollection.h Symbol.h \
-			Rectangle.h Circle.h Polygon.h Label.h \
-			ElementVisualizer.h	LinkVisualizer.h Color.h Edge.h base64.h\
-			Bridges.h Connector.h \
-			data_src/ActorMovieIMDB.h \
-			data_src/EarthquakeUSGS.h \
-			data_src/Book.h \
-			data_src/Game.h \
-			data_src/CancerIncidence.h \
-			data_src/GutenbergBook.h \
-			data_src/Shakespeare.h \
-			data_src/Song.h
-
 STYLE_INCLUDES = BST.h StudentInfo.h
 
 # Incude and Library paths
@@ -55,6 +38,9 @@ CXXFLAGS = -g $(IFLAGS) -std=c++11 $(LOCALCXXFLAGS)
 
 LIBS = -l$(CURL_LIB)
 
+ASSIGNMENTIDSTART=1000
+ASSIGNMENTIDTEST=1099
+
 .SUFFIXES: .cpp .o
 
 %: %.cpp
@@ -70,11 +56,15 @@ LIBS = -l$(CURL_LIB)
 all : $(EXECUTABLES)
 
 run:
-	ASSIGNMENTID=1000 ; for BINARY in $(EXECUTABLES); do \
+	ASSIGNMENTID=$(ASSIGNMENTIDSTART) ; for BINARY in $(EXECUTABLES); do \
 		echo ./$$BINARY $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER) ; \
 		     ./$$BINARY $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER) ; \
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done
+
+run_%: %
+	./$(subst run_,,$@) $(ASSIGNMENTIDTEST) $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
+
 clean:
 	rm -f $(EXECUTABLES) $(OBJS)
 

@@ -18,6 +18,10 @@ SRCS = $(sort $(shell grep -l public\ static\ void\ main *.java ) )
 
 OBJS = $(SRCS:.java=.class)
 
+y
+ASSIGNMENTIDSTART=2000
+ASSIGNMENTIDTEST=2099
+
 
 all : $(OBJS)
 
@@ -25,11 +29,15 @@ all : $(OBJS)
 	javac $<
 
 run:
-	ASSIGNMENTID=2000 ; for TEST in $(SRCS:.java=); do \
+	ASSIGNMENTID=$(ASSIGNMENTIDSTART) ; for TEST in $(SRCS:.java=); do \
 		echo "java $$TEST $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER)" ; \
 		      java $$TEST $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER) ; \
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done
+
+run_%:
+	java $(subst run_,,$@) $(ASSIGNMENTIDTEST) $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
+
 
 style:  
 #	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS)

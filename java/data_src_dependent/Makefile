@@ -7,6 +7,8 @@ TARGET =  all
 
 DIRS=$(sort $(shell find * -maxdepth 0 -mindepth 0 -type d))
 
+ASSIGNMENTIDSTART=2100
+ASSIGNMENTIDTEST=2199
 
 all:
 	for dir in $(DIRS); do \
@@ -15,7 +17,7 @@ all:
 	done
 
 run:
-	ASSIGNMENTID=2100 ; for TEST in $(DIRS); do \
+	ASSIGNMENTID=$(ASSIGNMENTIDSTART) ; for TEST in $(DIRS); do \
 		echo Testing $$TEST; \
 		( \
 			cd $$TEST; \
@@ -23,6 +25,9 @@ run:
 		) ; \
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done
+
+run_%:
+	cd $(subst run_,,$@); java $(subst run_,,$@) $(ASSIGNMENTIDTEST) $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
 
 clean:
 	for dir in $(DIRS); do \

@@ -7,6 +7,9 @@ TARGET =  all
 
 DIRS=$(sort $(shell find * -maxdepth 0 -mindepth 0 -type d))
 
+ASSIGNMENTIDSTART=1100
+ASSIGNMENTIDTEST=1199
+
 all:
 	for dir in $(DIRS); do \
 		echo "cd $$dir; make $$dir;" ; \
@@ -14,11 +17,15 @@ all:
 	done
 
 run:
-	ASSIGNMENTID=1100 ; for dir in $(DIRS); do \
+	ASSIGNMENTID=$(ASSIGNMENTIDSTART) ; for dir in $(DIRS); do \
 		echo "cd $$dir; ./$$dir $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER) ;" ; \
 		    ( cd $$dir; ./$$dir $$ASSIGNMENTID $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER) ; );  \
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done
+
+run_%:
+	cd $(subst run_,,$@); make $(subst run_,,$@);
+	cd $(subst run_,,$@); ./$(subst run_,,$@) $(ASSIGNMENTIDTEST) $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER) ;
 
 style:
 	for dir in $(DIRS); do \
