@@ -18,7 +18,7 @@ SRCS = $(sort $(shell grep -l public\ static\ void\ main *.java ) )
 
 OBJS = $(SRCS:.java=.class)
 
-y
+
 ASSIGNMENTIDSTART=2000
 ASSIGNMENTIDTEST=2099
 
