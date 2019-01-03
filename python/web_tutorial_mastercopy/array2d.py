@@ -1,5 +1,5 @@
-from Bridges.bridges import *
-from Bridges.array import *
+from bridges.bridges import *
+from bridges.array import *
 import sys
 
 def main():

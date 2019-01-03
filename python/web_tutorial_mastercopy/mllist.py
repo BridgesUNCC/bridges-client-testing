@@ -1,5 +1,5 @@
-from Bridges.bridges import *
-from Bridges.ml_element import *
+from bridges.bridges import *
+from bridges.ml_element import *
 import sys
 
 def main():

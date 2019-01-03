@@ -1,6 +1,6 @@
-from Bridges.bridges import *
-from python.web_tutorial.StudentInfo import *
-from Bridges.circ_sl_element import *
+from bridges.bridges import *
+from StudentInfo import *
+from bridges.circ_sl_element import *
 import sys
 
 def main():

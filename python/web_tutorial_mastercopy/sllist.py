@@ -1,6 +1,6 @@
-from python.web_tutorial.StudentInfo import *
-from Bridges.bridges import *
-from Bridges.sl_element import *
+from StudentInfo import *
+from bridges.bridges import *
+from bridges.sl_element import *
 import sys
 
 

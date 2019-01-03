@@ -1,6 +1,6 @@
-from Bridges.ColorGrid import *
-from Bridges.Bridges import *
-from Bridges.Color import *
+from bridges.color_grid import *
+from bridges.bridges import *
+from bridges.color import *
 import sys
 
 def main():
@@ -13,7 +13,7 @@ def main():
     bridges = Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 
     # set title fo visualization
-    bridges.setTitle("A Checkerboard Example Using Grid Type")
+    bridges.set_title("A Checkerboard Example Using Grid Type")
 
     width = 200
     height = 200

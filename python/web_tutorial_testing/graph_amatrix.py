@@ -1,6 +1,6 @@
-from Bridges import *
-from Bridges.data_src_dependent import DataSource
-from Bridges.GraphAdjMatrix import *
+from bridges import *
+from bridges.data_src_dependent import data_source
+from bridges.graph_adj_matrix import *
 import sys
 
 def main():

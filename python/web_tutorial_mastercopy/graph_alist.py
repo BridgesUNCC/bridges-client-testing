@@ -1,6 +1,6 @@
-from Bridges.data_src_dependent import *
-from Bridges.graph_adj_list import *
-from Bridges.bridges import *
+from bridges.data_src_dependent import *
+from bridges.graph_adj_list import *
+from bridges.bridges import *
 import sys
 
 

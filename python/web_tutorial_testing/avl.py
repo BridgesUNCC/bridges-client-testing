@@ -1,5 +1,5 @@
-from Bridges.Bridges import *
-from Bridges.AVLTreeElement import *
+from bridges.bridges import *
+from bridges.avl_tree_element import *
 import sys
 
 def main():
@@ -51,4 +51,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 

@@ -1,5 +1,5 @@
-from Bridges.Bridges import *
-from Bridges.TreeElement import *
+from bridges.bridges import *
+from bridges.tree_element import *
 import sys
 
 def main():

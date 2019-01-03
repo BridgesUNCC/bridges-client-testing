@@ -1,5 +1,5 @@
-from Bridges.Bridges import *
-from Bridges.BinTreeElement import *
+from bridges.bridges import *
+from bridges.bin_tree_element import *
 import sys
 
 

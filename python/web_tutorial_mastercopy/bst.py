@@ -1,6 +1,6 @@
-from Bridges.bridges import *
-from Bridges.bst_element import *
-from Bridges.data_src_dependent.data_source import *
+from bridges.bridges import *
+from bridges.bst_element import *
+from bridges.data_src_dependent.data_source import *
 import sys
 
 # recursive insert method to insert nodes into a binary search tree
@@ -27,7 +27,7 @@ def main():
     bridges = Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
-    bridges.setTitle("A Binary Search Tree Example with Earthquake Data")
+    bridges.set_title("A Binary Search Tree Example with Earthquake Data")
 
     # Retrieve a list of 10 earthquake records from USGS using the BRIDGES API
     ami = getEarthquakeUSGSData(10)
