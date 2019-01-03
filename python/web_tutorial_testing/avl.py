@@ -2,7 +2,7 @@ from Bridges.Bridges import *
 from Bridges.AVLTreeElement import *
 import sys
 
-class AVLTreetutorial:
+def main():
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -48,4 +48,7 @@ class AVLTreetutorial:
 
     # visualize the tree
     bridges.visualize()
+
+if __name__ == "__main__":
+    main()
 
