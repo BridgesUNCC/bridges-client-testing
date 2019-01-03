@@ -17,16 +17,15 @@ import java.util.HashMap;
 //	helps us illustrates the connections between the movies 
 // 	and their genres, while also showing their ratings.
 
-public class graph_imdb_by_genre2{
+public class graph_imdb_by_genre{
 	
 	public static void main(String[] args) throws Exception {
 		
 				// initialize Bridges
 				// parameters are assignment number, application key, user id
 
-//		Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
-//		bridges.setServer (args[3]);
-		Bridges bridges = new Bridges (0, "kalpathi60", "486749122386");
+		Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
+		bridges.setServer (args[3]);
 
 						// set a title for the visualization
 		bridges.setTitle("Graph Example(IMDB Data): Movies Grouped by Genre");
