@@ -3,7 +3,7 @@ from python.web_tutorial.StudentInfo import *
 from Bridges.CircSLelement import *
 import sys
 
-class CircSLtutorial:
+def main():
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -85,3 +85,7 @@ class CircSLtutorial:
 
     bridges.set_data_structure(head)
     bridges.visualize()
+
+if __name__ == "__main__":
+    main()
+

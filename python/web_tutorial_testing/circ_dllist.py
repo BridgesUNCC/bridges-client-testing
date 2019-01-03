@@ -16,7 +16,7 @@ def insertFront(tailElement, newElement):
     return tailElement
 
 
-class CircDLtutorial:
+def main():
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -96,3 +96,7 @@ class CircDLtutorial:
     bridges.set_data_structure(head)
     # visualize the circular list
     bridges.visualize()
+
+if __name__ == "__main__":
+    main()
+

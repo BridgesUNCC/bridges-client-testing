@@ -4,7 +4,8 @@ from Bridges.Bridges import *
 import sys
 
 
-class GraphAdjListtutorial:
+def main():
+
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -93,4 +94,7 @@ class GraphAdjListtutorial:
     # visualize the graph
     bridges.visualize()
 
+
+if __name__ == "__main__":
+    main()
 

@@ -13,7 +13,8 @@ def insertFront(front, new_el):
 
     return new_el
 
-class DLListtutorial:
+def main():
+
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -88,3 +89,7 @@ class DLListtutorial:
     bridges.set_data_structure(head)
     # visualize the data structure
     bridges.visualize()
+
+if __name__ == "__main__":
+    main()
+

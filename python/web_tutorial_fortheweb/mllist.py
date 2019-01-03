@@ -2,7 +2,8 @@ from Bridges.Bridges import *
 from Bridges.MLelement import *
 import sys
 
-class MLtutorial:
+def main():
+
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -56,3 +57,7 @@ class MLtutorial:
     bridges.set_data_structure(el0)
     #visualize the multi linked list
     bridges.visualize()
+
+if __name__ == "__main__":
+    main()
+

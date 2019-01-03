@@ -3,8 +3,7 @@ from Bridges.Bridges import *
 from Bridges.Color import *
 import sys
 
-class color_grid:
-
+def main():
     # This example illustrates using the Bridges color grid
     # We will build a checker grid using two different colors
 
@@ -67,3 +66,8 @@ class color_grid:
     bridges.set_data_structure(cg)
 
     bridges.visualize()
+
+
+if __name__ == "__main__":
+    main()
+

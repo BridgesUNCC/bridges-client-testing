@@ -3,7 +3,7 @@ from Bridges.BinTreeElement import *
 import sys
 
 
-class BinTreetutorial:
+def main():
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -63,4 +63,6 @@ class BinTreetutorial:
     #visualize the tree
     bridges.visualize()
 
+if __name__ == "__main__":
+    main()
 

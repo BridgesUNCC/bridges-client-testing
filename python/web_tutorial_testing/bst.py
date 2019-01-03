@@ -14,7 +14,7 @@ def insertR(rt, newel):
     return rt
 
 
-class EarthquakeDriver():
+def main():
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -46,4 +46,6 @@ class EarthquakeDriver():
     bridges.visualize()
 
 
+if __name__ == "__main__":
+    main()
 

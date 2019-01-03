@@ -2,7 +2,7 @@ from Bridges.Bridges import *
 from Bridges.Array import *
 import sys
 
-class Array1d():
+def main():
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -38,3 +38,7 @@ class Array1d():
 
     # visualize the list
     bridges.visualize()
+
+if __name__ == "__main__":
+    main()
+

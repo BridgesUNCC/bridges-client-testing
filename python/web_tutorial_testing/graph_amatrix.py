@@ -3,7 +3,8 @@ from Bridges.data_src_dependent import DataSource
 from Bridges.GraphAdjMatrix import *
 import sys
 
-class GraphAdjMatrixtutorial:
+def main():
+
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
@@ -77,3 +78,7 @@ class GraphAdjMatrixtutorial:
     bridges.set_data_structure(g)
     # visualize the graph
     bridges.visualize()
+
+if __name__ == "__main__":
+    main()
+
