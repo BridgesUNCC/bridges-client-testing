@@ -1,4 +1,3 @@
-
 #
 #Platform specific variables
 #
@@ -7,9 +6,6 @@ include ../../env_vars.mk
 
 #
 #
-
-ASTYLE = astyle
-ASTYLE_PARAMS = -A2 -T4 -xn -xc -xV -C -S -N -xU  -Y -p -xg -H -y -xb
 
 TARGET =  all
 
@@ -34,15 +30,9 @@ run:
 run_%:
 	$(PYTHON) $(subst run_,,$@).py $(ASSIGNMENTIDTEST) $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER)
 
-to_html:
-	/bin/sh ./to_html_creds.sh
-
-to_srcs:
-	/bin/sh ./to_krs.sh
-
-to_site:
-	/bin/sh ./to_site.sh
-	zip bridges-python-1.0.zip 
+style:
+	echo "Run make style against the master copy"
+	exit -1;
 
 backup:
 	tar cvfz bridges_python.tgz  src docs Makefile 
