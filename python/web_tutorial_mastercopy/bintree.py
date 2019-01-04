@@ -7,16 +7,12 @@ def main():
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
-#if TESTING
     bridges = Bridges(int(args[0]), args[1], args[2])
 
     if len(args) > 3:
         bridges.connector.set_server(args[3])
-#else
-    bridges = Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
-#endif
 
-    bridges.setTitle("A Huffman Coding Tree Example")
+    bridges.set_title("A Huffman Coding Tree Example")
 
     #build the tree
     t0 = BinTreeElement(label = "306", e = 0)
