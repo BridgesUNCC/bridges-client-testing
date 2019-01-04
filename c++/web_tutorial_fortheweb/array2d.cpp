@@ -13,9 +13,9 @@ int main(int argc, char **argv) {
 	int dims[3] = {4, 4, 1};
 	Array<string> *arr = new Array<string>(4, 4);
 
-	for (int i = 0; i < dims[1]; i++)
-		for (int j = 0; j < dims[0]; j++)
-			arr->getElement(i, j).setLabel("El " + to_string(i * dims[0] + j));
+	for (int i = 0; i < dims[0]; i++)
+		for (int j = 0; j < dims[1]; j++)
+			arr->getElement(i, j).setLabel("El " + to_string(i * dims[1] + j));
 
 	arr->getElement(0, 0).getVisualizer()->setColor(Color("red"));
 	arr->getElement(0, 3).getVisualizer()->setColor(Color("green"));
