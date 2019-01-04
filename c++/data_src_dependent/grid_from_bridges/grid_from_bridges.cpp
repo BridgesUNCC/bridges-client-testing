@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
 	bridges->visualize();
 
 	try {
-		DataSource *ds = new DataSource;
+	  DataSource *ds = new DataSource(bridges);
 		ColorGrid cg = ds->getColorGridFromAssignment(bridges->getUserName(), bridges->getAssignment());
 
 		// just to be sure this is working, lets change the mid square
@@ -54,7 +54,10 @@ int main(int argc, char **argv) {
 		std::cerr << "exception caught: " << s << std::endl;
 		return -1;
 	}
-
+	catch (rapidjson_exception re) {
+	  std::cerr<<"rapidjson_exception: "<<(std::string)re<<std::endl;
+	}
+	
 	delete bridges;
 
 	return 0;
