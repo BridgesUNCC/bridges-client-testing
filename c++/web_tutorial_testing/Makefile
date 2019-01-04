@@ -7,22 +7,16 @@ include ../../env_vars.mk
 #
 #
 
-ASTYLE = astyle
-ASTYLE_PARAMS = -A2 -T4 -xn -xc -xV -C -S -N -xU  -Y -p -xg -H -y -xb
 
 TARGET =  all
 
 
-SRCS = array.cpp array2d.cpp array3d.cpp sllist.cpp dllist.cpp circ_sllist.cpp \
-		circ_dllist.cpp  mllist.cpp tree.cpp bintree.cpp bst.cpp avl.cpp \
-		graph_alist.cpp graph_amatrix.cpp  color_grid.cpp shape_collection.cpp kdt.cpp
+SRCS = $(sort $(wildcard *.cpp) )
 
 
 OBJS = $(SRCS:.cpp=.o)
 
 EXECUTABLES = $(SRCS:.cpp=)
-
-STYLE_INCLUDES = BST.h StudentInfo.h
 
 # Incude and Library paths
 
