@@ -26,14 +26,14 @@ def main():
     bridges.set_title("A Binary Search Tree Example with Earthquake Data")
 
     # Retrieve a list of 10 earthquake records from USGS using the BRIDGES API
-    ami = getEarthquakeUSGSData(10)
+    ami = get_earthquake_usgs_data(10)
 
     root = None
     # create BST nodes and insert into a tree
     for i in range(len(ami)):
-        bst_node = BSTElement(ami[i].getMagnitude(), ami[i])
+        bst_node = BSTElement(ami[i].get_magnitude(), ami[i])
         # set label of the node
-        bst_node.set_label(ami[i].getTitle() + ami[i].getTime())
+        bst_node.set_label(ami[i].get_title() + ami[i].get_time())
 
         root = insertR(root, bst_node)
 

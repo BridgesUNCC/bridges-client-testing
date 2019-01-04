@@ -3,6 +3,7 @@
 #
 
 include ../../env_vars.mk
+export PYTHONPATH=/home/alec/PycharmProjects/bridges-python/
 
 #
 #

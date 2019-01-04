@@ -69,11 +69,11 @@ def main():
     while currentElement is not None:
         # color the node
         si = currentElement.get_value()
-        currentElement.get_visualizer().set_color(si.getLikeColor())
+        currentElement.get_visualizer().set_color(col_name=si.getLikeColor())
 
         if currentElement.get_next() is not None:
             # color the link
-            currentElement.get_link_visualizer(currentElement.get_next()).set_color(si.getDislikeColor())
+            currentElement.get_link_visualizer(currentElement.get_next()).set_color(col_name=si.getDislikeColor())
             # adjust link thickness
             currentElement.get_link_visualizer(currentElement.get_next()).set_thickness(si.getCreditHours() * 0.75)
 

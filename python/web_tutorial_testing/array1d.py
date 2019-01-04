@@ -1,6 +1,8 @@
+import sys
+print(sys.path)
+
 from bridges.bridges import *
 from bridges.array import *
-import sys
 
 def main():
     args = sys.argv[1:]

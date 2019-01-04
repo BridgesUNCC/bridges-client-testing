@@ -78,9 +78,9 @@ def main():
     for i in range(len(students)):
 
         current.set_label(current.get_value().getName())
-        current.get_visualizer().set_color(current.get_value().getLikeColor())
+        current.get_visualizer().set_color(col_name=current.get_value().getLikeColor())
 
-        current.get_link_visualizer(current.get_next()).set_color(current.get_value().getDislikeColor())
+        current.get_link_visualizer(current.get_next()).set_color(col_name=current.get_value().getDislikeColor())
 
         current.get_link_visualizer(current.get_next()).set_thickness(current.get_value().getCreditHours() *.03)
 

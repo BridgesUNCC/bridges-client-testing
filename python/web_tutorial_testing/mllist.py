@@ -49,11 +49,11 @@ def main():
     el6.set_sub_list(el10)
 
     el0.get_visualizer().set_size(40)
-    el0.get_link_visualizer(el1).set_color("red")
+    el0.get_link_visualizer(el1).set_color(col_name="red")
     el0.get_link_visualizer(el1).set_thickness(3)
-    el1.get_link_visualizer(el2).set_color("blue")
+    el1.get_link_visualizer(el2).set_color(col_name="blue")
     el1.get_link_visualizer(el2).set_thickness(3)
-    el2.get_link_visualizer(el3).set_color("cyan")
+    el2.get_link_visualizer(el3).set_color(col_name="cyan")
     el2.get_link_visualizer(el3).set_thickness(3)
 
     # set visualizer type
