@@ -1,6 +1,6 @@
 from bridges.bridges import *
 from bridges.circ_dl_element import *
-from python.web_tutorial.StudentInfo import *
+from StudentInfo import *
 import sys
 
 #helper funtction
@@ -20,14 +20,10 @@ def main():
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
-#if TESTING
     bridges = Bridges(int(args[0]), args[1], args[2])
 
     if len(args) > 3:
         bridges.connector.set_server(args[3])
-#else
-    bridges = Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
-#endif
 
     students = []
 
@@ -86,12 +82,12 @@ def main():
     # add visual attributes
     for i in range(len(students)):
         current.set_label(current.get_value().getName())
-        current.get_visualizer().set_color(current.get_value().getLikeColor())
+        current.get_visualizer().set_color(col_name=current.get_value().getLikeColor())
 
-        current.get_link_visualizer(current.get_next()).set_color(current.get_value().getDislikeColor())
+        current.get_link_visualizer(current.get_next()).set_color(col_name=current.get_value().getDislikeColor())
         current.get_link_visualizer(current.get_next()).set_thickness(current.get_value().getCreditHours()*.2)
 
-        current.get_link_visualizer(current.get_prev()).set_color(current.get_value().getDislikeColor())
+        current.get_link_visualizer(current.get_prev()).set_color(col_name=current.get_value().getDislikeColor())
         current.get_link_visualizer(current.get_prev()).set_thickness(current.get_value().getCreditHours()*.2)
 
         current = current.get_next()
