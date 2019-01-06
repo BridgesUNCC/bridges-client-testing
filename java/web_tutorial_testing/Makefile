@@ -35,7 +35,7 @@ run:
 		ASSIGNMENTID=`expr $$ASSIGNMENTID + 1`; \
 	done
 
-run_%:
+run_%: %.class
 	java $(subst run_,,$@) $(ASSIGNMENTIDTEST) $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY)  $(BRIDGES_SERVER)
 
 
