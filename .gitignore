@@ -7,3 +7,7 @@ __pycache__/
 *.o
 *.dSYM
 env_vars.mk
+
+*/web_tutorial
+*/web_tutorial_testing
+*/web_tutorial_fortheweb
