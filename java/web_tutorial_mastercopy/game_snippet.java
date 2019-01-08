@@ -1,0 +1,28 @@
+import java.util.List;
+import java.util.Random;
+import bridges.connect.Bridges;
+import bridges.data_src_dependent.Game;
+
+public class game_snippet {
+	public static void main(String[] args) throws Exception {
+
+		//create the Bridges object
+#if TESTING
+    Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+    bridges.setServer(args[3]);
+#else
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
+
+		/* Get a List of Game objects from Bridges */
+		List<Game> mylist = bridges.getGameData();
+
+		/* Inspect a random Game object */
+		Game game1 = mylist.get((new Random()).nextInt(mylist.size()));
+		System.out.println(game1.getTitle());
+		System.out.println(game1.getPlatformType());
+		System.out.println(game1.getRating());
+		System.out.println(game1.getGenre());
+
+	}
+}
