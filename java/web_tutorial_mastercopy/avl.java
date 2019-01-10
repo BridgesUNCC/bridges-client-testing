@@ -13,6 +13,14 @@ public class avl {
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
+		bridges.setTitle("AVL Tree Example");
+        bridges.setDescription("This AVL tree has six elements. "
+                        + "In this example, the balance factor for each element is set manually using the setLabel() function. "
+                        + "Users must implement this function as part of the insert/delete operation to maintain a balanced tree. "
+                        + "Links between nodes are then set using the setLeft()/setRight() functions. "
+                        + "Here the setColor() and setOpacity() functions were used to stylize the root node. "
+                        + "Once initialized and styled the AVL root is passed through the BRIDGES visualizer and displayed.");
+						
 		//create  an  AVL tree elements
 		AVLTreeElement<Integer, String> avl_root = new AVLTreeElement<Integer, String>(50,
 			"Hello");

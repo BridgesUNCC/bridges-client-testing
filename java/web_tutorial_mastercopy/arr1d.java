@@ -13,7 +13,12 @@ public class arr1d {
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
-
+		bridges.setTitle("One-Dimensional Array Example");
+        bridges.setDescription("An array displaying one row and four columns. " 
+                            + "This example uses a for loop to initialize and set each element to a default color. "
+                            + "After initialization, colors of specific elements are changed manually using the "
+                            + " setColor() function.");
+		
 		//  set array dimensions, allocate array of elements
 		int arraySize = 10;
 

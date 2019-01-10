@@ -13,6 +13,12 @@ public class arr2d {
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
+		bridges.setTitle("Two-Dimensional Array Example");
+        bridges.setDescription("A 2D array displaying four rows and four columns. " 
+                            + "This example uses a for loop to initialize, label, and set each element to a default color. "
+                            + "After initialization, colors of specific elements are changed manually using the "
+                            + " setColor() function.");
+							
 		//  for 2D array 5x5
 		int num_rows = 4, num_cols = 4;
 		Array<Integer> my_array = new Array<Integer> (num_rows, num_cols);
