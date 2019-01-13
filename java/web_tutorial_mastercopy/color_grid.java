@@ -33,7 +33,10 @@ public class color_grid {
 #endif
 		// set title for visualization
 		bridges.setTitle("A CheckerBoard Example Using Grid Type");
-
+		bridges.setDescription("In this example, the user creates a color grid with width and height set to 10. "
+            +   "The grid is then iterated through using a nested for loop changing the color based on even or odd value of each pixel. "
+            +   "This grid uses blue for the even pixels and red for the odd pixels.");
+			
 		int width = 200, height = 200;
 
 		Color blue = new Color("blue");

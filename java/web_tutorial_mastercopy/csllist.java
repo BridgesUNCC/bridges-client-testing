@@ -14,6 +14,13 @@ public class csllist {
 										"YOUR_API_KEY");
 #endif
 
+		bridges.setTitle("A Circle Singly Linked List Example");
+        bridges.setDescription("In this example the user has built an array of students and their information including, student number, "
+                +   "name, major, email address, favorite color, disliked color, and credit hours. A for loop is used to iterate through this array "
+                +   "creating and linking a list of CircDLelements. Note that each element is linked once and only to the next element in the list. "
+				+   "After the list is created, a do-while loop is used to alter the visual "
+                +   "attributes of the data using the students color preferences and number of credits.");
+
 		StudentInfo[] students = {
 			new StudentInfo(
 				"00000000000",
