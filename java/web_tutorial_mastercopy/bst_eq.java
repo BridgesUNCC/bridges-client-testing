@@ -20,6 +20,10 @@ public class bst_eq {
 										"YOUR_API_KEY");
 #endif
 		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
+		bridges.setDescription("In this example, the user requests 10 records from USGS using the BRIDGES API function getEarthquakeUSGSData(). "
+                +   "The results are then stored as BST nodes using a for loop keeping track of the earthquakes magnitude and the earthquakes number. "
+                +   "Once created, each BST node is passed to a function that stores them within a binary tree using the magnitude to determine its position.");
+
 
 					// Retrieve a list of 10 earthquake  records  from USGS using the BRIDGES API
 		List<EarthquakeUSGS> eqlist = Bridges.getEarthquakeUSGSData(10);

@@ -13,7 +13,12 @@ public class cdllist {
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
-
+		bridges.setTitle("A Circular Doubly Linked List Example");
+        bridges.setDescription("In this example the user has built an array of students and their information including, student number, "
+                +   "name, major, email address, favorite color, disliked color, and credit hours. A for loop is used to iterate through this array "
+                +   "creating and linking a list of CircDLelements. After the list is created, an enhanced for loop is used to alter the visual "
+                +   "attributes of the data using the students color preferences and number of credits.");
+				
 		StudentInfo[] students = {
 			new StudentInfo(
 				"00000000000",
