@@ -21,9 +21,9 @@ make_python:
 	cd python/web_tutorial_testing; make; make run;
 
 clean:
+	cd c++/web_tutorial_testing; make clean;
+	cd c++/data_src_dependent; make clean;
 	cd java/web_tutorial_testing; make clean;
 	cd java/data_src_dependent; make clean;
-	cd c++/web_tutorial; make clean;
-	cd c++/data_src_dependent; make clean;
 
 
