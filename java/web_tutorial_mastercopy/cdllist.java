@@ -7,19 +7,19 @@ public class cdllist {
 
 
 #if TESTING
+
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
+		bridges.setTitle("A Circular Doubly Linked List Example");
+		bridges.setDescription("This example shows five nodes each linked to their parent and child node. "
+				+	"Colors are: Magenta node with blue links size 9, Red node with magenta links size 11, blue node with magenta links size 9, "
+				+	"yellow node with red links size 15, and green node with yellow links size 12.");
+
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
-		bridges.setTitle("A Circular Doubly Linked List Example");
-        bridges.setDescription("In this example the user has built an array of students and their information including, student number, "
-                +   "name, major, email address, favorite color, disliked color, and credit hours. A for loop is used to iterate through this array "
-                +   "creating and linking a list of CircDLelements. Note that each element is linked to the previous and next element in the list "
-				+	"rather than only the next element. After the list is created, a do-while loop is used to alter the visual "
-                +   "attributes of the data using the students color preferences and number of credits.");
-				
 		StudentInfo[] students = {
 			new StudentInfo(
 				"00000000000",

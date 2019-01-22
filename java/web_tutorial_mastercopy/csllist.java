@@ -5,22 +5,21 @@ public class csllist {
 
 	public static void main(String[] args) throws Exception {
 
-
 #if TESTING
+
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
+		bridges.setTitle("A Circle Singly Linked List Example");
+        bridges.setDescription("This example shows five nodes. Each node is linked only to its child node. "
+				+	"Colors are: A green node with a yellow link size 12, a blue node with a magenta link size 9, "
+				+	"a magenta node with a blue link size 9, a red node with a magenta link size 11, and a yellow node with "
+				+	"a red link size 15.");
+				
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
-
-		bridges.setTitle("A Circle Singly Linked List Example");
-        bridges.setDescription("In this example the user has built an array of students and their information including, student number, "
-                +   "name, major, email address, favorite color, disliked color, and credit hours. A for loop is used to iterate through this array "
-                +   "creating and linking a list of CircDLelements. Note that each element is linked once and only to the next element in the list. "
-				+   "After the list is created, a do-while loop is used to alter the visual "
-                +   "attributes of the data using the students color preferences and number of credits.");
-
 		StudentInfo[] students = {
 			new StudentInfo(
 				"00000000000",
