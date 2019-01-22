@@ -12,6 +12,14 @@ int main(int argc, char **argv) {
     Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
         bridges->setServer(argv[4]);
+
+	bridges.setTitle("Three-Dimensional Array Example");
+	bridges.setDescription("A 3D array displaying four rows, four columns, and four slices. " 
+						+ "This example uses a for loop in which the header specifies slice count as the iteration variable. "
+						+ "A nested loop then builds a 2D array within that slice. (See Two-Dimensional Array Test) "
+						+ "After initialization, colors of specific elements are changed manually using the "
+						+ " setColor() function.");
+						
 #else
     Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                 "YOUR_API_KEY");

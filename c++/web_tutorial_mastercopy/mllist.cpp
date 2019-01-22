@@ -10,6 +10,12 @@ int main(int argc, char **argv)  {
     Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
         bridges->setServer(argv[4]);
+
+	bridges.setTitle("A Multilist Example");
+	bridges.setDescription("The multilist example should have one large red node, three small square red nodes, "
+			+	"and eight neutral nodes. The larger red node is connected via a red link to a neutral node. The next "
+			+	"link from the neutral node is blue followed by a cyan link between two of the small square red nodes.");
+
 #else
     Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                 "YOUR_API_KEY");

@@ -17,6 +17,12 @@ int main(int argc, char **argv) {
     Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
         bridges->setServer(argv[4]);
+	
+	// set title for visualization
+	bridges.setTitle("A CheckerBoard Example Using Grid Type");
+	bridges.setDescription("This is an example of the color grid with height and width 10. "
+		+   "This example alternates between blue and red starting with red at the top left corner of the grid.");
+		
 #else
     Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                 "YOUR_API_KEY");
