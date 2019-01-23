@@ -14,6 +14,11 @@ def main():
     if len(args) > 3:
         bridges.connector.set_server(args[3])
 
+    #Title and Description
+    bridges.setTitle("One-Dimensional Array Example")
+    bridges.setDescription("OneD array with colors in order left to right: "
+            +	"red, green, blue, cyan, magenta, yellow, red, green, blue, black.")
+
     #set array dimensions, allocate array fo elements
     arraySize = 10
 

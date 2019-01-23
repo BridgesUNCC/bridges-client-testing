@@ -12,9 +12,15 @@ public class bst_eq {
 			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");   		
 
 		//create the Bridges object
+		
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
 		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
+		bridges.setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than "
+			+ "the parent is set to the right and nodes with a magnitude less than the parent set to the left. "
+			+ "The root is set to red the leaf nodes are neutral.");
+
 
 					// Retrieve a list of 10 earthquake  records  from USGS using the BRIDGES API
 		List<EarthquakeUSGS> eqlist = Bridges.getEarthquakeUSGSData(10);

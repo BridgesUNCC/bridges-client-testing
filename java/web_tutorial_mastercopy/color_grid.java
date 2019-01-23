@@ -25,18 +25,20 @@ public class color_grid {
 
 		// initialize BRIDGES
 #if TESTING
+
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
+		// set title for visualization
+		bridges.setTitle("A CheckerBoard Example Using Grid Type");
+		bridges.setDescription("This is an example of the color grid with height and width 10. "
+            +   "This example alternates between blue and red starting with red at the top left corner of the grid.");
+			
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
-		// set title for visualization
-		bridges.setTitle("A CheckerBoard Example Using Grid Type");
-		bridges.setDescription("In this example, the user creates a color grid with width and height set to 10. "
-            +   "The grid is then iterated through using a nested for loop changing the color based on even or odd value of each pixel. "
-            +   "This grid uses blue for the even pixels and red for the odd pixels.");
-			
+		
 		int width = 200, height = 200;
 
 		Color blue = new Color("blue");

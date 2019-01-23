@@ -7,8 +7,18 @@ public class arr3d {
 
 		//create the Bridges object
 
+
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
+		bridges.setTitle("Three-Dimensional Array Example");
+        bridges.setDescription("A 3D array displaying four rows, four columns, and four slices. " 
+                            + "This example uses a for loop in which the header specifies slice count as the iteration variable. "
+                            + "A nested loop then builds a 2D array within that slice. (See Two-Dimensional Array Test) "
+                            + "After initialization, colors of specific elements are changed manually using the "
+                            + " setColor() function.");
+
+
 		// specify array dimensions and create 3D array
 		int num_slices = 4, num_rows = 4, num_cols = 4;
 		Array<Integer> my_array = new Array<Integer> (num_slices, num_rows, num_cols);

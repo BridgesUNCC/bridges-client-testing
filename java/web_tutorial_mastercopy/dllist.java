@@ -7,8 +7,15 @@ public class dllist {
 
 
 #if TESTING
+		
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
+		bridges.setTitle("A doubly Linked List Example");
+		bridges.setDescription("This list has five nodes all linked to the nodes before and after them. "
+				+	" Node colors are as follows: Blue and red connected by magenta links, red and green connected by "
+				+	"purple links, green and black connected by blue links, and black and cyan connected by red links.");
+				
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");

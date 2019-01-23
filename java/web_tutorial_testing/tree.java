@@ -9,6 +9,11 @@ public class tree {
         Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
+		bridges.setTitle("A General Tree Example");
+		bridges.setDescription("A basic tree with seven nodes. Three on one side and three on the other. The root node is set to red with 0.3 opacity. "
+				+	"The other six nodes are neutral color.");
+				
+
 		//create   tree nodes
 		TreeElement<String> t0 = new TreeElement<String>("Hello");
 		TreeElement<String> t2 = new TreeElement<String>("This");

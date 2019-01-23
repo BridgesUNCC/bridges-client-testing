@@ -7,11 +7,15 @@ public class bintree {
 
 
 		//create the Bridges object
+		
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
 		bridges.setTitle("A Huffman Coding Tree Example");
-		bridges.setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2");
+		bridges.setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2 "
+				+ "Root is set to red and leaf nodes are set to orange.");
+
+
 		//create  an   tree
 		BinTreeElement<Integer> t0 = new BinTreeElement<Integer>("306", 0);
 		BinTreeElement<Integer> t1 = new BinTreeElement<Integer>("120\\nE", 1);

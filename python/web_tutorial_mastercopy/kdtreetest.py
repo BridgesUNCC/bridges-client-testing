@@ -11,8 +11,10 @@ bridges = Bridges(int(args[0]), args[1], args[2])
 if len(args) > 3:
     bridges.connector.set_server(args[3])
 
-
-bridges.set_title("a KD Tree Example")
+#Title and Description
+bridges.setTitle("A Kd Tree Example")
+bridges.setDescription("A three-level tree with partitioners cycling between X and Y."
+                + " The root node color is set to red while the leaf nodes that represent code letters are set to orange.")
 
 t0 = KDTreeElement(key = 50, dim = 0)
 t1 = KDTreeElement(key = 25, dim = 1)

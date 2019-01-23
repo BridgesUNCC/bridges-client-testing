@@ -7,18 +7,22 @@ public class arr2d {
 
 		//create the Bridges object
 #if TESTING
+
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
+		bridges.setTitle("Two-Dimensional Array Example");
+        bridges.setDescription("A TwoD array with four rows and four columns. " 
+                            + "Row one left to right: red, neutral, neutral, blue. "
+							+ "Row two left to right: neutral, cyan, neutral, neutral. "
+							+ "Row three left to right: neutral, neutral, yellow, neutral. "
+							+ "Row four left to right: green, neutral, neutral, magenta.");
+
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
-		bridges.setTitle("Two-Dimensional Array Example");
-        bridges.setDescription("A 2D array displaying four rows and four columns. " 
-                            + "This example uses a for loop to initialize, label, and set each element to a default color. "
-                            + "After initialization, colors of specific elements are changed manually using the "
-                            + " setColor() function.");
-							
+					
 		//  for 2D array 5x5
 		int num_rows = 4, num_cols = 4;
 		Array<Integer> my_array = new Array<Integer> (num_rows, num_cols);

@@ -4,12 +4,16 @@
 using namespace bridges;
 
 int main(int argc, char **argv) {
-
-
+	
 						// command line args provide credentials and server to test on
 	Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
 	if (argc > 4)
 		bridges->setServer(argv[4]);
+
+	bridges->setTitle("One-Dimensional Array Example");
+    bridges->setDescription("OneD array with colors in order left to right: "
+			"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
+
 
 	Array<int> *arr = new Array<int>(10);
 
