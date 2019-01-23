@@ -11,6 +11,15 @@ def main():
     if len(args) > 3:
         bridges.connector.set_server(args[3])
 
+    #Title and Description
+    bridges.setTitle("Two-Dimensional Array Example")
+    bridges.setDescription("A TwoD array with four rows and four columns. " 
+                        + "Row one left to right: red, neutral, neutral, blue. "
+                        + "Row two left to right: neutral, cyan, neutral, neutral. "
+                        + "Row three left to right: neutral, neutral, yellow, neutral. "
+                        + "Row four left to right: green, neutral, neutral, magenta.")
+
+
     # for 2D array 4x4
     num_rows = 4
     num_cols = 4

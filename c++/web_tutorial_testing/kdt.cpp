@@ -10,6 +10,11 @@ int main(int argc, char **argv) {
         bridges->setServer(argv[4]);
 
 	bridges->setTitle("A Kd Tree Example");
+	bridges->setDescription("A three-level tree with partitioners cycling between X and Y."
+			 " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
+	
+
+	bridges->setTitle("A Kd Tree Example");
 
 	KdTreeElement<int, int> *t0 = new KdTreeElement<int, int>(50, 0);
 	KdTreeElement<int, int> *t1 = new KdTreeElement<int, int>(25, 1);

@@ -5,7 +5,6 @@
 #include "data_src/EarthquakeUSGS.h"
 #include "BSTElement.h"
 
-
 using namespace std;
 using namespace bridges;
 
@@ -21,10 +20,10 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
-	bridges.setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than "
-		+ "the parent is set to the right and nodes with a magnitude less than the parent set to the left. "
-		+ "The root is set to red the leaf nodes are neutral.");
+	bridges->setTitle("A Binary Search Tree Example with Earthquake Data");
+	bridges->setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than "
+		 "the parent is set to the right and nodes with a magnitude less than the parent set to the left. "
+		 "The root is set to red the leaf nodes are neutral.");
 		
 #else
     Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 

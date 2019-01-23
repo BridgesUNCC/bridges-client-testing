@@ -12,6 +12,14 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
+	bridges->setTitle("Two-Dimensional Array Example");
+	bridges->setDescription("A TwoD array with four rows and four columns. " 
+						 "Row one left to right: red, neutral, neutral, blue. "
+						 "Row two left to right: neutral, cyan, neutral, neutral. "
+						 "Row three left to right: neutral, neutral, yellow, neutral. "
+						 "Row four left to right: green, neutral, neutral, magenta.");
+
+
 	int dims[3] = {4, 4, 1};
 	Array<string> *arr = new Array<string>(4, 4);
 

@@ -14,6 +14,12 @@ def main():
     if len(args) > 3:
         bridges.connector.set_server(args[3])
 
+    #Title and Description
+    bridges.setTitle("A Single Linked List Example")
+    bridges.setDescription("A list of student data where each node is linked only to the next "
+            +	"node in the list. Node and link colors from top of list to bottom: Blue with magenta link, "
+            +	"red with magenta link, green with yellow link, magenta with green link, cyan.")      
+
     # create the linked list elements with student data
 
     e01 = SLelement(e=Student("00000000000",

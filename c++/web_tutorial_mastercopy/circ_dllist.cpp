@@ -22,10 +22,10 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges.setTitle("A Circular Doubly Linked List Example");
-	bridges.setDescription("This example shows five nodes each linked to their parent and child node. "
-			+	"Colors are: Magenta node with blue links size 9, Red node with magenta links size 11, blue node with magenta links size 9, "
-			+	"yellow node with red links size 15, and green node with yellow links size 12.");
+	bridges->setTitle("A Circular Doubly Linked List Example");
+	bridges->setDescription("This example shows five nodes each linked to their parent and child node. "
+				"Colors are: Magenta node with blue links size 9, Red node with magenta links size 11, blue node with magenta links size 9, "
+				"yellow node with red links size 15, and green node with yellow links size 12.");
 
 #else
     Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 

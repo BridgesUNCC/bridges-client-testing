@@ -10,9 +10,9 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges.setTitle("A Kd Tree Example");
-	bridges.setDescription("A three-level tree with partitioners cycling between X and Y."
-					+ " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
+	bridges->setTitle("A Kd Tree Example");
+	bridges->setDescription("A three-level tree with partitioners cycling between X and Y."
+			 " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
 	
 #else
     Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 

@@ -6,8 +6,15 @@ public class dllist {
 	public static void main(String[] args) throws Exception {
 
 
+		
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
+		bridges.setTitle("A doubly Linked List Example");
+		bridges.setDescription("This list has five nodes all linked to the nodes before and after them. "
+				+	" Node colors are as follows: Blue and red connected by magenta links, red and green connected by "
+				+	"purple links, green and black connected by blue links, and black and cyan connected by red links.");
+				
 		// load student info
 		StudentInfo[] students = {
 			new StudentInfo(

@@ -13,9 +13,9 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges.setTitle("A General Tree Example");
-	bridges.setDescription("A basic tree with seven nodes. Three on one side and three on the other. The root node is set to red with 0.3 opacity. "
-			+	"The other six nodes are neutral color.");
+	bridges->setTitle("A General Tree Example");
+	bridges->setDescription("A basic tree with seven nodes. Three on one side and three on the other. The root node is set to red with 0.3 opacity. "
+				"The other six nodes are neutral color.");
 			
 #else
     Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 

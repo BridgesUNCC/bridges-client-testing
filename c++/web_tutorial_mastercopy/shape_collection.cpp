@@ -14,9 +14,9 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges.setTitle("Symbol Collection");
-	bridges.setDescription("Red square, green circle, magenta horizontal and vertical lines, "
-			+	"and a test label with a purple outline.");
+	bridges->setTitle("Symbol Collection");
+	bridges->setDescription("Red square, green circle, magenta horizontal and vertical lines, "
+				"and a test label with a purple outline.");
 			
 #else
     Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 

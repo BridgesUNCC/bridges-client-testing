@@ -10,9 +10,9 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges.setTitle("A Huffman Coding Tree Example");
-	bridges.setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2 "
-			+ "Root is set to red and leaf nodes are set to orange.");
+	bridges->setTitle("A Huffman Coding Tree Example");
+	bridges->setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2 "
+			 "Root is set to red and leaf nodes are set to orange.");
 
 #else
     Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 

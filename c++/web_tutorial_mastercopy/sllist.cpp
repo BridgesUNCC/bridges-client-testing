@@ -16,10 +16,10 @@ int main (int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges.setTitle("A Single Linked List Example");
-	bridges.setDescription("A list of student data where each node is linked only to the next "
-			+	"node in the list. Node and link colors from top of list to bottom: Blue with magenta link, "
-			+	"red with magenta link, green with yellow link, magenta with green link, cyan.");
+	bridges->setTitle("A Single Linked List Example");
+	bridges->setDescription("A list of student data where each node is linked only to the next "
+				"node in the list. Node and link colors from top of list to bottom: Blue with magenta link, "
+				"red with magenta link, green with yellow link, magenta with green link, cyan.");
 			
 #else
     Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 

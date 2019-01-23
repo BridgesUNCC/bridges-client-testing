@@ -13,6 +13,12 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
+	// set a title for the visualization
+	bridges->setTitle("A Simple Graph (Adjacency List) Example using IMDB Actor/Movie Data");
+	bridges->setDescription("Two lists each having an actor as the root node with 15 movies they played in as leaf nodes. "
+				"Root nodes are both red, Kevin Bacon's leaf nodes are green and Denzel Washington's leaf nodes are neutral.");
+			
+
 
 	bridges->setTitle("Graph Adj List Example: IMDB Data");
 

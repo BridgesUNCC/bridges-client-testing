@@ -6,9 +6,15 @@ public class arr1d {
 
 		//create the Bridges object, set credentials
 
+
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
+		bridges.setTitle("One-Dimensional Array Example");
+        bridges.setDescription("OneD array with colors in order left to right: "
+				+	"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
+
+		
 		//  set array dimensions, allocate array of elements
 		int arraySize = 10;
 

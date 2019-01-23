@@ -24,11 +24,16 @@ public class color_grid {
 		// We will build a checker grid using two different colors
 
 		// initialize BRIDGES
+
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
 		// set title for visualization
 		bridges.setTitle("A CheckerBoard Example Using Grid Type");
-
+		bridges.setDescription("This is an example of the color grid with height and width 10. "
+            +   "This example alternates between blue and red starting with red at the top left corner of the grid.");
+			
+		
 		int width = 200, height = 200;
 
 		Color blue = new Color("blue");

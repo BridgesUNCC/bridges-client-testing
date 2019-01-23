@@ -15,6 +15,12 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
+	bridges->setTitle("A doubly Linked List Example");
+	bridges->setDescription("This list has five nodes all linked to the nodes before and after them. "
+				" Node colors are as follows: Blue and red connected by magenta links, red and green connected by "
+				"purple links, green and black connected by blue links, and black and cyan connected by red links.");
+			
+
 	// load student info
 	int num_students = 5;
 	StudentInfo students[] = {

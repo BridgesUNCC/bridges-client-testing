@@ -6,8 +6,18 @@ public class arr2d {
 	public static void main(String[] args) throws Exception {
 
 		//create the Bridges object
+
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
+		bridges.setTitle("Two-Dimensional Array Example");
+        bridges.setDescription("A TwoD array with four rows and four columns. " 
+                            + "Row one left to right: red, neutral, neutral, blue. "
+							+ "Row two left to right: neutral, cyan, neutral, neutral. "
+							+ "Row three left to right: neutral, neutral, yellow, neutral. "
+							+ "Row four left to right: green, neutral, neutral, magenta.");
+
+					
 		//  for 2D array 5x5
 		int num_rows = 4, num_cols = 4;
 		Array<Integer> my_array = new Array<Integer> (num_rows, num_cols);
