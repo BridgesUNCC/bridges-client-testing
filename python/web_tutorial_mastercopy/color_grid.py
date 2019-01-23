@@ -16,8 +16,8 @@ def main():
         bridges.connector.set_server(args[3])
 
     #Title and Description
-    bridges.setTitle("A CheckerBoard Example Using Grid Type")
-    bridges.setDescription("This is an example of the color grid with height and width 10. "
+    bridges.set_title("A CheckerBoard Example Using Grid Type")
+    bridges.set_description("This is an example of the color grid with height and width 10. "
         +   "This example alternates between blue and red starting with red at the top left corner of the grid.")
 
     width = 200

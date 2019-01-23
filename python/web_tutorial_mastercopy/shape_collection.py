@@ -18,8 +18,8 @@ def main():
         bridges.connector.set_server(args[3])
 
     #Title and Description
-    bridges.setTitle("Symbol Collection")
-    bridges.setDescription("Red square, green circle, magenta horizontal and vertical lines, "
+    bridges.set_title("Symbol Collection")
+    bridges.set_description("Red square, green circle, magenta horizontal and vertical lines, "
             +	"and a test label with a purple outline.")
 
     sc = SymbolCollection()
