@@ -7,17 +7,17 @@ int main(int argc, char **argv) {
 	
 #if TESTING
 						// command line args provide credentials and server to test on
-	Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+//	Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
 	if (argc > 4)
-		bridges->setServer(argv[4]);
+		bridges.setServer(argv[4]);
 
-	bridges->setTitle("One-Dimensional Array Example");
-    bridges->setDescription("OneD array with colors in order left to right: "
+	bridges.setTitle("One-Dimensional Array Example");
+    bridges.setDescription("OneD array with colors in order left to right: "
 			"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
 
 #else
-	Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
-								"YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
 	Array<int> *arr = new Array<int>(10);
@@ -39,9 +39,9 @@ int main(int argc, char **argv) {
 	arr->getElement(9).getVisualizer()->setColor(Color("black"));
 
 
-	bridges->setTitle("Array Example");
-	bridges->setDataStructure(arr);
-	bridges->visualize();
+	bridges.setTitle("Array Example");
+	bridges.setDataStructure(arr);
+	bridges.visualize();
 
 	return 0;
 }
