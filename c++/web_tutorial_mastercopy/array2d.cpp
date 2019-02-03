@@ -9,19 +9,20 @@ int main(int argc, char **argv) {
 
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 
-	bridges->setTitle("Two-Dimensional Array Example");
-	bridges->setDescription("A TwoD array with four rows and four columns. " 
+	bridges.setTitle("Two-Dimensional Array Example");
+	bridges.setDescription("A TwoD array with four rows and four columns. "
 						 "Row one left to right: red, neutral, neutral, blue. "
 						 "Row two left to right: neutral, cyan, neutral, neutral. "
 						 "Row three left to right: neutral, neutral, yellow, neutral. "
 						 "Row four left to right: green, neutral, neutral, magenta.");
 
 #else
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
 #endif
 
@@ -39,10 +40,8 @@ int main(int argc, char **argv) {
 	arr->getElement(1, 1).getVisualizer()->setColor(Color("cyan"));
 	arr->getElement(2, 2).getVisualizer()->setColor(Color("yellow"));
 
-
-	bridges->setTitle("2D Array Example");
-	bridges->setDataStructure(arr);
-	bridges->visualize();
+	bridges.setDataStructure(arr);
+	bridges.visualize();
 
 	return 0;
 }

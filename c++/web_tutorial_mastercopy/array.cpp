@@ -38,8 +38,6 @@ int main(int argc, char **argv) {
 	arr->getElement(8).getVisualizer()->setColor(Color("blue"));
 	arr->getElement(9).getVisualizer()->setColor(Color("black"));
 
-
-	bridges.setTitle("Array Example");
 	bridges.setDataStructure(arr);
 	bridges.visualize();
 

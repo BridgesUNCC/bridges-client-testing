@@ -7,21 +7,21 @@ using namespace bridges;
 int main(int argc, char **argv)  {
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+    
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 
-	bridges->setTitle("A Multilist Example");
-	bridges->setDescription("The multilist example should have one large red node, three small square red nodes, "
+	bridges.setTitle("A Multilist Example");
+	bridges.setDescription("The multilist example should have one large red node, three small square red nodes, "
 				"and eight neutral nodes. The larger red node is connected via a red link to a neutral node. The next "
 				"link from the neutral node is blue followed by a cyan link between two of the small square red nodes.");
 
 #else
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
 #endif
-
-	bridges->setTitle("A Trivial Multilist Example");
 
 	//create  a linked list
 
@@ -67,9 +67,10 @@ int main(int argc, char **argv)  {
 	el2->getLinkVisualizer(el3)->setThickness(3);
 
 	el0->getVisualizer()->setColor(Color("red"));
+    
 	//set visualizer type
-	bridges->setDataStructure(el0);
+	bridges.setDataStructure(el0);
 
 	// visualize the list
-	bridges->visualize();
+	bridges.visualize();
 }

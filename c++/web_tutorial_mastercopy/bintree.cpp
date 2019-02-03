@@ -6,22 +6,20 @@ using namespace bridges;
 int main(int argc, char **argv) {
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+    
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 
-	bridges->setTitle("A Huffman Coding Tree Example");
-	bridges->setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2 "
+	bridges.setTitle("A Huffman Coding Tree Example");
+	bridges.setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2 "
 			 "Root is set to red and leaf nodes are set to orange.");
 
 #else
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
 #endif
-
-	bridges->setTitle("A Huffman Coding Tree Example");
-	bridges->setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2");
-
 
 	BinTreeElement<int> *t0 = new BinTreeElement<int>(0, "306");
 	BinTreeElement<int> *t1 = new BinTreeElement<int>(1, "120\\nE");
@@ -67,9 +65,9 @@ int main(int argc, char **argv) {
 	t14->getVisualizer()->setColor(Color("orange"));
 
 	// provide BRIDGES the  handle to the tree structure
-	bridges->setDataStructure(t0);
+	bridges.setDataStructure(t0);
 
-	bridges->visualize();
+	bridges.visualize();
 
 	return 0;
 }

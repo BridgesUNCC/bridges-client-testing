@@ -12,17 +12,19 @@ using namespace bridges;
 int main (int argc, char **argv) {
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+    
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 
-	bridges->setTitle("A Single Linked List Example");
-	bridges->setDescription("A list of student data where each node is linked only to the next "
+	bridges.setTitle("A Single Linked List Example");
+	bridges.setDescription("A list of student data where each node is linked only to the next "
 				"node in the list. Node and link colors from top of list to bottom: Blue with magenta link, "
 				"red with magenta link, green with yellow link, magenta with green link, cyan.");
 			
 #else
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
 #endif
 
@@ -109,6 +111,6 @@ int main (int argc, char **argv) {
 		currentElement = currentElement->getNext();
 	}
 
-	bridges->setDataStructure(el0);
-	bridges->visualize();
+	bridges.setDataStructure(el0);
+	bridges.visualize();
 }

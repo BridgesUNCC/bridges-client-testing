@@ -12,18 +12,20 @@ using namespace bridges;
 int main (int argc, char **argv) {
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+    
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 
-	bridges->setTitle("A Circle Singly Linked List Example");
-	bridges->setDescription("This example shows five nodes. Each node is linked only to its child node. "
+	bridges.setTitle("A Circle Singly Linked List Example");
+	bridges.setDescription("This example shows five nodes. Each node is linked only to its child node. "
 				"Colors are: A green node with a yellow link size 12, a blue node with a magenta link size 9, "
 				"a magenta node with a blue link size 9, a red node with a magenta link size 11, and a yellow node with "
 				"a red link size 15.");
 			
 #else
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
 #endif
 
@@ -107,7 +109,7 @@ int main (int argc, char **argv) {
 
 
 	// set data structure to point to head
-	bridges->setDataStructure(head);
+	bridges.setDataStructure(head);
 	// visualize the circular list
-	bridges->visualize();
+	bridges.visualize();
 }
