@@ -14,16 +14,21 @@ using namespace bridges;
 int main(int argc, char **argv) {
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+    
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
+	
+	// set title for visualization
+	bridges.setTitle("A CheckerBoard Example Using Grid Type");
+	bridges.setDescription("This is an example of the color grid with height and width 10. "
+		   "This example alternates between blue and red starting with red at the top left corner of the grid.");
+		
 #else
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
 #endif
-
-	// set title for visualization
-	bridges->setTitle("A Color Grid Example");
 
 	int width = 200, height = 200;
 
@@ -59,9 +64,9 @@ int main(int argc, char **argv) {
 					cg->set(x, y, Color(col));
 		}
 
-	bridges->setDataStructure(cg);
+	bridges.setDataStructure(cg);
 
-	bridges->visualize();
+	bridges.visualize();
 
 	return 0;
 }

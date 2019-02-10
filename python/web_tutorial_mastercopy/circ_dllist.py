@@ -25,6 +25,12 @@ def main():
     if len(args) > 3:
         bridges.connector.set_server(args[3])
 
+    #Title and Description
+    bridges.set_title("A Circular Doubly Linked List Example")
+    bridges.set_description("This example shows five nodes each linked to their parent and child node. "
+            +	"Colors are: Magenta node with blue links size 9, Red node with magenta links size 11, blue node with magenta links size 9, "
+            +	"yellow node with red links size 15, and green node with yellow links size 12.")
+
     students = []
 
     # create a list of student data

@@ -7,10 +7,14 @@ public class kdt {
 	public static void main(String[] args) throws Exception {
 
 		//create the Bridges object
-        Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
 		bridges.setTitle("A Kd Tree Example");
+		bridges.setDescription("A three-level tree with partitioners cycling between X and Y."
+                        + " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
+        
 
 		// create Kd Tree nodes
 		KdTreeElement<Integer, String> t0 = new KdTreeElement<Integer, String>(50, 0);

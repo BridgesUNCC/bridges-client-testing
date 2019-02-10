@@ -19,7 +19,9 @@ public class shape_collection {
         bridges.setServer(args[3]);
 
 		bridges.setTitle("Symbol Collection");
-		bridges.setDescription("Some Shapes and Symbols");
+		bridges.setDescription("Red square, green circle, magenta horizontal and vertical lines, "
+				+	"and a test label with a purple outline.");
+				
 
 		SymbolCollection sc = new SymbolCollection();
 		Rectangle s1 = new Rectangle(-25.0f, 0.0f, 50, 50);

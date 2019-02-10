@@ -7,17 +7,18 @@ public class arr1d {
 		//create the Bridges object, set credentials
 
 #if TESTING
+
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
+		bridges.setTitle("One-Dimensional Array Example");
+        bridges.setDescription("OneD array with colors in order left to right: "
+				+	"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
+
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
-		bridges.setTitle("One-Dimensional Array Example");
-        bridges.setDescription("An array displaying one row and four columns. " 
-                            + "This example uses a for loop to initialize and set each element to a default color. "
-                            + "After initialization, colors of specific elements are changed manually using the "
-                            + " setColor() function.");
 		
 		//  set array dimensions, allocate array of elements
 		int arraySize = 10;

@@ -11,8 +11,15 @@ public class sllist {
 
 		// note: you must fill in with your Bridges credentials
 #if TESTING
+
         Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
+
+		bridges.setTitle("A Single Linked List Example");
+		bridges.setDescription("A list of student data where each node is linked only to the next "
+				+	"node in the list. Node and link colors from top of list to bottom: Blue with magenta link, "
+				+	"red with magenta link, green with yellow link, magenta with green link, cyan.");
+				
 #else
         Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                         "YOUR_API_KEY");

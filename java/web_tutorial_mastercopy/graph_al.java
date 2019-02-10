@@ -12,15 +12,19 @@ public class graph_al {
 
 		// initialize Bridges
 #if TESTING
+		
         Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
+
+		// set a title for the visualization
+		bridges.setTitle("A Simple Graph (Adjacency List) Example using IMDB Actor/Movie Data");
+		bridges.setDescription("Two lists each having an actor as the root node with 15 movies they played in as leaf nodes. "
+				+	"Root nodes are both red, Kevin Bacon's leaf nodes are green and Denzel Washington's leaf nodes are neutral.");
+				
 #else
         Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                         "YOUR_API_KEY");
 #endif
-
-		// set a title for the visualization
-		bridges.setTitle("A Simple Graph (Adjacency List) Example using IMDB Actor/Movie Data");
 
 		ArrayList<ActorMovieIMDB>  actor_movie_data =
 			(ArrayList<ActorMovieIMDB>) bridges.getActorMovieIMDBData(1813);

@@ -11,16 +11,19 @@ public class bst {
 
 		//create the Bridges object
 #if TESTING
+
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
+
+		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
+		bridges.setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than "
+			+ "the parent is set to the right and nodes with a magnitude less than the parent set to the left. "
+			+ "The root is set to red the leaf nodes are neutral.");
+			
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
-		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
-		bridges.setDescription("In this example, the user requests 10 records from USGS using the BRIDGES API function getEarthquakeUSGSData(). "
-                +   "The results are then stored as BST nodes using a for loop keeping track of the earthquakes magnitude and the earthquakes number. "
-                +   "Once created, each BST node is passed to a function that stores them within a binary tree using the magnitude to determine its position.");
 
 		// Retrieve a list of 10 earthquake  records  from USGS using the BRIDGES API
 		List<EarthquakeUSGS> eqlist = Bridges.getEarthquakeUSGSData(10);

@@ -14,9 +14,11 @@ def main():
     if len(args) > 3:
         bridges.connector.set_server(args[3])
 
-    # set a title for the visualization
-    bridges.set_title("A Simple Graph (Adjacency List) Example Using IMDB Actor/Movie Data")
-
+    #Title and Description
+    bridges.set_title("A Simple Graph (Adjacency List) Example using IMDB Actor/Movie Data")
+    bridges.set_description("Two lists each having an actor as the root node with 15 movies they played in as leaf nodes. "
+            +	"Root nodes are both red, Kevin Bacon's leaf nodes are green and Denzel Washington's leaf nodes are neutral.")
+            
     actor_movie_data = get_actor_movie_imdb_data(1813)
 
     # create an adjacency list based graph

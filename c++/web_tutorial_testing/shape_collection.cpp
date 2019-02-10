@@ -14,6 +14,11 @@ int main(int argc, char **argv) {
         bridges->setServer(argv[4]);
 
 	bridges->setTitle("Symbol Collection");
+	bridges->setDescription("Red square, green circle, magenta horizontal and vertical lines, "
+				"and a test label with a purple outline.");
+			
+
+	bridges->setTitle("Symbol Collection");
 	bridges->setDescription("Some Shapes and Symbols");
 
 	SymbolCollection *sc = new SymbolCollection(); 

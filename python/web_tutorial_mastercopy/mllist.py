@@ -12,6 +12,12 @@ def main():
     if len(args) > 3:
         bridges.connector.set_server(args[3])
 
+    #Title and Description
+    bridges.set_title("A Multilist Example")
+    bridges.set_description("The multilist example should have one large red node, three small square red nodes, "
+            +	"and eight neutral nodes. The larger red node is connected via a red link to a neutral node. The next "
+            +	"link from the neutral node is blue followed by a cyan link between two of the small square red nodes.")
+
     # create multi linked list
     el0 = MLelement("0", "0")
     el1 = MLelement("1", "1")
