@@ -33,20 +33,20 @@ int main(int argc, char **argv) {
 	//create the Bridges object, set credentials
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 #else
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                 "YOUR_API_KEY");
 #endif
 
 	
-	bridges->setTitle("Graph : Earthquake Data (USGS)");
+	bridges.setTitle("Graph : Earthquake Data (USGS)");
 
 	//Get most recent 10000 earthquakes
-	DataSource *ds = new DataSource;
-	std::vector< EarthquakeUSGS > eqs = ds->getEarthquakeUSGSData(1000);
+	DataSource ds (&bridges);
+	std::vector< EarthquakeUSGS > eqs = ds.getEarthquakeUSGSData(1000);
 
 	//sort earthquake by decreasing magnitude
 	std::sort(eqs.begin(), eqs.end(),
@@ -93,13 +93,13 @@ int main(int argc, char **argv) {
 	}	
 	
 	// tell Bridges what data structure to visualize
-	bridges->setDataStructure(&graph);
+	bridges.setDataStructure(&graph);
 
-	bridges->setCoordSystemType("equirectangular");
-	bridges->setMapOverlay(true);
+	bridges.setCoordSystemType("equirectangular");
+	bridges.setMapOverlay(true);
 
 	// visualize the list
-	bridges->visualize();
+	bridges.visualize();
 	
 	//add edges between
 	for (int i=0; i<eqs.size(); ++i) {
@@ -124,17 +124,17 @@ int main(int argc, char **argv) {
 	}
 	
 	// visualize the list
-	bridges->visualize();
+	bridges.visualize();
 
 	for (int i=0; i<eqs.size(); ++i) {
 	  auto nvp = graph.getVisualizer(i);
 	  nvp->setLocation(INFINITY, INFINITY);
 	}
 	
-	bridges->setMapOverlay(false);
+	bridges.setMapOverlay(false);
 
 	// visualize the list
-	bridges->visualize();
+	bridges.visualize();
 	
 	return 0;
 }
