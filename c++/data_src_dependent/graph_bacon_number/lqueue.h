@@ -23,7 +23,7 @@ private:
   int size;					// Number of elements in queue
 
 public:
-  LQueue(int sz =defaultSize) // Constructor 
+  LQueue() // Constructor 
     { front = rear = new SLelement<E>(); size = 0; }
 
   ~LQueue() { clear(); delete front; }      // Destructor
@@ -31,6 +31,7 @@ public:
   void clear() {           // Clear queue
     while(front->getNext() != NULL) { // Delete each link node
       rear = front;
+      front = front->getNext();
       delete rear;
     }
     rear = front;

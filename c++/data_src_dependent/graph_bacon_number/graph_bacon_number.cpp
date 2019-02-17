@@ -34,8 +34,7 @@ int main(int argc, char **argv) {
                                 "YOUR_API_KEY");
 #endif
 
-
-	// set title for visualization
+    // set title for visualization
 	bridges.setTitle("Bacon Number: IMDB Actor-Movie Data");
 
 	// use an adjacency list based graph
@@ -124,18 +123,18 @@ int getBaconNumber (GraphAdjList<string>& gr,   		// input graph
 														// back to source actor
 													
 	// Need to use a queue, as we are doing a BFS search
-  LQueue<string>* lq = new LQueue<string>;
+  LQueue<string> lq;
 
 	// add the source actor to the queue
-	lq->enqueue(src_actor);
+	lq.enqueue(src_actor);
 	// initializations
 	mark[src_actor] = "visited";
 	dist[src_actor] =  0;
 	parent[src_actor]  = "none";
 
 	// BFS traversal
-	while (lq->length() > 0) {  // non empty queue
-		string vertex = (string) lq->dequeue();
+	while (lq.length() > 0) {  // non empty queue
+		string vertex = (string) lq.dequeue();
 
 		// get adjacency list of vertex
 		const SLelement<Edge<string>> *sl_list = gr.getAdjacencyList(vertex);
@@ -148,7 +147,7 @@ int getBaconNumber (GraphAdjList<string>& gr,   		// input graph
 			// increment distance and point point parent back to vertex name
 			if (mark[w] == "unvisited"){
 				mark[w] =  "visited";
-				lq->enqueue(w);
+				lq.enqueue(w);
 								// update the distance and parent values
 				dist[w] =  dist[vertex]+1;
 				parent[w] = vertex;
