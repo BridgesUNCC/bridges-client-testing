@@ -51,21 +51,21 @@ int main(int argc, char* argv[]) {
 	//create the Bridges object, set credentials
 #if TESTING
 	// command line args provide credentials and server to test on
-	Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+	Bridges bridges(atoi(argv[1]), argv[2], argv[3]);
 	if (argc > 4)
-		bridges->setServer(argv[4]);
+		bridges.setServer(argv[4]);
 #else
-	Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+	Bridges bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
 		"YOUR_API_KEY");
 #endif
 
 
 
 	//Get Song data
-	DataSource *ds = new DataSource;
-	Song s = ds->getSong(title, author);
+	DataSource ds (&bridges);
+	Song s = ds.getSong(title, author);
 
-	bridges->setTitle("Song Grid - `" + title + "'  by " + author);
+	bridges.setTitle("Song Grid - `" + title + "'  by " + author);
 
 
 	//print lyrics
@@ -98,10 +98,10 @@ int main(int argc, char* argv[]) {
 	}
 
 	//tell Bridges what data structure to visualize
-	bridges->setDataStructure(&grid);
+	bridges.setDataStructure(&grid);
 
 	// visualize the grid
-	bridges->visualize();
+	bridges.visualize();
 
 	return 0;
 }

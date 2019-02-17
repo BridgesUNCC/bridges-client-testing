@@ -76,20 +76,20 @@ int main(int argc, char **argv) {
 	//create the Bridges object, set credentials
 #if TESTING
 	// command line args provide credentials and server to test on
-	Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
 	if (argc > 4)
-		bridges->setServer(argv[4]);
+		bridges.setServer(argv[4]);
 #else
-	Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+	Bridges bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
 		"YOUR_API_KEY");
 #endif
 
 
-	bridges->setTitle("Linked List with Earthquake Data");
+	bridges.setTitle("Linked List with Earthquake Data");
 
 	//Get Earthquake data
-	DataSource *ds = new DataSource;
-	std::vector< EarthquakeUSGS > eqs = ds->getEarthquakeUSGSData(500);
+	DataSource ds (&bridges);
+	std::vector< EarthquakeUSGS > eqs = ds.getEarthquakeUSGSData(500);
 
 	//Building linked list
 	SLelement<EarthquakeUSGS>* head = nullptr;
@@ -111,10 +111,10 @@ int main(int argc, char **argv) {
 	}
 
 	// tell Bridges what data structure to visualize
-	bridges->setDataStructure(head);
+	bridges.setDataStructure(head);
 
 	// visualize the list
-	bridges->visualize();
+	bridges.visualize();
 
 	//free memory
 	while (head != nullptr) {

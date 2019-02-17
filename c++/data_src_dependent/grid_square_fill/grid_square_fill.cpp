@@ -9,11 +9,11 @@ using namespace bridges;
 int main(int  argc, char **argv) {
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges(atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 #else
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                 "YOUR_API_KEY");
 #endif
 
@@ -28,7 +28,7 @@ int main(int  argc, char **argv) {
     int free = 0;
 
     ColorGrid grid(rows, columns, Color(255, 255, 255, free));
-    bridges->setTitle("Square Fill Grid");
+    bridges.setTitle("Square Fill Grid");
 
     srand((unsigned) time(nullptr));
 
@@ -106,8 +106,8 @@ int main(int  argc, char **argv) {
 
     }
 
-    bridges->setDataStructure(&grid);
-    bridges->visualize();
+    bridges.setDataStructure(&grid);
+    bridges.visualize();
 
     return 0;
 }
