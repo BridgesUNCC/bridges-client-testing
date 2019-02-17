@@ -18,29 +18,29 @@ int main(int argc, char **argv) {
 			end_color = "red";
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 #else
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                 "YOUR_API_KEY");
 #endif
 		
-	bridges->setTitle("BST Example: IGN Game Data");
+	bridges.setTitle("BST Example: IGN Game Data");
 								// read the data and build the BST
 
-	DataSource *ds = new DataSource;
-    vector<Game> game_list = ds->getGameData();
+	DataSource ds (&bridges);
+    vector<Game> game_list = ds.getGameData();
 
-	BST<string, Game> *bst = new BST<string, Game> ();
+    BST<string, Game> bst;
 
 	for (int k = 0; k < 1000;k++) {
 		Game g = game_list[k];
-		bst->insert(g.getTitle(), g);
+		bst.insert(g.getTitle(), g);
 	}
 					// visualize the binary search tree
-	bridges->setDataStructure(bst->getRoot());
-	bridges->visualize();
+	bridges.setDataStructure(bst.getRoot());
+	bridges.visualize();
 
 	return 0;
 }

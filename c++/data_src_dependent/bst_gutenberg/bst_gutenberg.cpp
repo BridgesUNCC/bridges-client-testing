@@ -20,33 +20,33 @@ int main(int argc, char **argv) {
 		
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 #else
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                 "YOUR_API_KEY");
 #endif
 
 								// read the earth quake  data and build the BST
 
-	bridges->setTitle("BST Example: Gutenberg Book Collection");
+	bridges.setTitle("BST Example: Gutenberg Book Collection");
 
-	DataSource *ds = new DataSource;
+	DataSource ds (&bridges);
 
-    vector<GutenbergBook> book_list = ds->getGutenbergBookData();
+    vector<GutenbergBook> book_list = ds.getGutenbergBookData();
 
-	BST<string, GutenbergBook> *bst = new BST<string, GutenbergBook> ();
+    BST<string, GutenbergBook> bst;
 
 	for (int k = 0; k < book_list.size(); k++) {
 		GutenbergBook b = book_list[k];
-		bst->insert(b.getTitle(), b);
+		bst.insert(b.getTitle(), b);
 	}
 
 
 					// visualize the binary search tree
-	bridges->setDataStructure(bst->getRoot());
-	bridges->visualize();
+	bridges.setDataStructure(bst.getRoot());
+	bridges.visualize();
 
 	return 0;
 }

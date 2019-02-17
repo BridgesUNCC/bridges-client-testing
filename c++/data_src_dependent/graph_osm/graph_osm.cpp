@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
   }
   
   //create the Bridges object, set credentials
-  Bridges *bridges =  new Bridges(16, "esaule", "SOMETHING");
+  Bridges *bridges =  new Bridges(16, "esaule", "1090423871824");
 
 	
 	bridges->setTitle("Graph : OpenStreet Map Example");
