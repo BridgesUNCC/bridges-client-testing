@@ -29,16 +29,16 @@ int main(int argc, char **argv) {
 	if (argc == 4)		// Server type provided
 		bridges.setServer(argv[3]);
 		
-	Array<string> *arr = new Array<string>(4, 4, 4);
+	Array<string> arr (4, 4, 4);
 
-	arr->getElement(0, 0, 0).getVisualizer()->setColor(Color("red"));
-	arr->getElement(0, 3, 0).getVisualizer()->setColor(Color("green"));
-	arr->getElement(3, 0, 0).getVisualizer()->setColor(Color("blue"));
-	arr->getElement(3, 3, 0).getVisualizer()->setColor(Color("magenta"));
-	arr->getElement(1, 1, 0).getVisualizer()->setColor(Color("cyan"));
-	arr->getElement(2, 2, 0).getVisualizer()->setColor(Color("yellow"));
+	arr.getElement(0, 0, 0).getVisualizer()->setColor(Color("red"));
+	arr.getElement(0, 3, 0).getVisualizer()->setColor(Color("green"));
+	arr.getElement(3, 0, 0).getVisualizer()->setColor(Color("blue"));
+	arr.getElement(3, 3, 0).getVisualizer()->setColor(Color("magenta"));
+	arr.getElement(1, 1, 0).getVisualizer()->setColor(Color("cyan"));
+	arr.getElement(2, 2, 0).getVisualizer()->setColor(Color("yellow"));
 
-	bridges.setDataStructure(arr);
+	bridges.setDataStructure(&arr);
 	bridges.visualize();
 
 	return 0;

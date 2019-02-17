@@ -2,12 +2,11 @@
 #include "Bridges.h"
 #include "AVLTreeElement.h"
 
-
 using namespace std;
 using namespace bridges;
 
 int main(int argc, char **argv) {
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
 
 	AVLTreeElement<int, string> *tle0 =
@@ -46,11 +45,10 @@ int main(int argc, char **argv) {
 	tle2->setLabel(std::to_string(tle2->getBalanceFactor()));
 	tle3->setLabel(std::to_string(tle3->getBalanceFactor()));
 
-	bridges->setTitle("AVL Tree Example");
 	// provide BRIDGES the  handle to the tree structure
-	bridges->setDataStructure(tle0);
+	bridges.setDataStructure(tle0);
 
-	bridges->visualize();
+	bridges.visualize();
 
 	return 0;
 }

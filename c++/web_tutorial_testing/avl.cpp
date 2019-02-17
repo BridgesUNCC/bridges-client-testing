@@ -7,12 +7,14 @@ using namespace bridges;
 
 int main(int argc, char **argv) {
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+    
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 
-	bridges->setTitle("AVL Tree Example");
-	bridges->setDescription("This AVL tree has six elements. "
+	bridges.setTitle("AVL Tree Example");
+	bridges.setDescription("This AVL tree has six elements. "
 					 "The root is magenta color and has three nodes on its left "
 					 "and two nodes on its right. The values from lower left to the root, 20, 40, 30, 50. "
 					 "And from lower right to root, 90, 70, 50.");
@@ -54,11 +56,10 @@ int main(int argc, char **argv) {
 	tle2->setLabel(std::to_string(tle2->getBalanceFactor()));
 	tle3->setLabel(std::to_string(tle3->getBalanceFactor()));
 
-	bridges->setTitle("AVL Tree Example");
 	// provide BRIDGES the  handle to the tree structure
-	bridges->setDataStructure(tle0);
+	bridges.setDataStructure(tle0);
 
-	bridges->visualize();
+	bridges.visualize();
 
 	return 0;
 }

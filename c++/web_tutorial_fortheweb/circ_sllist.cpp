@@ -10,7 +10,7 @@
 using namespace bridges;
 
 int main (int argc, char **argv) {
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
 
 	// create the linked list elements with
@@ -93,7 +93,7 @@ int main (int argc, char **argv) {
 
 
 	// set data structure to point to head
-	bridges->setDataStructure(head);
+	bridges.setDataStructure(head);
 	// visualize the circular list
-	bridges->visualize();
+	bridges.visualize();
 }

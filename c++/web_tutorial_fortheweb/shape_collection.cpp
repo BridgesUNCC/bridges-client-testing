@@ -8,11 +8,8 @@
 using namespace bridges;
 
 int main(int argc, char **argv) {
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
-
-	bridges->setTitle("Symbol Collection");
-	bridges->setDescription("Some Shapes and Symbols");
 
 	SymbolCollection *sc = new SymbolCollection(); 
 	Rectangle *s1 = new Rectangle(-25, 0, 50, 50);
@@ -46,9 +43,9 @@ int main(int argc, char **argv) {
 
 	// set visualizer type
 
-	bridges->setDataStructure(sc);
+	bridges.setDataStructure(sc);
 				// visualize the JSON and Collection
-	bridges->visualize();
+	bridges.visualize();
 			
 	return 0;
 }

@@ -15,12 +15,14 @@ int max_quakes = 25;
 
 int main(int argc, char **argv) {
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+    
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 
-	bridges->setTitle("A Binary Search Tree Example with Earthquake Data");
-	bridges->setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than "
+	bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
+	bridges.setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than "
 		 "the parent is set to the right and nodes with a magnitude less than the parent set to the left. "
 		 "The root is set to red the leaf nodes are neutral.");
 		
@@ -28,10 +30,7 @@ int main(int argc, char **argv) {
 	string hilite_color = "orange",
 		   def_color = "green",
 		   end_color = "red";
-		
-	// read the earth quake  data and build the BST
-	bridges->setTitle("Recent Earthquakes (USGIS Data)");
-
+    
 	DataSource *ds = new DataSource;
 
 	vector<EarthquakeUSGS> eq_list = ds->getEarthquakeUSGSData(max_quakes);
@@ -50,8 +49,8 @@ int main(int argc, char **argv) {
 	}
 
 	// visualize the binary search tree
-	bridges->setDataStructure(root);
-	bridges->visualize();
+	bridges.setDataStructure(root);
+	bridges.visualize();
 
 	return 0;
 }

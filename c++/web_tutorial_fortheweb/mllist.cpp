@@ -5,10 +5,8 @@
 using namespace bridges;
 
 int main(int argc, char **argv)  {
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
-
-	bridges->setTitle("A Trivial Multilist Example");
 
 	//create  a linked list
 
@@ -54,9 +52,10 @@ int main(int argc, char **argv)  {
 	el2->getLinkVisualizer(el3)->setThickness(3);
 
 	el0->getVisualizer()->setColor(Color("red"));
+    
 	//set visualizer type
-	bridges->setDataStructure(el0);
+	bridges.setDataStructure(el0);
 
 	// visualize the list
-	bridges->visualize();
+	bridges.visualize();
 }

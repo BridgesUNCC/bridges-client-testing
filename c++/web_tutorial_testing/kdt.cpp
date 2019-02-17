@@ -5,16 +5,15 @@ using namespace bridges;
 
 int main(int argc, char **argv) {
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 
-	bridges->setTitle("A Kd Tree Example");
-	bridges->setDescription("A three-level tree with partitioners cycling between X and Y."
+	bridges.setTitle("A Kd Tree Example");
+	bridges.setDescription("A three-level tree with partitioners cycling between X and Y."
 			 " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
 	
-
-	bridges->setTitle("A Kd Tree Example");
 
 	KdTreeElement<int, int> *t0 = new KdTreeElement<int, int>(50, 0);
 	KdTreeElement<int, int> *t1 = new KdTreeElement<int, int>(25, 1);
@@ -48,9 +47,9 @@ int main(int argc, char **argv) {
 	t6->getVisualizer()->setColor(Color("orange"));
 
 	// provide BRIDGES the  handle to the tree structure
-	bridges->setDataStructure(t0);
+	bridges.setDataStructure(t0);
 
-	bridges->visualize();
+	bridges.visualize();
 
 	return 0;
 }

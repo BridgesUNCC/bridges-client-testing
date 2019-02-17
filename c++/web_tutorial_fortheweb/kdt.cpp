@@ -4,10 +4,8 @@
 using namespace bridges;
 
 int main(int argc, char **argv) {
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
-
-	bridges->setTitle("A Kd Tree Example");
 
 	KdTreeElement<int, int> *t0 = new KdTreeElement<int, int>(50, 0);
 	KdTreeElement<int, int> *t1 = new KdTreeElement<int, int>(25, 1);
@@ -41,9 +39,9 @@ int main(int argc, char **argv) {
 	t6->getVisualizer()->setColor(Color("orange"));
 
 	// provide BRIDGES the  handle to the tree structure
-	bridges->setDataStructure(t0);
+	bridges.setDataStructure(t0);
 
-	bridges->visualize();
+	bridges.visualize();
 
 	return 0;
 }

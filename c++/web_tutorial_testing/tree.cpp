@@ -8,12 +8,14 @@ using namespace bridges;
 int main(int argc, char **argv) {
 
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+    
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 
-	bridges->setTitle("A General Tree Example");
-	bridges->setDescription("A basic tree with seven nodes. Three on one side and three on the other. The root node is set to red with 0.3 opacity. "
+	bridges.setTitle("A General Tree Example");
+	bridges.setDescription("A basic tree with seven nodes. Three on one side and three on the other. The root node is set to red with 0.3 opacity. "
 				"The other six nodes are neutral color.");
 			
 
@@ -50,11 +52,10 @@ int main(int argc, char **argv) {
 	t0->getVisualizer()->setColor(Color("red"));
 	t0->getVisualizer()->setOpacity(0.3f);
 
-	bridges->setTitle("A General Tree Example");
 	// provide BRIDGES the  handle to the tree structure
-	bridges->setDataStructure(t0);
+	bridges.setDataStructure(t0);
 
-	bridges->visualize();
+	bridges.visualize();
 
 	return 0;
 }

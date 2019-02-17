@@ -9,21 +9,20 @@ using namespace bridges;
 
 int main(int argc, char **argv) {
                         // command line args provide credentials and server to test on
-    Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+    
     if (argc > 4)
-        bridges->setServer(argv[4]);
+        bridges.setServer(argv[4]);
 
 	// set a title for the visualization
-	bridges->setTitle("A Simple Graph (Adjacency List) Example using IMDB Actor/Movie Data");
-	bridges->setDescription("Two lists each having an actor as the root node with 15 movies they played in as leaf nodes. "
+	bridges.setTitle("A Simple Graph (Adjacency List) Example using IMDB Actor/Movie Data");
+	bridges.setDescription("Two lists each having an actor as the root node with 15 movies they played in as leaf nodes. "
 				"Root nodes are both red, Kevin Bacon's leaf nodes are green and Denzel Washington's leaf nodes are neutral.");
 			
 
-
-	bridges->setTitle("Graph Adj List Example: IMDB Data");
-
-	DataSource *ds = new DataSource;
-	vector<ActorMovieIMDB> actor_list = ds->getActorMovieIMDBData(1813);
+	DataSource ds (&bridges);
+	vector<ActorMovieIMDB> actor_list = ds.getActorMovieIMDBData(1813);
 
 	GraphAdjList<string, string> graph;
 
@@ -89,9 +88,9 @@ int main(int argc, char **argv) {
 	}
 
 	// provide BRIDGES the  handle to the tree structure
-	bridges->setDataStructure(&graph);
+	bridges.setDataStructure(&graph);
 	// Visualize the graph
-	bridges->visualize();
+	bridges.visualize();
 
 	return 0;
 }

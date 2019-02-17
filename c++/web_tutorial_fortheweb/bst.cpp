@@ -5,7 +5,6 @@
 #include "data_src/EarthquakeUSGS.h"
 #include "BSTElement.h"
 
-
 using namespace std;
 using namespace bridges;
 
@@ -15,16 +14,13 @@ BSTElement<float, EarthquakeUSGS> *insert (BSTElement<float, EarthquakeUSGS> *rt
 int max_quakes = 25;
 
 int main(int argc, char **argv) {
-    Bridges *bridges =  new Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
 
 	string hilite_color = "orange",
 		   def_color = "green",
 		   end_color = "red";
-		
-	// read the earth quake  data and build the BST
-	bridges->setTitle("Recent Earthquakes (USGIS Data)");
-
+    
 	DataSource *ds = new DataSource;
 
 	vector<EarthquakeUSGS> eq_list = ds->getEarthquakeUSGSData(max_quakes);
@@ -43,8 +39,8 @@ int main(int argc, char **argv) {
 	}
 
 	// visualize the binary search tree
-	bridges->setDataStructure(root);
-	bridges->visualize();
+	bridges.setDataStructure(root);
+	bridges.visualize();
 
 	return 0;
 }
