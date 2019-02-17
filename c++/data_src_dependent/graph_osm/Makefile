@@ -1,33 +1,65 @@
-CC = c++
 
-TARGET = graph_osm
+#
+#Platform specific variables
+#
+include ../../../env_vars.mk
 
-SRCS = graph_osm.cpp
+#
+#
+
+ASTYLE = astyle
+ASTYLE_PARAMS = -A2 -T4 -xn -xc -xV -C -S -N -xU  -Y -p -xg -H -y -xb
+
+TARGET =  all
+
+
+SRCS=$(wildcard *.cpp)
+
 OBJS = $(SRCS:.cpp=.o)
 
-BRIDGES_INCL = $(HOME)/gr/bridges/client/cxx/src
-RAPID_JSON_INCL =  /usr/local/rapidjson/include
-IFLAGS = -I.  -I/usr/local/curl760/include/curl -I$(BRIDGES_INCL)  -I$(RAPID_JSON_INCL)
+EXECUTABLES = $(SRCS:.cpp=)
 
-CPPFLAGS = -c -g $(IFLAGS) -std=c++11 -stdlib=libc++
 
-LDFLAGS =  -L/usr/local/curl760/lib
-LIBS =  -lcurl
+STYLE_INCLUDES=$(wildcard *.h)
 
-.SUFFIXES: .cpp
+# Incude and Library paths
 
-.cpp.h: $(INCLUDES)
-	$(CC) $(CPPFLAGS)  $< -o $@
 
-.cpp.o:  
-	$(CC) $(CPPFLAGS)  $< -o $@
 
-TARGET: $(OBJS) 
-	$(CC) -g -o $(TARGET) $(OBJS) $(LDFLAGS) $(LIBS)
+# Include and library flags
+
+IFLAGS = -I$(BRIDGES_INCL)  -I$(CURL_INCL)  -I$(RAPID_JSON_INCL) -DTESTING=1
+LDFLAGS =  -L$(CURL_LIB_PATH) $(LOCALLDFLAGS)
+CXXFLAGS = -g $(IFLAGS) -std=c++11 $(LOCALCXXFLAGS)
+
+# Libraries
+
+LIBS = -l$(CURL_LIB)
+
+.SUFFIXES: .cpp .o
+
+%: %.cpp
+	$(CXX) -g -o $@ $< $(CXXFLAGS) $(LDFLAGS) $(LIBS)
+
+.o:
+	$(LD) $(LDFLAGS)  $< -o $@ $(LIBS)
+
+.cpp.o:
+	$(CXX) -c -g -o $@ $< $(CXXFLAGS)
+
+
+
+
+style:  
+	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) $(STYLE_INCLUDES)
 
 clean:
-	rm bstTest.o bstt
+	rm -f $(EXECUTABLES) $(OBJS)
+
+
+
+depend: $(SRCS)
+	gcc -MD  $(IFLAGS) $(SRCS)
 
 
 # DO NOT DELETE
-
