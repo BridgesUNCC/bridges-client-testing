@@ -15,15 +15,16 @@ import bridges.data_src_dependent.ActorMovieIMDB;
 
 
 
-public class tmp {
+public class graph_bacon_number {
 	public static void main(String[] args) throws Exception {
 		
 		// Initialize BRIDGES with your credentials
 
-        Bridges bridges = new Bridges (0, "kalpathi60", "486749122386");
-        bridges.setServer ("live");
+        Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
+        bridges.setServer (args[3]);
 		// set title for visualization
 		bridges.setTitle("Bacon Number: IMDB Actor-Movie Data");
+		bridges.setDescription("Illustrates the shortest path between two actors: Kevin Bacon to Cary Grant");
 
 		// use an adjacency list based graph
 		GraphAdjListSimple<String> gr = new GraphAdjListSimple<>();
