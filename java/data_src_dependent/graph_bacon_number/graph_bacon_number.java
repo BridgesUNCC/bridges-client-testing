@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 import java.lang.String;
 import java.util.List;
+import java.util.LinkedList;
 
 import bridges.connect.Bridges;
 import bridges.base.SLelement;
@@ -14,13 +15,13 @@ import bridges.data_src_dependent.ActorMovieIMDB;
 
 
 
-public class graph_bacon_number {
+public class tmp {
 	public static void main(String[] args) throws Exception {
 		
 		// Initialize BRIDGES with your credentials
 
-        Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
-        bridges.setServer (args[3]);
+        Bridges bridges = new Bridges (0, "kalpathi60", "486749122386");
+        bridges.setServer ("live");
 		// set title for visualization
 		bridges.setTitle("Bacon Number: IMDB Actor-Movie Data");
 
@@ -60,16 +61,21 @@ public class graph_bacon_number {
 			// TO DO : Highlight "Cate_Blanchett" node and the movie nodes she is 
 			// connected to in "red" and do the same for "Kevin_Bacon_(I)" in "green"
 			// specify colors by their names, "red", for example
-			if (actor.equals("Cate_Blanchett")) {
-				gr.getLinkVisualizer (actor, movie).setColor ("orange");
-				gr.getVisualizer (actor).setColor ("orange");
-				gr.getVisualizer (movie).setColor ("orange");
-			}
-			if (actor.equals("Kevin_Bacon_(I)")) {
-				gr.getLinkVisualizer (actor, movie).setColor ("green");
-				gr.getVisualizer (actor).setColor ("green");
-				gr.getVisualizer (movie).setColor ("green");
-			}
+			String col = "";
+			if (actor.equals("Charles_Grodin_(I)")) col = "orange"; 
+			else if (actor.equals("Kevin_Bacon_(I)")) col = "green";
+			else if (actor.equals( "Christopher_Lee_(I)")) col = "red";
+			else if (actor.equals( "Morgan_Freeman_(I)")) col = "purple";
+			else if (actor.equals( "James_Earl_Jones")) col = "yellow";
+			else if (actor.equals( "Cary_Grant")) col = "cyan";
+			else if (actor.equals( "Billy_Crystal")) col = "magenta";
+			else if (actor.equals( "Cate_Blanchett")) col = "maroon";
+			else col = "blue";
+
+            gr.getLinkVisualizer (actor, movie).setColor (col);
+//          gr.getLinkVisualizer (movie, actor).setColor (col);
+            gr.getVisualizer (actor).setColor (col);
+            gr.getVisualizer (movie).setColor (col);
 		}
 
 		//set the data structure handle, and visualize the input graph
@@ -85,7 +91,7 @@ public class graph_bacon_number {
 			dist.put(v.getKey(), 0);
 		}
 
-		int d = getBaconNumber(gr, "Kevin_Bacon_(I)", "Cate_Blanchett", 
+		int d = getBaconNumber(gr, "Kevin_Bacon_(I)", "Cary_Grant", 
 										mark, dist, parent);
 
 		bridges.setDataStructure(gr);
@@ -106,18 +112,18 @@ public class graph_bacon_number {
 															// back to source actor
 	try {
 		// Need to use a queue, as we are doing a BFS search
-		LQueue<String> lq = new LQueue<String>();
+		LinkedList<String> lq = new LinkedList<String>();
 
 		// add the source actor to the queue
-		lq.enqueue(src_actor);
+		lq.addLast(src_actor);
 		// initializations
 		mark.put(src_actor, "visited");
 		dist.put(src_actor,  0);
 		parent.put(src_actor, "none");
 
 		// BFS traversal
-		while (lq.length() > 0) {  // non empty queue
-			String vertex = (String) lq.dequeue();
+		while (lq.size() > 0) {  // non empty queue
+			String vertex = (String) lq.removeFirst();
 
 			// get adjacency list of vertex
 			SLelement<Edge<String, String>> sl_list = gr.getAdjacencyList(vertex);
@@ -130,7 +136,7 @@ public class graph_bacon_number {
 				// increment distance and point point parent back to vertex name
 				if (mark.get(w).equals("unvisited")){
 					mark.put(w, "visited");
-					lq.enqueue(w);
+					lq.addLast(w);
 									// update the distance and parent values
 					dist.put(w, dist.get(vertex)+1);
 					parent.put(w, vertex);
