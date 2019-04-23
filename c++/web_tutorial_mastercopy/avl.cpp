@@ -40,10 +40,10 @@ int main(int argc, char **argv) {
 	tle1->setLeft(tle2);
 
 	// set attributes
-	tle0->getVisualizer()->setColor(Color("red"));
-	tle1->getVisualizer()->setColor(Color("green"));
-	tle2->getVisualizer()->setColor(Color("blue"));
-	tle3->getVisualizer()->setColor(Color("yellow"));
+	tle0->setColor(Color("red"));
+	tle1->setColor(Color("green"));
+	tle2->setColor(Color("blue"));
+	tle3->setColor(Color("yellow"));
 
 	tle0->getLinkVisualizer(tle1)->setColor(Color("red"));
 	tle1->getLinkVisualizer(tle2)->setColor(Color("green"));

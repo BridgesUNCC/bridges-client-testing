@@ -33,12 +33,12 @@ int main(int argc, char **argv) {
 		for (int j = 0; j < dims[1]; j++)
 			arr.getElement(i, j).setLabel("El " + to_string(i * dims[1] + j));
 
-	arr.getElement(0, 0).getVisualizer()->setColor(Color("red"));
-	arr.getElement(0, 3).getVisualizer()->setColor(Color("green"));
-	arr.getElement(3, 0).getVisualizer()->setColor(Color("blue"));
-	arr.getElement(3, 3).getVisualizer()->setColor(Color("magenta"));
-	arr.getElement(1, 1).getVisualizer()->setColor(Color("cyan"));
-	arr.getElement(2, 2).getVisualizer()->setColor(Color("yellow"));
+	arr.getElement(0, 0).setColor(Color("red"));
+	arr.getElement(0, 3).setColor(Color("green"));
+	arr.getElement(3, 0).setColor(Color("blue"));
+	arr.getElement(3, 3).setColor(Color("magenta"));
+	arr.getElement(1, 1).setColor(Color("cyan"));
+	arr.getElement(2, 2).setColor(Color("yellow"));
 
 	bridges.setDataStructure(&arr);
 	bridges.visualize();

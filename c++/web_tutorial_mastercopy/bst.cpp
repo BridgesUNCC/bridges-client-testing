@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
 			to_string(eq.getLatit()) + "," + to_string(eq.getLongit()) + " )\\n" +
 			eq.getDateStr());
 		root = insert (root, bst_node);
-		root->getVisualizer()->setColor(Color("red"));
+		root->setColor(Color("red"));
 	}
 
 	// visualize the binary search tree

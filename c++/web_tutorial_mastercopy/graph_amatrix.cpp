@@ -40,8 +40,8 @@ int main(int argc, char **argv) {
 	graph.addVertex(washington, "");
 
 	// color the nodes
-	graph.getVertex(bacon)->getVisualizer()->setColor(Color("red"));
-	graph.getVertex(washington)->getVisualizer()->setColor(Color("red"));
+	graph.getVertex(bacon)->setColor(Color("red"));
+	graph.getVertex(washington)->setColor(Color("red"));
 
 	graph.addEdge(bacon, washington, 1);
 
@@ -61,7 +61,7 @@ int main(int argc, char **argv) {
 			graph.addEdge(m, bacon, 1);
 
 			// make the movie node a bit transparent
-			graph.getVertex(m)->getVisualizer()->setOpacity(0.5f);
+			graph.getVertex(m)->setOpacity(0.5f);
 			cnt1++;
 		}
 		else if ((a == "Denzel_Washington") && (cnt2 < 15)) {
@@ -70,7 +70,7 @@ int main(int argc, char **argv) {
 			graph.addEdge(washington, m, 1);
 			graph.addEdge(m, washington, 1);
 			// make the movie node a bit transparent
-			graph.getVertex(m)->getVisualizer()->setOpacity(0.5f);
+			graph.getVertex(m)->setOpacity(0.5f);
 			cnt2++;
 		}
 	}
@@ -87,7 +87,7 @@ int main(int argc, char **argv) {
 	for (auto& term_vertex : bacon_row) {
 		// color only the neighbors; make sure weight is non-zero
 		if (term_vertex.first != "Denzel_Washington" && term_vertex.second)
-			graph.getVertex(term_vertex.first)->getVisualizer()->setColor(Color("green"));
+			graph.getVertex(term_vertex.first)->setColor(Color("green"));
 	}
 
 	// provide BRIDGES the  handle to the tree structure
