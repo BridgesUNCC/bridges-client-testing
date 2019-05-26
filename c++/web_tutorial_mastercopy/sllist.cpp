@@ -94,7 +94,7 @@ int main (int argc, char **argv) {
 	while (currentElement != nullptr) {
 		// color the node
 		StudentInfo si = currentElement->getValue();
-		currentElement->getVisualizer()->setColor(si.getFavoriteColor());
+		currentElement->setColor(si.getFavoriteColor());
 
 		if (currentElement->getNext() != nullptr) {
 

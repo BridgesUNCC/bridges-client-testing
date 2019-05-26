@@ -53,16 +53,16 @@ int main(int argc, char **argv) {
 	t11->setRight(t13);
 
 
-	t0->getVisualizer()->setColor(Color("red"));
+	t0->setColor(Color("red"));
 	// color the leaf nodes that represent the code letters
-	t1->getVisualizer()->setColor(Color("orange"));
-	t4->getVisualizer()->setColor(Color("orange"));
-	t5->getVisualizer()->setColor(Color("orange"));
-	t6->getVisualizer()->setColor(Color("orange"));
-	t9->getVisualizer()->setColor(Color("orange"));
-	t12->getVisualizer()->setColor(Color("orange"));
-	t13->getVisualizer()->setColor(Color("orange"));
-	t14->getVisualizer()->setColor(Color("orange"));
+	t1->setColor(Color("orange"));
+	t4->setColor(Color("orange"));
+	t5->setColor(Color("orange"));
+	t6->setColor(Color("orange"));
+	t9->setColor(Color("orange"));
+	t12->setColor(Color("orange"));
+	t13->setColor(Color("orange"));
+	t14->setColor(Color("orange"));
 
 	// provide BRIDGES the  handle to the tree structure
 	bridges.setDataStructure(t0);

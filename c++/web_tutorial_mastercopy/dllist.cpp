@@ -84,7 +84,7 @@ int main(int argc, char **argv) {
 	DLelement<StudentInfo> *curr = head, *next;
 	while (curr != nullptr) {
 		curr->setLabel(curr->getValue().getStudentLabel());
-		curr->getVisualizer()->setColor(curr->getValue().getFavoriteColor());
+		curr->setColor(curr->getValue().getFavoriteColor());
 
 		DLelement<StudentInfo> n1, n2;
 		if (curr->getNext() != nullptr) {

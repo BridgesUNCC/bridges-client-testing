@@ -99,7 +99,7 @@ int main (int argc, char **argv) {
 	current = head;
 	do {
 		current->setLabel(current->getValue().getStudentLabel());
-		current->getVisualizer()->setColor(current->getValue().getFavoriteColor());
+		current->setColor(current->getValue().getFavoriteColor());
 
 		current->getLinkVisualizer(current->getNext())->setColor(current->getValue().getDislikeColor());
 		current->getLinkVisualizer(current->getNext())->setThickness(current->getValue().getStudentCreditHours() * 0.5);
