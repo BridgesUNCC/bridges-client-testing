@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
 	DataSource *ds = new DataSource;
 	vector<ActorMovieIMDB> actor_list = ds->getActorMovieIMDBData(1813);
 
-	GraphAdjList<string, string> graph;
+	GraphAdjList<string, string, int> graph;
 
 
 	// first create vertices for two actors
@@ -78,7 +78,15 @@ int main(int argc, char **argv) {
 	// Next, we illustrate traversing the adacency list and color the
 	// movie nodes adjacent to the Kevin Bacon node.
 
-	// first get the adjacency list for Kevin Bacon
+	// we will use iterators to traverse the adjacency list
+
+	for (auto& edge: graph.outgoingEdgeSetOf(bacon)) {
+		string from = edge.from(), to = edge.to();	
+		if (to != "Denzel_Washington")
+			graph.getVisualizer(to)->setColor(Color("green"));	
+	}
+
+/*
 	SLelement<Edge<string>>  *head = graph.getAdjacencyList().at(bacon);
 	// traverse the adjacency list
 	for (SLelement<Edge<string>> *sle = head; sle != nullptr;
@@ -91,6 +99,7 @@ int main(int argc, char **argv) {
 		if (term_vertex != "Denzel_Washington")
 			el->setColor(Color("green"));
 	}
+*/
 
 	// provide BRIDGES the  handle to the tree structure
 	bridges.setDataStructure(&graph);
