@@ -65,9 +65,9 @@ int main(int argc, char **argv) {
 //	}
 
 	//Builds a graph with nodes at correct location
-	GraphAdjList<int, EarthquakeUSGS> graph;
+	GraphAdjList<int, EarthquakeUSGS, int> graph;
 	
-	for (int i=0; i<eqs.size(); ++i) {
+	for (int i=0; i < eqs.size(); ++i) {
 	  auto eq = eqs[i];
 	  graph.addVertex(i, eq);
 	  

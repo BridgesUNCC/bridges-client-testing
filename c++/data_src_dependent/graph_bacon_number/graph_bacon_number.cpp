@@ -14,7 +14,7 @@ using namespace std;
 
 using namespace bridges;
 
-int getBaconNumber (GraphAdjList<string, string>&gr, string src_actor, 	
+int getBaconNumber (GraphAdjList<string, string, int>&gr, string src_actor, 	
 		string dest_actor,	unordered_map<string, string>& mark, 
 		unordered_map<string, int>& dist, unordered_map<string, string>& parent);
 
@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
 	bridges.setTitle("Bacon Number: IMDB Actor-Movie Data");
 
 	// use an adjacency list based graph
-	GraphAdjList<string> gr;
+	GraphAdjList<string, string, int> gr;
 
 	DataSource ds (&bridges);
 
@@ -114,7 +114,7 @@ int main(int argc, char **argv) {
 // Computes the Bacon Number of a an actor (#links that takes you from the 
 // source actor to the destination actor. 
 //
-int getBaconNumber (GraphAdjList<string>& gr,   		// input graph 
+int getBaconNumber (GraphAdjList<string, string, int>& gr,   		// input graph 
 				string src_actor, 						// source actor 
 				string dest_actor,						// destination actor
 				unordered_map<string, string>& mark, 	// mark array -- keep track of visited nodes
@@ -136,12 +136,9 @@ int getBaconNumber (GraphAdjList<string>& gr,   		// input graph
 	while (lq.length() > 0) {  // non empty queue
 		string vertex = (string) lq.dequeue();
 
-		// get adjacency list of vertex
-		const SLelement<Edge<string>> *sl_list = gr.getAdjacencyList(vertex);
-		for (const SLelement<Edge<string>> *sle = sl_list; sle != NULL; sle = 
-											sle->getNext()){
+		for (auto& edge: gr.outgoingEdgeSetOf(vertex)) {
 			// get destination vertex
-			string w = ((Edge<string>)sle->getValue()).getVertex();
+			string w = edge.to();
 
 			// if unvisited, mark it as visited and add to queue,
 			// increment distance and point point parent back to vertex name
