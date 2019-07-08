@@ -12,8 +12,8 @@ def main():
         bridges.connector.set_server(args[3])
 
     #Title and Description
-    bridges.setTitle("AVL Tree Example")
-    bridges.setDescription("This AVL tree has six elements. "
+    bridges.set_title("AVL Tree Example")
+    bridges.set_description("This AVL tree has six elements. "
                     + "The root is magenta color and has three nodes on its left "
                     + "and two nodes on its right. The values from lower left to the root, 20, 40, 30, 50. "
                     + "And from lower right to root, 90, 70, 50.")      

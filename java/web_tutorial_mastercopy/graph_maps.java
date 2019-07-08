@@ -19,7 +19,7 @@ public class graph_maps {
 #endif
 
 		// set a title for the visualization
-		bridges.setTitle("Graphs with Map Overlays");
+		bridges.set_title("Graphs with Map Overlays");
 
 		// create an adjacency list based graph
 		GraphAdjListSimple<String> g = new GraphAdjListSimple<String>();
@@ -42,7 +42,7 @@ public class graph_maps {
 		// visualize SVG World map
 		bridges.setCoordSystemType("equirectangular");
 		bridges.setMapOverlay(true);
-		bridges.setTitle("SVG World Map");
+		bridges.set_title("SVG World Map");
 		bridges.visualize();
 
 
@@ -61,7 +61,7 @@ public class graph_maps {
 		// visualize Canvas AlbersUSA map
 		bridges.setCoordSystemType("albersusa");
 		bridges.setMapOverlay(true);
-		bridges.setTitle("Canvas USA Map");
+		bridges.set_title("Canvas USA Map");
 		bridges.visualize();
 
 		// fix a node over London
@@ -71,7 +71,7 @@ public class graph_maps {
 		// visualize Canvas World map
 		bridges.setCoordSystemType("equirectangular");
 		bridges.setMapOverlay(true);
-		bridges.setTitle("Canvas World Map");
+		bridges.set_title("Canvas World Map");
 		bridges.visualize();
 	}
 }

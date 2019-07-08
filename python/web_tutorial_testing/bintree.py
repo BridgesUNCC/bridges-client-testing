@@ -13,8 +13,8 @@ def main():
         bridges.connector.set_server(args[3])
 
     #Title and Description
-    bridges.setTitle("A Huffman Coding Tree Example")
-    bridges.setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2 "
+    bridges.set_title("A Huffman Coding Tree Example")
+    bridges.set_description("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2 "
             + "Root is set to red and leaf nodes are set to orange.")
 
     #build the tree

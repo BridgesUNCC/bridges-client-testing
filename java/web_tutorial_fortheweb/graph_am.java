@@ -17,7 +17,7 @@ public class graph_am {
                                         "YOUR_API_KEY");
 
 		// set a title for the visualization
-		bridges.setTitle("A Simple Graph (Adjacency Matrix)  Example using IMDB Actor/Movie Data");
+		bridges.set_title("A Simple Graph (Adjacency Matrix)  Example using IMDB Actor/Movie Data");
 
 		ArrayList<ActorMovieIMDB>  actor_movie_data =
 			(ArrayList<ActorMovieIMDB>) bridges.getActorMovieIMDBData(1813);

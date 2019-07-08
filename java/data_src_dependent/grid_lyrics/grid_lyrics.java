@@ -140,7 +140,7 @@ public class grid_lyrics {
 			}
 		}
 
-		bridges.setTitle("Song Grids");
+		bridges.set_title("Song Grids");
 		bridges.setDataStructure(grid);
 		bridges.visualize();
 

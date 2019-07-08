@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 	arr->getElement(1, 1, 0).getVisualizer()->setColor(Color("cyan"));
 	arr->getElement(2, 2, 0).getVisualizer()->setColor(Color("yellow"));
 
-	bridges->setTitle("3D Array Example");
+	bridges->set_title("3D Array Example");
 	bridges->setDataStructure(arr);
 	bridges->visualize();
 

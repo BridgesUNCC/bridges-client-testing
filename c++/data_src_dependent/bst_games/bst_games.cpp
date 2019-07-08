@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
                                 "YOUR_API_KEY");
 #endif
 		
-	bridges.setTitle("BST Example: IGN Game Data");
+	bridges.set_title("BST Example: IGN Game Data");
 								// read the data and build the BST
 
 	DataSource ds (&bridges);

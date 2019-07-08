@@ -10,8 +10,8 @@ public class csllist {
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
-		bridges.setTitle("A Circle Singly Linked List Example");
-        bridges.setDescription("This example shows five nodes. Each node is linked only to its child node. "
+		bridges.set_title("A Circle Singly Linked List Example");
+        bridges.set_description("This example shows five nodes. Each node is linked only to its child node. "
 				+	"Colors are: A green node with a yellow link size 12, a blue node with a magenta link size 9, "
 				+	"a magenta node with a blue link size 9, a red node with a magenta link size 11, and a yellow node with "
 				+	"a red link size 15.");

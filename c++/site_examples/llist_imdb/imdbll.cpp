@@ -24,8 +24,8 @@ int main(int argc, char **argv) {
 		
 							// BRIDGES initializations
 	Bridges *bridges = new Bridges(100, argv[1], argv[2]);
-	bridges->setTitle("Linked List Example: IMDB Actor-Movie Data");
-	bridges->setDescription("A linked list example using IMDB actor movie data. Here we see a list of 1813 actors with their movies displayed. Mouseover the node and zoom in using the middle button to see the movies of this actor. The node colors from blue to red are mapped to the number of movies.");
+	bridges->set_title("Linked List Example: IMDB Actor-Movie Data");
+	bridges->set_description("A linked list example using IMDB actor movie data. Here we see a list of 1813 actors with their movies displayed. Mouseover the node and zoom in using the middle button to see the movies of this actor. The node colors from blue to red are mapped to the number of movies.");
 
 
 	ActorList<ActorMovieIMDB> *actor_list = new ActorList<ActorMovieIMDB>;

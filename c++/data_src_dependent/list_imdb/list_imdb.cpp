@@ -19,7 +19,7 @@ int main(int argc, char **argv) {
 		"YOUR_API_KEY");
 #endif
 
-	bridges.setTitle("List with  IMDB Actor/Movie Data");
+	bridges.set_title("List with  IMDB Actor/Movie Data");
 
 	DataSource ds (&bridges);
 	std::vector< ActorMovieIMDB > ami = ds.getActorMovieIMDBData();

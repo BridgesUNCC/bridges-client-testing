@@ -11,8 +11,8 @@ public class arr1d {
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
-		bridges.setTitle("One-Dimensional Array Example");
-        bridges.setDescription("OneD array with colors in order left to right: "
+		bridges.set_title("One-Dimensional Array Example");
+        bridges.set_description("OneD array with colors in order left to right: "
 				+	"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
 
 #else

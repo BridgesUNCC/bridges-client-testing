@@ -9,7 +9,7 @@ def main():
     # create the Bridges object, set credentials
     bridges = Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 
-    bridges.setTitle("A Huffman Coding Tree Example")
+    bridges.set_title("A Huffman Coding Tree Example")
 
     #build the tree
     t0 = BinTreeElement(label = "306", e = 0)

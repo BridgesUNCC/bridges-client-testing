@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
 	arr->getElement(9).getVisualizer()->setColor(Color("black"));
 
 
-	bridges->setTitle("Array Example");
+	bridges->set_title("Array Example");
 	bridges->setDataStructure(arr);
 	bridges->visualize();
 

@@ -11,8 +11,8 @@ public class kdt {
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
-		bridges.setTitle("A Kd Tree Example");
-		bridges.setDescription("A three-level tree with partitioners cycling between X and Y."
+		bridges.set_title("A Kd Tree Example");
+		bridges.set_description("A three-level tree with partitioners cycling between X and Y."
                         + " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
         
 

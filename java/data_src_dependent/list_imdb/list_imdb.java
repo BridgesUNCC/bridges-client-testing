@@ -14,7 +14,7 @@ public class list_imdb {
         bridges.setServer (args[3]);
 
 		/* Set an assignment title */
-		bridges.setTitle("Linked  List using IMDB Actor/Movie Data");
+		bridges.set_title("Linked  List using IMDB Actor/Movie Data");
 
 		/* Get a List of ActorMovieIMDB objects from Bridges */
 		List<ActorMovieIMDB> mylist = bridges.getActorMovieIMDBData(Integer.MAX_VALUE);

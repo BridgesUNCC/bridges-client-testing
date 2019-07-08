@@ -18,7 +18,7 @@ public class bst_shakespeare {
         bridges.setServer (args[3]);
 
 
-		bridges.setTitle("Shakespeare Sonnets, Poems, Plays");
+		bridges.set_title("Shakespeare Sonnets, Poems, Plays");
 
 							// Retrieve Shakespeare Data 
 		ArrayList<Shakespeare> shksp_list = 

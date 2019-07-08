@@ -10,7 +10,7 @@ int main(int argc, char **argv)  {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges->setTitle("A Trivial Multilist Example");
+	bridges->set_title("A Trivial Multilist Example");
 
 	//create  a linked list
 

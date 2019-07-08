@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 	arr->getElement(2, 2).getVisualizer()->setColor(Color("yellow"));
 
 
-	bridges->setTitle("2D Array Example");
+	bridges->set_title("2D Array Example");
 	bridges->setDataStructure(arr);
 	bridges->visualize();
 

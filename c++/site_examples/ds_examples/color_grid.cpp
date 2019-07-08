@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
         bridges->setServer(argv[4]);
 
 	// set title for visualization
-	bridges->setTitle("A Color Grid Example");
+	bridges->set_title("A Color Grid Example");
 
 	int width = 200, height = 200;
 

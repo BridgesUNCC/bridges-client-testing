@@ -10,7 +10,7 @@ public class kdt {
         Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                         "YOUR_API_KEY");
 
-		bridges.setTitle("A Kd Tree Example");
+		bridges.set_title("A Kd Tree Example");
 
 		// create Kd Tree nodes
 		KdTreeElement<Integer, String> t0 = new KdTreeElement<Integer, String>(50, 0);

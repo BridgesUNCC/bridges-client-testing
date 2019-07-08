@@ -13,7 +13,7 @@ int main(int argc, char **argv) {
         bridges->setServer(argv[4]);
 
 
-	bridges->setTitle("A General Tree Example");
+	bridges->set_title("A General Tree Example");
 
 	TreeElement<string> *t0 = new TreeElement<string>("Hello", "Hello");
 	TreeElement<string> *t2 = new TreeElement<string>("This", "This");
@@ -48,7 +48,7 @@ int main(int argc, char **argv) {
 	t0->getVisualizer()->setColor(Color("red"));
 	t0->getVisualizer()->setOpacity(0.3f);
 
-	bridges->setTitle("A General Tree Example");
+	bridges->set_title("A General Tree Example");
 	// provide BRIDGES the  handle to the tree structure
 	bridges->setDataStructure(t0);
 

@@ -62,7 +62,7 @@ public class list_eq{
         bridges.setServer (args[3]);
 
 		/* Set an assignment title */
-		bridges.setTitle("List Using USGS Earthquake Data");
+		bridges.set_title("List Using USGS Earthquake Data");
 
 		/* Get a List of USGS Earthquake Tweet objects from Bridges */
 		List<EarthquakeUSGS> mylist = bridges.getEarthquakeUSGSData(500);

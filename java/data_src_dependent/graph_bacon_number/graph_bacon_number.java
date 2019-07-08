@@ -23,8 +23,8 @@ public class graph_bacon_number {
         Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer (args[3]);
 		// set title for visualization
-		bridges.setTitle("Bacon Number: IMDB Actor-Movie Data");
-		bridges.setDescription("Illustrates the shortest path between two actors: Kevin Bacon to Cary Grant");
+		bridges.set_title("Bacon Number: IMDB Actor-Movie Data");
+		bridges.set_description("Illustrates the shortest path between two actors: Kevin Bacon to Cary Grant");
 
 		// use an adjacency list based graph
 		GraphAdjListSimple<String> gr = new GraphAdjListSimple<>();

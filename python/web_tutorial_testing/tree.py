@@ -13,8 +13,8 @@ def main():
         bridges.connector.set_server(args[3])
 
     #Title and Description
-    bridges.setTitle("A General Tree Example")
-    bridges.setDescription("A basic tree with seven nodes. Three on one side and three on the other. The root node is set to red with 0.3 opacity. "
+    bridges.set_title("A General Tree Example")
+    bridges.set_description("A basic tree with seven nodes. Three on one side and three on the other. The root node is set to red with 0.3 opacity. "
             +	"The other six nodes are neutral color.")
 
     # create tree nodes

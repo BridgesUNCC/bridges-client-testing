@@ -13,8 +13,8 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges->setTitle("Symbol Collection");
-	bridges->setDescription("Some Shapes and Symbols");
+	bridges->set_title("Symbol Collection");
+	bridges->set_description("Some Shapes and Symbols");
 
 	SymbolCollection *sc = new SymbolCollection(); 
 	Rectangle *s1 = new Rectangle(-25, 0, 50, 50);

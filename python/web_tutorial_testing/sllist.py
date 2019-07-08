@@ -15,8 +15,8 @@ def main():
         bridges.connector.set_server(args[3])
 
     #Title and Description
-    bridges.setTitle("A Single Linked List Example")
-    bridges.setDescription("A list of student data where each node is linked only to the next "
+    bridges.set_title("A Single Linked List Example")
+    bridges.set_description("A list of student data where each node is linked only to the next "
             +	"node in the list. Node and link colors from top of list to bottom: Blue with magenta link, "
             +	"red with magenta link, green with yellow link, magenta with green link, cyan.")      
 

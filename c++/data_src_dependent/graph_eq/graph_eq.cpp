@@ -42,7 +42,7 @@ int main(int argc, char **argv) {
 #endif
 
 	
-	bridges.setTitle("Graph : Earthquake Data (USGS)");
+	bridges.set_title("Graph : Earthquake Data (USGS)");
 
 	//Get most recent 10000 earthquakes
 	DataSource ds (&bridges);

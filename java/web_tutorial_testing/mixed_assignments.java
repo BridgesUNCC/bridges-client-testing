@@ -38,7 +38,7 @@ public class mixed_assignments {
 		t0.setOpacity(0.5f);
 
 		// set data structure and visualize
-		bridges.setTitle("A multiple subassignment example");
+		bridges.set_title("A multiple subassignment example");
 		bridges.setDataStructure(t0);
 		bridges.visualize();
 
@@ -58,7 +58,7 @@ public class mixed_assignments {
 		tail.setNext(head);
 
 		// set data structure and visualize
-		bridges.setTitle("A small circular singly linked list");
+		bridges.set_title("A small circular singly linked list");
 		bridges.setDataStructure(head);
 		bridges.visualize();
 
@@ -81,7 +81,7 @@ public class mixed_assignments {
 		my_array.getElement(0, 0).setColor("purple");
 
 		// set data structure and visualize
-		bridges.setTitle("A 2D Array");
+		bridges.set_title("A 2D Array");
 		bridges.setDataStructure(my_array);
 		bridges.visualize();
 
@@ -113,7 +113,7 @@ public class mixed_assignments {
 		sc.addSymbol(s4);
 
 		// set data structure and visualize
-		bridges.setTitle("A Symbol Collection");
+		bridges.set_title("A Symbol Collection");
 		bridges.setDataStructure(sc);
 		bridges.visualize();
 
@@ -135,7 +135,7 @@ public class mixed_assignments {
 		}
 
 		// set data structure and visualize
-		bridges.setTitle("Color Grid Example");
+		bridges.set_title("Color Grid Example");
 		bridges.setDataStructure(cg);
 		bridges.visualize();
 	}

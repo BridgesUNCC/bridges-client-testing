@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 	bridges->setServer(argv[3]);
 
 								// read the earth quake  data and build the BST
-	bridges->setTitle("Recent Earthquakes (USGIS Data)");
+	bridges->set_title("Recent Earthquakes (USGIS Data)");
 
 	DataSource *ds = new DataSource;
     vector<EarthquakeUSGS> eq_list = ds->getEarthquakeUSGSData(max_quakes);

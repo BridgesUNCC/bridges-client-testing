@@ -12,8 +12,8 @@ int main(int argc, char **argv) {
 	if (argc > 4)
 		bridges.setServer(argv[4]);
 
-	bridges.setTitle("One-Dimensional Array Example");
-    bridges.setDescription("OneD array with colors in order left to right: "
+	bridges.set_title("One-Dimensional Array Example");
+    bridges.set_description("OneD array with colors in order left to right: "
 			"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
 
 #else

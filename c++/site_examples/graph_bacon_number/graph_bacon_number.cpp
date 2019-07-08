@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 	bridges->setServer (argv[3]);
 
 	// set title for visualization
-	bridges->setTitle("Bacon Number: IMDB Actor-Movie Data");
+	bridges->set_title("Bacon Number: IMDB Actor-Movie Data");
 
 	// use an adjacency list based graph
 	GraphAdjList<string> gr;

@@ -11,7 +11,7 @@ def main():
     bridges = Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 
     # set a title for the visualization
-    bridges.setTitle("A Simple Graph (Adjacency Matrix) Example using IMDB Actor/Movie Data")
+    bridges.set_title("A Simple Graph (Adjacency Matrix) Example using IMDB Actor/Movie Data")
 
     actor_movie_data = getActorMovieIMDBData(1813)
     # create an adjacency Matrix based graph

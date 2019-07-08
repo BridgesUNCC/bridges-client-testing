@@ -10,8 +10,8 @@ public class bintree {
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 
-		bridges.setTitle("A Huffman Coding Tree Example");
-		bridges.setDescription("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2");
+		bridges.set_title("A Huffman Coding Tree Example");
+		bridges.set_description("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2");
 		//create  an   tree
 		BinTreeElement<Integer> t0 = new BinTreeElement<Integer>("306", 0);
 		BinTreeElement<Integer> t1 = new BinTreeElement<Integer>("120\\nE", 1);
