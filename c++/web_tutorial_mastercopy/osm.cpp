@@ -63,8 +63,8 @@ int main(int argc, char **argv) {
 	for (int k = 0; k < vertices.size(); k++) {
 		gr->addVertex(k);
 		vertices[k].getCartesianCoords(coords);
-		gr->getVertex(k)->getVisualizer()->setLocation(coords[0], coords[1]);
-		gr->getVertex(k)->getVisualizer()->setColor(Color("green"));
+		gr->getVertex(k)->setLocation(coords[0], coords[1]);
+		gr->getVertex(k)->setColor(Color("green"));
     }
     for (int k = 0; k < edges.size(); k++) {
       gr->addEdge(edges[k].getSourceVertex(), edges[k].getDestinationVertex(), 
