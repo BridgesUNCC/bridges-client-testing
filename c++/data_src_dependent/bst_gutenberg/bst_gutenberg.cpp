@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
 
 								// read the earth quake  data and build the BST
 
-	bridges.set_title("BST Example: Gutenberg Book Collection");
+	bridges.setTitle("BST Example: Gutenberg Book Collection");
 
 	DataSource ds (&bridges);
 

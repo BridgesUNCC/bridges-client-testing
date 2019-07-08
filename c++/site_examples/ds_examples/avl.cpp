@@ -48,7 +48,7 @@ int main(int argc, char **argv) {
 	tle2->setLabel(std::to_string(tle2->getBalanceFactor()));
 	tle3->setLabel(std::to_string(tle3->getBalanceFactor()));
 
-	bridges->set_title("AVL Tree Example");
+	bridges->setTitle("AVL Tree Example");
 	// provide BRIDGES the  handle to the tree structure
 	bridges->setDataStructure(tle0);
 

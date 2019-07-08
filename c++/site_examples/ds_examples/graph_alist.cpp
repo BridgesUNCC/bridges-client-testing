@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
         bridges->setServer(argv[4]);
 
 
-	bridges->set_title("Graph Adj List Example: IMDB Data");
+	bridges->setTitle("Graph Adj List Example: IMDB Data");
 
 	DataSource *ds = new DataSource;
 	vector<ActorMovieIMDB> actor_list = ds->getActorMovieIMDBData(1813);

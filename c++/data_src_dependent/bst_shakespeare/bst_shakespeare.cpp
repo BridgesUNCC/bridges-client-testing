@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 #endif
 								// read the earth quake  data and build the BST
 
-	bridges.set_title("BST Example: Shakespeare Plays, Poems, Sonnets");
+	bridges.setTitle("BST Example: Shakespeare Plays, Poems, Sonnets");
 
 	DataSource ds (&bridges);
 

@@ -10,8 +10,8 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges.setServer(argv[4]);
 
-	bridges.set_title("A Kd Tree Example");
-	bridges.set_description("A three-level tree with partitioners cycling between X and Y."
+	bridges.setTitle("A Kd Tree Example");
+	bridges.setDescription("A three-level tree with partitioners cycling between X and Y."
 			 " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
 	
 

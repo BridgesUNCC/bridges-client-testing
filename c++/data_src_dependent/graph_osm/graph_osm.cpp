@@ -44,7 +44,7 @@ int main(int argc, char **argv) {
   Bridges *bridges =  new Bridges(16, "esaule", "1090423871824");
 
 	
-	bridges->set_title("Graph : OpenStreet Map Example");
+	bridges->setTitle("Graph : OpenStreet Map Example");
 
 						// create graph object
 	GraphAdjList<int, int> graph;

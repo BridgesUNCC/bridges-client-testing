@@ -28,7 +28,7 @@ int main(int  argc, char **argv) {
     int free = 0;
 
     ColorGrid grid(rows, columns, Color(255, 255, 255, free));
-    bridges.set_title("Square Fill Grid");
+    bridges.setTitle("Square Fill Grid");
 
     srand((unsigned) time(nullptr));
 

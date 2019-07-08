@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges->set_title("Graph Adj Matrix Example: IMDB Data");
+	bridges->setTitle("Graph Adj Matrix Example: IMDB Data");
 	
 	DataSource *ds = new DataSource;
 	vector<ActorMovieIMDB> actor_list = ds->getActorMovieIMDBData(1813);

@@ -22,8 +22,8 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges.setServer(argv[4]);
 
-	bridges.set_title("A Binary Search Tree Example with Earthquake Data");
-	bridges.set_description("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than "
+	bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
+	bridges.setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than "
 		 "the parent is set to the right and nodes with a magnitude less than the parent set to the left. "
 		 "The root is set to red the leaf nodes are neutral.");
 		

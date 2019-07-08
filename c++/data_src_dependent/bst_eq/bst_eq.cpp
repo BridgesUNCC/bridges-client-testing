@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
 		"YOUR_API_KEY");
 #endif
 	// read the earth quake  data and build the BST
-	bridges.set_title("Recent Earthquakes (USGIS Data)");
+	bridges.setTitle("Recent Earthquakes (USGIS Data)");
 
 	DataSource ds (&bridges);
 	vector<EarthquakeUSGS> eq_list = ds.getEarthquakeUSGSData(max_quakes);

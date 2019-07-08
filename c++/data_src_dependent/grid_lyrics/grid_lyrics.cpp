@@ -65,7 +65,7 @@ int main(int argc, char* argv[]) {
 	DataSource ds (&bridges);
 	Song s = ds.getSong(title, author);
 
-	bridges.set_title("Song Grid - `" + title + "'  by " + author);
+	bridges.setTitle("Song Grid - `" + title + "'  by " + author);
 
 
 	//print lyrics

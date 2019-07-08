@@ -21,8 +21,8 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges.setServer(argv[4]);
 
-    bridges.set_title("An Open Street Map Example");
-    bridges.set_description("Illustrates the road map of the UNC Charlotte Campus.");
+    bridges.setTitle("An Open Street Map Example");
+    bridges.setDescription("Illustrates the road map of the UNC Charlotte Campus.");
             
 #else
     Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");

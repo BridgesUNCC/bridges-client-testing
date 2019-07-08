@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
 		   end_color = "red";
 		
 	// read the earth quake  data and build the BST
-	bridges->set_title("Recent Earthquakes (USGIS Data)");
+	bridges->setTitle("Recent Earthquakes (USGIS Data)");
 
 	DataSource *ds = new DataSource;
 

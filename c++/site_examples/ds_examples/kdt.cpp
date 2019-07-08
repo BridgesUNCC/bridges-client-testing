@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
     if (argc > 4)
         bridges->setServer(argv[4]);
 
-	bridges->set_title("A Kd Tree Example");
+	bridges->setTitle("A Kd Tree Example");
 
 	KdTreeElement<int, int> *t0 = new KdTreeElement<int, int>(50, 0);
 	KdTreeElement<int, int> *t1 = new KdTreeElement<int, int>(25, 1);

@@ -85,7 +85,7 @@ int main(int argc, char **argv) {
 #endif
 
 
-	bridges.set_title("Linked List with Earthquake Data");
+	bridges.setTitle("Linked List with Earthquake Data");
 
 	//Get Earthquake data
 	DataSource ds (&bridges);

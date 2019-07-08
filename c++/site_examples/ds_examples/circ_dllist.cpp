@@ -23,7 +23,7 @@ int main(int argc, char **argv) {
 
 
 
-	bridges->set_title("An Example Circular Doubly Linked List");
+	bridges->setTitle("An Example Circular Doubly Linked List");
 
 	// create the linked list elements with
 	// student data

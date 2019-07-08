@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
 #endif
 
     // set title for visualization
-	bridges.set_title("Bacon Number: IMDB Actor-Movie Data");
+	bridges.setTitle("Bacon Number: IMDB Actor-Movie Data");
 
 	// use an adjacency list based graph
 	GraphAdjList<string, string, int> gr;
