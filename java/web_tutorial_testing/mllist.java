@@ -54,7 +54,7 @@ public class mllist {
 		el6.setSubList(el10);
 
 		// set visual attributes
-		el0.getVisualizer().setSize (40);
+		el0.setSize (40);
 		el0.getLinkVisualizer(el1).setColor("red");
 		el0.getLinkVisualizer(el1).setThickness(3);
 		el1.getLinkVisualizer(el2).setColor("blue");
@@ -62,7 +62,7 @@ public class mllist {
 		el2.getLinkVisualizer(el3).setColor("cyan");
 		el2.getLinkVisualizer(el3).setThickness(3);
 
-		el0.getVisualizer().setColor("red");
+		el0.setColor("red");
 		//set visualizer type
 		bridges.setDataStructure(el0);
 		// visualize the multilist

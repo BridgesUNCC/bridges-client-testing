@@ -38,7 +38,7 @@ public class bst_eq {
 
 		
 		bridges.setDataStructure(bst.getTreeRoot());
-//		bridges.getVisualizer().setVisualizeJSON(true);
+//		bridges.setVisualizeJSON(true);
 		//* Read each Tweet returned from Bridges
 //		System.out.println("\n\n\n------Printing Earthquakes-------\n");
 //		for ( int i = 0; i < eqlist.size(); i++ ){

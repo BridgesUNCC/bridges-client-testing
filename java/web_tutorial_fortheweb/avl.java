@@ -34,8 +34,8 @@ public class avl {
 		avl_2.setRight(avl_5);
 		avl_3.setRight(avl_6);
 		// set some attributes
-		avl_root.getVisualizer().setColor("magenta");
-		avl_root.getVisualizer().setOpacity(0.8f);
+		avl_root.setColor("magenta");
+		avl_root.setOpacity(0.8f);
 
 		//set visualizer type
 		bridges.setDataStructure(avl_root);

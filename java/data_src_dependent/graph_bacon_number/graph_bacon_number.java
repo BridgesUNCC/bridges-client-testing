@@ -157,7 +157,7 @@ public class graph_bacon_number {
 						Element<String> *el, *el2;
 						for (auto& v : *gr.getVertices()) {
 							el = (Element<String>*) v.second;
-							el.getVisualizer().setOpacity(0.5f);
+							el.setOpacity(0.5f);
 						}
 	*/
 							

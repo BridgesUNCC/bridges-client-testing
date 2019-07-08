@@ -39,8 +39,8 @@ public class graph_am {
 		graph.addEdge(a1, a2, 1);
 
 		// color the two actor nodes
-		graph.getVertices().get("Kevin_Bacon_(I)").getVisualizer().setColor("red");
-		graph.getVertices().get("Denzel_Washington").getVisualizer().setColor("red");
+		graph.getVertices().get("Kevin_Bacon_(I)").setColor("red");
+		graph.getVertices().get("Denzel_Washington").setColor("red");
 
 		// make them a bit bigger
 		graph.getVisualizer("Kevin_Bacon_(I)").setSize(20);

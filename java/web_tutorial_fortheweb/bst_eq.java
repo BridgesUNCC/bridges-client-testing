@@ -33,7 +33,7 @@ public class bst_eq {
 
 
 								// set some visual attributes
-		root.getVisualizer().setColor("red");
+		root.setColor("red");
 
              					//set visualizer type
 		bridges.setDataStructure(root);

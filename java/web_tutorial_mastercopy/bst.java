@@ -42,7 +42,7 @@ public class bst {
 
 
 		// set some visual attributes
-		root.getVisualizer().setColor("red");
+		root.setColor("red");
 
 		//set visualizer type
 		bridges.setDataStructure(root);

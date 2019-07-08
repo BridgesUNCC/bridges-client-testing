@@ -39,12 +39,12 @@ public class arr3d {
 			}
 		}
 		// color some of the elements
-		my_array.getElement(0, 0, 0).getVisualizer().setColor("red");
-		my_array.getElement(0, 3, 0).getVisualizer().setColor("green");
-		my_array.getElement(3, 0, 0).getVisualizer().setColor("blue");
-		my_array.getElement(3, 3, 0).getVisualizer().setColor("magenta");
-		my_array.getElement(1, 1, 0).getVisualizer().setColor("cyan");
-		my_array.getElement(2, 2, 0).getVisualizer().setColor("yellow");
+		my_array.getElement(0, 0, 0).setColor("red");
+		my_array.getElement(0, 3, 0).setColor("green");
+		my_array.getElement(3, 0, 0).setColor("blue");
+		my_array.getElement(3, 3, 0).setColor("magenta");
+		my_array.getElement(1, 1, 0).setColor("cyan");
+		my_array.getElement(2, 2, 0).setColor("yellow");
 
 		//set visualizer type
 		bridges.setDataStructure(my_array);

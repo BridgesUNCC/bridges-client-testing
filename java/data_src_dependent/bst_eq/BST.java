@@ -172,7 +172,7 @@ class BST<Key extends Comparable<? super Key>, E>
     }
 	public void resetToDefaultColors(BSTElement<Key,E>  root) {
 		if (root != null) {
-			root.getVisualizer().setColor("blue");
+			root.setColor("blue");
 			resetToDefaultColors(root.getLeft());
 			resetToDefaultColors(root.getRight());
 		}
@@ -182,7 +182,7 @@ class BST<Key extends Comparable<? super Key>, E>
 					// compare location of quake
 			String loc = ((EarthquakeUSGS) root.getValue()).getLocation();
 			if (loc.toLowerCase().contains(location.toLowerCase()) )// matches
-				root.getVisualizer().setColor("red");
+				root.setColor("red");
 			findAndHighlightByLocation(root.getLeft(), location);
 			findAndHighlightByLocation(root.getRight(), location);
 		}
@@ -192,7 +192,7 @@ class BST<Key extends Comparable<? super Key>, E>
 							// size mapping: from quake range 0-10 to 0-30
 		if (root != null) {
 			float magn = (float) ((EarthquakeUSGS)root.getValue()).getMagnitude();
-			root.getVisualizer().setSize((int) (magn*5));
+			root.setSize((int) (magn*5));
 
 			scaleByMagnitude (root.getLeft());
 			scaleByMagnitude (root.getRight());
@@ -203,7 +203,7 @@ class BST<Key extends Comparable<? super Key>, E>
 		if (root != null) {
 			float magn = (float) ((EarthquakeUSGS)root.getValue()).getMagnitude();
 			if (min_r <= magn && magn <= max_r)	 // in range
-				root.getVisualizer().setColor("magenta");
+				root.setColor("magenta");
 			
 			findAndHighlightQuakeRange(root.getLeft(), min_r, max_r);
 			findAndHighlightQuakeRange(root.getRight(), min_r, max_r);
@@ -218,7 +218,7 @@ class BST<Key extends Comparable<? super Key>, E>
 			Integer y_tree = ((EarthquakeUSGS) root.getValue()).getYear();
 			if (mon_tree.toLowerCase().contains(month.toLowerCase()) 
 								&& (year == y_tree))// matches
-				root.getVisualizer().setColor("red");
+				root.setColor("red");
 			findAndHighlightByDate(root.getLeft(), month, year);
 			findAndHighlightByDate(root.getRight(), month, year);
 		}

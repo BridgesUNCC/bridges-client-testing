@@ -43,16 +43,16 @@ public class list_eq{
 			color = "black";
 		}
 		/* Set the color of the Element */
-		el.getVisualizer().setColor(color);
+		el.setColor(color);
 
 		/* Set the size of the Element based on the magnitude */
-		el.getVisualizer().setSize(magnitude * 5);
+		el.setSize(magnitude * 5);
 
 		/* Set the shape of the Element based on the location */
 		if (el.getValue().getLocation().contains("Alaska"))
-			el.getVisualizer().setShape("diamond");
+			el.setShape("diamond");
 		else if (el.getValue().getLocation().contains("Hawaii"))
-			el.getVisualizer().setShape("cross");
+			el.setShape("cross");
 	}
 
 	public static void main(String[] args) throws Exception {

@@ -44,16 +44,16 @@ public class bintree {
 		t11.setLeft(t12);
 		t11.setRight(t13);
 
-		t0.getVisualizer().setColor("red");
+		t0.setColor("red");
 		// color the leaf nodes that represent the code letters
-		t1.getVisualizer().setColor("orange");
-		t4.getVisualizer().setColor("orange");
-		t5.getVisualizer().setColor("orange");
-		t6.getVisualizer().setColor("orange");
-		t9.getVisualizer().setColor("orange");
-		t12.getVisualizer().setColor("orange");
-		t13.getVisualizer().setColor("orange");
-		t14.getVisualizer().setColor("orange");
+		t1.setColor("orange");
+		t4.setColor("orange");
+		t5.setColor("orange");
+		t6.setColor("orange");
+		t9.setColor("orange");
+		t12.setColor("orange");
+		t13.setColor("orange");
+		t14.setColor("orange");
 
 		//set visualizer type
 		bridges.setDataStructure(t0);

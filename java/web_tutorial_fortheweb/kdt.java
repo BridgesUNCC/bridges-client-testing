@@ -38,12 +38,12 @@ public class kdt {
 		t5.setLabel("X");
 		t6.setLabel("X");
 
-		t0.getVisualizer().setColor("red");
+		t0.setColor("red");
 		// color the leaf nodes that represent the code letters
-		t1.getVisualizer().setColor("orange");
-		t4.getVisualizer().setColor("orange");
-		t5.getVisualizer().setColor("orange");
-		t6.getVisualizer().setColor("orange");
+		t1.setColor("orange");
+		t4.setColor("orange");
+		t5.setColor("orange");
+		t6.setColor("orange");
 
 		// provide BRIDGES the  handle to the tree structure
 		bridges.setDataStructure(t0);

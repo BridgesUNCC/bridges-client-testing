@@ -78,9 +78,9 @@ public class graph_imdb_by_genre{
 							// add vertex for each genre
 			g.addVertex(genres[k], new ActorMovieIMDB()); 
 							// set attributes (color, opacity, size)
-			g.getVertex(genres[k]).getVisualizer().setColor("red");
-			g.getVertex(genres[k]).getVisualizer().setOpacity(0.5f);
-			g.getVertex(genres[k]).getVisualizer().setSize(50);
+			g.getVertex(genres[k]).setColor("red");
+			g.getVertex(genres[k]).setOpacity(0.5f);
+			g.getVertex(genres[k]).setSize(50);
 		}
 	}
 
@@ -112,13 +112,13 @@ public class graph_imdb_by_genre{
 					// add a graph vertex for the actor, if new)
 			if (!g.getVertices().containsKey(actor)) {
 				g.addVertex(actor, actor_movie_data.get(k));
-				verts.get(actor).getVisualizer().setColor("green");
+				verts.get(actor).setColor("green");
 				verts.get(actor).setLabel(actor);
             }
 
 			if (!g.getVertices().containsKey(movie)) {
 				g.addVertex(movie, actor_movie_data.get(k));
-				verts.get(movie).getVisualizer().setColor("yellow");
+				verts.get(movie).setColor("yellow");
 				verts.get(movie).setLabel(movie);
             }
 					// add edges between actor and movie
@@ -138,15 +138,15 @@ public class graph_imdb_by_genre{
 				g.getVertex(movie).setLabel(label);
 				
 				if (rating < 5.0)
-					g.getVertex(movie).getVisualizer().setColor("blue");
+					g.getVertex(movie).setColor("blue");
 				else if (rating < 6.0) 
-					g.getVertex(movie).getVisualizer().setColor("green");
+					g.getVertex(movie).setColor("green");
 				else if (rating < 7.0)
-					g.getVertex(movie).getVisualizer().setColor("yellow");
+					g.getVertex(movie).setColor("yellow");
 				else if (rating < 8.0)
-					g.getVertex(movie).getVisualizer().setColor("tan");
+					g.getVertex(movie).setColor("tan");
 				else 
-					g.getVertex(movie).getVisualizer().setColor("gold");
+					g.getVertex(movie).setColor("gold");
 			}
 		}
 	}

@@ -43,8 +43,8 @@ public class tree {
 		t3.addChild(t6);
 
 		// set some visual attributes
-		t0.getVisualizer().setColor("red");
-		t0.getVisualizer().setOpacity(0.3f);
+		t0.setColor("red");
+		t0.setOpacity(0.3f);
 
 		bridges.setTitle("A General Tree Example");
 		//set visualizer type

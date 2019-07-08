@@ -63,7 +63,7 @@ public class dllist {
 		DLelement<StudentInfo> curr = head, next;
 		while (curr != null) {
 			curr.setLabel(curr.getValue().getStudentLabel());
-			curr.getVisualizer().setColor(curr.getValue().getFavoriteColor());
+			curr.setColor(curr.getValue().getFavoriteColor());
 
 			DLelement<StudentInfo> n1, n2;
 			if (curr.getNext() != null) {
