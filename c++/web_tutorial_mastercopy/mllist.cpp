@@ -59,11 +59,11 @@ int main(int argc, char **argv)  {
 	el6->setSubList(el10);
 
 	el0->setSize (40);
-	el0->getLinkVisualizer(el1)->setColor(Color("red"));
+	el0->getLinkVisualizer(el1)->setColor("red");
 	el0->getLinkVisualizer(el1)->setThickness(3);
-	el1->getLinkVisualizer(el2)->setColor(Color("blue"));
+	el1->getLinkVisualizer(el2)->setColor("blue");
 	el1->getLinkVisualizer(el2)->setThickness(3);
-	el2->getLinkVisualizer(el3)->setColor(Color("cyan"));
+	el2->getLinkVisualizer(el3)->setColor("cyan");
 	el2->getLinkVisualizer(el3)->setThickness(3);
 
 	el0->setColor(Color("red"));

@@ -31,12 +31,12 @@ int main(int argc, char **argv) {
 		
 	Array<string> arr (4, 4, 4);
 
-	arr.getElement(0, 0, 0).setColor(Color("red"));
-	arr.getElement(0, 3, 0).setColor(Color("green"));
-	arr.getElement(3, 0, 0).setColor(Color("blue"));
-	arr.getElement(3, 3, 0).setColor(Color("magenta"));
-	arr.getElement(1, 1, 0).setColor(Color("cyan"));
-	arr.getElement(2, 2, 0).setColor(Color("yellow"));
+	arr.getElement(0, 0, 0).setColor("red");
+	arr.getElement(0, 3, 0).setColor("green");
+	arr.getElement(3, 0, 0).setColor("blue");
+	arr.getElement(3, 3, 0).setColor("magenta");
+	arr.getElement(1, 1, 0).setColor("cyan");
+	arr.getElement(2, 2, 0).setColor("yellow");
 
 	bridges.setDataStructure(&arr);
 	bridges.visualize();

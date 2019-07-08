@@ -39,8 +39,8 @@ int main(int argc, char **argv) {
 	graph.addVertex(washington, "");
 
 	// color the nodes
-	graph.getVertex(bacon)->setColor(Color("red"));
-	graph.getVertex(washington)->setColor(Color("red"));
+	graph.getVertex(bacon)->setColor("red");
+	graph.getVertex(washington)->setColor("red");
 
 	graph.addEdge(bacon, washington, 1);
 
@@ -83,7 +83,7 @@ int main(int argc, char **argv) {
 	for (auto& edge: graph.outgoingEdgeSetOf(bacon)) {
 		string from = edge.from(), to = edge.to();	
 		if (to != "Denzel_Washington")
-			graph.getVisualizer(to)->setColor(Color("green"));	
+			graph.getVisualizer(to)->setColor("green");	
 	}
 
 /*

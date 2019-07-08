@@ -40,14 +40,14 @@ int main(int argc, char **argv) {
 	tle1->setLeft(tle2);
 
 	// set attributes
-	tle0->setColor(Color("red"));
-	tle1->setColor(Color("green"));
-	tle2->setColor(Color("blue"));
-	tle3->setColor(Color("yellow"));
+	tle0->setColor("red");
+	tle1->setColor("green");
+	tle2->setColor("blue");
+	tle3->setColor("yellow");
 
-	tle0->getLinkVisualizer(tle1)->setColor(Color("red"));
-	tle1->getLinkVisualizer(tle2)->setColor(Color("green"));
-	tle0->getLinkVisualizer(tle3)->setColor(Color("blue"));
+	tle0->getLinkVisualizer(tle1)->setColor("red");
+	tle1->getLinkVisualizer(tle2)->setColor("green");
+	tle0->getLinkVisualizer(tle3)->setColor("blue");
 
 	// illustrate balance factors in the node labels
 	tle0->setBalanceFactor(-1);

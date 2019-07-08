@@ -40,8 +40,8 @@ int main(int argc, char **argv) {
 	graph.addVertex(washington, "");
 
 	// color the nodes
-	graph.getVertex(bacon)->setColor(Color("red"));
-	graph.getVertex(washington)->setColor(Color("red"));
+	graph.getVertex(bacon)->setColor("red");
+	graph.getVertex(washington)->setColor("red");
 
 	graph.addEdge(bacon, washington, 1);
 
@@ -87,7 +87,7 @@ int main(int argc, char **argv) {
 	for (auto& term_vertex : bacon_row) {
 		// color only the neighbors; make sure weight is non-zero
 		if (term_vertex.first != "Denzel_Washington" && term_vertex.second)
-			graph.getVertex(term_vertex.first)->setColor(Color("green"));
+			graph.getVertex(term_vertex.first)->setColor("green");
 	}
 
 	// provide BRIDGES the  handle to the tree structure

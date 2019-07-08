@@ -54,7 +54,7 @@ int main(int argc, char **argv) {
 
 	// set some visual attributes
 
-	t0->setColor(Color("red"));
+	t0->setColor("red");
 	t0->setOpacity(0.3f);
 
 	// provide BRIDGES the  handle to the tree structure
