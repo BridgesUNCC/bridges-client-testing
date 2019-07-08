@@ -34,14 +34,14 @@ public class graph_al {
 
 		// add an edge between the two actors a1 and a2,
 		// the third parameter is the edge weight
-		g.addEdge(a1, a2, 1);
+		g.addEdge(a1, a2);
 
 		// color the two actor nodes
-		g.getVertices().get("Kevin_Bacon_(I)").getVisualizer().setColor("red");
-		g.getVertices().get("Denzel_Washington").getVisualizer().setColor("red");
+		g.getVertices().get("Kevin_Bacon_(I)").setColor("red");
+		g.getVertices().get("Denzel_Washington").setColor("red");
 		// make them a bit bigger
-		g.getVertices().get("Kevin_Bacon_(I)").getVisualizer().setSize(20);
-		g.getVertices().get("Denzel_Washington").getVisualizer().setSize(20);
+		g.getVertices().get("Kevin_Bacon_(I)").setSize(20);
+		g.getVertices().get("Denzel_Washington").setSize(20);
 
 		// get their nodes
 		Element v1 = g.getVertices().get(a1);
@@ -59,20 +59,20 @@ public class graph_al {
 
 				// add vertices for this movie  and an edge for the link
 				g.addVertex(m, "");
-				g.addEdge(a1, m, 1);
-				g.addEdge(m, a1, 1);
+				g.addEdge(a1, m);
+				g.addEdge(m, a1);
 
 				// make the movie node a bit transparent
-				g.getVertices().get(m).getVisualizer().setOpacity(0.5f);
+				g.getVertices().get(m).setOpacity(0.5f);
 				cnt1++;
 			}
 			else if (a.equals("Denzel_Washington") && cnt2 < 15) {
 				// add vertices for this movie  and an edge for the link
 				g.addVertex(m, "");
-				g.addEdge(a2, m, 1);
-				g.addEdge(m, a2, 1);
+				g.addEdge(a2, m);
+				g.addEdge(m, a2);
 				// make the movie node a bit transparent
-				g.getVertices().get(m).getVisualizer().setOpacity(0.5f);
+				g.getVertices().get(m).setOpacity(0.5f);
 				cnt2++;
 			}
 		}
@@ -85,12 +85,12 @@ public class graph_al {
 		// traverse the adjacency list
 		for (SLelement<Edge<String, String>> sle = head; sle != null; sle = sle.getNext() ) {
 			// get the terminating vertex
-			String term_vertex = sle.getValue().getVertex();
+			String term_vertex = sle.getValue().getFrom();
 			// find the corresponding element
 			Element<String> el = g.getVertices().get(term_vertex);
 			// set the  color of the node except the Denzel W. node
 			if (!term_vertex.equals("Denzel_Washington"))
-				el.getVisualizer().setColor("green");
+				el.setColor("green");
 		}
 
 		// Pass the graph object to BRIDGES

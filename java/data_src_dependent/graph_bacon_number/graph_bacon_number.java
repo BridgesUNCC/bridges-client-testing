@@ -56,8 +56,8 @@ public class graph_bacon_number {
 
 			// create the edge -- assumes no duplicate edges 
 			// undirected graph, edges go both ways
-			gr.addEdge(actor, movie, 1);
-			gr.addEdge(movie, actor, 1);
+			gr.addEdge(actor, movie);
+			gr.addEdge(movie, actor);
 
 			// TO DO : Highlight "Cate_Blanchett" node and the movie nodes she is 
 			// connected to in "red" and do the same for "Kevin_Bacon_(I)" in "green"
@@ -131,7 +131,7 @@ public class graph_bacon_number {
 			for (SLelement<Edge<String, String>> sle = sl_list; sle != null; sle = 
 												sle.getNext()){
 				// get destination vertex
-				String w = ((Edge<String, String>)sle.getValue()).getVertex();
+				String w = ((Edge<String, String>)sle.getValue()).getFrom();
 
 				// if unvisited, mark it as visited and add to queue,
 				// increment distance and point point parent back to vertex name
