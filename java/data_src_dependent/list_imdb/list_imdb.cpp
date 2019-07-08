@@ -12,7 +12,7 @@ int main(int argc, char **argv) {
 	Bridges *bridges = new Bridges(209, argv[1], argv[2]);
 	bridges->setServer(argv[3]);
 	
-	bridges->set_title("List with  IMDB Actor/Movie Data");
+	bridges->setTitle("List with  IMDB Actor/Movie Data");
 
 	DataSource *ds = new DataSource;
 	std::vector< ActorMovieIMDB > ami = ds->getActorMovieIMDBData();

@@ -11,8 +11,8 @@ public class arr2d {
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
-		bridges.set_title("Two-Dimensional Array Example");
-        bridges.set_description("A TwoD array with four rows and four columns. " 
+		bridges.setTitle("Two-Dimensional Array Example");
+        bridges.setDescription("A TwoD array with four rows and four columns. " 
                             + "Row one left to right: red, neutral, neutral, blue. "
 							+ "Row two left to right: neutral, cyan, neutral, neutral. "
 							+ "Row three left to right: neutral, neutral, yellow, neutral. "

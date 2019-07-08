@@ -18,7 +18,7 @@ public class bst_eq {
 
 		Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer (args[3]);
-		bridges.set_title("Recent Earthquakes(USGIS Data)");
+		bridges.setTitle("Recent Earthquakes(USGIS Data)");
 
 								// Retrieve a list of (maxElements) Tweets */	
 		List<EarthquakeUSGS> eqlist = Bridges.getEarthquakeUSGSData(maxElements );

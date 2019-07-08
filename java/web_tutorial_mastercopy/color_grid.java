@@ -30,8 +30,8 @@ public class color_grid {
 		bridges.setServer(args[3]);
 
 		// set title for visualization
-		bridges.set_title("A CheckerBoard Example Using Grid Type");
-		bridges.set_description("This is an example of the color grid with height and width 10. "
+		bridges.setTitle("A CheckerBoard Example Using Grid Type");
+		bridges.setDescription("This is an example of the color grid with height and width 10. "
             +   "This example alternates between blue and red starting with red at the top left corner of the grid.");
 			
 #else

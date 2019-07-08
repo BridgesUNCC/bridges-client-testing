@@ -17,7 +17,7 @@ public class bst_gutenberg {
         Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer (args[3]);
 
-		bridges.set_title("GutenBerg Book Collection(Meta Data Only)");
+		bridges.setTitle("GutenBerg Book Collection(Meta Data Only)");
 
 
 							// Retrieve Gutenberg Book Data 

@@ -8,7 +8,7 @@ public class mllist {
         Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                         "YOUR_API_KEY");
 
-		bridges.set_title("A Multilist Example");
+		bridges.setTitle("A Multilist Example");
 
 		//create  nodes for the main list
 

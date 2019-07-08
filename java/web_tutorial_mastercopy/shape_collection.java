@@ -19,8 +19,8 @@ public class shape_collection {
         Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
-		bridges.set_title("Symbol Collection");
-		bridges.set_description("Red square, green circle, magenta horizontal and vertical lines, "
+		bridges.setTitle("Symbol Collection");
+		bridges.setDescription("Red square, green circle, magenta horizontal and vertical lines, "
 				+	"and a test label with a purple outline.");
 				
 #else

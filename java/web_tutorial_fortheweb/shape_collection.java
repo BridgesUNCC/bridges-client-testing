@@ -18,8 +18,8 @@ public class shape_collection {
         Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                         "YOUR_API_KEY");
 
-		bridges.set_title("Symbol Collection");
-		bridges.set_description("Some Shapes and Symbols");
+		bridges.setTitle("Symbol Collection");
+		bridges.setDescription("Some Shapes and Symbols");
 
 		SymbolCollection sc = new SymbolCollection();
 		Rectangle s1 = new Rectangle(-25.0f, 0.0f, 50, 50);

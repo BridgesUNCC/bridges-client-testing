@@ -41,7 +41,7 @@ public class tree {
 		t0.setColor("red");
 		t0.setOpacity(0.3f);
 
-		bridges.set_title("A General Tree Example");
+		bridges.setTitle("A General Tree Example");
 		//set visualizer type
 		bridges.setDataStructure(t0);
 		// visualize the tree

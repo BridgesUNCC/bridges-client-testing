@@ -9,8 +9,8 @@ public class tree {
         Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
-		bridges.set_title("A General Tree Example");
-		bridges.set_description("A basic tree with seven nodes. Three on one side and three on the other. The root node is set to red with 0.3 opacity. "
+		bridges.setTitle("A General Tree Example");
+		bridges.setDescription("A basic tree with seven nodes. Three on one side and three on the other. The root node is set to red with 0.3 opacity. "
 				+	"The other six nodes are neutral color.");
 				
 
@@ -46,7 +46,7 @@ public class tree {
 		t0.setColor("red");
 		t0.setOpacity(0.3f);
 
-		bridges.set_title("A General Tree Example");
+		bridges.setTitle("A General Tree Example");
 		//set visualizer type
 		bridges.setDataStructure(t0);
 		// visualize the tree

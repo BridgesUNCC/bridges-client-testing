@@ -8,8 +8,8 @@ public class mllist {
         Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
-		bridges.set_title("A Multilist Example");
-		bridges.set_description("The multilist example should have one large red node, three small square red nodes, "
+		bridges.setTitle("A Multilist Example");
+		bridges.setDescription("The multilist example should have one large red node, three small square red nodes, "
 				+	"and eight neutral nodes. The larger red node is connected via a red link to a neutral node. The next "
 				+	"link from the neutral node is blue followed by a cyan link between two of the small square red nodes.");
 

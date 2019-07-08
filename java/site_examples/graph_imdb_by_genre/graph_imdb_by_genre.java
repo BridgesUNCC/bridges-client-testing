@@ -28,9 +28,9 @@ public class graph_imdb_by_genre{
 		bridges.setServer (args[3]);
 
 						// set a title for the visualization
-		bridges.set_title("Graph Example(IMDB Data): Movies Grouped by Genre");
+		bridges.setTitle("Graph Example(IMDB Data): Movies Grouped by Genre");
 
-		bridges.set_description("Graph of IMDB movies grouped by genres; movies are color coded by ratings");
+		bridges.setDescription("Graph of IMDB movies grouped by genres; movies are color coded by ratings");
 
 						// get the actor-movie IMDB data
 						// accessible as JSON from 

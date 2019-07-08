@@ -10,8 +10,8 @@ public class dllist {
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
-		bridges.set_title("A doubly Linked List Example");
-		bridges.set_description("This list has five nodes all linked to the nodes before and after them. "
+		bridges.setTitle("A doubly Linked List Example");
+		bridges.setDescription("This list has five nodes all linked to the nodes before and after them. "
 				+	" Node colors are as follows: Blue and red connected by magenta links, red and green connected by "
 				+	"purple links, green and black connected by blue links, and black and cyan connected by red links.");
 				

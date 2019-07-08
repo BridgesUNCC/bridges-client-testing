@@ -16,7 +16,7 @@ public class bst_games {
     						// Instantiate a Bridges object 
         Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer (args[3]);
-		bridges.set_title("Binary Search Tree with IGN Game Data");
+		bridges.setTitle("Binary Search Tree with IGN Game Data");
 
 							// Retrieve Game Data
 		ArrayList<Game> game_list = 

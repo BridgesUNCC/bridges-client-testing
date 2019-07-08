@@ -12,7 +12,7 @@ public class bst {
 		//create the Bridges object
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
-		bridges.set_title("A Binary Search Tree Example with Earthquake Data");
+		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
 
 		// Retrieve a list of 10 earthquake  records  from USGS using the BRIDGES API
 		List<EarthquakeUSGS> eqlist = Bridges.getEarthquakeUSGSData(10);

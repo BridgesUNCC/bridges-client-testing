@@ -63,7 +63,7 @@ public class graph_eq {
         bridges.setCoordSystemType("equirectangular");
         bridges.setDataStructure(graph);
         bridges.setMapOverlay(true);
-        bridges.set_title("Earthquake Map");
+        bridges.setTitle("Earthquake Map");
         bridges.visualize();
 
         for (int i = 0; i < 99; ++i) {
