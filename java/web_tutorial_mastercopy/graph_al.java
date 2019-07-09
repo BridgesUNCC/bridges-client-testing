@@ -88,7 +88,7 @@ public class graph_al {
 
 		// first get the adjacency list for Kevin Bacon
 		// traverse the adjacency list
-		for (var edge : g.outgoingEdgeSetOf(a1)) {
+		for (Edge<String, String> edge : g.outgoingEdgeSetOf(a1)) {
 			String from = edge.getFrom(), to = edge.getTo();
 			if (!to.equals(a2))
 				edge.setColor("green");
