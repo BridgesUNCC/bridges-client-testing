@@ -81,12 +81,12 @@ def main():
     curr = head
     while curr is not None:
         curr.set_label(curr.get_value().getName())
-        curr.get_visualizer().set_color(col_name=curr.get_value().getDislikeColor())
+        curr.color = col_name=curr.get_value().getDislikeColor())
 
         if curr.get_next()is not None:
             next = curr.get_next()
-            curr.get_link_visualizer(next).set_color(col_name=curr.get_value().getDislikeColor())
-            next.get_link_visualizer(curr).set_color(col_name=curr.get_value().getDislikeColor())
+            curr.get_link_visualizer(next).color = col_name=curr.get_value().getDislikeColor())
+            next.get_link_visualizer(curr).color = col_name=curr.get_value().getDislikeColor())
 
         curr = curr.get_next()
 

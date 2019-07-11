@@ -51,15 +51,15 @@ def main():
     t11.set_right(t13)
 
     # color the leaf nodes to represent the code letters
-    t0.get_visualizer().set_color("red")
-    t1.get_visualizer().set_color("orange")
-    t4.get_visualizer().set_color("orange")
-    t5.get_visualizer().set_color("orange")
-    t6.get_visualizer().set_color("orange")
-    t9.get_visualizer().set_color("orange")
-    t12.get_visualizer().set_color("orange")
-    t13.get_visualizer().set_color("orange")
-    t14.get_visualizer().set_color("orange")
+    t0.color = "red"
+    t1.color = "orange"
+    t4.color = "orange"
+    t5.color = "orange"
+    t6.color = "orange"
+    t9.color = "orange"
+    t12.color = "orange"
+    t13.color = "orange"
+    t14.color = "orange"
 
     # set visualizer type
     bridges.set_data_structure(t0)

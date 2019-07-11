@@ -25,20 +25,20 @@ def main():
     arr = Array(num_elements = arraySize)
 
     #populate the array with squares of indicies
-    for i in range(arr.get_size()):
-        arr.get_element(i).set_label(i*i)
+    for i in range(arr.size):
+        arr[i].label = i*i
 
     #color the array elements
-    arr.get_element(0).get_visualizer().set_color("red")
-    arr.get_element(1).get_visualizer().set_color("green")
-    arr.get_element(2).get_visualizer().set_color("blue")
-    arr.get_element(3).get_visualizer().set_color("cyan")
-    arr.get_element(4).get_visualizer().set_color("magenta")
-    arr.get_element(5).get_visualizer().set_color("yellow")
-    arr.get_element(6).get_visualizer().set_color("red")
-    arr.get_element(7).get_visualizer().set_color("green")
-    arr.get_element(8).get_visualizer().set_color("blue")
-    arr.get_element(9).get_visualizer().set_color("black")
+    arr[0].color = "red"
+    arr[1].color = "green"
+    arr[2].color = "blue"
+    arr[3].color = "cyan"
+    arr[4].color = "magenta"
+    arr[5].color = "yellow"
+    arr[6].color = "red"
+    arr[7].color = "green"
+    arr[8].color = "blue"
+    arr[9].color = "black"
 
     # tell Bridges what data structure to visualize
     bridges.set_data_structure(arr)

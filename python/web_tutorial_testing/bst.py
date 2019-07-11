@@ -42,7 +42,7 @@ def main():
         root = insertR(root, bst_node)
 
     # set some visual attributes
-    root.get_visualizer().set_color("red")
+    root.color = "red"
 
     #set visualizer type
     bridges.set_data_structure(root)
