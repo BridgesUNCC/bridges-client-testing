@@ -1,6 +1,7 @@
 import bridges.base.Color;
 import bridges.base.ColorGrid;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -28,7 +29,9 @@ public class grid_from_bridges {
 	bridges.setDataStructure(cg1);
 	bridges.visualize();
 
-	ColorGrid cg= bridges.getColorGridFromAssignment(bridges.getUserName(), bridges.getAssignmentID(), 0);
+	DataSource ds = bridges.getDataSource();
+	
+	ColorGrid cg= ds.getColorGridFromAssignment(bridges.getUserName(), bridges.getAssignmentID(), 0);
 
 	int[] dims = cg.getDimensions();
 	for (int k = dims[1] / 2 - 5; k < dims[1] / 2 + 5; k++)
