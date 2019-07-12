@@ -1,6 +1,7 @@
 
 import bridges.base.*;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.data_src_dependent.EarthquakeUSGS;
 
 import java.util.Comparator;
@@ -32,7 +33,8 @@ public class graph_eq {
         GraphAdjListSimple<String> graph = new GraphAdjListSimple<>();
 
         // grabs most recent 10000 earthquakes
-        List<EarthquakeUSGS> eqList = Bridges.getEarthquakeUSGSData(5000);
+	DataSource ds = bridges.getDataSource();
+        List<EarthquakeUSGS> eqList = ds.getEarthquakeUSGSData(5000);
 
         // sorts list by magnitude in descending order
         eqList.sort(Comparator.comparingDouble(EarthquakeUSGS::getMagnitude).reversed());

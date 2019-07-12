@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Random;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.data_src_dependent.ActorMovieIMDB;
 
 /*! A test class that fetches a random movie from IMDB then sends the
@@ -18,8 +19,9 @@ public class imdb_snippet {
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
+    DataSource ds = bridges.getDataSource();
 		/* Get a List of ActorMovieIMDB objects from Bridges */
-		List<ActorMovieIMDB> mylist = bridges.getActorMovieIMDBData();
+		List<ActorMovieIMDB> mylist = ds.getActorMovieIMDBData();
 
 		/* Inspect a random ActorMovieIMDB object */
 		ActorMovieIMDB pair1 = mylist.get((new Random()).nextInt(mylist.size()));

@@ -4,6 +4,7 @@
 // 
 import java.util.Scanner;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.base.BSTElement;
 import bridges.data_src_dependent.Shakespeare;
 import java.util.ArrayList;
@@ -20,9 +21,10 @@ public class bst_shakespeare {
 
 		bridges.setTitle("Shakespeare Sonnets, Poems, Plays");
 
-							// Retrieve Shakespeare Data 
+							// Retrieve Shakespeare Data
+		DataSource ds = bridges.getDataSource();
 		ArrayList<Shakespeare> shksp_list = 
-				(ArrayList<Shakespeare>) Bridges.getShakespeareData();
+				(ArrayList<Shakespeare>) ds.getShakespeareData();
 
 		BST<String, Shakespeare>  bst = new BST<String, Shakespeare>();
 		for ( int i = 0; i < shksp_list.size(); i++ ){

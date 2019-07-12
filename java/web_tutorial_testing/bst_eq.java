@@ -1,4 +1,5 @@
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.base.BSTElement;
 import bridges.data_src_dependent.EarthquakeUSGS;
 import bridges.data_src_dependent.Tweet;
@@ -23,7 +24,8 @@ public class bst_eq {
 
 
 					// Retrieve a list of 10 earthquake  records  from USGS using the BRIDGES API
-		List<EarthquakeUSGS> eqlist = Bridges.getEarthquakeUSGSData(10);
+    DataSource ds = bridges.getDataSource();
+		List<EarthquakeUSGS> eqlist = ds.getEarthquakeUSGSData(10);
 
 					// create BST nodes and insert into a tree
 		BSTElement<Double, EarthquakeUSGS> root = null; 

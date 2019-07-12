@@ -39,12 +39,12 @@ int main(int argc, char **argv) {
 	t5->setLabel("X");
 	t6->setLabel("X");
 
-	t0->getVisualizer()->setColor(Color("red"));
+	t0->setColor("red");
 	// color the leaf nodes that represent the code letters
-	t1->getVisualizer()->setColor(Color("orange"));
-	t4->getVisualizer()->setColor(Color("orange"));
-	t5->getVisualizer()->setColor(Color("orange"));
-	t6->getVisualizer()->setColor(Color("orange"));
+	t1->setColor("orange");
+	t4->setColor("orange");
+	t5->setColor("orange");
+	t6->setColor("orange");
 
 	// provide BRIDGES the  handle to the tree structure
 	bridges.setDataStructure(t0);

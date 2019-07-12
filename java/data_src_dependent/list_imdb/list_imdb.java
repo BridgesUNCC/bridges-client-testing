@@ -2,6 +2,7 @@ import java.util.List;
 
 /* Import Bridges and relevant data source */
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.base.SLelement;
 import bridges.data_src_dependent.ActorMovieIMDB;
 
@@ -17,7 +18,8 @@ public class list_imdb {
 		bridges.setTitle("Linked  List using IMDB Actor/Movie Data");
 
 		/* Get a List of ActorMovieIMDB objects from Bridges */
-		List<ActorMovieIMDB> mylist = bridges.getActorMovieIMDBData(Integer.MAX_VALUE);
+		DataSource ds = bridges.getDataSource();
+		List<ActorMovieIMDB> mylist = ds.getActorMovieIMDBData(Integer.MAX_VALUE);
 
 		/* Set up a prev and head element */
 		SLelement<ActorMovieIMDB> prev = new SLelement<ActorMovieIMDB>();

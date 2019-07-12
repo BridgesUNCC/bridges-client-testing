@@ -4,6 +4,7 @@
 // 
 import java.util.Scanner;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.base.BSTElement;
 import bridges.data_src_dependent.GutenbergBook;
 import java.util.ArrayList;
@@ -20,9 +21,10 @@ public class bst_gutenberg {
 		bridges.setTitle("GutenBerg Book Collection(Meta Data Only)");
 
 
-							// Retrieve Gutenberg Book Data 
+							// Retrieve Gutenberg Book Data
+		DataSource ds = bridges.getDataSource();
 		ArrayList<GutenbergBook> book_list = 
-				(ArrayList<GutenbergBook>) Bridges.getGutenbergBookMetaData();
+				(ArrayList<GutenbergBook>) ds.getGutenbergBookMetaData();
 
 		BST<String, GutenbergBook>  bst = new BST<String, GutenbergBook>();
 		for ( int i = 0; i < book_list.size(); i++ ){

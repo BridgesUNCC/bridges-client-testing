@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Random;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.data_src_dependent.GutenbergBook;
 
 /*! A test class that fetches a random book from Gutenberg Book then sends the
@@ -19,7 +20,8 @@ public class book_snippet {
 #endif
 
 		/* Get a List of GutenbergBook objects from Bridges */
-		List<GutenbergBook> mylist = bridges.getGutenbergBookMetaData();
+    DataSource ds = bridges.getDataSource();
+    List<GutenbergBook> mylist = ds.getGutenbergBookMetaData();
 
 		/* Inspect a random GutenbergBook object */
 		GutenbergBook book1 = mylist.get((new Random()).nextInt(mylist.size()));

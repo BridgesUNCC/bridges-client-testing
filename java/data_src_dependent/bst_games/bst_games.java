@@ -4,6 +4,7 @@
 // 
 import java.util.Scanner;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.base.BSTElement;
 import bridges.data_src_dependent.Game;
 import java.util.ArrayList;
@@ -19,8 +20,9 @@ public class bst_games {
 		bridges.setTitle("Binary Search Tree with IGN Game Data");
 
 							// Retrieve Game Data
+		DataSource ds = bridges.getDataSource();
 		ArrayList<Game> game_list = 
-				(ArrayList<Game>) Bridges.getGameData();
+				(ArrayList<Game>) ds.getGameData();
 
 		BST<String, Game>  bst = new BST<String, Game>();
 //		for ( int i = 0; i < game_list.size(); i++ ){

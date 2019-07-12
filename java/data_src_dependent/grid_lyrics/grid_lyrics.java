@@ -5,6 +5,7 @@
 import bridges.base.Color;
 import bridges.base.ColorGrid;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -119,7 +120,8 @@ public class grid_lyrics {
 	public static void main(String[] args) throws Exception {
         Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer (args[3]);
-		String song = Bridges.getSong("Delicate").getLyrics();
+	DataSource ds = bridges.getDataSource();
+		String song = ds.getSong("Delicate").getLyrics();
 		String[] lyrics = splitLyrics(song);									                // returns already split and cleaned array of the lyrics
 
 		if (lyrics.length > 480)

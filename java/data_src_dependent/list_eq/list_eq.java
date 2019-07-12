@@ -2,6 +2,7 @@ import java.util.List;
 
 /* Import Bridges and relevant data source */
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.base.SLelement;
 import bridges.data_src_dependent.EarthquakeUSGS;
 
@@ -60,12 +61,13 @@ public class list_eq{
 		/* Initialize a Bridges connection with your credentials */
         Bridges bridges = new Bridges (Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer (args[3]);
-
+	
 		/* Set an assignment title */
 		bridges.setTitle("List Using USGS Earthquake Data");
 
 		/* Get a List of USGS Earthquake Tweet objects from Bridges */
-		List<EarthquakeUSGS> mylist = bridges.getEarthquakeUSGSData(500);
+	DataSource ds = bridges.getDataSource();
+		List<EarthquakeUSGS> mylist = ds.getEarthquakeUSGSData(500);
 
 		/* Set up a prev and head element */
 		SLelement<EarthquakeUSGS> prev = new SLelement<EarthquakeUSGS>();
