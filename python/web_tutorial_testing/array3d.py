@@ -31,16 +31,16 @@ def main():
     for k in range(num_slices):
         for j in range(num_rows):
             for i in range(num_cols):
-                my_array.get_element(x=i, y=j, z=k).set_label("El " + str(n))
+                my_array[i, j, k].label = "El " + str(n)
                 n += n
 
     #color some of the elements
-    my_array.get_element(x=0, y=0, z=0).get_visualizer().set_color("red")
-    my_array.get_element(x=0, y=3, z=0).get_visualizer().set_color("green")
-    my_array.get_element(x=3, y=0, z=0).get_visualizer().set_color("blue")
-    my_array.get_element(x=3, y=3, z=0).get_visualizer().set_color("magenta")
-    my_array.get_element(x=1, y=1, z=0).get_visualizer().set_color("cyan")
-    my_array.get_element(x=2, y=2, z=0).get_visualizer().set_color("yellow")
+    my_array[0, 0, 0].color = "red"
+    my_array[0, 3, 0].color = "green"
+    my_array[3, 0, 0].color = "blue"
+    my_array[3, 3, 0].color = "magenta"
+    my_array[1, 1, 0].color = "cyan"
+    my_array[2, 2, 0].color = "yellow"
 
     #set visualizer type
     bridges.set_data_structure(my_array)

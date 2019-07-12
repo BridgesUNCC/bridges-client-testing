@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.LinkedList;
 
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.base.SLelement;
 import bridges.base.Element;
 import bridges.base.Edge;
@@ -30,7 +31,8 @@ public class graph_bacon_number {
 		GraphAdjListSimple<String> gr = new GraphAdjListSimple<>();
 
 		// get the actor movie IMDB data through the BRIDGES API
-		List<ActorMovieIMDB> actor_list = bridges.getActorMovieIMDBData (1814);
+		DataSource ds = bridges.getDataSource();
+		List<ActorMovieIMDB> actor_list = ds.getActorMovieIMDBData (1814);
 
 		String actor, movie;
 		for (int k = 0; k < actor_list.size(); k++) {

@@ -8,6 +8,7 @@ import bridges.base.SLelement;
 import bridges.base.GraphAdjList;
 import bridges.base.Edge;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.data_src_dependent.ActorMovieIMDB;
 import java.util.HashMap;
 
@@ -35,7 +36,8 @@ public class graph_imdb_by_genre{
 						// get the actor-movie IMDB data
 						// accessible as JSON from 
 						// https://bridgesdata.herokuapp.com/api/imdb2
-		List<ActorMovieIMDB> actor_movie_data = bridges.getActorMovieIMDBData2();
+		DataSource ds = bridges.getDataSource();
+		List<ActorMovieIMDB> actor_movie_data = ds.getActorMovieIMDBData2();
 
 						// create an adjacency list based graph
 		GraphAdjList<String, ActorMovieIMDB, String> g = new GraphAdjList<>();

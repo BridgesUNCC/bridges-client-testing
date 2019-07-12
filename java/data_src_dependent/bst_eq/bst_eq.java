@@ -3,6 +3,7 @@
 // SimpleDriver.java : Driver to illustrate importing USGS earthquake data
 // 
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.base.BSTElement;
 import bridges.data_src_dependent.EarthquakeUSGS;
 import bridges.data_src_dependent.Tweet;
@@ -20,8 +21,9 @@ public class bst_eq {
 		bridges.setServer (args[3]);
 		bridges.setTitle("Recent Earthquakes(USGIS Data)");
 
-								// Retrieve a list of (maxElements) Tweets */	
-		List<EarthquakeUSGS> eqlist = Bridges.getEarthquakeUSGSData(maxElements );
+								// Retrieve a list of (maxElements) Tweets */
+		DataSource ds = bridges.getDataSource();
+		List<EarthquakeUSGS> eqlist = ds.getEarthquakeUSGSData(maxElements );
 		BST<Double, EarthquakeUSGS>  bst = new BST<Double, EarthquakeUSGS>();
 		for ( int i = 0; i < eqlist.size(); i++ ){
 			if (eqlist.get(i).getMagnitude() > 3.)

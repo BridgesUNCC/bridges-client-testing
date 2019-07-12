@@ -100,7 +100,7 @@ int main(int argc, char **argv) {
 	do {
 		si = current->getValue();
 		current->setLabel(si.getStudentLabel());
-		current->getVisualizer()->setColor(si.getFavoriteColor());
+		current->setColor(si.getFavoriteColor());
 
 		current->getLinkVisualizer(current->getNext())->setColor(si.getDislikeColor());
 		current->getLinkVisualizer(current->getNext())->setThickness(si.getStudentCreditHours()*.5);

@@ -7,6 +7,7 @@ import bridges.base.SLelement;
 import bridges.base.GraphAdjMatrixSimple;
 import bridges.base.Edge;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.data_src_dependent.ActorMovieIMDB;
 
 public class graph_am {
@@ -23,8 +24,9 @@ public class graph_am {
 				+	"Root nodes are both red, Kevin Bacon's leaf nodes are green and Denzel Washington's leaf nodes are neutral.");
 				
 
+    DataSource ds = bridges.getDataSource();
 		ArrayList<ActorMovieIMDB>  actor_movie_data =
-			(ArrayList<ActorMovieIMDB>) bridges.getActorMovieIMDBData(1813);
+			(ArrayList<ActorMovieIMDB>) ds.getActorMovieIMDBData(1813);
 
 		// create an adjacency list based graph
 		GraphAdjMatrixSimple<String> graph = new GraphAdjMatrixSimple<String>();

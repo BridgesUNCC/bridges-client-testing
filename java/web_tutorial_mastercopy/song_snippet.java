@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Random;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.data_src_dependent.Song;
 
 public class song_snippet {
@@ -15,7 +16,8 @@ public class song_snippet {
 #endif
 
 		/* Get a List of ActorMovieIMDB objects from Bridges */
-		List<Song> mylist = bridges.getSongData();
+    DataSource ds = bridges.getDataSource();
+		List<Song> mylist = ds.getSongData();
 
 		/* Inspect a random ActorMovieIMDB object */
 		Song song1 = mylist.get((new Random()).nextInt(mylist.size()));

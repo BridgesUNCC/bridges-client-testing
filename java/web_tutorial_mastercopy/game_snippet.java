@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Random;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.data_src_dependent.Game;
 
 public class game_snippet {
@@ -15,7 +16,8 @@ public class game_snippet {
 #endif
 
 		/* Get a List of Game objects from Bridges */
-		List<Game> mylist = bridges.getGameData();
+    DataSource ds = bridges.getDataSource();
+		List<Game> mylist = ds.getGameData();
 
 		/* Inspect a random Game object */
 		Game game1 = mylist.get((new Random()).nextInt(mylist.size()));

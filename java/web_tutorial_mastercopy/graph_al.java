@@ -5,6 +5,7 @@ import bridges.base.SLelement;
 import bridges.base.GraphAdjListSimple;
 import bridges.base.Edge;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.data_src_dependent.ActorMovieIMDB;
 
 public class graph_al {
@@ -26,8 +27,9 @@ public class graph_al {
                                         "YOUR_API_KEY");
 #endif
 
+    DataSource ds = bridges.getDataSource();
 		ArrayList<ActorMovieIMDB>  actor_movie_data =
-			(ArrayList<ActorMovieIMDB>) bridges.getActorMovieIMDBData(1813);
+			(ArrayList<ActorMovieIMDB>) ds.getActorMovieIMDBData(1813);
 
 
 		// create an adjacency list based graph

@@ -1,4 +1,5 @@
 import bridges.base.Plot;
+import bridges.base.BenchMarking;
 import bridges.connect.Bridges;
 import bridges.validation.RateLimitException;
 
@@ -43,12 +44,12 @@ public class plot_test {
 	public static void main(String[] args) throws IOException, RateLimitException, InterruptedException {
 		Bridges bridges = new Bridges(1001, "test", "1055982372149");
 //		Bridges bridges = new Bridges(0, "kalpathi60", "486749122386");
-		bridges.setServer("plotting");
 		bridges.setVisualizeJSON(true);
 		
 		Plot plot = new Plot("Sort Runtime");
-		plot.runtime("InsertSort", 100, 10000, sort);
-		plot.runtime("bubblesort", 100, 10000, bubbleSort);
+		BenchMarking bench = new BenchMarking(plot);
+		bench.run("InsertSort", 100, 10000, sort);
+		bench.run("bubblesort", 100, 10000, bubbleSort);
 		
 		bridges.setDataStructure(plot);
 		bridges.visualize();

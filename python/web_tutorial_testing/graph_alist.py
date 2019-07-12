@@ -18,7 +18,7 @@ def main():
     bridges.set_title("A Simple Graph (Adjacency List) Example using IMDB Actor/Movie Data")
     bridges.set_description("Two lists each having an actor as the root node with 15 movies they played in as leaf nodes. "
             +	"Root nodes are both red, Kevin Bacon's leaf nodes are green and Denzel Washington's leaf nodes are neutral.")
-            
+
     actor_movie_data = get_actor_movie_imdb_data(1813)
 
     # create an adjacency list based graph
@@ -35,11 +35,11 @@ def main():
     g.add_edge(a1, a2, 1)
 
     # color the two actor nodes
-    g.get_vertices().get("Kevin_Bacon_(I)").get_visualizer().set_color(col_name="red")
-    g.get_vertices().get("Denzel_Washington").get_visualizer().set_color(col_name="red")
+    g.get_vertices().get("Kevin_Bacon_(I)"].color = col_name="red")
+    g.get_vertices().get("Denzel_Washington"].color = col_name="red")
     # make them a bit bigger
-    g.get_vertices().get("Kevin_Bacon_(I)").get_visualizer().set_size(20)
-    g.get_vertices().get("Denzel_Washington").get_visualizer().set_size(20)
+    g.get_vertices().get("Kevin_Bacon_(I)"].set_size(20)
+    g.get_vertices().get("Denzel_Washington"].set_size(20)
 
     # get their nodes
     v1 = g.get_vertices().get(a1)
@@ -61,7 +61,7 @@ def main():
             g.add_edge(a1, m, 1)
             g.add_edge(m, a1, 1)
             # make the movie node a bit transparent
-            g.get_vertices().get(m).get_visualizer().set_opacity(0.5)
+            g.get_vertices().get(m].set_opacity(0.5)
             cnt1 += 1
 
         elif (a == "Denzel_Washington" and cnt2 < 15):
@@ -70,7 +70,7 @@ def main():
             g.add_edge(a2, m, 1)
             g.add_edge(m, a2, 1)
             # make the movie node a bit transparent
-            g.get_vertices().get(m).get_visualizer().set_opacity(0.5)
+            g.get_vertices().get(m].set_opacity(0.5)
             cnt2 += 1
 
     # Next, we illustrate traversing the adjacency list and color the movie
@@ -88,7 +88,7 @@ def main():
         el = g.get_vertices().get(term_vertex)
         # set the color of the node except the Denzel W. node
         if(term_vertex != "Denzel Washington"):
-            el.get_visualizer().set_color(col_name="green")
+            el.color = col_name="green"
         sle = sle.get_next()
 
     # Pass the graph object to BRIDGES

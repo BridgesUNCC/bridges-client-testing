@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Random;
 import bridges.connect.Bridges;
+import bridges.connect.DataSource;
 import bridges.data_src_dependent.Shakespeare;
 
 public class shakespeare_snippet {
@@ -15,7 +16,8 @@ public class shakespeare_snippet {
 #endif
 
 		/* Get a List of Shakespeare objects from Bridges */
-		List<Shakespeare> mylist = bridges.getShakespeareData();
+    DataSource ds = bridges.getDataSource();
+		List<Shakespeare> mylist = ds.getShakespeareData();
 
 		/* Inspect a random Shakespeare object */
 		Shakespeare work1 = mylist.get((new Random()).nextInt(mylist.size()));

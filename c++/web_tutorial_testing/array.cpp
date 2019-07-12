@@ -23,16 +23,16 @@ int main(int argc, char **argv) {
 		arr.getElement(j).setLabel(to_string(arr.getElement(j).getValue()));
 	}
 
-	arr.getElement(0).getVisualizer()->setColor(Color("red"));
-	arr.getElement(1).getVisualizer()->setColor(Color("green"));
-	arr.getElement(2).getVisualizer()->setColor(Color("blue"));
-	arr.getElement(3).getVisualizer()->setColor(Color("cyan"));
-	arr.getElement(4).getVisualizer()->setColor(Color("magenta"));
-	arr.getElement(5).getVisualizer()->setColor(Color("yellow"));
-	arr.getElement(6).getVisualizer()->setColor(Color("red"));
-	arr.getElement(7).getVisualizer()->setColor(Color("green"));
-	arr.getElement(8).getVisualizer()->setColor(Color("blue"));
-	arr.getElement(9).getVisualizer()->setColor(Color("black"));
+	arr.getElement(0).setColor("red");
+	arr.getElement(1).setColor("green");
+	arr.getElement(2).setColor("blue");
+	arr.getElement(3).setColor("cyan");
+	arr.getElement(4).setColor("magenta");
+	arr.getElement(5).setColor("yellow");
+	arr.getElement(6).setColor("red");
+	arr.getElement(7).setColor("green");
+	arr.getElement(8).setColor("blue");
+	arr.getElement(9).setColor("black");
 
 	bridges.setDataStructure(&arr);
 	bridges.visualize();

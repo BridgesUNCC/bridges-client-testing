@@ -28,15 +28,15 @@ def main():
     #populate the array
     for row in range(num_rows):
         for col in  range(num_cols):
-            my_array.get_element(x=row, y=col).set_label("El " + str(row*num_cols + col))
+            my_array[row, col].set_label("El " + str(row*num_cols + col))
 
     #color some of the elements
-    my_array.get_element(x=0, y=0).get_visualizer().set_color("red")
-    my_array.get_element(x=0, y=3).get_visualizer().set_color("green")
-    my_array.get_element(x=3, y=0).get_visualizer().set_color("blue")
-    my_array.get_element(x=3, y=3).get_visualizer().set_color("magenta")
-    my_array.get_element(x=1, y=1).get_visualizer().set_color("cyan")
-    my_array.get_element(x=2, y=2).get_visualizer().set_color("yellow")
+    my_array[0, 0].set_color("red")
+    my_array[0, 3].set_color("green")
+    my_array[3, 0].set_color("blue")
+    my_array[3, 3].set_color("magenta")
+    my_array[1, 1].set_color("cyan")
+    my_array[2, 2].set_color("yellow")
 
     #set visualizer type
     bridges.set_data_structure(my_array)
