@@ -10,6 +10,8 @@ env_vars.mk
 
 c++/web_tutorial_testing/*.cpp
 c++/web_tutorial_fortheweb/*.cpp
+c++/web_tutorial_testing/*.h
+c++/web_tutorial_fortheweb/*.h
 
 java/web_tutorial_testing/*.java
 java/web_tutorial_fortheweb/*.java
