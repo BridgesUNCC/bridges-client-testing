@@ -30,7 +30,12 @@ int main(int argc, char **argv) {
 	vector<EarthquakeUSGS> eq_list = ds.getEarthquakeUSGSData(max_quakes);
 
 	cout << "Earthquake 0:" << endl;
-	cout << "\tMagnitude:" << eq_list[0].getMagnitude() << endl;
+	cout << "\tMagnitude:" << eq_list[0].getMagnitude() << endl
+		 << "\tDate:" << eq_list[0].getDateStr() << endl 
+		 << "\tLocation: " <<  eq_list[0].getLocation() << endl
+		 << "\tLat/Long:"  << eq_list[0].getLatit() << "," << 
+		 			eq_list[0].getLongit() << endl;
+		
 
 	return 0;
 }
