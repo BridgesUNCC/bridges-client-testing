@@ -42,9 +42,20 @@ public class plot_test {
 	};
 
 	public static void main(String[] args) throws IOException, RateLimitException, InterruptedException {
-		Bridges bridges = new Bridges(1001, "test", "1055982372149");
-//		Bridges bridges = new Bridges(0, "kalpathi60", "486749122386");
-		bridges.setVisualizeJSON(true);
+#if TESTING
+
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+		bridges.setServer(args[3]);
+
+		bridges.setTitle("One-Dimensional Array Example");
+        bridges.setDescription("OneD array with colors in order left to right: "
+				+	"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
+
+#else
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
+										"YOUR_API_KEY");
+#endif
+    //bridges.setVisualizeJSON(true);
 		
 		Plot plot = new Plot("Sort Runtime");
 		BenchMarking bench = new BenchMarking(plot);

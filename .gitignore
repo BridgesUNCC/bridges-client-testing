@@ -8,14 +8,11 @@ __pycache__/
 *.dSYM
 env_vars.mk
 
-c++/web_tutorial
-c++/web_tutorial_testing
-c++/web_tutorial_fortheweb
+c++/web_tutorial_testing/*.cpp
+c++/web_tutorial_fortheweb/*.cpp
 
-java/web_tutorial
-java/web_tutorial_testing
-java/web_tutorial_fortheweb
+java/web_tutorial_testing/*.java
+java/web_tutorial_fortheweb/*.java
 
-python/web_tutorial
-python/web_tutorial_testing
-python/web_tutorial_fortheweb
+python/web_tutorial_testing/*.py
+python/web_tutorial_fortheweb/*.py
