@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 
 
+_DS_Store
 *.class
 *.o
 *.dSYM
