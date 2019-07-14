@@ -1,5 +1,5 @@
-import bridges.base.Plot;
-import bridges.base.BenchMarking;
+import bridges.base.LineChart;
+import bridges.base.SortingBenchmark;
 import bridges.connect.Bridges;
 import bridges.validation.RateLimitException;
 
@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.function.Consumer;
 
-public class plot_test {
+public class sortingbenchmark {
 	
 	static Consumer <int[]> sort = arr -> {
 		int n = arr.length; 
@@ -47,9 +47,8 @@ public class plot_test {
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
-		bridges.setTitle("One-Dimensional Array Example");
-        bridges.setDescription("OneD array with colors in order left to right: "
-				+	"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
+		bridges.setTitle("Sorting Benchmark");
+        bridges.setDescription("Sorting Benchmark test");
 
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
@@ -57,8 +56,8 @@ public class plot_test {
 #endif
     //bridges.setVisualizeJSON(true);
 		
-		Plot plot = new Plot("Sort Runtime");
-		BenchMarking bench = new BenchMarking(plot);
+		LineChart plot = new LineChart("Sort Runtime");
+		SortingBenchmark bench = new SortingBenchmark(plot);
 		bench.run("InsertSort", 100, 10000, sort);
 		bench.run("bubblesort", 100, 10000, bubbleSort);
 		
