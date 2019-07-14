@@ -28,7 +28,13 @@ public class sortingbenchmark {
 		arr[i] = temp; 
 	    } 
     };
-	
+
+    static Consumer <int[]> javasort = arr -> {
+	Arrays.sort(arr);
+		  
+    };
+
+    
     static Consumer <int[]> bubbleSort = arr -> {
 	int n = arr.length; 
         for (int i = 0; i < n-1; i++) 
@@ -63,6 +69,7 @@ public class sortingbenchmark {
 	bench.setTimeCap(1000*1); //1 seconds
 	bench.run("InsertSort", sort);
 	bench.run("bubblesort", bubbleSort);
+	bench.run("javasort", javasort);
 
 	bridges.setDataStructure(plot);
 	bridges.visualize();
@@ -70,11 +77,11 @@ public class sortingbenchmark {
 	LineChart plot2 = new LineChart();
 	plot2.setTitle("Sort Runtime");
 	SortingBenchmark bench2 = new SortingBenchmark(plot2);
-	bench2.geometricRange(100, 10000000, 1.5);
+	bench2.geometricRange(100, 1000000, 1.5);
 	bench2.setTimeCap(1000*1); //1 seconds
 	bench2.run("InsertSort", sort);
 	bench2.run("bubblesort", bubbleSort);
-		
+	bench2.run("javasort", javasort);
 		
 	bridges.setDataStructure(plot2);
 	bridges.visualize();
