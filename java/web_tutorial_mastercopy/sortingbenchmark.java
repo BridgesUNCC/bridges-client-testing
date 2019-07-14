@@ -58,8 +58,8 @@ public class sortingbenchmark {
 		
 		LineChart plot = new LineChart("Sort Runtime");
 		SortingBenchmark bench = new SortingBenchmark(plot);
-		bench.run("InsertSort", 100, 10000, sort);
-		bench.run("bubblesort", 100, 10000, bubbleSort);
+		bench.run("InsertSort", 500, 10000, sort);
+		bench.run("bubblesort", 500, 10000, bubbleSort);
 		
 		bridges.setDataStructure(plot);
 		bridges.visualize();
