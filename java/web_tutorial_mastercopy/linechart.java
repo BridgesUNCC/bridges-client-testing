@@ -23,7 +23,7 @@ public class linechart {
 #endif
     //bridges.setVisualizeJSON(true);
 		
-    LineChart plot = new LineChart("Sort Runtime");
+    LineChart plot = new LineChart();
 
 double x1[] = new double[]{0, 3, 5, 20};
 double y1[] = new double[]{0, 3, 5, 20};
@@ -32,14 +32,17 @@ double y2[] = new double[]{0, 30, 400};
 plot.setDataSeries("1", x1, y1);
 plot.setDataSeries("2", x2, y2);
 
+plot.setTitle("Sort Runtime");
+
 bridges.setDataStructure(plot);
 		bridges.visualize();
 
-plot.toggleLogarithmicX(true);
+		plot.toggleLogarithmicX(true);
 
 		bridges.visualize();
 
-plot.toggleLogarithmicY(true);
+		plot.toggleMouseTrack(true);
+		plot.toggleLogarithmicY(true);
 
 		bridges.visualize();
 
