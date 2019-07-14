@@ -28,7 +28,7 @@ public class linechart {
 double x1[] = new double[]{1, 3, 5, 20};
 double y1[] = new double[]{2, 3, 5, 20};
 double x2[] = new double[]{2, 15.2,  40};
-double y2[] = new double[]{4, 30.5, 400};
+double y2[] = new double[]{4, 30.5, 400.99};
 plot.setDataSeries("1", x1, y1);
 plot.setDataSeries("2", x2, y2);
 
@@ -44,6 +44,8 @@ bridges.setDataStructure(plot);
 		plot.toggleMouseTrack(true);
 		plot.toggleLogarithmicY(true);
 
+		bridges.setVisualizeJSON(true);
+		
 		bridges.visualize();
 
 	}
