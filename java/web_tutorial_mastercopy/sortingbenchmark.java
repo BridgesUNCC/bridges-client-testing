@@ -9,60 +9,75 @@ import java.util.function.Consumer;
 
 public class sortingbenchmark {
 	
-	static Consumer <int[]> sort = arr -> {
-		int n = arr.length; 
+    static Consumer <int[]> sort = arr -> {
+	int n = arr.length; 
 		  
         // One by one move boundary of unsorted subarray 
         for (int i = 0; i < n-1; i++) 
-        { 
-            // Find the minimum element in unsorted array 
-            int min_idx = i; 
-            for (int j = i+1; j < n; j++) 
-                if (arr[j] < arr[min_idx]) 
-                    min_idx = j; 
+	    { 
+		// Find the minimum element in unsorted array 
+		int min_idx = i; 
+		for (int j = i+1; j < n; j++) 
+		    if (arr[j] < arr[min_idx]) 
+			min_idx = j; 
   
-            // Swap the found minimum element with the first 
-            // element 
-            int temp = arr[min_idx]; 
-            arr[min_idx] = arr[i]; 
-            arr[i] = temp; 
-        } 
-	};
+		// Swap the found minimum element with the first 
+		// element 
+		int temp = arr[min_idx]; 
+		arr[min_idx] = arr[i]; 
+		arr[i] = temp; 
+	    } 
+    };
 	
-	static Consumer <int[]> bubbleSort = arr -> {
-		int n = arr.length; 
+    static Consumer <int[]> bubbleSort = arr -> {
+	int n = arr.length; 
         for (int i = 0; i < n-1; i++) 
             for (int j = 0; j < n-i-1; j++) 
                 if (arr[j] > arr[j+1]) 
-                { 
-                    int temp = arr[j]; 
-                    arr[j] = arr[j+1]; 
-                    arr[j+1] = temp; 
-                } 
-	};
+		    { 
+			int temp = arr[j]; 
+			arr[j] = arr[j+1]; 
+			arr[j+1] = temp; 
+		    } 
+    };
 
-	public static void main(String[] args) throws IOException, RateLimitException, InterruptedException {
-#if TESTING
+    public static void main(String[] args) throws IOException, RateLimitException, InterruptedException {
+	#if TESTING
 
-		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
-		bridges.setServer(args[3]);
+	    Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+	bridges.setServer(args[3]);
 
-		bridges.setTitle("Sorting Benchmark");
+	bridges.setTitle("Sorting Benchmark");
         bridges.setDescription("Sorting Benchmark test");
 
-#else
-		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
-										"YOUR_API_KEY");
-#endif
-    //bridges.setVisualizeJSON(true);
+	#else
+	    Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
+					  "YOUR_API_KEY");
+	#endif
+	    //bridges.setVisualizeJSON(true);
 		
-		LineChart plot = new LineChart("Sort Runtime");
-		SortingBenchmark bench = new SortingBenchmark(plot);
-		bench.run("InsertSort", 500, 10000, sort);
-		bench.run("bubblesort", 500, 10000, bubbleSort);
+	    LineChart plot = new LineChart();
+	plot.setTitle("Sort Runtime");
+	SortingBenchmark bench = new SortingBenchmark(plot);
+	bench.linearRange(100, 10000, 20);
+	bench.setTimeCap(1000*1); //1 seconds
+	bench.run("InsertSort", sort);
+	bench.run("bubblesort", bubbleSort);
+
+	bridges.setDataStructure(plot);
+	bridges.visualize();
+
+	LineChart plot2 = new LineChart();
+	plot2.setTitle("Sort Runtime");
+	SortingBenchmark bench2 = new SortingBenchmark(plot2);
+	bench2.geometricRange(100, 10000000, 1.5);
+	bench2.setTimeCap(1000*1); //1 seconds
+	bench2.run("InsertSort", sort);
+	bench2.run("bubblesort", bubbleSort);
 		
-		bridges.setDataStructure(plot);
-		bridges.visualize();
-	}
+		
+	bridges.setDataStructure(plot2);
+	bridges.visualize();
+    }
 
 }
