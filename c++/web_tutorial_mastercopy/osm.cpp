@@ -36,7 +36,13 @@ int main(int argc, char **argv) {
 /*
 	OSMData osm_data = ds->getOSMData("uncc_campus");
 */
-	OSMData osm_data = ds->getOSMData("charlotte");
+	OSMData osm_data;
+	try {
+	  osm_data = ds->getOSMDataOld("charlotte");
+	}
+	catch (std::string s) {
+	  std::cerr<<"Exception: "<<s<<"\n";
+	}
 /*
 	OSMData osm_data = ds->getOSMData("washington_dc");
 	OSMData osm_data = ds->getOSMData("saint_paul");
