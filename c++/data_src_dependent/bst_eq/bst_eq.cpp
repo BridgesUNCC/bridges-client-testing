@@ -6,7 +6,6 @@ using namespace std;
 #include "Bridges.h"
 #include "DataSource.h"
 #include "data_src/EarthquakeUSGS.h"
-#include "book.h"
 #include "BSTElement.h"
 #include "BST.h"
 

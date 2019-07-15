@@ -7,6 +7,7 @@
 
 using namespace std;
 using namespace bridges;
+using namespace bridges::dataset;
 
 BSTElement<float, EarthquakeUSGS> *insert (BSTElement<float, EarthquakeUSGS> *rt,
 	BSTElement<float, EarthquakeUSGS> *new_el);
