@@ -4,6 +4,7 @@ import bridges.base.SymbolCollection;
 import bridges.base.Rectangle;
 import bridges.base.Circle;
 import bridges.base.Label;
+import bridges.base.Polyline;
 import bridges.base.Polygon;
 import bridges.base.Color;
 
@@ -38,7 +39,7 @@ public class shape_collection {
 		sc.addSymbol(s2);
 
 
-		Polygon s3 = new Polygon();
+		Polyline s3 = new Polyline();
 		//	vector<float> pts = {-100.0, 0.0, 100.0, 0.0, 0.0, 0.0, 0.0, -100.0, 0.0, 100.0, 0.0, 0.0};
 		//	s3->setPolygon (pts);
 
@@ -50,6 +51,14 @@ public class shape_collection {
 		s3.addPoint(0, 0);
 		s3.setStrokeColor(new Color("magenta"));
 		sc.addSymbol(s3);
+
+		Polyline s4 = new Polyline();
+			s4.addPoint(-25, -10);
+			s4.addPoint(25, -10);
+			s4.addPoint(0, 50);
+			s4.setStrokeColor(new Color("darkorchid"));
+			s4.setStrokeWidth(2.0f);
+		sc.addSymbol(s4);
 
 		Label l = new Label();
 		l.setLocation(0, 25);
