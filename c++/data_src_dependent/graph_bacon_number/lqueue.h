@@ -14,6 +14,8 @@
 #include "queue.h"
 
 using namespace bridges;
+using namespace bridges::datastructure;
+
 // Implementations for linked queue function members
 // Linked queue implementation
 template <typename E> class LQueue: public Queue<E> {
