@@ -19,21 +19,21 @@ public class graph_am {
         Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
-		// set a title for the visualization
-		bridges.setTitle("A Simple Graph (Adjacency Matrix)  Example using IMDB Actor/Movie Data");
-		bridges.setDescription("Two lists each having an actor as the root node with 15 movies they played in as leaf nodes. "
-				+	"Root nodes are both red, Kevin Bacon's leaf nodes are green and Denzel Washington's leaf nodes are neutral.");
-				
 #else
         Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                         "YOUR_API_KEY");
 #endif
 
-    DataSource ds = bridges.getDataSource();
+		//  title, description
+		bridges.setTitle("A Simple Graph (Adjacency Matrix)  Example using IMDB Actor/Movie Data");
+		bridges.setDescription("Two lists each having an actor as the root node with 15 movies they played in as leaf nodes. "
+				+	"Root nodes are both red, Kevin Bacon's leaf nodes are green and Denzel Washington's leaf nodes are neutral.");
+				
+    	DataSource ds = bridges.getDataSource();
 		ArrayList<ActorMovieIMDB>  actor_movie_data =
 			(ArrayList<ActorMovieIMDB>) ds.getActorMovieIMDBData(1813);
 
-		// create an adjacency list based graph
+		// create an adjacency matrix based graph
 		GraphAdjMatrixSimple<String> graph = new GraphAdjMatrixSimple<String>();
 
 		// first create vertices for two actors and add them to the graph
