@@ -2,6 +2,7 @@
 #include "SymbolCollection.h"
 #include "Rectangle.h"
 #include "Polygon.h"
+#include "Polyline.h"
 #include "Circle.h"
 #include "Label.h"
 
@@ -37,7 +38,15 @@ int main(int argc, char **argv) {
 	Circle s2(25, 0, 25);
 	s2.setFillColor(Color("green"));
 	sc.addSymbol(&s2);
-	
+
+	Polyline s4;
+	s4.addPoint(-25, -10);
+	s4.addPoint(25, -10);
+	s4.addPoint(0, 50);
+	s4.setStrokeColor("darkorchid");
+	s4.setStrokeWidth(2.0f);
+	sc.addSymbol(&s4);
+
 	Polygon s3;
 	s3.addPoint(-100, 0);
 	s3.addPoint(100, 0);
@@ -45,15 +54,17 @@ int main(int argc, char **argv) {
 	s3.addPoint(0, -100);
 	s3.addPoint(0, 100);
 	s3.addPoint(0, 0);
-	s3.setStrokeColor(Color("magenta"));
+	s3.setStrokeColor("magenta");
 	sc.addSymbol(&s3);
+
+
 
 	Label l;
 	l.setLocation(0,25);
 	l.setFontSize(12);
 	l.setStrokeWidth(1.0f);
 	l.setLabel("test label");
-	l.setStrokeColor(Color("purple"));
+	l.setStrokeColor("purple");
 	sc.addSymbol(&l);
 
 	// set visualizer type
