@@ -15,6 +15,7 @@ BSTElement<float, EarthquakeUSGS> *insert (BSTElement<float, EarthquakeUSGS> *rt
 int max_quakes = 25;
 
 int main(int argc, char **argv) {
+	// create Bridges object
 #if TESTING
                         // command line args provide credentials and server to test on
     Bridges bridges (atoi(argv[1]), argv[2], argv[3]);

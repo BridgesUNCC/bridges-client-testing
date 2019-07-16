@@ -9,9 +9,9 @@ using namespace std;
 using namespace bridges;
 
 int main(int argc, char **argv) {
+	// create Bridges object
 #if TESTING
                         // command line args provide credentials and server to test on
-    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
     Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
         bridges.setServer(argv[4]);
