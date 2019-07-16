@@ -12,15 +12,15 @@ public class kdt {
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
-		bridges.setTitle("A Kd Tree Example");
-		bridges.setDescription("A three-level tree with partitioners cycling between X and Y."
-                        + " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
-        
 #else
         Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                         "YOUR_API_KEY");
 #endif
 
+		bridges.setTitle("A Kd Tree Example");
+		bridges.setDescription("A three-level tree with partitioners cycling between X and Y."
+                        + " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
+        
 		// create Kd Tree nodes
 		KdTreeElement<Integer, String> t0 = new KdTreeElement<Integer, String>(50, 0);
 		KdTreeElement<Integer, String> t1 = new KdTreeElement<Integer, String>(25, 1);
@@ -39,6 +39,7 @@ public class kdt {
 		t2.setLeft(t5);
 		t2.setRight(t6);
 
+		// set partitioning dimensions
 		t0.setLabel("X");
 		t1.setLabel("Y");
 		t2.setLabel("Y");
@@ -48,6 +49,7 @@ public class kdt {
 		t6.setLabel("X");
 
 		t0.setColor("red");
+
 		// color the leaf nodes that represent the code letters
 		t1.setColor("orange");
 		t4.setColor("orange");
