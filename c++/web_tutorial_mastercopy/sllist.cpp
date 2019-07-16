@@ -60,6 +60,9 @@ int main (int argc, char **argv) {
 	// set node size
 	el0->setSize (20);
 
+	// set link label
+	el2->getLinkVisualizer(el3)->setLabel("Gladys_to_Karol");
+
 	bridges.setDataStructure(el0);
 	bridges.visualize();
 }

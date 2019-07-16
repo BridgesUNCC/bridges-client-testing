@@ -39,13 +39,11 @@ int main(int argc, char **argv) {
     DLelement<string>  *el3 = new DLelement<string> ("Karol Soderman", "Karol Soderman");
     DLelement<string>  *el4 = new DLelement<string> ("Starr McGinn", "Starr McGinn");
 	
-	// insert the students into the  front of the list
-	DLelement<string> *head = nullptr;
-	head = insertFront(head, el0);
-	head = insertFront(head, el1);
-	head = insertFront(head, el2);
-	head = insertFront(head, el3);
-	head = insertFront(head, el4);
+	// create the list
+	el0->setNext(el1); el1->setPrev(el0);
+	el1->setNext(el2); el2->setPrev(el1);
+	el2->setNext(el3); el3->setPrev(el2);
+	el3->setNext(el4); el4->setPrev(el3);
 
 	// add  element colors
 	// set colors for list elements - see the Color class for supported colors
@@ -59,7 +57,10 @@ int main(int argc, char **argv) {
 
     // adjust link thickness
     el3->getLinkVisualizer(el4)->setThickness(3.0f);
-    el4->getLinkVisualizer(el1)->setThickness(3.0f);
+    el4->getLinkVisualizer(el3)->setThickness(6.0f);
+
+	// set link label
+	el2->getLinkVisualizer(el3)->setLabel("Link Label");
 
     // set node transparency
     el4->setOpacity (0.5f);
@@ -67,14 +68,13 @@ int main(int argc, char **argv) {
     // set node size
     el0->setSize (20);
 
-	bridges.setDataStructure(head);
+	bridges.setDataStructure(el0);
 	bridges.visualize();
 
 	return 0;
 }
 
-DLelement<string> *insertFront(DLelement<string> *front,
-	DLelement<string> *new_el) {
+DLelement<string> *insertFront(DLelement<string> *front, DLelement<string> *new_el) {
 	if (front == nullptr)
 		return new_el;
 
