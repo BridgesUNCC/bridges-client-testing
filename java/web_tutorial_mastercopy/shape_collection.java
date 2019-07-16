@@ -1,4 +1,3 @@
-
 import bridges.connect.Bridges;
 import bridges.base.SymbolCollection;
 import bridges.base.Rectangle;
@@ -13,22 +12,24 @@ public class shape_collection {
 
 	public static void main(String[] args) throws Exception {
 
+		//create Bridges object
+#if TESTING
 		if (args.length < 2)
 			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
-		// note: you must fill in with your Bridges credentials
-#if TESTING
         Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
         bridges.setServer(args[3]);
 
-		bridges.setTitle("Symbol Collection");
-		bridges.setDescription("Red square, green circle, magenta horizontal and vertical lines, "
-				+	"and a test label with a purple outline.");
-				
 #else
         Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                         "YOUR_API_KEY");
 #endif
+		// title, description
+		bridges.setTitle("Symbol Collection");
+		bridges.setDescription("Red square, green circle, magenta horizontal and vertical lines, "
+				+	"and a test label with a purple outline.");
+				
 
+		// create some symbols and add to symbol collection
 		SymbolCollection sc = new SymbolCollection();
 		Rectangle s1 = new Rectangle(-25.0f, 0.0f, 50, 50);
 		s1.setFillColor(new Color("red"));
@@ -39,10 +40,7 @@ public class shape_collection {
 		sc.addSymbol(s2);
 
 
-		Polyline s3 = new Polyline();
-		//	vector<float> pts = {-100.0, 0.0, 100.0, 0.0, 0.0, 0.0, 0.0, -100.0, 0.0, 100.0, 0.0, 0.0};
-		//	s3->setPolygon (pts);
-
+		Polygon s3 = new Polygon();
 		s3.addPoint(-100, 0);
 		s3.addPoint(100, 0);
 		s3.addPoint(0, 0);
@@ -68,10 +66,9 @@ public class shape_collection {
 		l.setStrokeColor(new Color("purple"));
 		sc.addSymbol(l);
 
-
 		// set visualizer type
-
 		bridges.setDataStructure(sc);
+
 		// visualize the JSON and Collection
 		bridges.visualize();
 	}
