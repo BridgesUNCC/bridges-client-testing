@@ -38,28 +38,11 @@ int main(int argc, char **argv) {
 */
 	OSMData osm_data;
 	try {
-	  osm_data = ds->getOSMDataOld("charlotte");
+	  osm_data = ds->getOSMDataOld("uncc_campus");
 	}
 	catch (std::string s) {
 	  std::cerr<<"Exception: "<<s<<"\n";
 	}
-/*
-	OSMData osm_data = ds->getOSMData("washington_dc");
-	OSMData osm_data = ds->getOSMData("saint_paul");
-	OSMData osm_data = ds->getOSMData("new_york");
-	OSMData osm_data = ds->getOSMData("los_angeles");
-	OSMData osm_data = ds->getOSMData("san_francisco");
-	OSMData osm_data = ds->getOSMData("miami");
-	OSMData osm_data = ds->getOSMData("minneapolis");
-	OSMData osm_data = ds->getOSMData("dallas");
-*/
-
-/*
-				// Dont work - data too large
-	OSMData osm_data = ds->getOSMData("houston");
-	OSMData osm_data = ds->getOSMData("chicago");
-*/
-
 	vector<OSMVertex> vertices = osm_data.getVertices(); 
 	vector<OSMEdge> edges = osm_data.getEdges(); 
 
@@ -79,6 +62,7 @@ int main(int argc, char **argv) {
 		
     }
 
+	gr->forceLargeVisualization(true);
 	bridges.setDataStructure(gr);
 	bridges.visualize();
 
