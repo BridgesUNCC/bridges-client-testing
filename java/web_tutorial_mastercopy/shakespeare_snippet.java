@@ -9,14 +9,14 @@ public class shakespeare_snippet {
 
 		//create the Bridges object
 #if TESTING
-    Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
-    bridges.setServer(args[3]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+   		bridges.setServer(args[3]);
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
 		/* Get a List of Shakespeare objects from Bridges */
-    DataSource ds = bridges.getDataSource();
+    	DataSource ds = bridges.getDataSource();
 		List<Shakespeare> mylist = ds.getShakespeareData();
 
 		/* Inspect a random Shakespeare object */
@@ -24,6 +24,5 @@ public class shakespeare_snippet {
 		System.out.println(work1.getTitle());
 		System.out.println(work1.getType());
 		System.out.println(work1.getText().substring(0, Math.min(100, work1.getText().length())) + "...");
-
 	}
 }

@@ -9,14 +9,14 @@ public class song_snippet {
 
 		//create the Bridges object
 #if TESTING
-    Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
-    bridges.setServer(args[3]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+		bridges.setServer(args[3]);
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
 		/* Get a List of ActorMovieIMDB objects from Bridges */
-    DataSource ds = bridges.getDataSource();
+		DataSource ds = bridges.getDataSource();
 		List<Song> mylist = ds.getSongData();
 
 		/* Inspect a random ActorMovieIMDB object */
@@ -26,6 +26,5 @@ public class song_snippet {
 		System.out.println(song1.getAlbumTitle());
 		System.out.println(song1.getReleaseDate());
 		System.out.println(song1.getLyrics().substring(0, Math.min(100, song1.getLyrics().length())) + "...");
-
 	}
 }
