@@ -2,8 +2,8 @@
 #include "Bridges.h"
 #include "TreeElement.h"
 
-using namespace std;
 using namespace bridges;
+using std::string;
 
 int main(int argc, char **argv) {
 
@@ -32,17 +32,6 @@ int main(int argc, char **argv) {
 	TreeElement<string> *t6 =  new TreeElement<string>("Tree", "Tree");
 	TreeElement<string> *t7 =  new TreeElement<string>("Representation", "Representation");
 
-	// put in labels for each node; we simply use integers
-
-
-	t0->setLabel(t0->getValue());
-	t2->setLabel(t2->getValue());
-	t3->setLabel(t3->getValue());
-	t4->setLabel(t4->getValue());
-	t5->setLabel(t5->getValue());
-	t6->setLabel(t6->getValue());
-	t7->setLabel(t7->getValue());
-
 	// add links to children
 
 	t0->addChild(t2);
@@ -56,6 +45,14 @@ int main(int argc, char **argv) {
 
 	t0->setColor("red");
 	t0->setOpacity(0.3f);
+
+	// link colors
+	t0->getLinkVisualizer(t2)->setColor("green");
+	t0->getLinkVisualizer(t2)->setThickness(2.0f);
+	t0->getLinkVisualizer(t3)->setColor("blue");
+	t0->getLinkVisualizer(t3)->setThickness(2.0f);
+	t0->getLinkVisualizer(t4)->setColor("orange");
+	t0->getLinkVisualizer(t4)->setThickness(2.0f);
 
 	// provide BRIDGES the  handle to the tree structure
 	bridges.setDataStructure(t0);

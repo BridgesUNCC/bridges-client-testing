@@ -17,38 +17,35 @@ int max_quakes = 25;
 int main(int argc, char **argv) {
 #if TESTING
                         // command line args provide credentials and server to test on
-    //Bridges *bridges =  new Bridges(atoi(argv[1]), argv[2], argv[3]);
     Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
     
     if (argc > 4)
         bridges.setServer(argv[4]);
 
-	bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
-	bridges.setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than "
-		 "the parent is set to the right and nodes with a magnitude less than the parent set to the left. "
-		 "The root is set to red the leaf nodes are neutral.");
 		
 #else
     Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
                                 "YOUR_API_KEY");
 #endif
 
-	string hilite_color = "orange",
-		   def_color = "green",
-		   end_color = "red";
-    
-	DataSource *ds = new DataSource;
+	// set title, description
+	bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
+	bridges.setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than the parent is set to the right and nodes with a magnitude less than the parent set to the left. The root is set to red the leaf nodes are neutral.");
 
+	// get earthquake data
+	DataSource *ds = new DataSource;
 	vector<EarthquakeUSGS> eq_list = ds->getEarthquakeUSGSData(max_quakes);
 
+	// create the binary tree root
 	BSTElement<float, EarthquakeUSGS> *root = nullptr;
 
+	// insert quake records into the tree
 	for (int k = 0; k < max_quakes; k++) {
 		EarthquakeUSGS eq = eq_list[k];
 		BSTElement<float, EarthquakeUSGS>
 		*bst_node = new BSTElement<float, EarthquakeUSGS>(eq.getMagnitude(), eq);
-		bst_node->setLabel(eq.getTitle() + "\\nLat/Long: ( " +
-			to_string(eq.getLatit()) + "," + to_string(eq.getLongit()) + " )\\n" +
+		bst_node->setLabel(eq.getTitle() + "\nLat/Long: ( " +
+			to_string(eq.getLatit()) + "," + to_string(eq.getLongit()) + " )\n" +
 			eq.getDateStr());
 		root = insert (root, bst_node);
 		root->setColor("red");
@@ -61,6 +58,7 @@ int main(int argc, char **argv) {
 	return 0;
 }
 
+// inserts a record into the tree
 BSTElement<float, EarthquakeUSGS> *insert (BSTElement<float, EarthquakeUSGS> *rt,
 	BSTElement<float, EarthquakeUSGS> *new_el) {
 	if (rt == nullptr)
