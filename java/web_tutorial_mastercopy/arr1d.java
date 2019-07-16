@@ -5,21 +5,22 @@ public class arr1d {
 	public static void main(String[] args) throws Exception {
 
 		//create the Bridges object, set credentials
-
 #if TESTING
 
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
-		bridges.setTitle("One-Dimensional Array Example");
-        bridges.setDescription("OneD array with colors in order left to right: "
-				+	"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
 
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
 										"YOUR_API_KEY");
 #endif
 		
+		// title, description
+		bridges.setTitle("One-Dimensional Array Example");
+        bridges.setDescription("OneD array with colors in order left to right: "
+				+	"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
+
 		//  set array dimensions, allocate array of elements
 		int arraySize = 10;
 
