@@ -22,21 +22,24 @@ int main(int argc, char **argv) {
 	Array1D<int> arr (10);
 
 	for (int j = 0; j < 10; j++) {
-		arr.getElement(j).setValue(j * j);
-		arr.getElement(j).setLabel(to_string(arr.getElement(j).getValue()));
+	  arr[j]=j*j;
+	  arr.getElement(j).setLabel(to_string(arr[j]));
 	}
 
 	// set visual attributes
-	arr[0].setColor("red");
-	arr[1].setColor("green");
-	arr[2].setColor("blue");
-	arr[3].setColor("cyan");
-	arr[4].setColor("magenta");
-	arr[5].setColor("yellow");
-	arr[6].setColor("red");
-	arr[7].setColor("green");
-	arr[8].setColor("blue");
-	arr[9].setColor("black");
+	arr.getElement(0).setColor("red");
+	arr.getElement(1).setColor("green");
+	arr.getElement(2).setColor("blue");
+	arr.getElement(3).setColor("cyan");
+	arr.getElement(4).setColor("magenta");
+	arr.getElement(5).setColor("yellow");
+	arr.getElement(6).setColor("red");
+	arr.getElement(7).setColor("green");
+	arr.getElement(8).setColor("blue");
+	arr.getElement(9).setColor("black");
+
+	for (auto p : arr) {
+	}
 
 	// visualize
 	bridges.setDataStructure(&arr);
