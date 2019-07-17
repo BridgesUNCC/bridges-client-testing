@@ -18,11 +18,6 @@ int main(int argc, char **argv) {
 #endif
 	// title, description
 	bridges.setTitle("Two-Dimensional Array Example");
-	bridges.setDescription("A TwoD array with four rows and four columns. "
-						 "Row one left to right: red, neutral, neutral, blue. "
-						 "Row two left to right: neutral, cyan, neutral, neutral. "
-						 "Row three left to right: neutral, neutral, yellow, neutral. "
-						 "Row four left to right: green, neutral, neutral, magenta.");
 
 	// create, populate 2D array
 	int rows = 5;

@@ -26,8 +26,12 @@ int main(int argc, char **argv) {
 
 		
 	// create, populate 3D array
-	Array3D<string> arr (4, 4, 4);
+	Array3D<std::string> arr (4, 4, 4);
 
+	arr[0][1][2] = "hi there";
+	arr.getElement(0, 1, 2).setLabel(arr[0][1][2]);
+	arr.getElement(0, 1, 2).setColor("white");
+	
 	arr.getElement(0, 0, 0).setColor("red");
 	arr.getElement(0, 3, 0).setColor("green");
 	arr.getElement(3, 0, 0).setColor("blue");
