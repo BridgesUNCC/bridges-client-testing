@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "Array.h"
+#include "Array3D.h"
 #include "Bridges.h"
 
 using namespace std;
@@ -10,14 +10,11 @@ int main(int argc, char **argv) {
 	// create Bridges object
 #if TESTING
                         // command line args provide credentials and server to test on
-    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
-    if (argc > 4)
-        bridges.setServer(argv[4]);
-
-						
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+	if (argc > 4)
+		bridges.setServer(argv[4]);
 #else
-    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
-                                "YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 	// title, description
 	bridges.setTitle("Three-Dimensional Array Example");
@@ -29,7 +26,7 @@ int main(int argc, char **argv) {
 
 		
 	// create, populate 3D array
-	Array<string> arr (4, 4, 4);
+	Array3D<string> arr (4, 4, 4);
 
 	arr.getElement(0, 0, 0).setColor("red");
 	arr.getElement(0, 3, 0).setColor("green");
