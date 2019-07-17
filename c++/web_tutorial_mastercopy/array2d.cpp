@@ -25,18 +25,23 @@ int main(int argc, char **argv) {
 						 "Row four left to right: green, neutral, neutral, magenta.");
 
 	// create, populate 2D array
-	int dims[2] = {4, 4}; 
-	Array2D<string> arr(dims[1], dims[0]);
+	int rows = 5;
+	int cols = 3;
+	Array2D<int> arr(rows, cols);
 
-	for (int i = 0; i < dims[0]; i++)
-		for (int j = 0; j < dims[1]; j++)
-			arr.getElement(i, j).setLabel("El " + to_string(j * dims[0] + i));
+	for (int i = 0; i < rows; i++)
+		for (int j = 0; j < cols; j++)
+		  arr[i][j] = i*100+j;
+	
+	for (int i = 0; i < rows; i++)
+		for (int j = 0; j < cols; j++)
+		  arr.getElement(i, j).setLabel(std::to_string(arr[i][j]));
 
 	// set visual attributes
 	arr.getElement(0, 0).setColor("red");
 	arr.getElement(0, 3).setColor("green");
-	arr.getElement(3, 0).setColor("blue");
-	arr.getElement(3, 3).setColor("magenta");
+	arr.getElement(5, 0).setColor("blue");
+	arr.getElement(5, 3).setColor("magenta");
 	arr.getElement(1, 1).setColor("cyan");
 	arr.getElement(2, 2).setColor("yellow");
 
