@@ -6,6 +6,11 @@ TARGET =  all
 
 all : make_java make_c++ make_python
 
+make_web:
+	cd java/web_tutorial_mastercopy; make webversion
+	cd c++/web_tutorial_mastercopy; make webversion
+	cd python/web_tutorial_mastercopy; make webversion
+
 make_java:
 	cd java/web_tutorial_mastercopy; make testing;
 	cd java/web_tutorial_testing; make; make run;

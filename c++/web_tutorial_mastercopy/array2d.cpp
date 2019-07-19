@@ -20,8 +20,8 @@ int main(int argc, char **argv) {
 	bridges.setTitle("Two-Dimensional Array Example");
 
 	// create, populate 2D array
-	int rows = 5;
-	int cols = 3;
+	int rows = 6;
+	int cols = 6;
 	Array2D<int> arr(rows, cols);
 
 	for (int i = 0; i < rows; i++)
