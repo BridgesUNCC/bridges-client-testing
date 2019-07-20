@@ -15,26 +15,26 @@ public class linechart {
 		bridges.setServer(args[3]);
 
 		bridges.setTitle("Sorting Benchmark");
-        bridges.setDescription("Sorting Benchmark test");
+		bridges.setDescription("Sorting Benchmark test");
 
 #else
-		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
-										"YOUR_API_KEY");
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+			"YOUR_API_KEY");
 #endif
-    //bridges.setVisualizeJSON(true);
-		
-    LineChart plot = new LineChart();
-plot.setTitle("linechart plot");
+		//bridges.setVisualizeJSON(true);
 
-double x1[] = new double[]{1, 3, 5, 20};
-double y1[] = new double[]{2, 3, 5, 20};
-plot.setDataSeries("1", x1, y1);
-bridges.setDataStructure(plot);
+		LineChart plot = new LineChart();
+		plot.setTitle("linechart plot");
+
+		double x1[] = new double[] {1, 3, 5, 20};
+		double y1[] = new double[] {2, 3, 5, 20};
+		plot.setDataSeries("1", x1, y1);
+		bridges.setDataStructure(plot);
 		bridges.visualize();
 
-double x2[] = new double[]{2, 15.2,  40};
-double y2[] = new double[]{4, 30.5, 400.99};
-plot.setDataSeries("2", x2, y2);
+		double x2[] = new double[] {2, 15.2,  40};
+		double y2[] = new double[] {4, 30.5, 400.99};
+		plot.setDataSeries("2", x2, y2);
 		bridges.visualize();
 
 
@@ -46,7 +46,7 @@ plot.setDataSeries("2", x2, y2);
 		plot.toggleLogarithmicY(true);
 
 		bridges.setVisualizeJSON(true);
-		
+
 		bridges.visualize();
 
 	}

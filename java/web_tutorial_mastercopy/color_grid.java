@@ -32,13 +32,13 @@ public class color_grid {
 		// set title for visualization
 		bridges.setTitle("A CheckerBoard Example Using Grid Type");
 		bridges.setDescription("This is an example of the color grid with height and width 10. "
-            +   "This example alternates between blue and red starting with red at the top left corner of the grid.");
-			
+			+   "This example alternates between blue and red starting with red at the top left corner of the grid.");
+
 #else
-		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
-										"YOUR_API_KEY");
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+			"YOUR_API_KEY");
 #endif
-		
+
 		int width = 200, height = 200;
 
 		Color blue = new Color("blue");

@@ -9,14 +9,14 @@ public class game_snippet {
 
 		//create the Bridges object
 #if TESTING
-    	Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
-    	bridges.setServer(args[3]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+		bridges.setServer(args[3]);
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
 		/* Get a List of Game objects from Bridges */
-    	DataSource ds = bridges.getDataSource();
+		DataSource ds = bridges.getDataSource();
 		List<Game> mylist = ds.getGameData();
 
 		/* Inspect a random Game object */

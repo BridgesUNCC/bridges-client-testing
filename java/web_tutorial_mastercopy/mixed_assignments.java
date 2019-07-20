@@ -17,8 +17,8 @@ public class mixed_assignments {
 
 		//create the Bridges object
 #if TESTING
-    Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
-    bridges.setServer(args[3]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+		bridges.setServer(args[3]);
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
@@ -134,8 +134,8 @@ public class mixed_assignments {
 		cg.set(12, 12, black);
 		cg.set(12, 18, black);
 
-		for(int i = 0; i < 10; i++) {
-			cg.set(18, 10+i, black);
+		for (int i = 0; i < 10; i++) {
+			cg.set(18, 10 + i, black);
 		}
 
 		// set data structure and visualize
