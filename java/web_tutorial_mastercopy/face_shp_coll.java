@@ -27,9 +27,9 @@ public class face_shp_coll {
 		bridges.setTitle("Symbol Collection - A Face Example");
 		bridges.setDescription("Example of building a simple shape with transformations(translate, scale and rotation");
 
+		// Creae a simple face with circles and rectangles
 		SymbolCollection sc = new SymbolCollection();
 
-		// Creae a simple face with circles and rectangles
 		// face itself is a circle
 		Circle s1 = new Circle(50.0f);
 		s1.setStrokeColor("red");
@@ -102,8 +102,8 @@ public class face_shp_coll {
 		// set visualizer type
 		bridges.setDataStructure(sc);
 
+		// visualize 
 		bridges.visualize();
-
 	}
 }
 

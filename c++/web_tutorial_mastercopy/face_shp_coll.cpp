@@ -68,7 +68,7 @@ int main (int argc, char **argv) {
 	s5.setFillColor(Color("blue"));
 	s5.setStrokeWidth(1.3);
 	sf[0] = 3.; sf[1] = 0.5;
-	tf[0] = 0.; tf[1] = -45.0;
+	tf[0] = 0.; tf[1] = -40.0;
 	s5.scale(sf[0], sf[1]);
 	s5.translate(tf[0], tf[1]);
 	sc.addSymbol(&s5);
