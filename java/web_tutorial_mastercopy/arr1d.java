@@ -12,14 +12,14 @@ public class arr1d {
 
 
 #else
-		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
-										"YOUR_API_KEY");
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+			"YOUR_API_KEY");
 #endif
-		
+
 		// title, description
 		bridges.setTitle("One-Dimensional Array Example");
-        bridges.setDescription("OneD array with colors in order left to right: "
-				+	"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
+		bridges.setDescription("OneD array with colors in order left to right: "
+			+	"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
 
 		//  set array dimensions, allocate array of elements
 		int arraySize = 10;

@@ -11,10 +11,10 @@ public class csllist {
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
-				
+
 #else
-		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
-										"YOUR_API_KEY");
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+			"YOUR_API_KEY");
 #endif
 		// title, description
 		bridges.setTitle("A Circle Singly Linked List Example");
@@ -28,7 +28,7 @@ public class csllist {
 		CircSLelement<String>  el2 = new CircSLelement<String> ("Gladys Serino", "Gladys Serino");
 		CircSLelement<String>  el3 = new CircSLelement<String> ("Karol Soderman", "Karol Soderman");
 		CircSLelement<String>  el4 = new CircSLelement<String> ("Starr McGinn", "Starr McGinn");
-	 
+
 		//  link the elements
 		el0.setNext(el1);
 		el1.setNext(el2);

@@ -11,8 +11,8 @@ public class cdllist {
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 #else
-		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
-										"YOUR_API_KEY");
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+			"YOUR_API_KEY");
 #endif
 		bridges.setTitle("A Circular Doubly Linked List Example");
 
@@ -23,12 +23,16 @@ public class cdllist {
 		CircDLelement<String>  el2 = new CircDLelement<String> ("Gladys Serino", "Gladys Serino");
 		CircDLelement<String>  el3 = new CircDLelement<String> ("Karol Soderman", "Karol Soderman");
 		CircDLelement<String>  el4 = new CircDLelement<String> ("Starr McGinn", "Starr McGinn");
-	 
+
 		//  link the elements
-		el0.setNext(el1); el1.setPrev(el0);
-		el1.setNext(el2); el2.setPrev(el1);
-		el2.setNext(el3); el3.setPrev(el2);
-		el3.setNext(el4); el4.setPrev(el3);
+		el0.setNext(el1);
+		el1.setPrev(el0);
+		el1.setNext(el2);
+		el2.setPrev(el1);
+		el2.setNext(el3);
+		el3.setPrev(el2);
+		el3.setNext(el4);
+		el4.setPrev(el3);
 
 		// link the last element to the first
 		el4.setNext (el0);

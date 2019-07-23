@@ -10,17 +10,17 @@ public class kdt {
 #if TESTING
 
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
-        bridges.setServer(args[3]);
+		bridges.setServer(args[3]);
 
 #else
-        Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
-                                        "YOUR_API_KEY");
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+			"YOUR_API_KEY");
 #endif
 
 		bridges.setTitle("A Kd Tree Example");
 		bridges.setDescription("A three-level tree with partitioners cycling between X and Y."
-                        + " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
-        
+			+ " The root node color is set to red while the leaf nodes that represent code letters are set to orange.");
+
 		// create Kd Tree nodes
 		KdTreeElement<Integer, String> t0 = new KdTreeElement<Integer, String>(50, 0);
 		KdTreeElement<Integer, String> t1 = new KdTreeElement<Integer, String>(25, 1);
