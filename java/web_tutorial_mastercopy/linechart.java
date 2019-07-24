@@ -21,7 +21,6 @@ public class linechart {
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
 			"YOUR_API_KEY");
 #endif
-		//bridges.setVisualizeJSON(true);
 
 		LineChart plot = new LineChart();
 		plot.setTitle("linechart plot");
@@ -45,7 +44,6 @@ public class linechart {
 		plot.toggleMouseTrack(true);
 		plot.toggleLogarithmicY(true);
 
-		bridges.setVisualizeJSON(true);
 
 		bridges.visualize();
 

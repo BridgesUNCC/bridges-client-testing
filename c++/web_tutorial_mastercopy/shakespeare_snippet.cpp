@@ -9,11 +9,13 @@ using namespace std;
 using namespace bridges;
 
 
+// This program fragment illustrates how to access and retrieve the Shakespeare data
 int main(int argc, char **argv) {
 		
 	// create Bridges object
+
 #if TESTING
-                        // command line args provide credentials and server to test on
+	// command line args provide credentials and server to test on
     Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
         bridges.setServer(argv[4]);
@@ -21,17 +23,17 @@ int main(int argc, char **argv) {
     Bridges bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
                                 "YOUR_API_KEY");
 #endif
-								// read the earth quake  data and build the BST
 
+	// set title
 	bridges.setTitle("Accessing Shakespeare Plays, Poems, Sonnets Dataset");
 
-						// create a data source object
+	// create a data source object
 	DataSource ds (&bridges);
 
-						// get the data
+	// get the data
     vector<Shakespeare> shakespeare_data = ds.getShakespeareData();
 
-						// print the first record
+	// print the first record
 	cout << endl << "Shakespeare Data:" <<  endl << 
 		"Title: " << shakespeare_data[0].getTitle()  <<  endl << 
 		"Type: " << shakespeare_data[0].getType() <<  endl << 
