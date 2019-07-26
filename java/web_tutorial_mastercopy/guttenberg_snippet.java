@@ -7,14 +7,14 @@ import bridges.data_src_dependent.GutenbergBook;
 /*! A test class that fetches a random book from Gutenberg Book then sends the
 	title, authors name, and genre to the console as output.
 	There is no visual output to the users BRIDGES gallery after running this code.*/
-	
-public class book_snippet {
+
+public class guttenberg_snippet {
 	public static void main(String[] args) throws Exception {
 
 		//create the Bridges object
 #if TESTING
-    	Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
-    	bridges.setServer(args[3]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+		bridges.setServer(args[3]);
 #else
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif

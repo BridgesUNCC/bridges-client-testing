@@ -6,11 +6,11 @@ public class mllist {
 
 		//create the Bridges object
 #if TESTING
-        Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
-        bridges.setServer(args[3]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+		bridges.setServer(args[3]);
 #else
-        Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", 
-                                        "YOUR_API_KEY");
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+			"YOUR_API_KEY");
 #endif
 
 		bridges.setTitle("A Multilist Example");
@@ -29,7 +29,7 @@ public class mllist {
 		MLelement<Integer> el9 = new MLelement<Integer>("9", 9);
 		MLelement<Integer> el10 = new MLelement<Integer>("10", 10);
 		MLelement<Integer> el11 = new MLelement<Integer>("11", 11);
-		// create the main list: 1, 2, 3, 4	
+		// create the main list: 1, 2, 3, 4
 		el0.setNext(el1);
 		el1.setNext(el2);
 		el2.setNext(el3);
@@ -37,16 +37,16 @@ public class mllist {
 
 		// create a sublist from 2 to 5, 6, 7
 		el2.setSubList(el5);
-			el5.setNext(el6);
-			el6.setNext(el7);
+		el5.setNext(el6);
+		el6.setNext(el7);
 
 		// create a second sublist from 6 to 10, 11
 		el6.setSubList(el10);
-			el10.setNext(el11);
+		el10.setNext(el11);
 
 		//create a third sublist from 3 to 8, 9
 		el3.setSubList(el8);
-			el8.setNext(el9);
+		el8.setNext(el9);
 
 		// some visual attributes
 		el0.setSize (40);
@@ -66,7 +66,7 @@ public class mllist {
 		el1.getLinkVisualizer(el2).setThickness(3);
 		el2.getLinkVisualizer(el3).setThickness(3);
 
-		
+
 		//set visualizer type
 		bridges.setDataStructure(el0);
 

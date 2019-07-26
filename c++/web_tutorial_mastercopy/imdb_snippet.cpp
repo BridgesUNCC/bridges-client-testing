@@ -11,11 +11,12 @@ using namespace std;
 
 using namespace bridges;
 
+// This program fragment illustrates how to access and read the IMDB actor/movie data
 int main(int argc, char **argv) {
 		
-	// Initialize BRIDGES with your credentials
+	// create Bridges object
 #if TESTING
-                        // command line args provide credentials and server to test on
+    // command line args provide credentials and server to test on
     Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
     if (argc > 4)
         bridges.setServer(argv[4]);
@@ -24,9 +25,8 @@ int main(int argc, char **argv) {
                                 "YOUR_API_KEY");
 #endif
 
-    // set title for visualization
+    // set title
 	bridges.setTitle("Accessing IMDB Data");
-
 
 	// create data source object
 	DataSource ds (&bridges);
@@ -35,7 +35,6 @@ int main(int argc, char **argv) {
 	vector<ActorMovieIMDB> actor_list = ds.getActorMovieIMDBData(1814);
 
 	// print out the first record of the dataset
-
 	cout << "Actor-Movie Data:" << endl 
 		<< "\tActor: " << actor_list[0].getActor() << endl 
 		<< "\tMovie: " << actor_list[0].getMovie() << endl;

@@ -34,27 +34,28 @@ int main(int argc, char **argv) {
 	bridges.visualize();
 
 	try {
-	  DataSource ds(&bridges);
+		DataSource ds(&bridges);
 		ColorGrid cg = ds.getColorGridFromAssignment(bridges.getUserName(), bridges.getAssignment());
 
 		// just to be sure this is working, lets change the mid square
 		// of pixels to a red colored square
 
-		int *dims = cg.getDimensions();
-		cout << "Dims:" << dims[0] << "," << dims[1] << endl;
-		for (int k = dims[1] / 2 - 5; k < dims[1] / 2 + 5; k++)
-			for (int j = dims[0] / 2 - 5; j < dims[0] / 2 + 5; j++)
-				cg.set(k, j, Color("red"));
-		bridges.setDataStructure(&cg);
-		bridges.visualize();
+		int h = cg.getHeight();
+		int w = cg.getWidth();
+		cout << "Height, Width:" << h << "," << w << endl;
+		for (int k = h/2 - 5; k < h/2 + 5; k++)
+				for (int j = w/2 - 5; j < w/2 + 5; j++)
+					cg.set(k, j, Color("red"));
+				bridges.setDataStructure(&cg);
+				bridges.visualize();
 
-	}
-	catch (char const * s) {
+		}
+catch (char const * s) {
 		std::cerr << "exception caught: " << s << std::endl;
 		return -1;
 	}
 	catch (rapidjson_exception re) {
-	  std::cerr<<"rapidjson_exception: "<<(std::string)re<<std::endl;
+		std::cerr << "rapidjson_exception: " << (std::string)re << std::endl;
 	}
 
 	return 0;
