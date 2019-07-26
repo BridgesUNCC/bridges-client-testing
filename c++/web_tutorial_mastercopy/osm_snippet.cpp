@@ -37,7 +37,7 @@ int main(int argc, char **argv) {
 
 	double coords[2];
 	cout << "Number of Vertices [UNC Charlotte Campus]:" << vertices.size() << endl;
-	cout << "Number of Edges [UNC Charlotte Campus]:" << vertices.size() << endl;
+	cout << "Number of Edges [UNC Charlotte Campus]:" << edges.size() << endl;
 
 	// get cartesian coordinate  location of first vertex
 	osm_data.getVertices()[0].getCartesianCoords(coords);

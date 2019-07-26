@@ -21,19 +21,17 @@ public class osm_snippet {
 #endif
 
 		DataSource  ds = bridges.getDataSource();
-		OsmData osm_data = ds.getOsmData("uncc_campus");
+		OsmData osm_data = ds.getOsmDataOld("uncc_campus");
 
 		OsmVertex[] vertices = osm_data.getVertices();
 		OsmEdge[] edges = osm_data.getEdges();
 
-		double[] coords = new double[2];
-		System.out.println("Number of Vertices [UNC Charlotte Campus]:" + vertices.length;
-		System.out.println("Number of Edges [UNC Charlotte Campus]:" + vertices.length;
+		System.out.println("Number of Vertices [UNC Charlotte Campus]:" + vertices.length);
+		System.out.println("Number of Edges [UNC Charlotte Campus]:" + edges.length);
 
 		// get cartesian coordinate  location of first vertex
-		osm_data.getVertices().get(0).getCartesianCoords(coords);
+		double[] coords = osm_data.getVertices()[0].getCartesian_coord();
 		System.out.println ("Location of first vertex [Cartesian Coord]: " +  coords[0] + ","
 						+ coords[1]);
-			return 0;
 	}
 }
