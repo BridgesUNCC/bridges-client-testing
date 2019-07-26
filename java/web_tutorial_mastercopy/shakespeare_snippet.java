@@ -4,6 +4,7 @@ import bridges.connect.Bridges;
 import bridges.connect.DataSource;
 import bridges.data_src_dependent.Shakespeare;
 
+// a program fragment to access the Shakespeare data (plays, poems)
 public class shakespeare_snippet {
 	public static void main(String[] args) throws Exception {
 
@@ -15,11 +16,11 @@ public class shakespeare_snippet {
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
-		/* Get a List of Shakespeare objects from Bridges */
+		// Get a List of Shakespeare objects from Bridges
 		DataSource ds = bridges.getDataSource();
 		List<Shakespeare> mylist = ds.getShakespeareData();
 
-		/* Inspect a random Shakespeare object */
+		// Inspect a random Shakespeare object 
 		Shakespeare work1 = mylist.get((new Random()).nextInt(mylist.size()));
 		System.out.println(work1.getTitle());
 		System.out.println(work1.getType());

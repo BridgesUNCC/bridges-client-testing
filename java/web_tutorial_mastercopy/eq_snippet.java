@@ -3,15 +3,9 @@ import bridges.connect.Bridges;
 import bridges.connect.DataSource;
 import bridges.data_src_dependent.EarthquakeUSGS;
 
-//
 // This program fragment illustrates how to access the USGS earthquake data
-//
-
-
-
-
 public class eq_snippet {
-		public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {
 
 		// create Bridges object
 #if TESTING
@@ -36,6 +30,5 @@ public class eq_snippet {
 			 + "\tLocation: " +  eq_list.get(0).getLocation() + "\n"  
 			 + "\tLat/Long:"  + eq_list.get(0).getLatit() + "," + 
 						eq_list.get(0).getLongit());
-			
 	}
 }
