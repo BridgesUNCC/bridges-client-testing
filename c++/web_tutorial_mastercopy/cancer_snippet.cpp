@@ -10,7 +10,6 @@ using namespace bridges;
 
 // This program fragment illustrates how to access the IGN Game data
 int main(int argc, char **argv) {
-
 	// create Bridges object
 #if TESTING
     // command line args provide credentials and server to test on
@@ -29,6 +28,7 @@ int main(int argc, char **argv) {
 	DataSource ds (&bridges);
 	vector<CancerIncidence> ca = ds.getCancerIncidenceData();
 
+	cout << ca.size() << "\n";
 	
 	// Print a single record of the data for illustration
 	cout << "Incident 0:" << endl;
