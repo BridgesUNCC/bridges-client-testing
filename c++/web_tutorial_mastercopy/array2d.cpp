@@ -18,15 +18,17 @@ int main(int argc, char **argv) {
 #endif
 	// title, description
 	bridges.setTitle("Two-Dimensional Array Example");
+	bridges.setDescription("Illustrates a 2D array with visual attributes");
 
 	// create, populate 2D array
 	int rows = 6;
 	int cols = 6;
 	Array2D<int> arr(rows, cols);
 
+	// load array with its 1D address
 	for (int i = 0; i < rows; i++)
 		for (int j = 0; j < cols; j++)
-		  arr[i][j] = i*100+j;
+		  arr[i][j] = i*rows+j;
 	
 	for (int i = 0; i < rows; i++)
 		for (int j = 0; j < cols; j++)

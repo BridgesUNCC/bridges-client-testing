@@ -18,17 +18,19 @@ int main(int argc, char **argv) {
 #endif
 	// title, description
 	bridges.setTitle("Three-Dimensional Array Example");
+	bridges.setDescription("A 3 dimensional array with visual attributes. The third dimension is illustrated as a sequence of 2D slices");
 
 		
 	// create, populate 3D array
-	Array3D<std::string> arr (4, 4, 4);
+	Array3D<int> my_array (4, 4, 4);
 
-	arr[0][1][2] = "hi there";
-	arr.getElement(0, 1, 2).setLabel(arr[0][1][2]);
-	arr.getElement(0, 1, 2).setColor("white");
-	
-	arr.getElement(0, 0, 0).setColor("red");
-	arr.getElement(0, 3, 0).setColor("green");
+	// color some of the elements
+	my_array[0, 0, 0].setColor("red");
+	my_array[0, 3, 0].setColor("green");
+	my_array[3, 0, 0].setColor("blue");
+	my_array[3, 3, 0].setColor("magenta");
+	my_array[1, 1, 0].setColor("cyan");
+	my_array[2, 2, 0].setColor("yellow");
 
 	// visualize
 	bridges.setDataStructure(&arr);

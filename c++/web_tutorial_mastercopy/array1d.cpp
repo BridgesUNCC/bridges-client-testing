@@ -15,8 +15,7 @@ int main(int argc, char **argv) {
 #endif
 	// title, description
 	bridges.setTitle("One-Dimensional Array Example");
-    bridges.setDescription("OneD array with colors in order left to right: "
-			"red, green, blue, cyan, magenta, yellow, red, green, blue, black.");
+	bridges.setDescription("Illustrates a one dimensional array with visual attributes");
 
 	// create, populate the array
 	Array1D<int> arr (10);
