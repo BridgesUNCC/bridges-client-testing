@@ -1,3 +1,5 @@
+include ../../env_vars.mk
+
 SRCS=$(wildcard *.py)
 
 
@@ -20,3 +22,7 @@ testing: $(patsubst %,../web_tutorial_testing/%,$(SRCS))
 
 
 webversion: $(patsubst %,../web_tutorial_fortheweb/%,$(SRCS))
+
+run_%: ../web_tutorial_testing/%.py
+	cd ../web_tutorial_testing/; make $@
+

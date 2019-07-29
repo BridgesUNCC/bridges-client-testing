@@ -62,6 +62,8 @@ testing: $(patsubst %,../web_tutorial_testing/%,$(SRCS))
 
 webversion: $(patsubst %,../web_tutorial_fortheweb/%,$(SRCS))
 
+run_%: ../web_tutorial_testing/%.cpp
+	cd ../web_tutorial_testing/; make $@
 
 style:  
 	$(ASTYLE) $(ASTYLE_PARAMS)  $(SRCS) $(STYLE_INCLUDES)

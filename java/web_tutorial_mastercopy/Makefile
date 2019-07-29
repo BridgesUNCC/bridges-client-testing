@@ -23,6 +23,9 @@ testing: $(patsubst %,../web_tutorial_testing/%,$(SRCS))
 ../web_tutorial_fortheweb/%.java: %.java ../web_tutorial_fortheweb/
 	unifdef -DTESTING=0 -o ../web_tutorial_fortheweb/$< $< ; [ $$? != 2 ]
 
+run_%: ../web_tutorial_testing/%.java
+	cd ../web_tutorial_testing/; make $@
+
 
 webversion: $(patsubst %,../web_tutorial_fortheweb/%,$(SRCS))
 
