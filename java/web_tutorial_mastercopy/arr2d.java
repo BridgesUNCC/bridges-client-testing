@@ -30,6 +30,7 @@ public class arr2d {
 		for (int i = 0; i < num_rows; i++)
 			for (int j = 0; j < num_cols; j++) {
 				my_array.getElement(i, j).setValue(i*num_cols+j);
+				System.out.println (i+","+j+": " + my_array.getElement(i, j).getValue());
 			}
 
 		// populate the array
@@ -37,6 +38,7 @@ public class arr2d {
 			for (int col = 0; col < num_cols; col++) {
 				my_array.getElement(row, col).setLabel("El " +
 					String.valueOf(my_array.getElement(row, col).getValue()));
+				System.out.println (row+","+col+": " + my_array.getElement(row, col).getLabel());
 			}
 		}
 
