@@ -12,36 +12,36 @@ using namespace bridges;
 int main(int argc, char **argv) {
 	// create Bridges object
 #if TESTING
-    // command line args provide credentials and server to test on
-    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
-    if (argc > 4)
-        bridges.setServer(argv[4]);
+	// command line args provide credentials and server to test on
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+	if (argc > 4)
+		bridges.setServer(argv[4]);
 #else
-    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", 
-                                "YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+		"YOUR_API_KEY");
 #endif
-		
+
 	// set title
 	bridges.setTitle("How to access the IGN Game Data");
 
-	// read the IGN game data 
+	// read the IGN game data
 	DataSource ds (&bridges);
 	vector<CancerIncidence> ca = ds.getCancerIncidenceData();
 
 	cout << ca.size() << "\n";
-	
+
 	// Print a single record of the data for illustration
 	cout << "Incident 0:" << endl;
-	CancerIncidence& c =ca[0];
-	  
-	cout << "\tType: "<< c.getEventType() << "\n"
-	     << "\tYear: " << c.getYear() << "\n"
-	     << "\tPopulation: " << c.getPopulation() << "\n"
-	     << "\tRace: " << c.getRace() << "\n"
-	     << "\tGender: " << c.getGender() << "\n"
-	     << "\tCrudeRate: " << c.getCrudeRate() << "(more rate information available) \n"
-	     << "\tLocation: " << c.getLocationX() << ", "<<c.getLocationY() << "\n"
-	     << "\tCount: " << c.getCount() << endl;
+	CancerIncidence& c = ca[0];
+
+	cout << "\tType: " << c.getEventType() << "\n"
+		<< "\tYear: " << c.getYear() << "\n"
+		<< "\tPopulation: " << c.getPopulation() << "\n"
+		<< "\tRace: " << c.getRace() << "\n"
+		<< "\tGender: " << c.getGender() << "\n"
+		<< "\tCrudeRate: " << c.getCrudeRate() << "(more rate information available) \n"
+		<< "\tLocation: " << c.getLocationX() << ", " << c.getLocationY() << "\n"
+		<< "\tCount: " << c.getCount() << endl;
 
 	return 0;
 }

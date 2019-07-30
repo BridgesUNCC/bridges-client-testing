@@ -13,18 +13,18 @@ using namespace std;
 int main (int argc, char **argv) {
 	// create Bridges object
 #if TESTING
-                        // command line args provide credentials and server to test on
-    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
-    
-    if (argc > 4)
-        bridges.setServer(argv[4]);
+	// command line args provide credentials and server to test on
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+
+	if (argc > 4)
+		bridges.setServer(argv[4]);
 
 	bridges.setTitle("A Circle Singly Linked List Example");
 	bridges.setDescription("This circular singly linked list example shows five nodes and attached visual attributes. ");
-			
+
 #else
-    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
-                                "YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+		"YOUR_API_KEY");
 #endif
 
 	// create the linked list elements with student names
@@ -33,7 +33,7 @@ int main (int argc, char **argv) {
 	CircSLelement<string>  *el2 = new CircSLelement<string> ("Gladys Serino", "Gladys Serino");
 	CircSLelement<string>  *el3 = new CircSLelement<string> ("Karol Soderman", "Karol Soderman");
 	CircSLelement<string>  *el4 = new CircSLelement<string> ("Starr McGinn", "Starr McGinn");
- 
+
 	//  link the elements
 	el0->setNext(el1);
 	el1->setNext(el2);

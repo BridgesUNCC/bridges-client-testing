@@ -6,7 +6,7 @@ using namespace bridges;
 int main(int argc, char **argv) {
 	// create Bridges object
 #if TESTING
-						// command line args provide credentials and server to test on
+	// command line args provide credentials and server to test on
 	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
 	if (argc > 4)
 		bridges.setServer(argv[4]);
@@ -23,8 +23,8 @@ int main(int argc, char **argv) {
 	// populate the array, with squares of indices
 	// use the values to label the elements
 	for (int j = 0; j < 10; j++) {
-	  arr[j]=j*j;
-	  arr.getElement(j).setLabel(to_string(arr[j]));
+		arr[j] = j * j;
+		arr.getElement(j).setLabel(to_string(arr[j]));
 	}
 
 	// set visual attributes
