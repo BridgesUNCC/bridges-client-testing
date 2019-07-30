@@ -9,22 +9,22 @@
 using namespace bridges;
 
 int main (int argc, char **argv) {
-    // create Bridges object
+	// create Bridges object
 #if TESTING
-                        // command line args provide credentials and server to test on
-    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
-    
-    if (argc > 4)
-        bridges.setServer(argv[4]);
+	// command line args provide credentials and server to test on
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+
+	if (argc > 4)
+		bridges.setServer(argv[4]);
 #else
-    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
-                                "YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+		"YOUR_API_KEY");
 #endif
 	// title, description
 	bridges.setTitle("Symbol Collection - A Face Example");
 	bridges.setDescription("Example of building a simple shape with transformations(translate, scale and rotation");
 
-	SymbolCollection sc; 
+	SymbolCollection sc;
 
 	// Creae a simple face with circles and rectangles
 	// face itself is a circle
@@ -47,7 +47,8 @@ int main (int argc, char **argv) {
 	Circle s3(25);
 	s3.setStrokeColor("green");
 	s3.setStrokeWidth(1.3);
-	tf[0] = 25.; tf[1] = 20.;
+	tf[0] = 25.;
+	tf[1] = 20.;
 	s3.translate(tf[0], tf[1]);
 	s3.scale(0.3);
 	sc.addSymbol(&s3);
@@ -57,8 +58,10 @@ int main (int argc, char **argv) {
 	Rectangle s4(0, 0, 10, 10);
 	s4.setFillColor(Color("blue"));
 	s4.setStrokeWidth(1.3);
-	sf[0] = 0.5; sf[1] = 3.0;
-	tf[0] = 0.0; tf[1] = -10.0;
+	sf[0] = 0.5;
+	sf[1] = 3.0;
+	tf[0] = 0.0;
+	tf[1] = -10.0;
 	s4.scale(sf[0], sf[1]);
 	s4.translate(tf[0], tf[1]);
 	sc.addSymbol(&s4);
@@ -67,8 +70,10 @@ int main (int argc, char **argv) {
 	Rectangle s5(0, 0, 10, 10);
 	s5.setFillColor(Color("blue"));
 	s5.setStrokeWidth(1.3);
-	sf[0] = 3.; sf[1] = 0.5;
-	tf[0] = 0.; tf[1] = -40.0;
+	sf[0] = 3.;
+	sf[1] = 0.5;
+	tf[0] = 0.;
+	tf[1] = -40.0;
 	s5.scale(sf[0], sf[1]);
 	s5.translate(tf[0], tf[1]);
 	sc.addSymbol(&s5);
@@ -84,7 +89,7 @@ int main (int argc, char **argv) {
 
 	// add a title to the figure
 	Label l;
-	l.setLocation(-50,100);
+	l.setLocation(-50, 100);
 	l.setFontSize(16);
 	l.setStrokeWidth(1.0f);
 	l.setLabel("Its a Dorky Looking Face!");
@@ -95,6 +100,6 @@ int main (int argc, char **argv) {
 	bridges.setDataStructure(sc);
 
 	bridges.visualize();
-			
+
 	return 0;
 }

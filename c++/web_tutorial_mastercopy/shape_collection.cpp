@@ -12,26 +12,26 @@ int main(int argc, char **argv) {
 	// create Bridges object
 #if TESTING
 	// command line args provide credentials and server to test on
-    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
-    
-    if (argc > 4)
-        bridges.setServer(argv[4]);
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+
+	if (argc > 4)
+		bridges.setServer(argv[4]);
 
 #else
-    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
-                                "YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+		"YOUR_API_KEY");
 #endif
 
 	// title, description
 	bridges.setTitle("Symbol Collection");
 	bridges.setDescription("Red square, green circle, magenta horizontal and vertical lines, "
-				"and a test label with a purple outline.");
-			
+		"and a test label with a purple outline.");
+
 
 	// create some symbols and add to symbol collection
-	SymbolCollection sc; 
+	SymbolCollection sc;
 
-	// draw a rectangle 
+	// draw a rectangle
 	Rectangle s1(-25, 0, 50, 50);
 	s1.setFillColor(Color("red"));
 	sc.addSymbol(&s1);
@@ -76,7 +76,7 @@ int main(int argc, char **argv) {
 
 
 	Label l;
-	l.setLocation(0,25);
+	l.setLocation(0, 25);
 	l.setFontSize(12);
 	l.setStrokeWidth(1.0f);
 	l.setLabel("test label");
@@ -89,6 +89,6 @@ int main(int argc, char **argv) {
 	// visualize the JSON and Collection
 	bridges.setVisualizeJSONFlag(true);
 	bridges.visualize();
-			
+
 	return 0;
 }

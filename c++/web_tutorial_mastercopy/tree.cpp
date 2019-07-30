@@ -8,19 +8,19 @@ using std::string;
 int main(int argc, char **argv) {
 	// create Bridges object
 #if TESTING
-                        // command line args provide credentials and server to test on
-    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
-    
-    if (argc > 4)
-        bridges.setServer(argv[4]);
+	// command line args provide credentials and server to test on
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+
+	if (argc > 4)
+		bridges.setServer(argv[4]);
 
 	bridges.setTitle("A General Tree Example");
 	bridges.setDescription("A basic tree with seven nodes. Three on one side and three on the other. The root node is set to red with 0.3 opacity. "
-				"The other six nodes are neutral color.");
-			
+		"The other six nodes are neutral color.");
+
 #else
-    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
-                                "YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+		"YOUR_API_KEY");
 #endif
 
 	TreeElement<string> *t0 = new TreeElement<string>("Hello", "Hello");

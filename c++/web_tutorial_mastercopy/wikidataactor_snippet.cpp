@@ -7,11 +7,11 @@ using namespace std;
 
 #include "Bridges.h"
 #include "DataSource.h"
-#include "data_src/ActorMovieIMDB.h"
+#include "data_src/MovieActorWikidata.h"
 
 using namespace bridges;
 
-// This program fragment illustrates how to access and read the IMDB actor/movie data
+// This program fragment illustrates how to access and read the Wikidata actor/movie data
 int main(int argc, char **argv) {
 
 	// create Bridges object
@@ -26,18 +26,19 @@ int main(int argc, char **argv) {
 #endif
 
 	// set title
-	bridges.setTitle("Accessing IMDB Data");
+	bridges.setTitle("Accessing Wikidata Movie/Actor Data");
 
 	// create data source object
 	DataSource ds (&bridges);
 
-	// get the actor movie IMDB data through the BRIDGES API
-	vector<ActorMovieIMDB> actor_list = ds.getActorMovieIMDBData(1814);
+	// get the actor movie Wikidata data through the BRIDGES API for 1955.
+	// data are available from the early 20th century to now.
+	std::vector<MovieActorWikidata> v = ds.getWikidataActorMovie(1955, 1955);
 
 	// print out the first record of the dataset
 	cout << "Actor-Movie Data:" << endl
-		<< "\tActor: " << actor_list[0].getActor() << endl
-		<< "\tMovie: " << actor_list[0].getMovie() << endl;
+	     << "\tMovie: " << v[0].getMovieURI() << " \""<<v[0].getMovieName()<< "\"\n"
+	     << "\tActor: " << v[0].getActorURI() << " \""<<v[0].getActorName() << "\"\n";
 
 	return 0;
 }

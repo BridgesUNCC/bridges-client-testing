@@ -9,7 +9,7 @@ int main(int argc, char **argv) {
 
 	// create Bridges object
 #if TESTING
-                        // command line args provide credentials and server to test on
+	// command line args provide credentials and server to test on
 	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
 	if (argc > 4)
 		bridges.setServer(argv[4]);
@@ -28,11 +28,11 @@ int main(int argc, char **argv) {
 	// load array with its 1D address
 	for (int i = 0; i < rows; i++)
 		for (int j = 0; j < cols; j++)
-		  arr[i][j] = i*rows+j;
-	
+			arr[i][j] = i * rows + j;
+
 	for (int i = 0; i < rows; i++)
 		for (int j = 0; j < cols; j++)
-		  arr.getElement(i, j).setLabel("El " + std::to_string(arr[i][j]));
+			arr.getElement(i, j).setLabel("El " + std::to_string(arr[i][j]));
 
 	// set visual attributes
 	arr.getElement(0, 0).setColor("red");

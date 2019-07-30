@@ -6,14 +6,14 @@ using namespace bridges;
 int main(int argc, char **argv) {
 	// create bridges object
 #if TESTING
-                        // command line args provide credentials and server to test on
-    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
-    if (argc > 4)
-        bridges.setServer(argv[4]);
+	// command line args provide credentials and server to test on
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+	if (argc > 4)
+		bridges.setServer(argv[4]);
 
 #else
-    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
-                                "YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+		"YOUR_API_KEY");
 #endif
 	bridges.setTitle("A Kd Tree Example");
 	bridges.setDescription("A three-level tree with partitioners cycling between X and Y. The root node color is set to red while the leaf nodes that represent code letters are set to orange.");

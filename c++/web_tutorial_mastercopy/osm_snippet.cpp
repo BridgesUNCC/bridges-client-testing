@@ -16,24 +16,24 @@ int main(int argc, char **argv) {
 
 	// create Bridges object
 #if TESTING
-    // command line args provide credentials and server to test on
-    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
-    
-    if (argc > 4)
-        bridges.setServer(argv[4]);
+	// command line args provide credentials and server to test on
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
 
-    bridges.setTitle("An Open Street Map Example");
-    bridges.setDescription("Illustrates the road map of the UNC Charlotte Campus.");
-            
+	if (argc > 4)
+		bridges.setServer(argv[4]);
+
+	bridges.setTitle("An Open Street Map Example");
+	bridges.setDescription("Illustrates the road map of the UNC Charlotte Campus.");
+
 #else
-    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
 	DataSource  *ds = new DataSource;
 	OSMData osm_data = ds->getOSMDataOld("uncc_campus");
 
-	vector<OSMVertex> vertices = osm_data.getVertices(); 
-	vector<OSMEdge> edges = osm_data.getEdges(); 
+	vector<OSMVertex> vertices = osm_data.getVertices();
+	vector<OSMEdge> edges = osm_data.getEdges();
 
 	double coords[2];
 	cout << "Number of Vertices [UNC Charlotte Campus]:" << vertices.size() << endl;
@@ -42,6 +42,6 @@ int main(int argc, char **argv) {
 	// get cartesian coordinate  location of first vertex
 	osm_data.getVertices()[0].getCartesianCoords(coords);
 	cout << "Location of first vertex [Cartesian Coord]: " <<  coords[0] << ","
-					<< coords[1] << endl;
+		<< coords[1] << endl;
 	return 0;
 }

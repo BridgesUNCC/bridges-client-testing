@@ -16,17 +16,17 @@ int main(int argc, char **argv) {
 
 	// create Bridges object
 #if TESTING
-                        // command line args provide credentials and server to test on
-    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
-    
-    if (argc > 4)
-        bridges.setServer(argv[4]);
+	// command line args provide credentials and server to test on
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
 
-    bridges.setTitle("An Open Street Map Example");
-    bridges.setDescription("Illustrates the road map of the UNC Charlotte Campus.");
-            
+	if (argc > 4)
+		bridges.setServer(argv[4]);
+
+	bridges.setTitle("An Open Street Map Example");
+	bridges.setDescription("Illustrates the road map of the UNC Charlotte Campus.");
+
 #else
-    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
 	//create the Bridges object, set credentials
@@ -34,18 +34,18 @@ int main(int argc, char **argv) {
 	bridges.setServer("clone");
 
 	DataSource  *ds = new DataSource;
-/*
-	OSMData osm_data = ds->getOSMData("uncc_campus");
-*/
+	/*
+		OSMData osm_data = ds->getOSMData("uncc_campus");
+	*/
 	OSMData osm_data;
 	try {
-	  osm_data = ds->getOSMDataOld("uncc_campus");
+		osm_data = ds->getOSMDataOld("uncc_campus");
 	}
 	catch (std::string s) {
-	  std::cerr<<"Exception: "<<s<<"\n";
+		std::cerr << "Exception: " << s << "\n";
 	}
-	vector<OSMVertex> vertices = osm_data.getVertices(); 
-	vector<OSMEdge> edges = osm_data.getEdges(); 
+	vector<OSMVertex> vertices = osm_data.getVertices();
+	vector<OSMEdge> edges = osm_data.getEdges();
 
 	GraphAdjList<int, int>  *gr = new GraphAdjList<int, int>;
 	double coords[2];
@@ -55,19 +55,19 @@ int main(int argc, char **argv) {
 		vertices[k].getCartesianCoords(coords);
 		gr->getVertex(k)->setLocation(coords[0], coords[1]);
 		gr->getVertex(k)->setColor(Color("green"));
-    }
-    for (int k = 0; k < edges.size(); k++) {
-      gr->addEdge(edges[k].getSourceVertex(), edges[k].getDestinationVertex(), 
-                 edges[k].getEdgeLength() );
-      gr->getLinkVisualizer(edges[k].getSourceVertex(), edges[k].getDestinationVertex())->setColor(Color("red")); 
-		
-    }
+	}
+	for (int k = 0; k < edges.size(); k++) {
+		gr->addEdge(edges[k].getSourceVertex(), edges[k].getDestinationVertex(),
+			edges[k].getEdgeLength() );
+		gr->getLinkVisualizer(edges[k].getSourceVertex(), edges[k].getDestinationVertex())->setColor(Color("red"));
+
+	}
 
 	gr->forceLargeVisualization(true);
 	bridges.setDataStructure(gr);
 	bridges.visualize();
 
-						// create graph object
-	
+	// create graph object
+
 	return 0;
 }

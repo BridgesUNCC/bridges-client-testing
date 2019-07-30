@@ -20,7 +20,7 @@ OBJS = $(SRCS:.cpp=.o)
 
 EXECUTABLES = $(SRCS:.cpp=)
 
-STYLE_INCLUDES = BST.h StudentInfo.h
+STYLE_INCLUDES = $(wildcard *.h)
 
 # Incude and Library paths
 
