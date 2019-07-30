@@ -20,6 +20,8 @@ int main(int argc, char **argv) {
 	// create, populate the array
 	Array1D<int> arr (10);
 
+	// populate the array, with squares of indices
+	// use the values to label the elements
 	for (int j = 0; j < 10; j++) {
 	  arr[j]=j*j;
 	  arr.getElement(j).setLabel(to_string(arr[j]));

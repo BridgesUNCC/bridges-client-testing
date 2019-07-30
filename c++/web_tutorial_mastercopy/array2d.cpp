@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
 	
 	for (int i = 0; i < rows; i++)
 		for (int j = 0; j < cols; j++)
-		  arr.getElement(i, j).setLabel(std::to_string(arr[i][j]));
+		  arr.getElement(i, j).setLabel("El " + std::to_string(arr[i][j]));
 
 	// set visual attributes
 	arr.getElement(0, 0).setColor("red");

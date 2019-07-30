@@ -22,7 +22,7 @@ public class arr2d {
 		bridges.setTitle("Two-Dimensional Array Example");
 		bridges.setDescription("Illustrates a 2D array with visual attributes");
 
-		//  for 2D array 5x5
+		//  for 2D array 6x6
 		int num_rows = 6, num_cols = 6;
 		Array2D<Integer> my_array = new Array2D<Integer> (num_rows, num_cols);
 
@@ -30,15 +30,13 @@ public class arr2d {
 		for (int i = 0; i < num_rows; i++)
 			for (int j = 0; j < num_cols; j++) {
 				my_array.getElement(i, j).setValue(i*num_cols+j);
-				System.out.println (i+","+j+": " + my_array.getElement(i, j).getValue());
 			}
 
-		// populate the array
+		// populate the array with labels of the element sequence id
 		for (int row = 0; row < num_rows; row++) {
 			for (int col = 0; col < num_cols; col++) {
 				my_array.getElement(row, col).setLabel("El " +
 					String.valueOf(my_array.getElement(row, col).getValue()));
-				System.out.println (row+","+col+": " + my_array.getElement(row, col).getLabel());
 			}
 		}
 

@@ -26,8 +26,10 @@ public class arr1d {
 		Array1D<Integer> arr = new Array1D<Integer> (arraySize);
 
 		// populate the array, with squares of indices
+		// use the values to label the elements
 		for (int k = 0; k < arr.getSize(); k++) {
 			arr.getElement(k).setValue(k * k);
+			arr.getElement(k).setLabel(String.valueOf(arr.getElement(k).getValue()));
 		}
 
 		// color the array elements
