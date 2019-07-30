@@ -27,9 +27,9 @@ public class bst {
 			+ "The root is set to red the leaf nodes are neutral.");
 
 
-		// Retrieve a list of 10 earthquake  records  from USGS using the BRIDGES API
+		// Retrieve a list of 25 earthquake  records  from USGS using the BRIDGES API
 		DataSource ds = bridges.getDataSource();
-		List<EarthquakeUSGS> eqlist = ds.getEarthquakeUSGSData(10);
+		List<EarthquakeUSGS> eqlist = ds.getEarthquakeUSGSData(25);
 
 		// create BST nodes and insert into a tree
 		BSTElement<Double, EarthquakeUSGS> root = null;
