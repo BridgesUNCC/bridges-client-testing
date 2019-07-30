@@ -1,4 +1,3 @@
-
 #
 #Platform specific variables
 #
@@ -30,7 +29,7 @@ CXXFLAGS = -g $(IFLAGS) -std=c++11 $(LOCALCXXFLAGS)
 
 # Libraries
 
-LIBS = -l$(CURL_LIB)
+LIBS = -l$(CURL_LIB) -l pthread -l bridges
 
 ASSIGNMENTIDSTART=1000
 ASSIGNMENTIDTEST=1099
