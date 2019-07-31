@@ -16,34 +16,33 @@ class ListIMDB:
     #Set an assignment title
     bridges.set_title("ListIMDB Example")
 
-    #get a List of ActorMovieIMDB objects from DataSource
+    # get a List of ActorMovieIMDB objects from DataSource
     myList = get_actor_movie_imdb_data(1800)
 
-    #Setup a prev and head element
+    # Setup a prev and head element
     prev = SLelement()
     head = SLelement()
 
-    #Read each actor movie pair and setup a new SLelement for each
+    # Read each actor movie pair and setup a new SLelement for each
     for i in range(len(myList)):
 
-        #Create each new SLelement
+        # Create each new SLelement
         element = SLelement()
 
-        #Set the element label equal to 'Actor = Movie' for each pair.(print it out for sanit Check)
-        element.set_label(myList[i].get_actor() + " - " + myList[i].get_movie())
-        print(element.get_label())
+        # Set the element label equal to 'Actor = Movie' for each pair.(print it out for sanit Check)
+        element.label = (myList[i].actor + " - " + myList[i].movie)
 
-        #add 'next' pointer where appropriate
-        if(i > 0):
-            prev.set_next(element)
+        # add 'next' pointer where appropriate
+        if (i > 0):
+            prev.next = element
         else:
-            #Set head pointer
+            # Set head pointer
             head = element
-        #update prev pointer
+        # update prev pointer
         prev = element
 
-    #Pass head of the list to Bridges
+    # Pass head of the list to Bridges
     bridges.set_data_structure(head)
 
-    #Visualize the list
+    # Visualize the list
     bridges.visualize()
