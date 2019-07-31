@@ -39,7 +39,7 @@ public class color_grid {
 			"YOUR_API_KEY");
 #endif
 
-		int width = 200, height = 200;
+		int width = 100, height = 100;
 
 		Color blue = new Color("blue");
 		Color red = new Color("red");

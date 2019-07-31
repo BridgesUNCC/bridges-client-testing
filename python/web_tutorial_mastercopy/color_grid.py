@@ -28,9 +28,9 @@ def main():
     blue = Color(col_name="blue")
     red = Color(col_name="red")
 
-    # create a 200x200 color grid
-    width = 200
-    height = 200
+    # create a 100x100 color grid
+    width = 100
+    height = 100
     cg = ColorGrid(width, height, red)
 
     # create a checkerboard pattern
