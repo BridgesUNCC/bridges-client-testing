@@ -3,11 +3,10 @@ from bridges.circ_dl_element import *
 import sys
 
 def main():
-    args = sys.argv[1:]
-
     # create the Bridges object, set credentials
 #if TESTING
     # command line args provide credentials and server to test on
+    args = sys.argv[1:]
     bridges = Bridges(int(args[0]), args[1], args[2])
     if len(args) > 3:
         bridges.connector.set_server(args[3])
