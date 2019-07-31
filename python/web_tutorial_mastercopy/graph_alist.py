@@ -6,15 +6,18 @@ import sys
 
 def main():
 
-    args = sys.argv[1:]
-
     # create the Bridges object, set credentials
+#if TESTING
+    # command line args provide credentials and server to test on
+    args = sys.argv[1:]
     bridges = Bridges(int(args[0]), args[1], args[2])
-
     if len(args) > 3:
         bridges.connector.set_server(args[3])
+#else
+    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
 
-    #Title and Description
+    # title, description
     bridges.set_title("A Simple Graph (Adjacency List) Example using IMDB Actor/Movie Data")
     bridges.set_description("Two lists each having an actor as the root node with 15 movies they played in as leaf nodes. "
             +	"Root nodes are both red, Kevin Bacon's leaf nodes are green and Denzel Washington's leaf nodes are neutral.")

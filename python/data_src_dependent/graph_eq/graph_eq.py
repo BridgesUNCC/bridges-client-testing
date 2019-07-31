@@ -39,27 +39,29 @@ def main():
     for eq in eqlist:
         if len(graph.get_adjacency_list()) > 99:
             break
-        graph.add_vertex(eq.get_title(), eq.get_title())
-        vis = graph.get_visualizer(eq.get_title())
-        vis.set_location(eq.get_longit(), eq.get_latit())
-        vis.set_size(eq.get_magnitude())
+        graph.add_vertex(eq.title, eq.title)
+        vis = graph.get_visualizer(eq.title)
+        vis.set_location(eq.longit, eq.latit)
+        vis.size = eq.magnitude
 
-        red = ((eq.get_longit()/180.0)*255)
+        red = ((eq.longit / 180.0) * 255)
         if red > 0:
             red = red
-        else: red = 0
+        else:
+            red = 0
 
-        blue = ((eq.get_longit() / 180.0) * 255)
+        blue = ((eq.longit / 180.0) * 255)
         if blue < 0:
             blue = blue * -1
-        else: blue = 0
+        else:
+            blue = 0
 
-        green = ((eq.get_latit() / 90.0) * 255)
+        green = ((eq.latit / 90.0) * 255)
         if green < 0:
             green = green * -1
-        else: green = green
-
-        vis.set_color(red,green,blue,1.0)
+        else:
+            green = green
+        vis.color = [int(red), int(green), int(blue), 1.0]
 
     bridges.set_coord_system_type("equirectangular")
     bridges.set_data_structure(graph)
@@ -75,23 +77,22 @@ def main():
                 continue
 
             ua = eqlist[j]
-            distance = calc_distance(eq.get_latit(), eq.get_longit(), ua.get_latit(), ua.get_longit())
+            distance = calc_distance(eq.latit, eq.longit, ua.latit, ua.longit)
 
             if distance < 500:
-                graph.add_edge(eq.get_title(), ua.get_title())
-                graph.get_link_visualizer(eq.get_title(), ua.get_title()).set_label("%s.2f KM" % distance)
+                graph.add_edge(eq.title, ua.title)
+                graph.get_link_visualizer(eq.title, ua.title).label = "%s.2f KM" % distance
 
+    bridges.set_data_structure(graph)
     bridges.visualize()
 
     for i in range(99):
         eq = eqlist[i]
-        vis = graph.get_visualizer(eq.get_title())
+        vis = graph.get_visualizer(eq.title)
 
         vis.set_location(float('inf'), float('inf'))
-        vis.set_size(eq.get_magnitude() * 5)
+        vis.size = eq.magnitude * 5
 
+    bridges.set_data_structure(graph)
     bridges.set_map_overlay(False)
     bridges.visualize()
-
-if __name__ == '__main__':
-    main()

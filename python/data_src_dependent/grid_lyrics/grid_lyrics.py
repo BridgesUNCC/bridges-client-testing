@@ -108,7 +108,7 @@ def main():
     bridges.set_title("ListEQ Example")
 
 
-    song = get_song("Delicate").get_lyrics()
+    song = get_song("Delicate").lyrics
     lyrics = split_lyrics(song)
 
     if len(lyrics) > 480:
