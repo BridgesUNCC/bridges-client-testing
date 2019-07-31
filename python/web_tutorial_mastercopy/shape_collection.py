@@ -11,19 +11,23 @@ def main():
     args = sys.argv[1:]
 
     # create the Bridges object, set credentials
-
+#if TESTING
+    # command line args provide credentials and server to test on
+    args = sys.argv[1:]
     bridges = Bridges(int(args[0]), args[1], args[2])
-
     if len(args) > 3:
         bridges.connector.set_server(args[3])
+#else
+    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+#endif
 
-    #Title and Description
+    # title, description
     bridges.set_title("Symbol Collection")
     bridges.set_description("Red square, green circle, magenta horizontal and vertical lines, "
             +	"and a test label with a purple outline.")
 
     sc = SymbolCollection()
-    s1 = Rectangle(50, 50, -25.0, 0.0)
+    s1 = Rectangle(-25, 0, 50, 50)
     s1.set_fill_color(Color("green"))
     sc.add_symbol(s1)
 
