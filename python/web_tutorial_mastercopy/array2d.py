@@ -23,12 +23,11 @@ def main():
     # for 2D array 6x6
     num_rows = 6
     num_cols = 6
-    my_array = Array(x_dim = num_rows, y_dim = num_cols)
+    my_array = Array(y_dim = num_rows, x_dim = num_cols)
 
     #populate the array
     for row in range(num_rows):
         for col in  range(num_cols):
-#            my_array[row, col].set_label("El " + str(row*num_cols + col))
             my_array[row, col].label = "El " + str(row*num_cols + col);
 
     #color some of the elements
