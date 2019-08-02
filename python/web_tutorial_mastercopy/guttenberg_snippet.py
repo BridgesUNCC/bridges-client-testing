@@ -17,19 +17,16 @@ def main():
     bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
-    # get 100 earthquake records
-    my_list = get_earthquake_usgs_data(100)
+    # get the guttenberg book meta data
+    book_list = get_gutenberg_book_data()
 
-    # pick one at random
-    quake1 = my_list[random.randrange(len(my_list))]
+    # get the first book
+    book1 = book_list[random.randrange(len(book_list))]
 
-    # print details of quake
-    print(quake1.latit)
-    print(quake1.longit)
-    print(quake1.location)
-    print(quake1.title)
-    print(quake1.magnitude)
+    # print details to console
+    print(book1.title)
+    print(book1.name)
+    print(book1.genre)
 
-
-if __name__ == '__main__':
-    main()
+    if __name__ == '__main__':
+        main()
