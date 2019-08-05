@@ -21,7 +21,7 @@ def main():
     song = get_song("Harder Faster Better Stronger", "Daft Punk")
 
     # print its lyrics
-    print(song.title)
+    print(song.song_title)
     print(song.artist)
     print(song.album_title)
     print(song.release_date)
