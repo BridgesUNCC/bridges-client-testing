@@ -18,13 +18,14 @@ def main():
 #endif
 
     # get a song
-    song = get_song("Delicate")
+    song = get_song("Harder Faster Better Stronger", "Daft Punk")
 
     # print its lyrics
+    print(song.title)
     print(song.artist)
     print(song.album_title)
     print(song.release_date)
-    print(song.lyrics[0:min(100, len(song.lyrics))])
+    print(song.lyrics)
 
 
 if __name__ == '__main__':
