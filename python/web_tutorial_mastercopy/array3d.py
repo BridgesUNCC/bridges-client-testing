@@ -1,5 +1,6 @@
 from bridges.bridges import *
 from bridges.array import *
+from bridges.array3d import *
 import sys
 
 def main():
@@ -25,15 +26,17 @@ def main():
     num_rows = 4
     num_cols = 4
 
-    my_array = Array(x_dim=num_slices, y_dim=num_rows, z_dim=num_cols)
+    my_array = Array3D(slices=num_slices, rows=num_rows, cols=num_cols)
 
     # populate the elements with their array postition
     n = 0
     for k in range(num_slices):
         for j in range(num_rows):
             for i in range(num_cols):
-                my_array[i, j, k].label = "El " + str(n)
-                n += n
+                my_array[k, j, i].label = "El " + str(n)
+                n += 1
+
+
 
     # color some of the elements
     my_array[0, 0, 0].visualizer.color = "red"
