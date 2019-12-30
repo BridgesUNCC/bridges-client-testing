@@ -36,10 +36,7 @@ int main (int argc, char** argv) {
 	// command line args provide credentials and server to test on
 	my_game g (atoi(argv[1]), argv[2], argv[3]);
 #else
-	my_game g(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
-		"YOUR_API_KEY");
+	my_game g(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
-
-
 	g.start();
 }
