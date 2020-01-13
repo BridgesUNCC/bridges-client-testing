@@ -12,12 +12,12 @@ def main():
     if len(args) > 3:
         bridges.connector.set_server(args[3])
 #else
-    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
 #endif
 
     # set title, description
     bridges.set_title("A doubly Linked List Example")
-    bridges.set_description("This list has five nodes all linked to the nodes before and after them and illustrates visual attributes. ");
+    bridges.set_description("This list has five nodes all linked to the nodes before and after them and illustrates visual attributes. ")
 
 	# create list elements
     el0 = DLelement(e="Gretel Chaney", label="Gretel Chaney")

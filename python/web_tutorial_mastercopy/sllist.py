@@ -14,12 +14,12 @@ def main():
     if len(args) > 3:
         bridges.connector.set_server(args[3])
 #else
-    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
 #endif
 
     # set title, description
     bridges.set_title("A Single Linked List Example")
-    bridges.set_description("A singly linked list of node with student names, where each node is linked only to the next node in the list. Illustrates Node and link coloring, node size, link thickness and opacity");
+    bridges.set_description("A singly linked list of node with student names, where each node is linked only to the next node in the list. Illustrates Node and link coloring, node size, link thickness and opacity")
 
 	# create the list elements
     el0 = SLelement(e="Gretel Chaney", label="Gretel Chaney")
