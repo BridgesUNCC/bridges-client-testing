@@ -2,9 +2,9 @@ import bridges.games.*;
 import bridges.base.*;
 
 class DisplayGame extends NonBlockingGame {
-    public DisplayGame() {
-	//substitute your username and api key
-	super (1, "myuserid",  "myapikey", 10, 10);
+    public DisplayGame(int assignmentnumber, String username, String apikey) {
+        super (assignmentnumber, username,  apikey, 10, 10);
+
 	//this created a game board of 10x10 into assignment 1
     }
 
@@ -25,7 +25,12 @@ class DisplayGame extends NonBlockingGame {
     }
 
     public static void  main (String args[]) {
-	DisplayGame g = new DisplayGame();
+#if TESTING
+    DisplayGame g = new DisplayGame(Integer.parseInt(args[0]), args[1], args[2]);
+#else
+    DisplayGame g = new DisplayGame(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+			"YOUR_API_KEY");
+#endif
 	g.start();
     }
 }
