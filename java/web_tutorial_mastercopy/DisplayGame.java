@@ -5,7 +5,7 @@ class DisplayGame extends NonBlockingGame {
     public DisplayGame(int assignmentnumber, String username, String apikey) {
         super (assignmentnumber, username,  apikey, 10, 10);
 
-	//this created a game board of 10x10 into assignment 1
+	//this created a game board of 10x10
     }
 
     public void initialize() {
