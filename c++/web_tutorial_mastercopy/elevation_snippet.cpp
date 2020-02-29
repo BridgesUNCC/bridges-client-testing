@@ -36,5 +36,17 @@ int main(int argc, char **argv) {
 		std::cerr << "Exception: " << s << "\n";
 	}
 
+	// print the data dimensions  and the firs 10 elevation data values
+	cout << "\tWidth: " << elev_data->getCols() << endl
+		<< "\tHeight: " << elev_data->getRows() << endl
+		<< "\tResolution: " <<  elev_data->getCellSize() << endl 
+		<< "\tLower Left Corner: "  << elev_data->getxll()  << 
+				 ", " <<  elev_data->getyll() <<endl;
+
+	cout << "The first 10 elevation values.." << endl;
+	for (int k = 0; k < 10; k++)
+		cout << elev_data->getVal(0, k) << "  " << endl;
+	cout << endl;
+
 	return 0;
 }
