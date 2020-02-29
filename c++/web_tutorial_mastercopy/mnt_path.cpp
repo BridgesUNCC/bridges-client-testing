@@ -23,13 +23,20 @@ int main(int argc, char **argv) {
 
 	// bridges object initialization
 	
-	
-	// initialize Bridges
-	Bridges bridges(123, "BRIDGES_USER_ID", "BRIDGES_API_KEY");
+#if TESTING
+    // command line args provide credentials and server to test on
+    Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+    if (argc > 4)
+        bridges.setServer(argv[4]);
 
+#else
+    Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+        "YOUR_API_KEY");
+#endif
+	
 	// defaults for row number and data file
 	int startRow = 300;
-	string dataFile = "../data/colorado1.dat";
+	string dataFile = "./colorado1.dat";
 
 	// set title
 	bridges.setTitle("Mountain Paths - Greedy Algorithms Example");
