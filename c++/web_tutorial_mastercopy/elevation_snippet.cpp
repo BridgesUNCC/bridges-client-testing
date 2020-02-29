@@ -29,7 +29,6 @@ int main(int argc, char **argv) {
 	DataSource ds;
 	dataset::ElevationData *elev_data;
 	try {
-		//osm_data = ds->getOSMData(35.28, -80.75, 35.32, -80.71);
 		elev_data = ds.getElevationData(6.020558108041891,46.10757941505641,
 						9.707863253414155,47.77059916141684, 0.02);
 	}
