@@ -3,7 +3,8 @@ from bridges.data_src_dependent import data_source
 
 class Image():
     def __init__(self):
-        self.ele_obj = data_source.get_elevation_data([6.020558108041891,46.10757941505641,9.707863253414155,47.77059916141684]) #Switzerland
+#        self.ele_obj = data_source.get_elevation_data([6.020558108041891,46.10757941505641,9.707863253414155,47.77059916141684]) #Switzerland
+        self.ele_obj = data_source.get_elevation_data([6.0,46.10, 9.0,47.7]) #Switzerland
         
         # Create the image file header
         self.header = "Hello"
@@ -72,7 +73,16 @@ class Image():
 
 
 def main():
-    bridges = Bridges(107, "test", "137842425086")
+#if TESTING
+    args = sys.argv[1:]
+
+    # command line args provide credentials and server to test on
+    bridges = Bridges(int(args[0]), args[1], args[2])
+    if len(args) > 3:
+        bridges.connector.set_server(args[3])
+#else
+    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
+#endif
 
     bridges.set_title("Mountain Paths - Greedy Algorithms Example")
     bridges.set_description("Path through the mountains through the lowest elevation.")
