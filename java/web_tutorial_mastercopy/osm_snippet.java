@@ -21,7 +21,7 @@ public class osm_snippet {
 #endif
 
 		DataSource  ds = bridges.getDataSource();
-		OsmData osm_data = ds.getOsmData("Baltimore");
+		OsmData osm_data = ds.getOsmData("Baltimore, Maryland");
 
 		OsmVertex[] vertices = osm_data.getVertices();
 		OsmEdge[] edges = osm_data.getEdges();
