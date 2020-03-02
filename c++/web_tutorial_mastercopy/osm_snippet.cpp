@@ -30,8 +30,8 @@ int main(int argc, char **argv) {
 #endif
 
 	DataSource  *ds = new DataSource;
-	OSMData osm_data = ds->getOSMDataOld("uncc_campus");
-
+	OSMData osm_data = ds->getOSMData("Charlotte, North Carolina");
+	
 	vector<OSMVertex> vertices = osm_data.getVertices();
 	vector<OSMEdge> edges = osm_data.getEdges();
 
