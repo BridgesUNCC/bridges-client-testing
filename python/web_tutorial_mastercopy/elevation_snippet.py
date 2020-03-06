@@ -22,11 +22,11 @@ def main():
     print("Width: "+str(ele_obj.cols))
     print("Height: "+str(ele_obj.rows))
     print("Coordinate of lower left corner: "+str(ele_obj.xll)+", "+str(ele_obj.yll))
-    print("Spatial resolution: " + ele_obj.cellsize)
+    print("Spatial resolution: " + str(ele_obj.cellsize))
 
     print("First 10 elevations:")
     for i in range(0, 10):
-        print(ele_obj.data[0][i])
+        print(str(ele_obj.data[0][i]))
     
 
     
