@@ -30,14 +30,14 @@ int main(int argc, char **argv) {
 #endif
 
 	DataSource  *ds = new DataSource;
-	OSMData osm_data = ds->getOSMDataOld("uncc_campus");
-
+	OSMData osm_data = ds->getOSMData("Charlotte, North Carolina");
+	
 	vector<OSMVertex> vertices = osm_data.getVertices();
 	vector<OSMEdge> edges = osm_data.getEdges();
 
 	double coords[2];
-	cout << "Number of Vertices [UNC Charlotte Campus]:" << vertices.size() << endl;
-	cout << "Number of Edges [UNC Charlotte Campus]:" << edges.size() << endl;
+	cout << "Number of Vertices [Charlotte]:" << vertices.size() << endl;
+	cout << "Number of Edges [Charlotte]:" << edges.size() << endl;
 
 	// get cartesian coordinate  location of first vertex
 	osm_data.getVertices()[0].getCartesianCoords(coords);

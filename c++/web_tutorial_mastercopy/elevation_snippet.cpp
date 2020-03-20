@@ -24,8 +24,6 @@ int main(int argc, char **argv) {
 
 	//create the Bridges object, set credentials
 
-	bridges.setServer("clone");
-
 	DataSource ds;
 	dataset::ElevationData *elev_data;
 	try {
