@@ -20,16 +20,26 @@ void generateSine(AudioClip * ac) {
     }
 }
 
-int main() {
-    Bridges bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+int main(int argc, char*argv[]) {
+
+#if TESTING
+	// command line args provide credentials and server to test on
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+
+	if (argc > 4)
+		bridges.setServer(argv[4]);
+
+
+#else
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+		"YOUR_API_KEY");
+#endif
 
     bridges.setTitle("Audio Mixing");
-    bridges.setDescription("Mixing two AudioClips together");
-
-    bridges.setServer("clone");
+    bridges.setDescription("sine");
 
     // Load the clips
-    AudioClip clip = AudioClip(44100*5);
+    AudioClip clip = AudioClip(44100*5, 1, 32, 44100);
 
     generateSine(&clip);
 
