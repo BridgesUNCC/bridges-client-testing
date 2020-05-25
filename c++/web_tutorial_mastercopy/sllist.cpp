@@ -44,6 +44,14 @@ int main (int argc, char **argv) {
 	el2->setNext(el3);
 	el3->setNext(el4);
 
+	// SLelement also has an iterator that can be used to iterate over the list
+
+    SLelement<string>::SLelement_listhelper list(el0);
+    
+	// print the names of the students in the list
+    for (auto iter = list.begin(); iter != list.end(); ++iter)
+        cout << *iter << endl;
+
 	// set colors for list elements - see the Color class for supported colors
 	el0->setColor("red");
 	el2->setColor("aliceblue");
