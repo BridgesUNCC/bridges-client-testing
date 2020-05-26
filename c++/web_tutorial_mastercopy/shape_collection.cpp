@@ -34,12 +34,12 @@ int main(int argc, char **argv) {
 	// draw a rectangle
 	Rectangle s1(-25, 0, 50, 50);
 	s1.setFillColor(Color("red"));
-	sc.addSymbol(s1);
+	sc.addSymbol(&s1);
 
 	// and a circle next to it
 	Circle s2(25, 0, 25);
 	s2.setFillColor(Color("green"));
-	sc.addSymbol(s2);
+	sc.addSymbol(&s2);
 
 	// draw a triangle above
 	Polygon s3;
@@ -48,7 +48,7 @@ int main(int argc, char **argv) {
 	s3.addPoint(0, 50);
 	s3.setStrokeColor("darkorchid");
 	s3.setStrokeWidth(2.0f);
-	sc.addSymbol(s3);
+	sc.addSymbol(&s3);
 
 	// draw axes
 	Polyline s4;
@@ -56,13 +56,13 @@ int main(int argc, char **argv) {
 	s4.addPoint(100, 0);
 	s4.setStrokeColor("magenta");
 	s4.setStrokeWidth(2.0f);
-	sc.addSymbol(s4);
+	sc.addSymbol(&s4);
 
 	Polyline s5;
 	s5.addPoint(0, -100);
 	s5.addPoint(0, 100);
 	s5.setStrokeWidth(2.0f);
-	sc.addSymbol(s5);
+	sc.addSymbol(&s5);
 
 	Polygon s6;
 	s6.addPoint (-30.0f, 40.0f);
@@ -71,7 +71,7 @@ int main(int argc, char **argv) {
 	s6.setStrokeColor("cyan");
 	s6.setFillColor("yellow");
 	s6.setStrokeWidth(3.0f);
-	sc.addSymbol(s6);
+	sc.addSymbol(&s6);
 
 
 
@@ -81,13 +81,12 @@ int main(int argc, char **argv) {
 	l.setStrokeWidth(1.0f);
 	l.setLabel("test label");
 	l.setStrokeColor("purple");
-	sc.addSymbol(l);
+	sc.addSymbol(&l);
 
 	// set visualizer type
 	bridges.setDataStructure(sc);
 
 	// visualize the JSON and Collection
-	bridges.setVisualizeJSONFlag(true);
 	bridges.visualize();
 
 	return 0;
