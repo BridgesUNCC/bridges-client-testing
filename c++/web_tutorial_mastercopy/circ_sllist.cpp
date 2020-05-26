@@ -43,7 +43,7 @@ int main (int argc, char **argv) {
 
 	// test the element's iterators
 	cout << "Testing list iterator.." << endl;
-	CircSLelement<string>::CircSLelement_listhelper  list(el0);
+	CircSLelement_List<string> list(el0);
 	auto iter = list.begin();
 	do {
 		cout << "\t" << *iter << endl;

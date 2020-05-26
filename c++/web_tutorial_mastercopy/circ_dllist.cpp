@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
 	el0->setPrev(el4);
 
 	cout << "Testing forward list iterator.." << endl;
-	CircDLelement<string>::CircDLelement_listhelper list(el0);
+	CircDLelement_List<string> list(el0);
     auto iter = list.begin();
     do {
         cout << "\t" << *iter << endl;

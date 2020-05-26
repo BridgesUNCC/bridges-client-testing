@@ -51,7 +51,7 @@ int main(int argc, char **argv) {
 	el4->setPrev(el3);
 
 	// test the iterators in DLelement
-	DLelement<string>::DLelement_listhelper list(el0);	
+	DLelement_List<string> list(el0);
 
 	cout <<  "Forward Iteration:" << endl;
 	for (auto iter = list.begin(); iter != list.end(); iter++)
