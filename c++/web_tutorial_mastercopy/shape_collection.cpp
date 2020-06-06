@@ -34,7 +34,9 @@ int main(int argc, char **argv) {
 	// draw a rectangle
 	Rectangle s1(-25, 0, 50, 50);
 	s1.setFillColor(Color("red"));
+	s1.setOpacity(0.3f);
 	sc.addSymbol(&s1);
+	
 
 	// and a circle next to it
 	Circle s2(25, 0, 25);
