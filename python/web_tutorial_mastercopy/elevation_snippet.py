@@ -18,7 +18,7 @@ def main():
 #endif
 
 
-    ele_obj = data_source.get_elevation_data([-98.02593749997456, 41.03133177632377, -98.02593749997456, 42.508577297430456, -96.94531249997696])
+    ele_obj = data_source.get_elevation_data([41.03133177632377, -98.02593749997456, 42.508577297430456, -96.94531249997696])
     print("Width: "+str(ele_obj.cols))
     print("Height: "+str(ele_obj.rows))
     print("Coordinate of lower left corner: "+str(ele_obj.xll)+", "+str(ele_obj.yll))
