@@ -39,7 +39,7 @@ int main(int argc, char*argv[]) {
     bridges.setDescription("sine");
 
     // Load the clips
-    AudioClip clip (44100*5, 1, 32, 44100);
+    AudioClip clip (44100*.25, 1, 32, 44100);
 
     generateSine(&clip);
 
