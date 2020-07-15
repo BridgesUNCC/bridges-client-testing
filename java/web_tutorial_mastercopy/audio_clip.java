@@ -36,9 +36,64 @@ public class audio_clip {
 	    
 	    generateSine(ac);
 	    
-	    bridges.setServer("clone");
 	    bridges.setDataStructure(ac);
 
 	    bridges.visualize();
+
+
+	    try {
+	    
+		AudioClip ac2 = new AudioClip("../../data/clap-8bit.wav");
+
+	    
+		bridges.setDataStructure(ac2);
+
+		bridges.visualize();
+	    }
+	    catch (bridges_external.WavFileException wfe) {
+		System.err.println(wfe.getMessage());
+	    }
+
+	    
+	    try {
+	    
+		AudioClip ac2 = new AudioClip("../../data/clap-16bit.wav");
+
+	    
+		bridges.setDataStructure(ac2);
+
+		bridges.visualize();
+	    }
+	    catch (bridges_external.WavFileException wfe) {
+		System.err.println(wfe.getMessage());
+	    }
+
+	    try {
+	    
+		AudioClip ac2 = new AudioClip("../../data/clap-24bit.wav");
+
+	    
+		bridges.setDataStructure(ac2);
+
+		bridges.visualize();
+	    }
+	    catch (bridges_external.WavFileException wfe) {
+		System.err.println(wfe.getMessage());
+	    }
+
+	    try {
+	    
+		AudioClip ac2 = new AudioClip("../../data/clap-32bit.wav");
+
+	    
+		bridges.setDataStructure(ac2);
+
+		bridges.visualize();
+	    }
+	    catch (bridges_external.WavFileException wfe) {
+		System.err.println(wfe.getMessage());
+	    }
+
+	    
 	}
 }
