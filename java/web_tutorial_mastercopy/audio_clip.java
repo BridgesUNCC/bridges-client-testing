@@ -31,8 +31,8 @@ public class audio_clip {
 
 
 	    bridges.setTitle("Audio Test");
-	    
-	    AudioClip ac = new AudioClip(44100*5, 1, 32, 44100);
+
+            AudioClip ac = new AudioClip(44100*5, 1, 32, 44100);
 	    
 	    generateSine(ac);
 	    
@@ -41,59 +41,32 @@ public class audio_clip {
 	    bridges.visualize();
 
 
-	    try {
 	    
-		AudioClip ac2 = new AudioClip("../../data/clap-8bit.wav");
+	    AudioClip ac2 = new AudioClip("../../data/clap-8bit.wav");
+
+	    bridges.setDataStructure(ac2);
+
+	    bridges.visualize();
+
+	    AudioClip ac3 = new AudioClip("../../data/clap-16bit.wav");
+		
+	    bridges.setDataStructure(ac3);
+
+	    bridges.visualize();
+
+	    AudioClip ac4 = new AudioClip("../../data/clap-24bit.wav");
 
 	    
-		bridges.setDataStructure(ac2);
+	    bridges.setDataStructure(ac4);
+
+	    bridges.visualize();
+
+	    
+	    AudioClip ac5 = new AudioClip("../../data/clap-32bit.wav");
+	    
+	    bridges.setDataStructure(ac5);
 
 		bridges.visualize();
-	    }
-	    catch (bridges_external.WavFileException wfe) {
-		System.err.println(wfe.getMessage());
-	    }
-
-	    
-	    try {
-	    
-		AudioClip ac2 = new AudioClip("../../data/clap-16bit.wav");
-
-	    
-		bridges.setDataStructure(ac2);
-
-		bridges.visualize();
-	    }
-	    catch (bridges_external.WavFileException wfe) {
-		System.err.println(wfe.getMessage());
-	    }
-
-	    try {
-	    
-		AudioClip ac2 = new AudioClip("../../data/clap-24bit.wav");
-
-	    
-		bridges.setDataStructure(ac2);
-
-		bridges.visualize();
-	    }
-	    catch (bridges_external.WavFileException wfe) {
-		System.err.println(wfe.getMessage());
-	    }
-
-	    try {
-	    
-		AudioClip ac2 = new AudioClip("../../data/clap-32bit.wav");
-
-	    
-		bridges.setDataStructure(ac2);
-
-		bridges.visualize();
-	    }
-	    catch (bridges_external.WavFileException wfe) {
-		System.err.println(wfe.getMessage());
-	    }
-
 	    
 	}
 }
