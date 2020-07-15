@@ -39,12 +39,40 @@ int main(int argc, char*argv[]) {
     bridges.setDescription("sine");
 
     // Load the clips
-    AudioClip clip = AudioClip(44100*5, 1, 32, 44100);
+    AudioClip clip (44100*5, 1, 32, 44100);
 
     generateSine(&clip);
 
     bridges.setDataStructure(clip);
     bridges.visualize();
 
+	    
+	    AudioClip ac2 ("../../data/clap-8bit.wav");
+
+	    bridges.setDataStructure(ac2);
+
+	    bridges.visualize();
+
+	    AudioClip ac3 ("../../data/clap-16bit.wav");
+		
+	    bridges.setDataStructure(ac3);
+
+	    bridges.visualize();
+
+	    AudioClip ac4 ("../../data/clap-24bit.wav");
+
+	    
+	    bridges.setDataStructure(ac4);
+
+	    bridges.visualize();
+
+	    
+	    AudioClip ac5 ("../../data/clap-32bit.wav");
+	    
+	    bridges.setDataStructure(ac5);
+
+		bridges.visualize();
+
+    
     return 0;
 }
