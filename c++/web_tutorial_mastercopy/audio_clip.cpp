@@ -71,6 +71,11 @@ int main(int argc, char*argv[]) {
 	    
 	    bridges.setDataStructure(ac5);
 
+
+	    AudioClip ac6 ("../../data/piano.wav");
+
+	    bridges.setDataStructure(ac6);
+
 		bridges.visualize();
 
     
