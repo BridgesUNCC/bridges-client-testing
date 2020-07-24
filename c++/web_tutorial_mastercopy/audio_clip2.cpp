@@ -30,7 +30,6 @@ int main(int argc, char*argv[]) {
     // Load the clips
 	string audio_file = "./piano.wav";
     AudioClip clip = AudioClip(string(audio_file));
-		clip.getRange();
 
     bridges.setDataStructure(clip);
     bridges.visualize();
