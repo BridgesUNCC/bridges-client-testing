@@ -21,6 +21,9 @@ SRCS=$(grep -l def\ main *.py | sort)
 
 cd -
 
+
+export FORCE_BRIDGES_ASSIGNMENT=3000
+
 for i in ${SRCS};
 do
     echo ===================================
@@ -28,6 +31,9 @@ do
     echo ===================================
 
     { run_python_test $i ; echo $? > ${HTMLLOGDIR}/${i}-runtest-code ; }  2>&1 | tee -a ${HTMLLOGDIR}/${i}-runtest
+
+    export FORCE_BRIDGES_ASSIGNMENT=$(expr ${FORCE_BRIDGES_ASSIGNMENT} + 1)
+
 done
 
 ## build summary

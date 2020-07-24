@@ -25,15 +25,21 @@ SRCS=$(ls *.cpp | sort)
 
 cd -
 
+
+export FORCE_BRIDGES_ASSIGNMENT=1000
+
+
 for i in ${SRCS};
 do
     echo ===================================
     echo ===========Test ${i}============
     echo ===================================
-
+    
     { build_cxx_test $i ; echo $? > ${HTMLLOGDIR}/${i}-buildtest-code ; }  2>&1 | tee -a ${HTMLLOGDIR}/${i}-buildtest
     
     { run_cxx_test $i ; echo $? > ${HTMLLOGDIR}/${i}-runtest-code ; }  2>&1 | tee -a ${HTMLLOGDIR}/${i}-runtest
+
+    export FORCE_BRIDGES_ASSIGNMENT=$(expr ${FORCE_BRIDGES_ASSIGNMENT} + 1)
 
 done
 
@@ -41,6 +47,9 @@ done
 
 for i in ${SRCS};
 do
+
+
+    
     build_test_code=$(cat ${HTMLLOGDIR}/${i}-buildtest-code)
     run_test_code=$(cat ${HTMLLOGDIR}/${i}-runtest-code)
 

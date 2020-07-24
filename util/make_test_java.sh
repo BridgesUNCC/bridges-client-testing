@@ -41,6 +41,8 @@ SRCS=$(grep -l public\ static\ void\ main *.java | sort )
 
 cd -
 
+export FORCE_BRIDGES_ASSIGNMENT=2000
+
 
 for i in ${SRCS};
 do
@@ -53,6 +55,8 @@ do
 
     { run_java_test $i ; echo $? > ${HTMLLOGDIR}/${i}-runtest-code ; }  2>&1 | tee -a ${HTMLLOGDIR}/${i}-runtest
     
+    export FORCE_BRIDGES_ASSIGNMENT=$(expr ${FORCE_BRIDGES_ASSIGNMENT} + 1)
+
 done
 
 ## build summary
