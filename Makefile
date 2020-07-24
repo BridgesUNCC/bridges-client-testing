@@ -11,6 +11,11 @@ make_web:
 	cd c++/web_tutorial_mastercopy; make webversion
 	cd python/web_tutorial_mastercopy; make webversion
 
+make_testing:
+	cd java/web_tutorial_mastercopy; make testing
+	cd c++/web_tutorial_mastercopy; make testing
+	cd python/web_tutorial_mastercopy; make testing
+
 make_java:
 	cd java/web_tutorial_mastercopy; make testing;
 	cd java/web_tutorial_testing; make; make run;

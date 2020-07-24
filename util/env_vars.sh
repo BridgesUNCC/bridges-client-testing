@@ -1,0 +1,14 @@
+export BRIDGES_LDFLAGS="-L /home/erik/prgs/bridges-cxx-install/lib/"
+export BRIDGES_CXXFLAGS="-I ~/work/bridges/bridges-cxx/src -I /home/erik/prgs/bridges-cxx-install/include/"
+
+
+export MARKDOWN=commonmarker
+
+export PYTHON=python3
+
+export FORCE_BRIDGES_USERNAME=esaule
+export FORCE_BRIDGES_APIKEY=1090423871824
+
+export FORCE_BRIDGES_FRAMELIMIT=10
+
+export CLASSPATH=/home/erik/work/bridges/bridges-java/build/libs/bridges-java-3.1.0b1.jar:.
