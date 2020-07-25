@@ -32,7 +32,7 @@ public class audio_clip {
 
 	    bridges.setTitle("Audio Test");
 
-            AudioClip ac = new AudioClip(44100*.25, 1, 32, 44100);
+            AudioClip ac = new AudioClip((int) (44100*.25), 1, 32, 44100);
 	    
 	    generateSine(ac);
 	    
