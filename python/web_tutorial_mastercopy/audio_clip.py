@@ -56,6 +56,11 @@ def main():
     clip = AudioTest(sample_count=44100*5, num_channels=2)
 
     clip.generate_sine()
+	
+	# Bit Depth Testing, was unsure where to put this since it requires a new clip
+    
+    #clip = AudioTest(sample_count=44100*5, num_channels=1, sample_bits=16, sample_rate=44100)
+    #clip.generate_sine()
 
 #if TESTING
     # command line args provide credentials and server to test on
