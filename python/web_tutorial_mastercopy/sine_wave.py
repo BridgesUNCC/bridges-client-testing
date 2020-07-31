@@ -33,7 +33,7 @@ def main():
         # Where the cycle is at i = 0
         phase = 0
         # The maximum amplitude of the wave (value of the highest point)
-        amplitude = 2147483648 / 4.0
+        amplitude = 2**31 / 4.0
         # The current second (with decimals) of the clip
         time = i / SAMPLE_RATE
         # This gives the sine curve
