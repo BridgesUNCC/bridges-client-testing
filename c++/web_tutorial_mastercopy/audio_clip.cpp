@@ -38,7 +38,7 @@ int main(int argc, char*argv[]) {
     bridges.setTitle("Audio Mixing");
     bridges.setDescription("sine");
 
-    // Load the clips
+
     AudioClip clip (44100*.25, 1, 32, 44100);
 
     generateSine(&clip, 32);
@@ -46,14 +46,20 @@ int main(int argc, char*argv[]) {
     bridges.setDataStructure(clip);
     bridges.visualize();
 
-    // Load the clips
     AudioClip clip2 (44100*.25, 1, 8, 44100);
 
     generateSine(&clip2, 8);
 
     bridges.setDataStructure(clip2);
     bridges.visualize();
-    
+
+    AudioClip clip3 (44100*.25, 1, 16, 44100);
+
+    generateSine(&clip3, 16);
+
+    bridges.setDataStructure(clip3);
+    bridges.visualize();
+        
 	    
 	    AudioClip ac2 ("../../data/clap-8bit.wav");
 
