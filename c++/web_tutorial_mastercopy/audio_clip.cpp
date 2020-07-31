@@ -7,11 +7,11 @@
 using namespace std;
 using namespace bridges;
 
-void generateSine(AudioClip * ac) {
+void generateSine(AudioClip * ac, int bit_depth) {
     for (int s = 0; s < ac->getSampleCount(); s++) {
         for (int c = 0; c < ac->getNumChannels(); c++) {
             double val = sin(s / 20.0);
-            int minmax32 = (pow(2, 32) / 2.0) - 1.0;
+            int minmax32 = (pow(2, bit_depth) / 2.0) - 1.0;
 
             int amp = (int)(val * minmax32);
             
@@ -41,11 +41,19 @@ int main(int argc, char*argv[]) {
     // Load the clips
     AudioClip clip (44100*.25, 1, 32, 44100);
 
-    generateSine(&clip);
+    generateSine(&clip, 32);
 
     bridges.setDataStructure(clip);
     bridges.visualize();
 
+    // Load the clips
+    AudioClip clip2 (44100*.25, 1, 8, 44100);
+
+    generateSine(&clip2, 8);
+
+    bridges.setDataStructure(clip2);
+    bridges.visualize();
+    
 	    
 	    AudioClip ac2 ("../../data/clap-8bit.wav");
 
