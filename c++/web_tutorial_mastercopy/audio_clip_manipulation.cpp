@@ -5,10 +5,20 @@ using namespace std;
 using namespace bridges;
 
 int main() {
-    // Create the Bridges object
-    Bridges bridges = Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
-                "YOUR_API_KEY");
-    
+	// create Bridges object
+#if TESTING
+	// command line args provide credentials and server to test on
+	Bridges bridges (atoi(argv[1]), argv[2], argv[3]);
+
+	if (argc > 4)
+		bridges.setServer(argv[4]);
+#else
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
+		"YOUR_API_KEY");
+#endif
+
+
+  
     // Title, description
         bridges.setTitle("An AudioClip Example");
         bridges.setDescription("This program takes any input audio clip and lowers its volume by half. To do this, we'll iterate through all the samples in the clip and halve them.");
