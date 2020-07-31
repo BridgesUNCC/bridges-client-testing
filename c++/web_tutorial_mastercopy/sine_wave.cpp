@@ -4,7 +4,7 @@
 using namespace std;
 using namespace bridges;
 
-int main() {
+int main(int argc, char **argv) {
 	// create Bridges object
 #if TESTING
 	// command line args provide credentials and server to test on
