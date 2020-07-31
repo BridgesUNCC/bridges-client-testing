@@ -1,7 +1,7 @@
 import bridges.connect.Bridges;
 import bridges.base.AudioClip;
 
-public class AudioClipManipulation {
+public class audio_clip_manipulation {
     public static void main(String[] args) throws Exception{
 
 	//create Bridges object

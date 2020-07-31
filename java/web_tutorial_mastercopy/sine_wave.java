@@ -1,7 +1,7 @@
 import bridges.connect.Bridges;
 import bridges.base.AudioClip;
 
-public class SineWave {
+public class sine_wave {
     public static void main(String[] args) throws Exception{
 
 	//create Bridges object
