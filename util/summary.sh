@@ -22,6 +22,9 @@ check_tools
 
 rm ${HTMLLOG}
 
+timeis=$(date)
+
+
 cat >>${HTMLLOG} <<EOF
 <html>
 <head>
@@ -46,7 +49,10 @@ background-color: springgreen;
 </style>
 </head>
 <body>
+<p>Run at ${timeis}</p> 
+
 EOF
+
 
 
 #Java
