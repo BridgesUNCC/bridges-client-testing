@@ -1,12 +1,21 @@
 import bridges.connect.Bridges;
 import bridges.base.AudioClip;
 
-public class AudioClipManipulation {
+public class audio_clip_manipulation {
     public static void main(String[] args) throws Exception{
-        // Create the Bridges object
-        Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
-                "YOUR_API_KEY");
 
+	//create Bridges object
+#if TESTING
+		if (args.length < 2)
+			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+		bridges.setServer(args[3]);
+
+#else
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+			"YOUR_API_KEY");
+#endif
+	
         // Title, description
         bridges.setTitle("An AudioClip Example");
         bridges.setDescription("This program takes any input audio clip and lowers its volume by half. To do this, we'll" +

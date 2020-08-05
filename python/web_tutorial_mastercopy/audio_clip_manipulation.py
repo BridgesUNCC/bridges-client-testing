@@ -1,11 +1,21 @@
 from bridges import AudioClip
 from bridges import Bridges
+import sys
 import math
 
 def main():
-    # Create the Bridges object
-    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
 
+    # create the Bridges object, set credentials
+#if TESTING
+    # command line args provide credentials and server to test on
+    args = sys.argv[1:]
+    bridges = Bridges(int(args[0]), args[1], args[2])
+    if len(args) > 3:
+        bridges.connector.set_server(args[3])
+#else
+    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
+#endif
+    
     # Title, description
     bridges.set_title("An AudioClip Example")
     bridges.set_description("This program takes any input audio clip and lowers its volume by half. To do this, we'll" +
@@ -19,14 +29,14 @@ def main():
     # Create a new audio clip object to store our changes on.
     # Copy the sample count, sample bit depth, and sample rate from the old clip.
     newAudioClip = AudioClip(sample_count=oldAudioClip.get_sample_count(), num_channels=1,
-            sample_bits=32, sample_rate=oldAudioClip.get_sample_rate())
+            sample_bits=oldAudioClip.get_sample_bits(), sample_rate=oldAudioClip.get_sample_rate())
 
     # Iterate through every sample in the clip
     for i in range(newAudioClip.get_sample_count()):
         # Get the sample at i in the first (and only) channel.
         sampleValue = oldAudioClip.get_sample(0, i)
         # Halve the value of the sample
-        newSampleValue = sampleValue / 2
+        newSampleValue = int(sampleValue / 2)
         # Set the sample at i to the new value
         newAudioClip.set_sample(0, i, newSampleValue)
 

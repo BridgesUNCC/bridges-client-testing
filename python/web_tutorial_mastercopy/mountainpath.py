@@ -94,5 +94,5 @@ def main():
     bridges.set_data_structure(img.get_image())
     bridges.visualize()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

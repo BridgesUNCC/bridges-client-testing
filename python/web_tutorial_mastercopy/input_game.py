@@ -28,10 +28,9 @@ class InputGame (NonBlockingGame):
 			self.draw_symbol(1, 5, NamedSymbol.none, NamedColor.red)
 
 def	main():
-#	game = InputGame(1, "BRIDGES_USER_ID", "BRIDGES_API_KEY")
-	game = InputGame(1, "kalpathi60", "486749122386")
+	game = InputGame(1, "BRIDGES_USER_ID", "BRIDGES_API_KEY")
 	# start the game
 	game.start()
 
-if __name__ == '__main__':
+if __name__ == "__main__":
 	main()

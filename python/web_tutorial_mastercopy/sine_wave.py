@@ -1,10 +1,20 @@
 from bridges import AudioClip
 from bridges import Bridges
+import sys
 import math
 
 def main():
-    # Create the Bridges object
+
+    # create the Bridges object, set credentials
+#if TESTING
+    # command line args provide credentials and server to test on
+    args = sys.argv[1:]
+    bridges = Bridges(int(args[0]), args[1], args[2])
+    if len(args) > 3:
+        bridges.connector.set_server(args[3])
+#else
     bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
+#endif
 
     # Title, description
     bridges.set_title("An AudioClip Example")
@@ -23,7 +33,7 @@ def main():
         # Where the cycle is at i = 0
         phase = 0
         # The maximum amplitude of the wave (value of the highest point)
-        amplitude = 2147483648 / 4.0
+        amplitude = 2**31 / 4.0
         # The current second (with decimals) of the clip
         time = i / SAMPLE_RATE
         # This gives the sine curve
