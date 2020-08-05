@@ -1,4 +1,5 @@
 from bridges import *
+import sys
 
 class InputGame (NonBlockingGame): 
 	def	 __init__(self, assid, user_id, api_key):
@@ -28,7 +29,12 @@ class InputGame (NonBlockingGame):
 			self.draw_symbol(1, 5, NamedSymbol.none, NamedColor.red)
 
 def	main():
-	game = InputGame(1, "BRIDGES_USER_ID", "BRIDGES_API_KEY")
+#if TESTING
+        args = sys.argv[1:]
+        game = InputGame(int(args[0]), args[1], args[2])
+#else
+        game = InputGame(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
+#endif
 	# start the game
 	game.start()
 
