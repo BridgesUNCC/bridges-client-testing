@@ -1,0 +1,48 @@
+from bridges.bridges import *
+from bridges.line_chart import *
+import sys
+import array
+
+
+def main():
+#if TESTING
+    # command line args provide credentials and server to test on
+    args = sys.argv[1:]
+    bridges = Bridges(int(args[0]), args[1], args[2])
+    if len(args) > 3:
+        bridges.connector.set_server(args[3])
+#else
+    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
+#endif
+
+
+    # create the Bridges object, set credentials
+    bridges = Bridges(int(args[0]), args[1], args[2])
+    bridges.set_title ("Line chart test")
+
+    plot = LineChart()
+    plot.title = "Line Chart Plot"
+    # set  the data
+    x1 = [1, 3, 5, 20]
+    y1 = [2, 3, 5, 20]
+    plot.set_data_series("1", x1, y1)
+    bridges.set_data_structure(plot)
+    bridges.visualize()
+
+    x2 = [2, 15.2,  40];
+    y2 = [4, 30.5, 400.99];
+    plot.set_data_series("2", x2, y2);
+    bridges.visualize();
+
+#    plot.toggleLogarithmicX(true);
+#    bridges.visualize();
+
+#    plot.toggleMouseTrack(true);
+#    plot.toggleLogarithmicY(true);
+
+#    bridges.visualize();
+
+
+
+if __name__ == "__main__":
+    main()
