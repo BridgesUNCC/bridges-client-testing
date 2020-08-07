@@ -34,14 +34,13 @@ def main():
     plot.set_data_series("2", x2, y2);
     bridges.visualize();
 
-#    plot.toggleLogarithmicX(true);
-#    bridges.visualize();
+    plot.logarithmicx = True
+    bridges.visualize();
 
-#    plot.toggleMouseTrack(true);
-#    plot.toggleLogarithmicY(true);
+    plot.mouse_track = True;
+    plot.logarithmicy = True;
 
-#    bridges.visualize();
-
+    bridges.visualize();
 
 
 if __name__ == "__main__":
