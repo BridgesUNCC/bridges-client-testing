@@ -40,7 +40,7 @@ def main():
         bst_node = BSTElement(key=ami[i].magnitude, e=ami[i])
 
         # set label of the node
-        bst_node.label = ami[i].title + ami[i].time
+        bst_node.label = ami[i].title + "\n" + ami[i].time
 
         # insert node into tree
         root = insertR(root, bst_node)
