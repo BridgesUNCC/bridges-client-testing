@@ -2,7 +2,7 @@ import bridges.base.CircDLelement;
 import bridges.connect.Bridges;
 import java.util.Iterator;
 
-public class cdllist {
+public class circ_dllist {
 
 	public static void main(String[] args) throws Exception {
 
