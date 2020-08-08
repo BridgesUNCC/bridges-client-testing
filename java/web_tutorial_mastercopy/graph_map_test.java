@@ -7,7 +7,7 @@ import bridges.base.Edge;
 import bridges.connect.Bridges;
 import bridges.data_src_dependent.ActorMovieIMDB;
 
-public class graph_maps {
+public class graph_map_test {
 	public static void main(String[] args) throws Exception {
 
 		// initialize Bridges
