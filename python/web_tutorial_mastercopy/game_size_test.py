@@ -25,10 +25,10 @@ class GameSizeTest (NonBlockingGame):
 
 def	main():
 #if TESTING
-        args = sys.argv[1:]
-        game = GameSizeTest(int(args[0]), args[1], args[2])
+	args = sys.argv[1:]
+	game = GameSizeTest(int(args[0]), args[1], args[2])
 #else
-        game = GameSizeTest(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
+	game = GameSizeTest(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
 #endif
 
 	# start the game
