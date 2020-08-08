@@ -34,8 +34,8 @@ int main(int argc, char **argv) {
 	bridges.setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than the parent is set to the right and nodes with a magnitude less than the parent set to the left. The root is set to red the leaf nodes are neutral.");
 
 	// get earthquake data
-	DataSource *ds = new DataSource;
-	vector<EarthquakeUSGS> eq_list = ds->getEarthquakeUSGSData(max_quakes);
+	DataSource ds(bridges);
+	vector<EarthquakeUSGS> eq_list = ds.getEarthquakeUSGSData(max_quakes);
 
 	// create the binary tree root
 	BSTElement<float, EarthquakeUSGS> *root = nullptr;
