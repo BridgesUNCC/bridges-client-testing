@@ -28,7 +28,8 @@ run_cxx() {
     (
 	cd ../c++/web_tutorial_testing/
 	
-	${TIMEOUT} 60 ./$(basename ${test} .cpp) 1 null null live
+	#${TIMEOUT} 60 ./$(basename ${test} .cpp) 1 null null live
+	${TIMEOUT} 60 ${DEBUGGER} ./$(basename ${test} .cpp) 1 null null live
 	if [ $? -eq 0 ] ;
 	then
 	    exit 0; #ok
