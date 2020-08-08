@@ -17,8 +17,8 @@ class MinimalGame (NonBlockingGame):
 
 def	main():
 #if TESTING
-        args = sys.argv[1:]
-        game = MinimalGame(int(args[0]), args[1], args[2])
+	args = sys.argv[1:]
+	game = MinimalGame(int(args[0]), args[1], args[2])
 #else
 	game = MinimalGame(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
 #endif
