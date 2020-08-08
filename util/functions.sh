@@ -3,7 +3,7 @@
 BASE=../
 TIMEOUT=mytimeout
 
-mytimeout() { perl -e 'alarm shift; exec @ARGV' "$@"; }
+mytimeout() { perl -e 'alarm shift; exec @ARGV; exit 1' "$@"; }
 filterexecutableonly() { while read filename; do if [ -x "$filename" ]; then echo "$filename" ;fi ; done }
 
 run_java() {
