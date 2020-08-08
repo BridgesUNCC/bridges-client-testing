@@ -10,7 +10,7 @@ import bridges.connect.Bridges;
 import bridges.connect.DataSource;
 import bridges.data_src_dependent.ActorMovieIMDB;
 
-public class graph_am {
+public class graph_amatrix {
 	public static void main(String[] args) throws Exception {
 
 		// initialize Bridges

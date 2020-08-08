@@ -1,7 +1,7 @@
 import bridges.connect.Bridges;
 import bridges.base.Array1D;
 
-public class arr1d {
+public class array1d {
 	public static void main(String[] args) throws Exception {
 
 		//create the Bridges object, set credentials

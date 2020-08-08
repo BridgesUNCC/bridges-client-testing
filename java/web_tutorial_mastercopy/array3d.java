@@ -2,7 +2,7 @@ import bridges.connect.Bridges;
 import bridges.base.Array3D;
 import bridges.base.Element;
 
-public class arr3d {
+public class array3d {
 	public static void main(String[] args) throws Exception {
 
 		//create the Bridges object

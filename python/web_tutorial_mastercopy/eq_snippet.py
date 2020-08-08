@@ -20,16 +20,14 @@ def main():
     # get 100 earthquake records
     my_list = get_earthquake_usgs_data(100)
 
-    # pick one at random
-    quake1 = my_list[random.randrange(len(my_list))]
+    # pick the first one 
+    quake1 = my_list[0]
 
     # print details of quake
-    print(quake1.latit)
-    print(quake1.longit)
-    print(quake1.location)
-    print(quake1.title)
-    print(quake1.magnitude)
-    print(quake1.time)
+    print("Magnitude: " + str(quake1.magnitude))
+    print("Date: " + str(quake1.time))
+    print("Location:" + str(quake1.location))
+    print("Lat/Long:" + str(quake1.latit) + "," + str(quake1.longit))
 
 
 if __name__ == "__main__":

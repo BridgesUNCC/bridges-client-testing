@@ -1,8 +1,8 @@
 import bridges.games.*;
 import bridges.base.*;
 
-class MinimalGame extends NonBlockingGame {
-    public MinimalGame(int assignmentnumber, String username, String apikey) {
+class minimal_game extends NonBlockingGame {
+    public minimal_game(int assignmentnumber, String username, String apikey) {
 	super (assignmentnumber, username,  apikey, 10, 10);
 	//this created a game board of 10x10 into assignment 1
     }
@@ -17,9 +17,9 @@ class MinimalGame extends NonBlockingGame {
     
     public static void  main (String args[]) {
 #if TESTING
-    MinimalGame g = new MinimalGame(Integer.parseInt(args[0]), args[1], args[2]);
+    minimal_game g = new minimal_game(Integer.parseInt(args[0]), args[1], args[2]);
 #else
-    MinimalGame g = new MinimalGame(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+    minimal_game g = new minimal_game(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
 			"YOUR_API_KEY");
 #endif
 
