@@ -45,6 +45,8 @@ style:
 	echo "You should run the styling from the master copy and not the testing copy!!!!!"
 	exit -1
 
+test_clean:
+	-rm *.java *.class
 
 clean: 
 	/bin/rm -f  *.class

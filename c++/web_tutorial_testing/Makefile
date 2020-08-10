@@ -67,7 +67,8 @@ run_valgrind_%: %
 clean:
 	rm -f $(EXECUTABLES) $(OBJS)
 
-
+test_clean:
+	-rm *.cpp *.hpp .h $(OBJS)
 
 depend: $(SRCS)
 	gcc -MD  $(IFLAGS) $(SRCS)

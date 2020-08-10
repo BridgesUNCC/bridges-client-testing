@@ -12,11 +12,11 @@ make_web:
 	cd python/web_tutorial_mastercopy; make webversion
 
 make_testing:
-	rm -rf java/web_tutorial_testing/
+	cd java/web_tutorial_testing/; make test_clean
 	cd java/web_tutorial_mastercopy; make testing
-	rm -rf c++/web_tutorial_testing/
+	cd c++/web_tutorial_testing/; make test_clean
 	cd c++/web_tutorial_mastercopy; make testing
-	rm -rf python/web_tutorial_testing/
+	cd python/web_tutorial_testing/; make test_clean
 	cd python/web_tutorial_mastercopy; make testing
 
 make_java:
