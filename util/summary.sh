@@ -62,7 +62,7 @@ LANGUAGE=java
 
 cd ../java/web_tutorial_testing
 
-JAVASRCS=$(grep -l public\ static\ void\ main *.java | sort )
+JAVASRCS=$(grep -l public\ static\ void\ main *.java | sort -V )
 
 cd -
 
@@ -101,7 +101,7 @@ LANGUAGE=cxx
 
 cd ../c++/web_tutorial_testing
 
-CXXSRCS=$(ls *.cpp | sort)
+CXXSRCS=$(ls *.cpp | sort -V )
 
 cd -
 
@@ -140,7 +140,7 @@ LANGUAGE=python
 
 cd ../python/web_tutorial_testing
 
-PYTHONSRCS=$(grep -l def\ main *.py | sort)
+PYTHONSRCS=$(grep -l def\ main *.py | sort -V )
 
 cd -
 

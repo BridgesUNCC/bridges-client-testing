@@ -37,7 +37,7 @@ find $BASE -type f -name *\.class | xargs rm
 
 cd ../java/web_tutorial_testing
 
-SRCS=$(grep -l public\ static\ void\ main *.java | sort )
+SRCS=$(grep -l public\ static\ void\ main *.java | sort -V )
 
 cd -
 
