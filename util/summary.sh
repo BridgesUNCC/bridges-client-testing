@@ -140,7 +140,7 @@ LANGUAGE=python
 
 cd ../python/web_tutorial_testing
 
-PYTHONSRCS=$(grep -l def\ main *.py | sort -V )
+PYTHONSRCS=$(grep -l "if __name__ == \"__main__\":" *.py | sort -V )
 
 cd -
 
