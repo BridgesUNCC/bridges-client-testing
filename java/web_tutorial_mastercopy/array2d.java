@@ -29,7 +29,7 @@ public class array2d {
 		// load array with its 1D address
 		for (int i = 0; i < num_rows; i++)
 			for (int j = 0; j < num_cols; j++) {
-				my_array.getElement(i, j).setValue(i*num_cols+j);
+				my_array.getElement(i, j).setValue(i * num_cols + j);
 			}
 
 		// populate the array with labels of the element sequence id

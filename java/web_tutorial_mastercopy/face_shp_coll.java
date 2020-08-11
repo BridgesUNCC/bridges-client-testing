@@ -102,7 +102,7 @@ public class face_shp_coll {
 		// set visualizer type
 		bridges.setDataStructure(sc);
 
-		// visualize 
+		// visualize
 		bridges.visualize();
 	}
 }

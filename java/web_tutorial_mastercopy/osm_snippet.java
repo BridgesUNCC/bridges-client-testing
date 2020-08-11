@@ -10,14 +10,14 @@ import bridges.data_src_dependent.OsmEdge;
 // and edges, and the location of the first vertex
 
 public class osm_snippet {
-    public static void main(String[] args) throws Exception {
+	public static void main(String[] args) throws Exception {
 
-        //create the Bridges object
+		//create the Bridges object
 #if TESTING
-        Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
-        bridges.setServer(args[3]);
+		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
+		bridges.setServer(args[3]);
 #else
-        Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
 		DataSource  ds = bridges.getDataSource();
@@ -32,6 +32,6 @@ public class osm_snippet {
 		// get cartesian coordinate  location of first vertex
 		double[] coords = osm_data.getVertices()[0].getCartesian_coord();
 		System.out.println ("Location of first vertex [Cartesian Coord]: " +  coords[0] + ","
-						+ coords[1]);
+			+ coords[1]);
 	}
 }

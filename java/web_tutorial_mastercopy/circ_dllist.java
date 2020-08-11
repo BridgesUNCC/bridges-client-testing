@@ -42,21 +42,21 @@ public class circ_dllist {
 		// test CurcDLelement iterators
 
 
-        System.out.println("Using foreach range loop.");
-        Iterator<String> iter = el0.iterator();
+		System.out.println("Using foreach range loop.");
+		Iterator<String> iter = el0.iterator();
 		for (String s : el0)
-            System.out.println("\t" + iter.next());
+			System.out.println("\t" + iter.next());
 
-        // use the iterator
-        System.out.println("Using iterators..");
+		// use the iterator
+		System.out.println("Using iterators..");
 		iter = el0.iterator();
 		while (iter.hasNext())
-            System.out.println("\t" + iter.next());
+			System.out.println("\t" + iter.next());
 		// test reverse iterator
 		System.out.println("Using reverse iterator..");
-        iter = el0.reverse_iterator();
+		iter = el0.reverse_iterator();
 		while (iter.hasNext())
-            System.out.println("\t" + iter.next());
+			System.out.println("\t" + iter.next());
 
 
 		// set colors for list elements - see the Color class for supported colors
