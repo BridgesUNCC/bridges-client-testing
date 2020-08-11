@@ -24,7 +24,7 @@ class DisplayGame extends NonBlockingGame {
 		//This function is executed each frame of the game
 	}
 
-	public static void  main (String args[]) {
+	public static void main (String args[]) {
 #if TESTING
 		DisplayGame g = new DisplayGame(Integer.parseInt(args[0]), args[1], args[2]);
 #else

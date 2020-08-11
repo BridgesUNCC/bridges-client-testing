@@ -15,7 +15,7 @@ class minimal_game extends NonBlockingGame {
 		//This function is executed each frame of the game
 	}
 
-	public static void  main (String args[]) {
+	public static void main (String args[]) {
 #if TESTING
 		minimal_game g = new minimal_game(Integer.parseInt(args[0]), args[1], args[2]);
 #else

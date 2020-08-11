@@ -32,7 +32,7 @@ class input_game extends NonBlockingGame {
 		}
 	}
 
-	public static void  main (String args[]) {
+	public static void main (String args[]) {
 #if TESTING
 		input_game g = new input_game(Integer.parseInt(args[0]), args[1], args[2]);
 #else
