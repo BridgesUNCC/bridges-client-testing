@@ -13,7 +13,7 @@ using namespace std;
 
 using namespace bridges;
 
-int max_quakes = 800;
+int max_quakes = 1000;
 
 int main(int argc, char **argv) {
 	string hilite_color = "orange", 
@@ -21,7 +21,6 @@ int main(int argc, char **argv) {
 			end_color = "red";
 		
 	Bridges *bridges = new Bridges(101, argv[1], argv[2]);
-	bridges->setServer(argv[3]);
 
 								// read the earth quake  data and build the BST
 	bridges->setTitle("Recent Earthquakes (USGIS Data)");
@@ -33,7 +32,7 @@ int main(int argc, char **argv) {
 
 	for (int k = 0; k < max_quakes; k++) {
 		EarthquakeUSGS eq = eq_list[k];
-		if (eq.getMagnitude() > 2.5)
+		if (eq.getMagnitude() > 3.)
 			bst->insert(eq.getMagnitude(), eq);
 	}
 	bst->setProperties(bst->getRoot());

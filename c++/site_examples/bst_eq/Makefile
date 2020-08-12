@@ -1,5 +1,3 @@
-CC = c++
-
 TARGET = bst_eq
 
 SRCS = bst_eq.cpp
@@ -18,10 +16,10 @@ LIBS =  -l$(CURL_LIB)
 .SUFFIXES: .cpp
 
 .cpp.o:  
-	$(CC) $(CPPFLAGS)  $< -o $@
+	$(CXX) $(CPPFLAGS)  $< -o $@
 
 TARGET: $(OBJS) 
-	$(CC) -g -o $(TARGET) $(OBJS) $(LDFLAGS) $(LIBS)
+	$(CXX) -g -o $(TARGET) $(OBJS) $(LDFLAGS) $(LIBS)
 
 clean: 
 	rm -f $(TARGET) *.o

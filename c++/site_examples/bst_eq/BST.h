@@ -94,7 +94,7 @@ void setProperties(BSTElement<Key, E>* root) const {
 		return;           // Empty tree
 	root->setLabel(root->getValue().getTitle() + "\n\n" + root->getValue().getDateStr());
 	float magn = root->getValue().getMagnitude();
-	if (magn  < 3.0) {
+	if (magn  < 3.5) {
 		root->getVisualizer()->setColor(Color("blue"));
 		root->getVisualizer()->setSize(30.0f);
 	}
@@ -102,8 +102,12 @@ void setProperties(BSTElement<Key, E>* root) const {
 		root->getVisualizer()->setColor(Color("green"));
 		root->getVisualizer()->setSize(30.0f);
 	}
-	else if (magn < 5.0) {
+	else if (magn < 4.5) {
 		root->getVisualizer()->setColor(Color("yellow"));
+		root->getVisualizer()->setSize(40.0f);
+	}
+	else if (magn < 5) {
+		root->getVisualizer()->setColor(Color("orange"));
 		root->getVisualizer()->setSize(40.0f);
 	}
 	else {
