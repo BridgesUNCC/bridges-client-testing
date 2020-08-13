@@ -1,0 +1,40 @@
+from bridges.data_src_dependent import *
+from bridges.graph_adj_list import *
+from bridges.bridges import *
+import sys
+
+
+def main():
+
+    # create the Bridges object, set credentials
+#if TESTING
+    # command line args provide credentials and server to test on
+    args = sys.argv[1:]
+    bridges = Bridges(int(args[0]), args[1], args[2])
+    if len(args) > 3:
+        bridges.connector.set_server(args[3])
+#else
+    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
+#endif
+
+    # title, description
+    bridges.set_title("Open Street Map Test")
+
+    # create an adjacency list based graph
+    osm_data = data_source.get_osm_data(35.28, -80.75, 35.32, -80.71, "default")
+    #osm_data = data_source.get_osm_data("Charlotte, North Carolina", "default")
+
+    # get the graph of this dataset
+    g = osm_data.get_graph()
+
+    g.force_large_vis = True
+
+    # Pass the graph object to BRIDGES
+    bridges.set_data_structure(g)
+    # visualize the graph
+    bridges.visualize()
+
+
+if __name__ == "__main__":
+    main()
+
