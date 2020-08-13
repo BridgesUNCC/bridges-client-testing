@@ -24,6 +24,9 @@ def main():
     osm_data = data_source.get_osm_data(35.28, -80.75, 35.32, -80.71, "default")
     #osm_data = data_source.get_osm_data("Charlotte, North Carolina", "default")
 
+    print ("Number of Vertices [Charlotte]: " + str(len(osm_data.vertices)))
+    print ("Number of Edges [Charlotte]: " + str(len(osm_data.edges)))
+
     # get the graph of this dataset
     g = osm_data.get_graph()
 
