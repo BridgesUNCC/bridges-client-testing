@@ -30,7 +30,7 @@ def main():
     # get the graph of this dataset
     g = osm_data.get_graph()
 
-    g.force_large_vis = True
+    g.force_large_visualization(True)
 
     # Pass the graph object to BRIDGES
     bridges.set_data_structure(g)
