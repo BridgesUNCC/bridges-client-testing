@@ -29,7 +29,7 @@ int main(int argc, char **argv) {
 	bridges.setTitle("BRIDGES Color Grid Tutorial - Part 2");
 
 	// set description
-	bridges.setDescription("This is an example to illustrate generating a checkerboard pattern using the ColorGrid object");
+	bridges.setDescription("This is an example to illustrate different ways of setting colors in the ColorGrid");
 
 
 	// create a 10 by 10 color grid  and initialize the grid to be all 

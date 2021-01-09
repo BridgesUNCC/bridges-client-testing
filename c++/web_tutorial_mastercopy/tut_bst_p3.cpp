@@ -8,7 +8,6 @@ using namespace bridges;
 
 // Part 3 of this tutorial will illustrate traversing a binary search tree
 // to find a specific key value and mark it as well as style the path to it
-// illustrate the paths
 
 int main(int argc, char **argv) {
 	// create Bridges object, set credentials
@@ -23,9 +22,11 @@ int main(int argc, char **argv) {
 		"YOUR_API_KEY");
 #endif
 
-	// set title, description
+	// set title
 	bridges.setTitle("A Simple  Binary Search Tree Example");
-	bridges.setDescription("This example illustrates a binary search tree built using BRIDGES");
+
+	// set description
+	bridges.setDescription("This example illustrates finding a key in a constructed binary search tree and styling the visited nodes and links");
 
 	// we will create the tree manually in this example
 

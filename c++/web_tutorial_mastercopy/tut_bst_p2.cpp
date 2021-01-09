@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 
 	// set title, description
 	bridges.setTitle("A Simple  Binary Search Tree Example");
-	bridges.setDescription("This example illustrates a binary search tree built using BRIDGES");
+	bridges.setDescription("This example illustrates styling a binary search tree nodes and links using BRIDGES");
 
 	// we will create the tree manually in this example
 
@@ -49,9 +49,6 @@ int main(int argc, char **argv) {
 
 	// style the nodes and links. Nodes have properties of label shape, size,
 	// color and opacity. Links have properties of a label, color and thickness
-
-	// we will demonstrate the path leading to the largest and smallest keys 
-	// with styling options in BRIDGES
 
 	root->setColor("red");
 	root->setSize (40);
