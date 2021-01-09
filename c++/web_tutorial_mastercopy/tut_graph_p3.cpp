@@ -84,8 +84,8 @@ int main(int argc, char **argv) {
 
 	// finally, list the vertices of the graph, using iterators
 	cout << "Using iterators to print the graph vertices..\n";
-	for (auto vert: graph.vertexSet()) {
-		cout << vert->getLabel() << "\n";
+	for (auto vert: graph.keySet()) {
+		cout << vert << "\n";
 	}
 
 	// provide BRIDGES the  handle to the tree structure
