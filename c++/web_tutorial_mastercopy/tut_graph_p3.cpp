@@ -30,7 +30,7 @@ int main(int argc, char **argv) {
 	bridges.setTitle("A Simple Adjacency list based Graph Example.");
 
 	// set  description
-	bridges.setDescription("Demonstrate how to create a graph with a few nodes and display it");
+	bridges.setDescription("Demonstrate advanced features of graphs, traversal of adjacency lists, use of iterators");
 
 	// create a graph with key values of type string. See the
 	// the documentation for GraphAdjList for its full capabilities
