@@ -51,6 +51,19 @@ def main():
     st3.label = st3.value
     st4.label = st4.value
 
+    # print the names of the students in the list using iteration
+
+    # Using a regular for loop on BRIDGES elements
+    print("\nUsing a regular while loop..\n"); 
+    el = st0
+    while el != None:
+        print (el.value)
+        el = el.next
+
+
+    #list = SLelementIterator(st0);
+    #while list.has_next():
+    #    print (next(list))
     # tell Bridges the head of the list
     bridges.set_data_structure(st0)
 
