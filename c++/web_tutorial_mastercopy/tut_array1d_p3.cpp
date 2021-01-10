@@ -41,18 +41,14 @@ int main(int argc, char **argv) {
 	for (int j = 0; j < 10; j++)
 		cout << "\t" << arr[j] << endl;
 
-	Array1DIterator<int> arr_iter(arr, 0);
-
 	cout << "Using a forward iterator..\n"; 
-	for (auto iter = arr_iter.begin(); iter != arr_iter.end(); ++iter)
+	for (auto iter = arr.begin(); iter != arr.end(); ++iter)
 		cout << "\t" << *iter << endl;
 
-/*
 	cout << "Using a range loop..\n"; 
-    for (auto iter: list) {
+    for (auto iter: arr) {
         cout << "\t" << iter << endl;
     }
-*/
 
 
 	// provide BRIDGES a handle to the data structure
