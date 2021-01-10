@@ -33,13 +33,20 @@ public class tut_array1d_p3 {
 
 		// populate the array, with squares of indices
 
-		// using regular for loops
 		for (int k = 0; k < arr.getSize(); k++) {
 			arr.getElement(k).setValue(k * k);
 
 			// use the array values to label the elements
 			arr.getElement(k).setLabel(String.valueOf(arr.getElement(k).getValue()));
 		}
+
+		System.out.println ("Printing values of array..");
+
+		// using regular for loops
+		System.out.println ("Using regular for loop..");
+		for (int k = 0; k < 10; k++)
+			System.out.println("\t" + arr.getElement(k).getValue());
+		
 
 		//use an iterator to print the values of the array
 		
