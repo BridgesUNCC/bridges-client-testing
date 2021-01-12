@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
 	bridges.setTitle("A doubly Linked List Example");
 
 	// set description
-	bridges.setDescription("This list has five nodes all linked to the nodes before and after them");
+	bridges.setDescription("Illustrate the user of iterators with doubly linked lists");
 
 
 	// create the nodes

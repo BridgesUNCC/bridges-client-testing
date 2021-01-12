@@ -26,7 +26,7 @@ int main(int argc, char **argv) {
 	bridges.setTitle("A doubly Linked List Example");
 
 	// set description
-	bridges.setDescription("This list has five nodes all linked to the nodes before and after them");
+	bridges.setDescription("Create a doubly linked  list of five nodes and display it");
 
 
 	// create the nodes
