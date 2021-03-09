@@ -8,7 +8,7 @@ import bridges.base.Polygon;
 import bridges.base.Color;
 
 
-public class rotated_label {
+public class rotate_label {
 
     public static void main(String[] args) throws Exception {
 
@@ -94,7 +94,6 @@ System.out.println("Bbox dims:" + bbox[0] + "," + bbox[1] + "," + bbox[2] +
 		bridges.setDataStructure(sc);
 
 		// visualize the JSON and Collection
-		bridges.setVisualizeJSON(true);
 		bridges.visualize();
 	}
 }
