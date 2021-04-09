@@ -21,10 +21,12 @@ def main():
 
     bridges.set_title ("Accessing Wikidata Movie/Actor Data")
 
-    list  = data_source.get_wiki_data_actor_movie(1955, 1965)
-    print("Actor-Movie Data:\n" + 
-         "\tMovie: " + list[0].movie_uri + ", " + list[0].movie_name + "\n" +
-         "\tActor: " + list[0].actor_uri + ", " + list[0].actor_name + "\n")
+    list  = data_source.get_wiki_data_actor_movie(1955, 1955)
+    print (len(list))
+    for i in range(1, len(list)):
+        print(str(i) + ")Actor-Movie Data:\n" +  
+             "\tMovie: " + list[i].movie_uri + ", " + list[i].movie_name + "\n" +
+             "\tActor: " + list[i].actor_uri + ", " + list[i].actor_name + "\n")
 
 
 if __name__ == "__main__":
