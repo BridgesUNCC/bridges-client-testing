@@ -34,9 +34,12 @@ public class wikidata_actor_snippet {
 		// data are available from the early 20th century to now.
 		ArrayList<ActorMovieWikidata> list = ds.getWikidataActorMovie(1955, 1955);
 
-		// print out the first record of the dataset
-		System.out.println("Actor-Movie Data:\n" +
-			"\tMovie: " + list.get(0).getMovieURI()  + " \""  + list.get(0).getMovieName() + "\"\n" +
-	     	"\tActor: " +  list.get(0).getActorURI() + " \"" + list.get(0).getActorName() + "\"\n"); 
+		System.out.println("Data Records in 1955: " + list.size() + "\n");
+
+		// print out the first 3 records of the dataset
+		for (int k = 0; k < 3; k++)
+			System.out.println("Actor-Movie Data:\n" +
+				"\tMovie: " + list.get(k).getMovieURI()  + " \""  + list.get(k).getMovieName() + "\"\n" +
+	     		"\tActor: " +  list.get(k).getActorURI() + " \"" + list.get(k).getActorName() + "\"\n"); 
 	}
 }
