@@ -19,8 +19,7 @@ int main(int argc, char **argv) {
 	if (argc > 4)
 		bridges.setServer(argv[4]);
 #else
-	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID",
-		"YOUR_API_KEY");
+	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
 
@@ -57,9 +56,18 @@ int main(int argc, char **argv) {
 		cout << "\n\tTitle: "  << b.getTitle();
 		cout << "\n\tId: "  << b.getId();
 	}
+
+	cout << "\n";
+
+	cout << "Testing  Getting Moby Dick text..\n";
+
+	string moby_dick_str = ds.getGutenbergText(2701);
+
+	cout << "Size:" << moby_dick_str.length() << endl;
+	cout << "First 200 chars:" << moby_dick_str.size() << "chars.\n";
+	for (int k = 0; k < 200; k++) 
+		cout << moby_dick_str[k];
 	cout << "\n";
 	
-
-
 	return 0;
 }
