@@ -21,23 +21,43 @@ public class gutenberg_snippet {
 		//retrieve the gutenberg books
 		DataSource ds = bridges.getDataSource();
 
+		//Get Meta data for a single book
+		
+
 		//Get Meta data for a book
-		List<GutenbergMeta> data = ds.searchGutenbergMeta("home", "title");
-		System.out.println(data[1].getTitle());
 
-		// System.out.println(data.getId());
-		// System.out.println(data.getTitle());
-		// System.out.println(data.getLanguage());
-		// System.out.println(data.getDate());
+		System.out.println("Meta data for 1 book: Moby Dick, by Id");
+		GutenbergMeta b = ds.getAGutenbergBookMetaData (2701);
+			System.out.println("\tId: " + b.getId());
+			System.out.println("\tTitle: " + b.getTitle());
+			System.out.println("\tLanguage: " + b.getLanguage());
+			System.out.println("\tDate Added:" + b.getDate());
 
-		// for (String gen : data.getGenres()){
-		//     System.out.println(gen);
-		// }
+		System.out.println("Retrieving books by title: Pride and Prejudice");
+		List<GutenbergMeta> blist = ds.getGutenbergBookMetaData("Pride and Prejudice", "title");
+		for (int k = 0; k < 2; k++) {
+			System.out.println("\tId: " + blist.get(k).getId());
+			System.out.println("\tTitle: " + blist.get(k).getTitle());
+			System.out.println("\tLanguage: " + blist.get(k).getLanguage());
+			System.out.println("\tDate Added: " + blist.get(k).getDate());
+		}
 
-		// //Get book text
-		// String text = ds.getGutenbergText(2701);
+		System.out.println("Retrieving books by Language: English");
+		blist = ds.getGutenbergBookMetaData("en", "language");
+		for (int k = 0; k < 2; k++) {
+			System.out.println("\tId: " + blist.get(k).getId());
+			System.out.println("\tTitle: " + blist.get(k).getTitle());
+			System.out.println("\tLanguage: " + blist.get(k).getLanguage());
+			System.out.println("\tDate Added: " + blist.get(k).getDate());
+		}
 
-		// text = text.substring(0,40);
-		// System.out.println(text);
+		System.out.println("Retrieving books by Date: 2018");
+		blist = ds.getGutenbergBookMetaData("2018-01-01", "date");
+		for (int k = 0; k < 2; k++) {
+			System.out.println("\tId: " + blist.get(k).getId());
+			System.out.println("\tTitle: " + blist.get(k).getTitle());
+			System.out.println("\tLanguage: " + blist.get(k).getLanguage());
+			System.out.println("\tDate Added: " + blist.get(k).getDate());
+		}
 	}
 }
