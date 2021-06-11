@@ -6,8 +6,8 @@ import bridges.base.GraphAdjListSimple;
 import bridges.base.Edge;
 import bridges.connect.Bridges;
 
-// In Part 3 of this tutorial will demonstrate some advanced features 
-// of adjacency list // based graphs in BRIDGES, such as graph traversal 
+// In Part 3 of this tutorial will demonstrate some advanced features
+// of adjacency list // based graphs in BRIDGES, such as graph traversal
 // and iterators that make it more convenient.
 //
 // We will continue using the same graph of actors
@@ -28,7 +28,7 @@ public class tut_graph_p3 {
 			"YOUR_API_KEY");
 #endif
 
-		// set a title 
+		// set a title
 		bridges.setTitle("A Simple Adjacency list based Graph Example.");
 
 		// set  description
@@ -38,13 +38,13 @@ public class tut_graph_p3 {
 		GraphAdjListSimple<String> graph = new GraphAdjListSimple<String>();
 
 		// create some actor names to be added to the graph
-		String  kevin_bacon = "Kevin Bacon", 
+		String  kevin_bacon = "Kevin Bacon",
 				denzel_washington = "Denzel Washington",
-				morgan_freeman = "Morgan Freeman", 
-				tom_cruise = "Tom Cruise", 
-				angelina_jolie = "Angelina Jolie", 
-				amy_adams = "Amy Adams", 
-				brad_pitt = "Brad Pitt"; 
+				morgan_freeman = "Morgan Freeman",
+				tom_cruise = "Tom Cruise",
+				angelina_jolie = "Angelina Jolie",
+				amy_adams = "Amy Adams",
+				brad_pitt = "Brad Pitt";
 
 		// add them to the graph
 		graph.addVertex(kevin_bacon, kevin_bacon);
@@ -54,7 +54,7 @@ public class tut_graph_p3 {
 		graph.addVertex(angelina_jolie, angelina_jolie);
 		graph.addVertex(amy_adams, amy_adams);
 		graph.addVertex(brad_pitt, brad_pitt);
-		
+
 		// add edges
 		graph.addEdge(kevin_bacon, denzel_washington);
 		graph.addEdge(kevin_bacon, morgan_freeman);
@@ -68,9 +68,9 @@ public class tut_graph_p3 {
 
 		// using core BRIDGES classes to print who Kevin Bacon is connected to
 		System.out.println("Using core Bridges classes:");
-		for (SLelement<Edge<String, String>> sle = 
-					graph.getAdjacencyList(kevin_bacon);
-					sle != null; sle = sle.getNext()) {
+		for (SLelement<Edge<String, String>> sle =
+				graph.getAdjacencyList(kevin_bacon);
+			sle != null; sle = sle.getNext()) {
 			Edge<String, String> edge = sle.getValue();
 			System.out.println("\t" + edge.getFrom() +  " --> " +  edge.getTo() );
 		}
@@ -79,9 +79,9 @@ public class tut_graph_p3 {
 		System.out.println("Using iterators");
 		for (Edge<String, String> edge : graph.outgoingEdgeSetOf(kevin_bacon)) {
 			System.out.println("\t" + edge.getFrom() + "-->" + edge.getTo());
-        }
+		}
 
-		// finally, list the vertices of the graph, using iterators 
+		// finally, list the vertices of the graph, using iterators
 		System.out.println("Using iterators to print the graph vertices[Method 1]:");
 		Iterator it = graph.getVertices().keySet().iterator();
 		while (it.hasNext())

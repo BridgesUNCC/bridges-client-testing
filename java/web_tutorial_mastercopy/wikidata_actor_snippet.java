@@ -27,7 +27,7 @@ public class wikidata_actor_snippet {
 		bridges.setTitle("Accessing Wikidata Movie/Actor Data");
 
 		// create data source object
-        DataSource ds = bridges.getDataSource();
+		DataSource ds = bridges.getDataSource();
 
 		// Get a List of Wikidata actor/movie  records from Bridges
 		// get the actor movie Wikidata data through the BRIDGES API for 1955.
@@ -40,6 +40,6 @@ public class wikidata_actor_snippet {
 		for (int k = 0; k < 3; k++)
 			System.out.println("Actor-Movie Data:\n" +
 				"\tMovie: " + list.get(k).getMovieURI()  + " \""  + list.get(k).getMovieName() + "\"\n" +
-	     		"\tActor: " +  list.get(k).getActorURI() + " \"" + list.get(k).getActorName() + "\"\n"); 
+				"\tActor: " +  list.get(k).getActorURI() + " \"" + list.get(k).getActorName() + "\"\n");
 	}
 }

@@ -19,7 +19,7 @@ public class tut_bst_p3 {
 		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
 			"YOUR_API_KEY");
 #endif
-		// set title 
+		// set title
 		bridges.setTitle("A Simple  Binary Search Tree Example");
 
 		// set description
@@ -43,11 +43,11 @@ public class tut_bst_p3 {
 		node2.setRight(node3);
 		node1.setRight(node4);
 		node1.setLeft(node5);
-		
 
-		// traverse the tree to the largest node and style them to find 
+
+		// traverse the tree to the largest node and style them to find
 		// key value 75
-		BSTElement<Integer, String> r  = root, left, right; 
+		BSTElement<Integer, String> r  = root, left, right;
 		Boolean found = false;
 		int search_key = 75;
 		while (!found && r != null) {
@@ -64,8 +64,8 @@ public class tut_bst_p3 {
 				r.setSize(49);
 				System.out.println("Yay! Found the key!\n");
 			}
-			else if (search_key < key){  // go left
-				left = r.getLeft();	
+			else if (search_key < key) { // go left
+				left = r.getLeft();
 				if (left != null) {  // style link
 					r.getLinkVisualizer(left).setColor("cyan");
 					r.getLinkVisualizer(left).setThickness(5.0f);
@@ -73,18 +73,18 @@ public class tut_bst_p3 {
 				r = left;
 			}
 			else {
-				right = r.getRight();	
+				right = r.getRight();
 				if (right != null) { // style link
 					r.getLinkVisualizer(right).setColor("cyan");
 					r.getLinkVisualizer(right).setThickness(5.0f);
-				}	
+				}
 				r = right;
 			}
 		}
-	
+
 		// privide BRIDGES a handle to the root of the tree
 		bridges.setDataStructure(root);
-	
+
 		// visualize the binary search tree
 		// Hit the 'l' key to see the node labels
 		bridges.visualize();
