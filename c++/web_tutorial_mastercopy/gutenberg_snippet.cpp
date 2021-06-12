@@ -28,74 +28,69 @@ int main(int argc, char **argv) {
 
 	// read the Gutenberg book data
 	DataSource ds (&bridges);
-	GutenbergBook gbook = ds.getGutenbergBookMetaData(2701);
 
-	// print the first book record
-	cout << "Guttenberg Book Data:\n"; 
-	cout << "\n\tTitle: "  << gbook.getTitle();
-	cout << "\n\tId: "  << gbook.getId();
+	cout << "Retrieving a single book's metadata\n";
 
+	GutenbergBook b = ds.getGutenbergBookMetaData(2701);// Moby Dick
+	cout << "\n\tTitle: "  << b.getTitle() << "\n";
+	cout << "\tId: " << b.getId();
+	cout << "\n\tLanguage:" << b.getLang();
 	cout << "\n\tAuthors:";
-	for (auto& k: gbook.getAuthors()) 
-		cout << "\t" << k << ",";
-	cout << "\n\tDate Added: "  << gbook.getDateAdded();
-	cout << "\n\tLanguage: " << gbook.getLang();
-	cout << "\n\tGenres: \n\t\t";
-	for (auto& i : gbook.getGenres())
-		cout << i << ",";
-	cout << "\n\n";
+	for (auto& k: b.getAuthors()) 
+		cout << k << ",";
 
-	cout << "Testing Search by title: Pride and Prejudice"  << endl;
-	vector<GutenbergBook> gbook_list = ds.searchGutenbergBookData("Pride and Prejudie", "title");
-
+	cout << "\nRetrieving books  by title: Pride and Prejudice"  << endl;
+	vector<GutenbergBook> gbook_list = ds.getGutenbergBookMetaData("Pride and Prejudie", "title");
 	cout << "Print the first 3 books of search results\n";
 	int n = 0;
 	for (auto& b : gbook_list) {
-		cout << b.getId() << "\n";
+		cout << "\tId: " << b.getId();
 		cout << "\n\tLanguage:" << b.getLang();
 		cout << "\n\tAuthors:";
 		for (auto& k: b.getAuthors()) 
 			cout << k << ",";
-		cout << "\n\tTitle: "  << b.getTitle();
+		cout << "\n\tTitle: "  << b.getTitle() << "\n";
 		if (++n == 3) break;
 	}
-	cout << "Testing Search by Language: English"  << endl;
-	gbook_list = ds.searchGutenbergBookData("en", "language");
+	cout << "Retrieving books by Language: English"  << endl;
+	gbook_list = ds.getGutenbergBookMetaData("en", "language");
 	cout << "Print the first 3 books of search results\n";
 	n = 0;
 	for (auto& b : gbook_list) {
-		cout << b.getId() << "\n";
+		cout << "\tId: " << b.getId();
 		cout << "\n\tLanguage:" << b.getLang();
 		cout << "\n\tAuthors:";
 		for (auto& k: b.getAuthors()) 
 			cout << k << ",";
-		cout << "\n\tTitle: "  << b.getTitle();
+		cout << "\n\tTitle: "  << b.getTitle() << "\n";
 		if (++n == 3) break;
 	}
-	cout << "Testing search by Date: 2018"  << endl;
-	gbook_list = ds.searchGutenbergBookData("2018-01-01", "date");
+	cout << "Retrieving books by Date: 2018"  << endl;
+	gbook_list = ds.getGutenbergBookMetaData("2018-01-01", "date");
 	cout << "Print the first 3 books of search results\n";
 	n = 0;
 	for (auto& b : gbook_list) {
-		cout << b.getId() << "\n";
+		cout << "\tId: " << b.getId();
 		cout << "\n\tLanguage:" << b.getLang();
 		cout << "\n\tAuthors:";
 		for (auto& k: b.getAuthors()) 
 			cout << k << ",";
 		cout << "\n\tTitle: "  << b.getTitle();
+		cout << "\n\tDate: "  << b.getDateAdded() << "\n";
 		if (++n == 3) break;
 	}
 
 	cout << "\n";
 
-//	cout << "Testing  Getting Moby Dick text..\n";
+	cout << "Testing  Getting Moby Dick text..\n";
 
-//	string moby_dick_str = ds.getGutenbergText(2701);
+	string moby_dick_str = ds.getGutenbergText(2701);
 
-//	cout << "First 200 chars:" << moby_dick_str.size() << "chars.\n";
-//	for (int k = 0; k < 200; k++) 
-//		cout << moby_dick_str[k];
-//	cout << "\n";
+	cout << "Moby Dick: Size : " << moby_dick_str.size() << "chars.\n";
+	cout << "First 300 chars..\n";
+	for (int k = 0; k < 300; k++) 
+		cout << moby_dick_str[k];
+	cout << "\n";
 	
 	return 0;
 }
