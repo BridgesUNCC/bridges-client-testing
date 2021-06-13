@@ -15,7 +15,7 @@ def main():
 #endif
 
     # Retrieve the book metadata given its id (2701 is MOby Dick)
-    meta = data_source.get_gutenberg_book_metadata (2701)
+    meta = data_source.get_a_gutenberg_book_metadata (2701)
     print(f"Id: {meta.id}")
     print(f"Title: {meta.title}")
     print(f"Date: {meta.date}")
@@ -28,8 +28,8 @@ def main():
     # you can search the gutenberg database by supplying a search parameters,
     #   a term and a category type (title, date, genre, language, author)
 
-    print("\nSearching for Pride and Prejudice\n")
-    meta_data = data_source.search_gutenberg_book_metadata("Pride and Prejudice", "title")
+    print("\nGet book by title: Pride and Prejudice\n")
+    meta_data = data_source.get_gutenberg_book_metadata("Pride and Prejudice", "title")
     for i in range(len(meta_data)):
         print(meta_data[i].title) #this is the title of book
         print(meta_data[i].id) #this is the id of book
@@ -39,8 +39,8 @@ def main():
 
     #  search for books in a particular language
 
-    meta_data = data_source.search_gutenberg_book_metadata("en", "language")
-    print("\nSearching for English books\n")
+    print("\nGet book by language: English\n")
+    meta_data = data_source.get_gutenberg_book_metadata("en", "language")
     for i in range(len(meta_data)):
         print(meta_data[i].title) #this is the title of book
         print(meta_data[i].id) #this is the id of book
