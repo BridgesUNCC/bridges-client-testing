@@ -60,11 +60,11 @@ public class gutenberg_snippet {
 			System.out.println("\tDate Added: " + blist.get(k).getDate());
 		}
 
-		System.out.println ("Retrievina book text: Moby Dick");
+		System.out.println ("Retrieving book text: Moby Dick");
 		String book = ds.getGutenbergBookText(2701);
 
-		// print the first 100 chars of the book
-		System.out.println("Printing the first 100 characters of the book");
-		System.out.println(book.substring(0, 100));
+		// print the first 300 chars of the book
+		System.out.println("Printing the first 300 characters of the book");
+		System.out.println(book.substring(0, 300));
 	}
 }
