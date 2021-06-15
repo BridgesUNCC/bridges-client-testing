@@ -54,7 +54,9 @@ def main():
 
     print("\nGet text of Moby Dick (id: 2701)\n")
     text = data_source.gutenberg_book_text(2701)
-    print(text[0:200])
+
+    print("\nPrinting the first 300  characters..")
+    print(text[0:300])
 
 
 if __name__ == '__main__':
