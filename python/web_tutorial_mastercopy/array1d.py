@@ -14,7 +14,7 @@ def main():
     if len(args) > 3:
         bridges.connector.set_server(args[3])
 #else
-    bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
+    bridges = Bridges(ASSIGNMENT_NUMBER, "USER_ID", "API_KEY")
 #endif
 
 

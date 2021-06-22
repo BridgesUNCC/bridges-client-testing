@@ -59,10 +59,16 @@ run_%: %
 #That FORCE_BRIDGES_FRAMELIMIT stops the game assignment after 10 frames
 	FORCE_BRIDGES_FRAMELIMIT=10 ./$(subst run_,,$@) $(ASSIGNMENTIDTEST) $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER)
 
+run_valgrind_%: %
+#That FORCE_BRIDGES_FRAMELIMIT stops the game assignment after 10 frames
+	FORCE_BRIDGES_FRAMELIMIT=10 valgrind ./$(subst run_valgrind_,,$@) $(ASSIGNMENTIDTEST) $(BRIDGES_TESTING_USER_NAME) $(BRIDGES_TESTING_API_KEY) $(BRIDGES_SERVER)
+
+
 clean:
 	rm -f $(EXECUTABLES) $(OBJS)
 
-
+test_clean:
+	-rm *.cpp *.hpp .h $(OBJS)
 
 depend: $(SRCS)
 	gcc -MD  $(IFLAGS) $(SRCS)

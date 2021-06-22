@@ -12,3 +12,5 @@ export FORCE_BRIDGES_APIKEY=123456789
 export FORCE_BRIDGES_FRAMELIMIT=10
 
 export CLASSPATH=/home/erik/work/bridges/bridges-java/build/libs/bridges-java-3.1.0b1.jar:.
+
+export DEBUGGER=valgrind --leak-check=full --show-leak-kinds=all --error-exitcode=999

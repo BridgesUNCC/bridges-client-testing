@@ -22,6 +22,9 @@ check_tools
 
 rm ${HTMLLOG}
 
+timeis=$(date)
+
+
 cat >>${HTMLLOG} <<EOF
 <html>
 <head>
@@ -46,7 +49,10 @@ background-color: springgreen;
 </style>
 </head>
 <body>
+<p>Run at ${timeis}</p> 
+
 EOF
+
 
 
 #Java
@@ -56,7 +62,7 @@ LANGUAGE=java
 
 cd ../java/web_tutorial_testing
 
-JAVASRCS=$(grep -l public\ static\ void\ main *.java | sort )
+JAVASRCS=$(grep -l public\ static\ void\ main *.java | sort -V )
 
 cd -
 
@@ -95,7 +101,7 @@ LANGUAGE=cxx
 
 cd ../c++/web_tutorial_testing
 
-CXXSRCS=$(ls *.cpp | sort)
+CXXSRCS=$(ls *.cpp | sort -V )
 
 cd -
 
@@ -134,7 +140,7 @@ LANGUAGE=python
 
 cd ../python/web_tutorial_testing
 
-PYTHONSRCS=$(grep -l def\ main *.py | sort)
+PYTHONSRCS=$(grep -l "if __name__ == \"__main__\":" *.py | sort -V )
 
 cd -
 

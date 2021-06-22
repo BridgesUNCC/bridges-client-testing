@@ -20,8 +20,9 @@ public class imdb_snippet {
 #endif
 
 		DataSource ds = bridges.getDataSource();
+
 		// Get a List of ActorMovieIMDB objects from Bridges
-		List<ActorMovieIMDB> mylist = ds.getActorMovieIMDBData();
+		List<ActorMovieIMDB> mylist = ds.getActorMovieIMDBData(1813);
 
 		// Inspect a random ActorMovieIMDB object
 		ActorMovieIMDB pair1 = mylist.get((new Random()).nextInt(mylist.size()));

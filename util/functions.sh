@@ -3,7 +3,7 @@
 BASE=../
 TIMEOUT=mytimeout
 
-mytimeout() { perl -e 'alarm shift; exec @ARGV' "$@"; }
+mytimeout() { perl -e 'alarm shift; exec @ARGV; exit 1' "$@"; }
 filterexecutableonly() { while read filename; do if [ -x "$filename" ]; then echo "$filename" ;fi ; done }
 
 run_java() {
@@ -28,7 +28,8 @@ run_cxx() {
     (
 	cd ../c++/web_tutorial_testing/
 	
-	${TIMEOUT} 60 ./$(basename ${test} .cpp) 1 null null live
+	#${TIMEOUT} 60 ./$(basename ${test} .cpp) 1 null null live
+	${TIMEOUT} 60 ${DEBUGGER} ./$(basename ${test} .cpp) 1 null null live
 	if [ $? -eq 0 ] ;
 	then
 	    exit 0; #ok

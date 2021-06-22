@@ -1,7 +1,6 @@
 #include <string>
 #include "Bridges.h"
 #include "DataSource.h"
-#include "data_src/ActorMovieIMDB.h"
 #include "GraphAdjList.h"
 
 using namespace std;
@@ -27,8 +26,8 @@ int main(int argc, char **argv) {
 #endif
 
 	// get the actor - movie data from IMDB dataset
-	DataSource *ds = new DataSource;
-	vector<ActorMovieIMDB> actor_list = ds->getActorMovieIMDBData(1813);
+	DataSource ds (bridges);
+	vector<ActorMovieIMDB> actor_list = ds.getActorMovieIMDBData(1813);
 
 	// create a graph
 	GraphAdjList<string, string, int> graph;

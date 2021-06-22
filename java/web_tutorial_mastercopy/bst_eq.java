@@ -2,15 +2,10 @@ import bridges.connect.Bridges;
 import bridges.connect.DataSource;
 import bridges.base.BSTElement;
 import bridges.data_src_dependent.EarthquakeUSGS;
-import bridges.data_src_dependent.Tweet;
-import bridges.data_src_dependent.USGSaccount;
 import java.util.List;
 
 public class bst_eq {
 	public static void main(String[] args) throws Exception {
-
-		if (args.length < 2)
-			throw new IllegalArgumentException("Need to provide user ID and API key as command-line arguments!");
 
 		//create the Bridges object
 #if TESTING
@@ -18,23 +13,25 @@ public class bst_eq {
 		Bridges bridges = new Bridges(Integer.parseInt(args[0]), args[1], args[2]);
 		bridges.setServer(args[3]);
 
+#else
+		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
+			"YOUR_API_KEY");
+#endif
+		// title, description
 		bridges.setTitle("A Binary Search Tree Example with Earthquake Data");
 		bridges.setDescription("10 sets of earthquake are gathered and sorted with nodes whos magnitude is greater than "
 			+ "the parent is set to the right and nodes with a magnitude less than the parent set to the left. "
 			+ "The root is set to red the leaf nodes are neutral.");
 
-#else
-		Bridges bridges = new Bridges(YOUR_ASSIGNMENT_NUMBER, "YOUR_USER_ID",
-			"YOUR_API_KEY");
-#endif
+		// Retrieve a list of 25 earthquake  records  from USGS using the BRIDGES API
+		int Max_Quakes = 25;
 
-		// Retrieve a list of 10 earthquake  records  from USGS using the BRIDGES API
 		DataSource ds = bridges.getDataSource();
-		List<EarthquakeUSGS> eqlist = ds.getEarthquakeUSGSData(10);
+		List<EarthquakeUSGS> eqlist = ds.getEarthquakeUSGSData(Max_Quakes);
 
 		// create BST nodes and insert into a tree
 		BSTElement<Double, EarthquakeUSGS> root = null;
-		for (int k = 0; k < 10; k++) {
+		for (int k = 0; k < Max_Quakes; k++) {
 			BSTElement<Double, EarthquakeUSGS> bst_node =
 				new BSTElement<Double, EarthquakeUSGS>(eqlist.get(k).getMagnitude(), eqlist.get(k));
 			// set label of the node
@@ -46,7 +43,7 @@ public class bst_eq {
 
 
 		// set some visual attributes
-		root.setColor("red");
+		root.setColor("cyan");
 
 		//set visualizer type
 		bridges.setDataStructure(root);

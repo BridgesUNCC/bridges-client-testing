@@ -21,7 +21,7 @@ html_log_header C++
 
 cd ../c++/web_tutorial_testing
 
-SRCS=$(ls *.cpp | sort)
+SRCS=$(ls *.cpp | sort -V )
 
 cd -
 

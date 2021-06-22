@@ -61,5 +61,9 @@ int main(int argc, char **argv) {
 	bridges.setDataStructure(el0);
 	bridges.visualize();
 
+	//freeing memory
+	delete el0;
+	delete el1;
+	
 	return 0;
 }

@@ -38,5 +38,7 @@ backup:
 	tar cvfz bridges_python.tgz  src docs Makefile 
 	cp bridges_python.tgz ~/Dropbox/.
 
+test_clean:
+	-rm *.py
 
 # DO NOT DELETE

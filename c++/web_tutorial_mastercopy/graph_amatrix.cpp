@@ -26,8 +26,8 @@ int main(int argc, char **argv) {
 		"YOUR_API_KEY");
 #endif
 
-	DataSource *ds = new DataSource;
-	vector<ActorMovieIMDB> actor_list = ds->getActorMovieIMDBData(1813);
+	DataSource ds (bridges);
+	vector<ActorMovieIMDB> actor_list = ds.getActorMovieIMDBData(1813);
 
 	GraphAdjMatrix<string, string> graph;
 
