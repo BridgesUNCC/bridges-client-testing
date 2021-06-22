@@ -2,10 +2,11 @@ import bridges.connect.Bridges;
 import bridges.base.SymbolCollection;
 import bridges.base.Rectangle;
 import bridges.base.Circle;
-import bridges.base.Label;
+import bridges.base.Text;
 import bridges.base.Polyline;
 import bridges.base.Polygon;
 import bridges.base.Color;
+import bridges.base.SymbolGroup;
 
 
 public class shape_collection {
@@ -75,19 +76,47 @@ public class shape_collection {
 
 
 
-		Label l = new Label();
-		l.setLocation(0.0f, 25.0f);
-		l.setFontSize(12);
+		Text l = new Text();
+		l.setAnchorLocation(0.0f, 25.0f);
+		l.setFontSize(12f);
 		l.setStrokeWidth(1.0f);
-		l.setLabel("test label");
+		l.setText("test label");
 		l.setStrokeColor("purple");
 		sc.addSymbol(l);
 
+
+		SymbolGroup group = new SymbolGroup();
+		sc.addSymbol(group);
+		group.setTransform(1,0,30,0,1,20);
+		
+		
+		Text l2 = new Text();
+		l2.setAnchorLocation(0.0f, 25.0f);
+		l2.setFontSize(12f);
+		l2.setStrokeWidth(1.0f);
+		l2.setText("test label translated");
+		l2.setStrokeColor("purple");
+		group.addSymbol(l2);
+		
+		SymbolGroup group2 = new SymbolGroup();
+		group.addSymbol(group2);
+		group2.setTransform(1,0,30,0,1,20);
+		
+		
+		Text l3 = new Text();
+		l3.setAnchorLocation(0.0f, 25.0f);
+		l3.setFontSize(12f);
+		l3.setStrokeWidth(1.0f);
+		l3.setText("test label translated more");
+		l3.setStrokeColor("purple");
+		group2.addSymbol(l3);
+		
+		
 		// set visualizer type
 		bridges.setDataStructure(sc);
 
 		// visualize the JSON and Collection
-		//	bridges.setVisualizeJSONFlag(true);
+		bridges.setVisualizeJSON(true);
 		bridges.visualize();
 	}
 }
