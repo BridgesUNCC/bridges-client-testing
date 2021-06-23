@@ -59,6 +59,18 @@ public class gutenberg_snippet {
 			System.out.println("\tLanguage: " + blist.get(k).getLanguage());
 			System.out.println("\tDate Added: " + blist.get(k).getDate());
 		}
+		System.out.println("Retrieving books by Author: Mark Twain");
+		blist = ds.getGutenbergBookMetaData("Mark Twain", "author");
+		for (int k = 0; k < blist.size(); k++) {
+			System.out.println("\tId: " + blist.get(k).getId());
+			System.out.println("\tTitle: " + blist.get(k).getTitle());
+			String[] authors = blist.get(k).getAuthors();
+			System.out.print("\tAuthors:");
+			for (int j = 0; j < authors.length; j++) 
+				System.out.println(authors[j] + ",");
+			System.out.println("\tLanguage: " + blist.get(k).getLanguage());
+			System.out.println("\tDate Added: " + blist.get(k).getDate());
+		}
 
 		System.out.println ("Retrieving book text: Moby Dick");
 		String book = ds.getGutenbergBookText(2701);
