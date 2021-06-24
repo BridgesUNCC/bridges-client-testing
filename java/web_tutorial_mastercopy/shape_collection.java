@@ -87,7 +87,7 @@ public class shape_collection {
 
 		SymbolGroup group = new SymbolGroup();
 		sc.addSymbol(group);
-		group.setTransform(1,0,30,0,1,20);
+		group.setTransform(1,0,0,1,30,20);
 		
 		
 		Text l2 = new Text();
@@ -100,7 +100,7 @@ public class shape_collection {
 		
 		SymbolGroup group2 = new SymbolGroup();
 		group.addSymbol(group2);
-		group2.setTransform(1,0,30,0,1,20);
+		group2.setTransform(1,0,0,1,30,20);
 		
 		
 		Text l3 = new Text();
