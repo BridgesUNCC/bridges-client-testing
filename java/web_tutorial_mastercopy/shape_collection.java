@@ -82,6 +82,7 @@ public class shape_collection {
 		l.setAnchorLocation(0.0f, 25.0f);
 		l.setFontSize(18f);
 		l.setStrokeWidth(2.0f);
+		l.setOpacity(.3f);
 		l.setText("test label1");
 		l.setStrokeColor("purple");
 		sc.addSymbol(l);
@@ -98,7 +99,7 @@ public class shape_collection {
 		l2.setStrokeWidth(1.0f);
 		l2.setText("test label translated and scaled");
 		l2.setStrokeColor("purple");
-		l2.translate(0.0f, 25.0f).scale(2.0f, 1.0f).translate(0.0f, -25.0f);
+		l2.scale(2.0f, 1.0f);
 		group.addSymbol(l2);
 		
 		SymbolGroup group2 = new SymbolGroup();
