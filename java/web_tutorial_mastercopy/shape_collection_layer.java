@@ -47,6 +47,14 @@ public class shape_collection_layer {
 		    s2.setLayer(2);
 		    sg.addSymbol(s2);
 
+
+		    Text t = new Text();
+		    t.setText("group above with rectangle over circle");
+		    t.setFontSize(10);
+		    t.setStrokeWidth(1);
+		    t.setStrokeColor("black");
+		    sg.addSymbol(t);
+		    
 		    sg.setLayer(1);
 		    sc.addSymbol(sg);
 		}
@@ -67,8 +75,16 @@ public class shape_collection_layer {
 		    s2.setLayer(3);
 		    sg.addSymbol(s2);
 		    
+
+		    Text t = new Text();
+		    t.setText("group below with circle over rectangle");
+		    t.setFontSize(10);
+		    t.setStrokeWidth(1);
+		    t.setStrokeColor("black");
+		    sg.addSymbol(t);
+		    
 		    sg.setLayer(2);
-		    sg.translate(20,20);
+		    sg.translate(30,30);
 		    sc.addSymbol(sg);
 		}
 
