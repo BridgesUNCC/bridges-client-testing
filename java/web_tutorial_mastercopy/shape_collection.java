@@ -105,7 +105,7 @@ public class shape_collection {
 		SymbolGroup group2 = new SymbolGroup();
 		group.addSymbol(group2);
 		group2.setTransform(1,0,0,1,30,20);
-		
+		group2.rotate(20);
 		
 		Text l3 = new Text();
 		l3.setAnchorLocation(0.0f, 25.0f);
