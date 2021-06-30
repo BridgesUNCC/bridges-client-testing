@@ -35,11 +35,13 @@ public class shape_collection {
 		// draw a rectangle
 		Rectangle s1 = new Rectangle(-25.0f, 0.0f, 50.0f, 50.0f);
 		s1.setFillColor("red");
+		s1.setOpacity(0.3f);
 		sc.addSymbol(s1);
 
 		// and a circle next to it
 		Circle s2 = new Circle(25.0f, 0.0f, 25.0f);
 		s2.setFillColor("green");
+		s1.setOpacity(0.1f);
 		sc.addSymbol(s2);
 
 		// draw a triangle above
@@ -78,9 +80,9 @@ public class shape_collection {
 
 		Text l = new Text();
 		l.setAnchorLocation(0.0f, 25.0f);
-		l.setFontSize(12f);
-		l.setStrokeWidth(1.0f);
-		l.setText("test label");
+		l.setFontSize(18f);
+		l.setStrokeWidth(2.0f);
+		l.setText("test label1");
 		l.setStrokeColor("purple");
 		sc.addSymbol(l);
 
@@ -94,8 +96,9 @@ public class shape_collection {
 		l2.setAnchorLocation(0.0f, 25.0f);
 		l2.setFontSize(12f);
 		l2.setStrokeWidth(1.0f);
-		l2.setText("test label translated");
+		l2.setText("test label translated and scaled");
 		l2.setStrokeColor("purple");
+		l2.translate(0.0f, 25.0f).scale(2.0f, 1.0f).translate(0.0f, -25.0f);
 		group.addSymbol(l2);
 		
 		SymbolGroup group2 = new SymbolGroup();
