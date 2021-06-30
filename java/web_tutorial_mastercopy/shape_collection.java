@@ -113,6 +113,7 @@ public class shape_collection {
 		l3.setStrokeWidth(1.0f);
 		l3.setText("test label translated more");
 		l3.setStrokeColor("purple");
+		l3.setAnchorAlignment("top", "middle");
 		group2.addSymbol(l3);
 		
 		
