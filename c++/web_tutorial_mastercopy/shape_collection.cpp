@@ -98,7 +98,6 @@ int main(int argc, char **argv) {
 	l.setStrokeWidth(1.0f);
 	l.setText("test label");
 	l.setStrokeColor("purple");
-	l.setRotationAngle(90.);
 	l.setOpacity(1.0f);
 	sc.addSymbol(&l);
 
