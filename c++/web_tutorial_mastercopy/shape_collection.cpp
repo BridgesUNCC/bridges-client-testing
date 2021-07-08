@@ -96,7 +96,7 @@ int main(int argc, char **argv) {
 	l.setAnchorLocation(loc);
 	l.setFontSize(50.0f);
 	l.setStrokeWidth(1.0f);
-	l.setLabel("test label");
+	l.setText("test label");
 	l.setStrokeColor("purple");
 	l.setRotationAngle(90.);
 	l.setOpacity(1.0f);
