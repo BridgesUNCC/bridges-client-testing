@@ -83,6 +83,8 @@ public class shape_collection_layer {
 		    t.setStrokeColor("black");
 		    sg.addSymbol(t);
 		    
+		    sg.setFillColor("magenta");
+
 		    sg.setLayer(2);
 		    sg.translate(30,30);
 		    sc.addSymbol(sg);

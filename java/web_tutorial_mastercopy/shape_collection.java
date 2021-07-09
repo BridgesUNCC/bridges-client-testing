@@ -67,6 +67,13 @@ public class shape_collection {
 		s5.setStrokeWidth(2.0f);
 		sc.addSymbol(s5);
 
+		Polyline s5b = new Polyline();
+		s5b.addPoint(50.0f, -100.0f);
+		s5b.addPoint(50.0f, 100.0f);
+		s5b.addPoint(70.0f, 120.0f);
+		s5b.setStrokeWidth(2.0f);
+		sc.addSymbol(s5b);
+		
 		Polygon s6 = new Polygon();
 		s6.addPoint (-30.0f, 40.0f);
 		s6.addPoint (30.0f, 40.0f);
