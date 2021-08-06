@@ -16,7 +16,7 @@ def main():
 #endif
 
     # set title, description
-    bridges.set_title("A Visualization Attributes Related Example Using Doubly Linked List")
+    bridges.set_title("A Visualization Attributes Related Example")
 
 	# create list elements
     el0 = DLelement(e="element0",  label="Element 0")
