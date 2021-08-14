@@ -34,7 +34,7 @@ int main(int argc, char **argv) {
 		r1.setFillColor(Color("red"));
 		r1.setOpacity(0.3f);
 	
-	Rectangle s1(-50, 0, 25, 25);
+	Rectangle s1(50, 0, 25, 25);
 		s1.setFillColor(Color("orange"));
 		s1.setOpacity(1.0f);
 	
@@ -42,23 +42,18 @@ int main(int argc, char **argv) {
 	Circle s2(50, 0, 25);
 		s2.setFillColor(Color("green"));
 		s2.setOpacity(1.0f);
+		s2.translate(50., 0.);
+		sc.addSymbol(s2);
 
 	// create a symbol group and put s1 and s2 into it
 	SymbolGroup g;
-		g.rotate(50.);
+		g.rotate(30.);
+		g.addSymbol(r1);
 		g.addSymbol(s1);
-		g.addSymbol(s2);
 
-	// add the group in the symbol collection 
+	// add the group to the symbol collection 
 	sc.addSymbol (g);
 
-	Polygon s3;
-		s3.addPoint(-25, -10);
-		s3.addPoint(25, -10);
-		s3.addPoint(0, 50);
-		s3.setStrokeColor("darkorchid");
-		s3.setStrokeWidth(2.0f);
-		s3.setOpacity(1.0f);
 
 	// draw axes
 	Polyline s4;
@@ -71,6 +66,7 @@ int main(int argc, char **argv) {
 	Polyline s5;
 		s5.addPoint(0, -100);
 		s5.addPoint(0, 100);
+		s5.setStrokeColor("magenta");
 		s5.setStrokeWidth(2.0f);
 		s5.setOpacity(1.0f);
 
@@ -86,7 +82,6 @@ int main(int argc, char **argv) {
 	SymbolGroup g2;
 		g2.scale(0.5);
 		g2.translate(100., 0.);
-		g2.addSymbol(s3);
 		g2.addSymbol(s4);
 		g2.addSymbol(s5);
 		g2.addSymbol(s6);
