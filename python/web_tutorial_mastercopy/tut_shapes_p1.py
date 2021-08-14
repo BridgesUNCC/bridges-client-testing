@@ -61,7 +61,7 @@ def main():
     s5.add_point(-100, 0)
     s5.add_point(100, 0)
     s5.stroke_color = "magenta"
-    s5.stroke_width = 4.0
+    s5.stroke_width = 2.0
     s5.opacity = 1.0
     sc.add_symbol(s5)
 
@@ -69,6 +69,7 @@ def main():
     s6 = Polyline()
     s6.add_point(0.0, -100.0)
     s6.add_point(0.0, 100.0)
+    s6.stroke_color = "magenta"
     s6.stroke_width = 2.0
     s6.opacity = 1.0
     sc.add_symbol(s6)
