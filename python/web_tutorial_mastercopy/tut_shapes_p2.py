@@ -23,8 +23,8 @@ def main():
 #endif
 
     # title, description
-    bridges.set_title("Symbol Collection")
-    bridges.set_description("Illustrates using two groups of symbols, transformedat the group level")
+    bridges.set_title("Symbol Collection: Groups")
+    bridges.set_description("Illustrates using two groups of symbols, transformedat the group level.")
 
     # draw a rectangle
     sc = SymbolCollection()
