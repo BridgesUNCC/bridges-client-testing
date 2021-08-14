@@ -30,15 +30,15 @@ def main():
     sc = SymbolCollection()
 
     # draw a rectangle
-    s1 = Rectangle(w=25, h=25, locx=50.0, locy=0.0)
+    s1 = Rectangle(w=25, h=25, locx=-50.0, locy=0.0)
     s1.fill_color = "red"
-    s1.opacity = 0.8 
+    s1.opacity = 0.5 
     sc.add_symbol(s1)
 
     # draw another rectangle
-    s2 = Rectangle(w=25, h=25, locx=-50.0, locy=0.0)
-    s2.fill_color = "red"
-    s2.opacity = 0.4 
+    s2 = Rectangle(w=25, h=25, locx=50.0, locy=0.0)
+    s2.fill_color = "orange"
+    s2.opacity = 0.8 
     sc.add_symbol(s2)
 
     # draw a circle
@@ -76,10 +76,11 @@ def main():
 
 
     l = Text()
-    l.set_anchor_location(10.0, 25.0)
-    l.font_size = 24.0
-    l.stroke_width = 1.0
-    l.label = "test label"
+    l.set_anchor_location(0.0, 25.0)
+    l.font_size = 18.0
+    l.stroke_width = 2.0
+    l.text = "test label1"
+    l.opacity = 0.5
     l.stroke_color = "purple"
     sc.add_symbol(l)
 
