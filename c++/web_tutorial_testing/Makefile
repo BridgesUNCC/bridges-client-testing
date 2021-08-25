@@ -29,7 +29,7 @@ CXXFLAGS = -g $(IFLAGS) -std=c++14 $(LOCALCXXFLAGS)
 
 # Libraries
 
-LIBS = -l$(CURL_LIB) -l pthread -l bridges
+LIBS = -l$(CURL_LIB) -l pthread -l bridges -l pthread
 
 ASSIGNMENTIDSTART=1000
 ASSIGNMENTIDTEST=1099
