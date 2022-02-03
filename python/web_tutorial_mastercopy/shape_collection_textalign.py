@@ -42,6 +42,7 @@ def anchor_test(alignLR, alignTB):
 
 def main():
 
+#if TESTING
     #command line args provide credentials and server to test on
     args = sys.argv[1:]
     bridges = Bridges(int(args[0]), args[1], args[2])
