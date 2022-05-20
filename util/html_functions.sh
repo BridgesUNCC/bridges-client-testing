@@ -65,9 +65,12 @@ html_log_detail_item() {
 	class="failure"
     fi
 
+
+    
     echo \<div class=\"${class}\"\> >> ${HTMLLOG}
+    echo \<h3\> id=\"${LANGUAGE}log${assignment}-${itemid}\"\>${prettystr} for test ${assignment}\</h3\> >> ${HTMLLOG}
     {
-	echo \#\#\# \<span id=\"${LANGUAGE}log${assignment}-${itemid}\"\>${prettystr} for test ${assignment}\</span\>
+	
 
 	echo \`\`\`
 	
