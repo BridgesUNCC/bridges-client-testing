@@ -1,4 +1,4 @@
-import java.util.List;
+import java.util.Vector;
 import bridges.connect.Bridges;
 import bridges.connect.DataSource;
 import bridges.data_src_dependent.Reddit;
@@ -21,7 +21,7 @@ public class reddit_snippet {
 		DataSource ds = bridges.getDataSource();
 
 		// get some data from the  "News" subreddit
-		List<EarthquakeUSGS> eq_list = ds.getRedditData("news", -9999);
+		Vector<Reddit> reddit_posts = ds.getRedditData("news", -9999);
 
 	}
 }
