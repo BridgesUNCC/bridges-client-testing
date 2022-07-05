@@ -16,6 +16,16 @@ def main():
     bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
 #endif
 
+    reddit_obj = data_source.reddit_data("news")
+   
+    print(f"Title: {reddit_obj[10].title}")
+    print(f"Author: {reddit_obj[10].author}")
+    print(f"Score: {reddit_obj[10].score}")
+    print(f"Comment Count: {reddit_obj[10].comment_count}")
+    print(f"Subreddit: {reddit_obj[10].subreddit}")
+
+    for i in range(0, 10):
+        print(f"Title: {reddit_obj[i].title}")
     print ("=====")
     print ("Available subreddits:")
     for subred in data_source.reddit_available_subreddit():
