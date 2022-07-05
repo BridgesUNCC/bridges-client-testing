@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
 
 	// return 100 cities in the US
 	unordered_map<string, string> city_params {
-		{"limit","10"}
+		{"population","500000"}
 	};
 try{	
 	vector<USCities>  us_cities = ds.getUSCities(city_params);// Moby Dick
