@@ -31,9 +31,16 @@ int main(int argc, char **argv) {
 	// create data source object
 	DataSource ds (&bridges);
 
-	// get the actor movie IMDB data through the BRIDGES API
-	vector<Reddit> actor_list = ds.getRedditData("news", -9999);
 
+	ds.setSourceType("local");
+	
+	vector<Reddit> reddit_list = ds.getRedditData("news", -9999);
+	std::cout<<""<<reddit_list.size()<<" post returned"<<"\n";
+	for (auto post : reddit_list) {
+	  std::cout<<"Title: "<<post.getTitle()<<"\n";
+	}
+	
+	
 	return 0;
 }
 
