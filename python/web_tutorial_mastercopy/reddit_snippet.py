@@ -16,7 +16,6 @@ def main():
     bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
 #endif
 
-
     reddit_obj = data_source.reddit_data("news")
    
     print(f"Title: {reddit_obj[10].title}")
