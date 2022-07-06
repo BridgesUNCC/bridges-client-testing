@@ -41,7 +41,7 @@ int main(int argc, char **argv) {
 		};
 
 	vector<USCities>  us_cities = ds.getUSCities(city_params);// Moby Dick
-	cout << "US Cities:\n";
+	cout << "US Cities (tested for limit of 25 cities, population over 200K, and lat/long Bounding Box: (34.025348,-85.352783), (36.800488,-75.300293):\n";
 	for (auto c : us_cities)
 		cout << "\n" << c.getCity() << "," << c.getState() << ":" << 
 			" Population: " <<  c.getPopulation()  << 
