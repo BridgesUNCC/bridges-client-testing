@@ -25,7 +25,9 @@ public class us_cities_snippet {
 		// - parameters are passed through a map
 		HashMap<String, String> map = new HashMap<String, String>();
 			map.put ("limit", "25");
-			map.put ("population", "2000000");
+			map.put ("population", "200000");
+			map.put ("minLatLong",  "34.025348,-85.352783");
+			map.put ("maxLatLong",  "36.800488,-75.300293");
 
 		// get the cities
 		List<USCities> cities = ds.getUSCitiesData(map);
@@ -36,6 +38,9 @@ public class us_cities_snippet {
 			System.out.println ("\t" + cities.get(k).getCity() + 
 				", " + cities.get(k).getState() + 
 				":  Population: " + cities.get(k).getPopulation() + 
-				", Elevation: " + cities.get(k).getElevation());
+				", Elevation: " + cities.get(k).getElevation() + 
+				", Lat/Long: " + cities.get(k).getLatitude() + "," +
+						cities.get(k).getLongitude()
+			);
 	}
 }

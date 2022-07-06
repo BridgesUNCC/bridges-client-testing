@@ -26,7 +26,6 @@ int main(int argc, char **argv) {
 	// set title
 	bridges.setTitle("Accessing US City data");
 
-	// read the Gutenberg book data
 	DataSource ds (&bridges);
 
 	cout << "Retrieving a set of US cities" << endl;
@@ -35,20 +34,19 @@ int main(int argc, char **argv) {
 
 	// return upto 10 cities in the US
 	unordered_map<string, string> city_params {
-		{"population","2000000"}, {"limit", "25"}
-	};
-try{	
+			{"population","200000"}, 
+			{"minLatLong", "34.025348,-85.352783"}, 
+			{"maxLatLong", "36.800488,-75.300293"},
+			{"limit", "25"}
+		};
+
 	vector<USCities>  us_cities = ds.getUSCities(city_params);// Moby Dick
 	cout << "US Cities:\n";
 	for (auto c : us_cities)
 		cout << "\n" << c.getCity() << "," << c.getState() << ":" << 
 			" Population: " <<  c.getPopulation()  << 
-			", Elevation: "  <<  c.getElevation(); 
+			", Elevation: "  <<  c.getElevation()
+			<< ", Lat/Long: " << c.getLatitude() << "," << c.getLongitude(); 
 
-	}
-	catch (string s) {
-
-	cout << s;
-}
 	return 0;
 }
