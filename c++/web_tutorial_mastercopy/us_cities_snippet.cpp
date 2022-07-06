@@ -33,15 +33,17 @@ int main(int argc, char **argv) {
 
 	// parameters to the query are through an unordered map
 
-	// return 100 cities in the US
+	// return upto 10 cities in the US
 	unordered_map<string, string> city_params {
-		{"population","500000"}
+		{"population","2000000"}, {"limit", "25"}
 	};
 try{	
 	vector<USCities>  us_cities = ds.getUSCities(city_params);// Moby Dick
 	cout << "US Cities:\n";
 	for (auto c : us_cities)
-		cout << "\n" << c.getCity() << "\n";
+		cout << "\n" << c.getCity() << "," << c.getState() << ":" << 
+			" Population: " <<  c.getPopulation()  << 
+			", Elevation: "  <<  c.getElevation(); 
 
 	}
 	catch (string s) {

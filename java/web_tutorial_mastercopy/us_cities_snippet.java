@@ -24,7 +24,7 @@ public class us_cities_snippet {
 		// limit to at most  25 cities and population above 2M
 		// - parameters are passed through a map
 		HashMap<String, String> map = new HashMap<String, String>();
-			map.put ("limit", "10");
+			map.put ("limit", "25");
 			map.put ("population", "2000000");
 
 		// get the cities
