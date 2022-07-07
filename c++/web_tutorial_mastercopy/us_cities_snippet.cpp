@@ -30,9 +30,23 @@ int main(int argc, char **argv) {
 
 	cout << "Retrieving a set of US cities" << endl;
 
-	// parameters to the query are through an unordered map
+	// Parameters to the query are through an unordered map
+	// you may use any subset of parameters to filter the US city data
+	// results will be filtered to satisfy all specified parameters
+	// for example if you provide population ane elevation ranges, then only those
+	// cities matching those ranges will be retrieved
 
-	// return upto 10 cities in the US
+	// Parameters include
+	// population range - specify  min and max population values
+	// elevation range - specify  min and max elevation values - note elevation can be
+	//   				negative (below sealevel!
+	// Lat/Long bounding box -- specified by minLatLong, maxLatLong pairs of values
+	// state  - state name -- cities within that state will be retrieved
+	// city   - city name  -- if it matches, it will be retrieved
+	// limit  - limit the output to a specified number of cities
+
+
+	// return upto 10 cities in the US, using the population, lat/long and limit parametes
 	unordered_map<string, string> city_params {
 			{"population","200000"}, 
 			{"minLatLong", "34.025348,-85.352783"}, 
@@ -40,7 +54,7 @@ int main(int argc, char **argv) {
 			{"limit", "25"}
 		};
 
-	vector<USCities>  us_cities = ds.getUSCities(city_params);// Moby Dick
+	vector<USCities>  us_cities = ds.getUSCities(city_params);
 	cout << "US Cities (tested for limit of 25 cities, population over 200K, and lat/long Bounding Box: (34.025348,-85.352783), (36.800488,-75.300293):\n";
 	for (auto c : us_cities)
 		cout << "\n" << c.getCity() << "," << c.getState() << ":" << 

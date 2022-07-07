@@ -39,7 +39,7 @@ def main():
     #list: maxll - is the maximum lat and long value for bounding box ex: maxll = [36.800488,-75.300293]
     #
 
-    # ommiting all arguments will get all data within the database
+    # omitting all arguments will get all data within the database
     # cities_data = data_source.get_us_cities_data()
 
     #getting a limit of 5 results
@@ -55,14 +55,14 @@ def main():
     # cities_data = data_source.get_us_cities_data(population = 2000)
 
     #getting only results within a NC bounding box
-    # cities_data = data_source.get_us_cities_data(minll = [34.025348,-85.352783], maxll = [36.800488,-75.300293])
+    #cities_data = data_source.get_us_cities_data(minll = [34.025348,-85.352783], maxll = [36.800488,-75.300293])
 
-    cities_data = data_source.get_us_cities_data(limit = 10, population=2000000)
+    #cities_data = data_source.get_us_cities_data(limit = 10, population=2000000)
 
     #combining all parameters
-    #cities_data = data_source.get_us_cities_data(limit = 5, state = 'NC', elevation = 100, population = 2000, minll = [34.025348,-85.352783], maxll = [36.800488,-75.300293])
+    cities_data = data_source.get_us_cities_data(limit = 25, state = 'NC', elevation = 100, population = 2000, minll = [34.025348,-85.352783], maxll = [36.800488,-75.300293])
     for c in cities_data:
-       print(c.city + ", " + c.state + ": population: " + str(c.population) + ", " + "elevation: " + str(c.elevation))
+       print(c.city + ", " + c.state + ": population: " + str(c.population) + ", " + "elevation: " + str(c.elevation) + ", lat/long: " + str(c.lat) + "," + str(c.lon))
 
 
 if __name__ == '__main__':
