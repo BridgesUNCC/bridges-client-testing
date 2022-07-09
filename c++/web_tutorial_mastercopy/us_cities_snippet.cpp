@@ -47,12 +47,17 @@ int main(int argc, char **argv) {
 
 
 	// return upto 10 cities in the US, using the population, lat/long and limit parametes
+/*
 	unordered_map<string, string> city_params {
 			{"population","200000"}, 
 			{"minLatLong", "34.025348,-85.352783"}, 
 			{"maxLatLong", "36.800488,-75.300293"},
 			{"limit", "25"}
 		};
+*/
+	unordered_map<string, string> city_params {
+			{"population","10000"}, 
+			{"state", "NC"}}; 
 
 	vector<USCities>  us_cities = ds.getUSCities(city_params);
 	cout << "US Cities (tested for limit of 25 cities, population over 200K, and lat/long Bounding Box: (34.025348,-85.352783), (36.800488,-75.300293):\n";
