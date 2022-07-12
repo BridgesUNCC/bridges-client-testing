@@ -16,13 +16,22 @@ public class reddit_snippet {
 #else
 		Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
-    
+		// read the earth quake  data and build the BST
+		bridges.setTitle("Accessing Reddit Data");
+
 		DataSource ds = bridges.getDataSource();
 
-		ArrayList<String> subreddits = ds.getAvailableSubreddits();
+		//ds.setSourceType("local");
+		
 
-		// get some data from the  "Ask Science" subreddit
-		ArrayList<Reddit> reddit_posts = ds.getRedditData("askscience");
+		ArrayList<String> subreddits = ds.getAvailableSubreddits();
+		System.out.println ("all subreddits available:");
+		for (String subred : subreddits) {
+		    System.out.println(subred);
+		}
+
+		// get some data from the  "News" subreddit
+		ArrayList<Reddit> reddit_posts = ds.getRedditData("askscience", -9999);
 		for (Reddit r: reddit_posts) {
 		    System.out.println("ID: "+r.getID());
 		    System.out.println("Title: "+r.getTitle());

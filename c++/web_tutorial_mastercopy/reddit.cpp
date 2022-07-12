@@ -25,10 +25,19 @@ int main(int argc, char **argv) {
 		"YOUR_API_KEY");
 #endif
 
+	// set title
+	bridges.setTitle("Accessing Reddit Data");
+
 	// create data source object
 	DataSource ds (&bridges);
 
-	vector<Reddit> reddit_list = ds.getRedditData("askscience");
+
+	std::cout<<"getting subreddits:"<<"\n";
+	for (auto subred : ds.getAvailableSubreddits()) {
+	  std::cout<<subred<<"\n";		     
+	}
+
+	vector<Reddit> reddit_list = ds.getRedditData("askscience", -9999);
 	std::cout<<""<<reddit_list.size()<<" post returned"<<"\n";
 	for (auto post : reddit_list) {
 	  std::cout<<"ID: "<<post.getID()<<"\n";
