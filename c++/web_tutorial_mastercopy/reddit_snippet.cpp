@@ -33,7 +33,12 @@ int main(int argc, char **argv) {
 
 
 	ds.setSourceType("local");
-	
+
+	std::cout<<"getting subreddits:"<<"\n";
+	for (auto subred : ds.getAvailableSubreddit()) {
+	  std::cout<<subred<<"\n";		     
+	}
+
 	vector<Reddit> reddit_list = ds.getRedditData("askscience", -9999);
 	std::cout<<""<<reddit_list.size()<<" post returned"<<"\n";
 	for (auto post : reddit_list) {
