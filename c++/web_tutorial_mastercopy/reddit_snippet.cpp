@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
 
 
 	std::cout<<"getting subreddits:"<<"\n";
-	for (auto subred : ds.getAvailableSubreddit()) {
+	for (auto subred : ds.getAvailableSubreddits()) {
 	  std::cout<<subred<<"\n";		     
 	}
 
