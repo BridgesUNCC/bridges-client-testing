@@ -1,7 +1,8 @@
-import java.util.Vector;
+import java.util.ArrayList;
 import bridges.connect.Bridges;
 import bridges.connect.DataSource;
 import bridges.data_src_dependent.Reddit;
+
 
 // This program fragment illustrates how to access the USGS earthquake data
 public class reddit_snippet {
@@ -20,8 +21,30 @@ public class reddit_snippet {
 
 		DataSource ds = bridges.getDataSource();
 
-		// get some data from the  "News" subreddit
-		Vector<Reddit> reddit_posts = ds.getRedditData("news", -9999);
+		//ds.setSourceType("local");
+		
 
+		ArrayList<String> subreddits = ds.getAvailableSubreddits();
+		System.out.println ("all subreddits available:");
+		for (String subred : subreddits) {
+		    System.out.println(subred);
+		}
+
+		// get some data from the  "News" subreddit
+		ArrayList<Reddit> reddit_posts = ds.getRedditData("askscience", -9999);
+		for (Reddit r: reddit_posts) {
+		    System.out.println("ID: "+r.getID());
+		    System.out.println("Title: "+r.getTitle());
+		    System.out.println("Author: "+r.getAuthor());
+		    System.out.println("Score: "+r.getScore());
+		    System.out.println("VoteRatio: "+r.getVoteRatio());
+		    System.out.println("CommentCount: "+r.getCommentCount());
+		    System.out.println("Subreddit: "+r.getSubreddit());
+		    System.out.println("PostTime: "+r.getPostTime());
+		    System.out.println("URL: "+r.getUrl());
+		    System.out.println("Text: "+r.getText());
+		    System.out.println("");
+		}
+		
 	}
 }
