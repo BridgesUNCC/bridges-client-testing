@@ -43,25 +43,31 @@ def main():
     # cities_data = data_source.get_us_cities_data()
 
     #getting a limit of 5 results
-    # cities_data = data_source.get_us_cities_data(limit = 5)
+    # cities_data = data_source.get_us_cities_data(limit = '5')
 
     #getting only results from NC
     # cities_data = data_source.get_us_cities_data(state = 'NC')
 
     #getting only results with elevation greater than 100
-    # cities_data = data_source.get_us_cities_data(elevation = 100)
+    # cities_data = data_source.get_us_cities_data(elevation = '100')
 
     #getting only results with population greater than 2000
-    # cities_data = data_source.get_us_cities_data(population = 2000)
+    # cities_data = data_source.get_us_cities_data(population = '2000')
 
     #getting only results within a NC bounding box
-    #cities_data = data_source.get_us_cities_data(minll = [34.025348,-85.352783], maxll = [36.800488,-75.300293])
+    #cities_data = data_source.get_us_cities_data(minll = '[34.025348,-85.352783]', maxll = '[36.800488,-75.300293]')
 
-    #cities_data = data_source.get_us_cities_data(limit = 10, population=2000000)
+    #cities_data = data_source.get_us_cities_data(limit = 10, min_pop=2000000)
 
     #combining all parameters
-    cities_data = data_source.get_us_cities_data(limit = 25, state = 'NC', elevation = 100, population = 2000, minll = [34.025348,-85.352783], maxll = [36.800488,-75.300293])
+    cities_data = data_source.get_us_cities_data(limit = 25, state = 'NC', min_elev= -100, min_pop =  10000, max_pop = 1000000, minll = [34.025348,-85.352783], maxll = [36.800488,-75.300293])
     for c in cities_data:
+       print(c.city + ", " + c.state + ": population: " + str(c.population) + ", " + "elevation: " + str(c.elevation) + ", lat/long: " + str(c.lat) + "," + str(c.lon))
+
+    print ("\nCities with negative elevation..\n");
+
+    cities_data2 = data_source.get_us_cities_data(limit='25', min_elev='-100', max_elev='0')
+    for c in cities_data2:
        print(c.city + ", " + c.state + ": population: " + str(c.population) + ", " + "elevation: " + str(c.elevation) + ", lat/long: " + str(c.lat) + "," + str(c.lon))
 
 
