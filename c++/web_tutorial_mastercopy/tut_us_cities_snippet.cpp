@@ -22,6 +22,7 @@ int main(int argc, char **argv) {
 	Bridges bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 
+
 	// set title
 	bridges.setTitle("Accessing US City data");
 
@@ -45,26 +46,23 @@ int main(int argc, char **argv) {
 	// limit  - limit the output to a specified number of cities
 
 
-	// output upto 25 cities of North carolina  with a population ranging from 200K to 1M
+	// return upto 10 cities in the North Carolina, using the 
+	// population, and limit parametes
 
 	unordered_map<string, string> city_params {
 			{"minPopulation","200000"}, 
 			{"maxPopulation","1000000"}, 
 			{"state", "NC"},
-			{"minLatLong", "[34.025348,-85.352783]"},
-			{"maxLatLong", "[36.800488,-75.300293]"},
 			{"limit", "25"}
 		};
 
 	vector<USCities>  us_cities = ds.getUSCities(city_params);
-	cout << "US Cities : \n";
+	cout << "US Cities (tested for limit of 25 cities, population over 200K, and lat/long Bounding Box: (34.025348,-85.352783), (36.800488,-75.300293):\n";
 	for (auto c : us_cities)
 		cout << "\n" << c.getCity() << "," << c.getState() << ":" << 
 			" Population: " <<  c.getPopulation()  << 
 			", Elevation: "  <<  c.getElevation()
 			<< ", Lat/Long: " << c.getLatitude() << "," << c.getLongitude(); 
-
-	cout << "\n";
 
 	return 0;
 }
