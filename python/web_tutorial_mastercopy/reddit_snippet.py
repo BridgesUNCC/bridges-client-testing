@@ -28,7 +28,7 @@ def main():
         print(f"Title: {reddit_obj[i].title}")
     print ("=====")
     print ("Available subreddits:")
-    for subred in data_source.reddit_available_subreddit():
+    for subred in data_source.available_subreddits():
         print (subred)
     print ("=====")
     

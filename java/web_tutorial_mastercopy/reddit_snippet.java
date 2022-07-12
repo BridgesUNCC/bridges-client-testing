@@ -4,7 +4,7 @@ import bridges.connect.DataSource;
 import bridges.data_src_dependent.Reddit;
 
 
-// This program fragment illustrates how to access the USGS earthquake data
+// This program fragment illustrates how to access the reddit data
 public class reddit_snippet {
 	public static void main(String[] args) throws Exception {
 
@@ -41,7 +41,7 @@ public class reddit_snippet {
 		    System.out.println("CommentCount: "+r.getCommentCount());
 		    System.out.println("Subreddit: "+r.getSubreddit());
 		    System.out.println("PostTime: "+r.getPostTime());
-		    System.out.println("URL: "+r.getUrl());
+		    System.out.println("URL: "+r.getURL());
 		    System.out.println("Text: "+r.getText());
 		    System.out.println("");
 		}
