@@ -32,8 +32,6 @@ int main(int argc, char **argv) {
 	DataSource ds (&bridges);
 
 
-	ds.setSourceType("local");
-
 	std::cout<<"getting subreddits:"<<"\n";
 	for (auto subred : ds.getAvailableSubreddit()) {
 	  std::cout<<subred<<"\n";		     
