@@ -2,7 +2,7 @@ import java.util.List;
 import java.util.HashMap;
 import bridges.connect.Bridges;
 import bridges.connect.DataSource;
-import bridges.data_src_dependent.USCities;
+import bridges.data_src_dependent.City;
 
 // This program fragment illustrates how to access the USGS earthquake data
 public class tut_us_cities_snippet {
@@ -49,7 +49,7 @@ public class tut_us_cities_snippet {
 			map.put ("limit", "25");
 
 		// get the cities
-		List<USCities> cities = ds.getUSCitiesData(map);
+		List<City> cities = ds.getUSCitiesData(map);
 		System.out.println ("Upto 25 cities in North Carolina with population between 200K and 1M");
 
 		// print the records
