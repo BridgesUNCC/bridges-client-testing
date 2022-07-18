@@ -4,7 +4,7 @@ using namespace std;
 
 #include "Bridges.h"
 #include "DataSource.h"
-#include "data_src/USCities.h"
+#include "data_src/City.h"
 
 using namespace bridges;
 
@@ -56,7 +56,7 @@ int main(int argc, char **argv) {
 			{"limit", "25"}
 		};
 
-	vector<USCities>  us_cities = ds.getUSCities(city_params);
+	vector<City>  us_cities = ds.getUSCities(city_params);
 	cout << "US Cities : \n";
 	for (auto c : us_cities)
 		cout << "\n" << c.getCity() << "," << c.getState() << ":" << 
