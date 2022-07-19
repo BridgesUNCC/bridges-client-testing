@@ -48,11 +48,13 @@ int main(int argc, char **argv) {
 	// output upto 25 cities of North carolina  with a population ranging from 200K to 1M
 
 	unordered_map<string, string> city_params {
-			{"minPopulation","200000"}, 
-			{"maxPopulation","1000000"}, 
+			{"min_pop","100000"}, 
+			{"max_pop","1000000"}, 
 			{"state", "NC"},
-			{"minLatLong", "[34.025348,-85.352783]"},
-			{"maxLatLong", "[36.800488,-75.300293]"},
+			{"min_lat", "35.025348"},
+			{"min_long", "-85.352783"},
+			{"max_lat", "36.800488"},
+			{"max_long", "-75.300293"},
 			{"limit", "25"}
 		};
 
