@@ -50,8 +50,8 @@ int main(int argc, char **argv) {
 	// population, and limit parametes
 
 	unordered_map<string, string> city_params {
-			{"minPopulation","200000"}, 
-			{"maxPopulation","1000000"}, 
+			{"min_pop","200000"}, 
+			{"max_pop","1000000"}, 
 			{"state", "NC"},
 			{"limit", "25"}
 		};
