@@ -5,7 +5,7 @@ import bridges.data_src_dependent.Reddit;
 
 
 // This program fragment illustrates how to access the reddit data
-public class reddit_snippet {
+public class reddit {
 	public static void main(String[] args) throws Exception {
 
 		// create Bridges object
