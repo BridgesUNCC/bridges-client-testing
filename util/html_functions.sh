@@ -68,7 +68,7 @@ html_log_detail_item() {
 
     
     echo \<div class=\"${class}\"\> >> ${HTMLLOG}
-    echo \<h3\> id=\"${LANGUAGE}log${assignment}-${itemid}\"\>${prettystr} for test ${assignment}\</h3\> >> ${HTMLLOG}
+    echo \<h3 id=\"${LANGUAGE}log${assignment}-${itemid}\"\>${prettystr} for test ${assignment}\</h3\> >> ${HTMLLOG}
     {
 	
 
