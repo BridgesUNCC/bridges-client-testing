@@ -4,7 +4,7 @@ import bridges.connect.Bridges;
 import bridges.connect.DataSource;
 import bridges.data_src_dependent.City;
 
-// This program fragment illustrates how to access the USGS earthquake data
+// This program fragment illustrates how to access the US Cities  data
 public class us_cities_snippet {
 	public static void main(String[] args) throws Exception {
 
