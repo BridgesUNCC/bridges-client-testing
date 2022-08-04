@@ -2,6 +2,7 @@
 
 BASE=../
 TIMEOUT=mytimeout
+TIMEOUTLIMIT=120
 
 mytimeout() { perl -e 'alarm shift; exec @ARGV; exit 1' "$@"; }
 filterexecutableonly() { while read filename; do if [ -x "$filename" ]; then echo "$filename" ;fi ; done }
@@ -12,7 +13,7 @@ run_java() {
 	cd ../java/web_tutorial_testing/
 
 	##account information set in env_vars.sh
-	${TIMEOUT} 60 java $(basename ${test} .java) 1 null null live
+	${TIMEOUT} ${TIMEOUTLIMIT} java $(basename ${test} .java) 1 null null live
 	if [ $? -eq 0 ] ;
 	then
 	    exit 0; #ok
@@ -28,8 +29,8 @@ run_cxx() {
     (
 	cd ../c++/web_tutorial_testing/
 	
-	#${TIMEOUT} 60 ./$(basename ${test} .cpp) 1 null null live
-	${TIMEOUT} 60 ${DEBUGGER} ./$(basename ${test} .cpp) 1 null null live
+	#${TIMEOUT} ${TIMEOUTLIMIT} ./$(basename ${test} .cpp) 1 null null live
+	${TIMEOUT} ${TIMEOUTLIMIT} ${DEBUGGER} ./$(basename ${test} .cpp) 1 null null live
 	if [ $? -eq 0 ] ;
 	then
 	    exit 0; #ok
@@ -47,7 +48,7 @@ run_python() {
 	cd ../python/web_tutorial_testing/
 
 
-	${TIMEOUT} 60 ${PYTHON} ${test} 1 null null live
+	${TIMEOUT} ${TIMEOUTLIMIT} ${PYTHON} ${test} 1 null null live
 	if [ $? -eq 0 ] ;
 	then
 	    exit 0; #ok
