@@ -1,4 +1,4 @@
-from bridges.bridges import *
+1from bridges.bridges import *
 from bridges.data_src_dependent import data_source
 import sys
 
@@ -61,5 +61,5 @@ def main():
 
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

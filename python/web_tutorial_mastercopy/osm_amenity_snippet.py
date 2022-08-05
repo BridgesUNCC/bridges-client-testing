@@ -39,5 +39,5 @@ def main():
     #print ("Cartesian Coordinate of first vertex: "+str(vertices[0].cartesian_coord[0])+ ", "+ str(vertices[0].cartesian_coord[1]))
 
     
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

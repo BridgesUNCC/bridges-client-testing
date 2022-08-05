@@ -31,5 +31,5 @@ def main():
        print(c.city + ", " + c.state + ": population: " + str(c.population) + ", " + "elevation: " + str(c.elevation) + ", lat/long: " + str(c.lat) + "," + str(c.lon))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
