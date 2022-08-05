@@ -68,7 +68,6 @@ def main():
 
     bridges.set_data_structure(sc)
 
-    bridges.set_visualize_JSON(True)
     bridges.visualize()
 
 if __name__ == "__main__":
