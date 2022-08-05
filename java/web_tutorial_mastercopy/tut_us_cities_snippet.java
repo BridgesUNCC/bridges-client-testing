@@ -43,8 +43,8 @@ public class tut_us_cities_snippet {
 
 		// use a hashmap to specify the parameters to the query
 		HashMap<String, String> map = new HashMap<String, String>();
-			map.put ("minPopulation", "200000");
-			map.put ("maxPopulation", "1000000");
+			map.put ("min_pop", "200000");
+			map.put ("max_pop", "1000000");
 			map.put ("state", "NC");
 			map.put ("limit", "25");
 
