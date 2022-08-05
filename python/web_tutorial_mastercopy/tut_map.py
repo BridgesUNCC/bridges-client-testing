@@ -37,7 +37,6 @@ def main():
 
     #visualize the structure
     bridges.set_data_structure(sc)
-    bridges.set_visualize_JSON(True)
     bridges.visualize()
 
 
@@ -45,7 +44,6 @@ def main():
     bridges.map = ["world", "united states of america"]
 
     bridges.set_data_structure(sc)
-    bridges.set_visualize_JSON(True)
     bridges.visualize()
 
     #We can also set the map the to a more detailed version if the US.
@@ -55,7 +53,6 @@ def main():
     bridges.map = ["us", "all"]
 
     bridges.set_data_structure(sc)
-    bridges.set_visualize_JSON(True)
     bridges.visualize()
 
     #Changing the second element we can choose which state of the US to visualize
@@ -64,7 +61,6 @@ def main():
 
 
     bridges.set_data_structure(sc)
-    bridges.set_visualize_JSON(True)
     bridges.visualize()
 
 if __name__ == "__main__":
