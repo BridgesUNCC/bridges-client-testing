@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
 	}
 
 	vector<Reddit> reddit_list = ds.getRedditData("askscience", -9999);
-	std::cout<<""<<reddit_list.size()<<" post returned"<<"\n";
+	std::cout<<""<<reddit_list.size()<<" posts returned"<<"\n";
 	int limit = 10, k = 0;
 	for (auto post : reddit_list) {
 	  if (k++ < limit) {
