@@ -32,18 +32,21 @@ public class reddit {
 
 		// get some data from the  "News" subreddit
 		ArrayList<Reddit> reddit_posts = ds.getRedditData("askscience", -9999);
+		int limit_posts = 10, i = 0;   // print upto 10 posts
 		for (Reddit r: reddit_posts) {
-		    System.out.println("ID: "+r.getID());
-		    System.out.println("Title: "+r.getTitle());
-		    System.out.println("Author: "+r.getAuthor());
-		    System.out.println("Score: "+r.getScore());
-		    System.out.println("VoteRatio: "+r.getVoteRatio());
-		    System.out.println("CommentCount: "+r.getCommentCount());
-		    System.out.println("Subreddit: "+r.getSubreddit());
-		    System.out.println("PostTime: "+r.getPostTime());
-		    System.out.println("URL: "+r.getURL());
-		    System.out.println("Text: "+r.getText());
-		    System.out.println("");
+			if  (i++ < limit_posts) {
+		    	System.out.println("ID: "+r.getID());
+		    	System.out.println("Title: "+r.getTitle());
+		    	System.out.println("Author: "+r.getAuthor());
+		    	System.out.println("Score: "+r.getScore());
+		    	System.out.println("VoteRatio: "+r.getVoteRatio());
+		    	System.out.println("CommentCount: "+r.getCommentCount());
+		    	System.out.println("Subreddit: "+r.getSubreddit());
+		    	System.out.println("PostTime: "+r.getPostTime());
+		    	System.out.println("URL: "+r.getURL());
+		    	System.out.println("Text: "+r.getText());
+		    	System.out.println("");
+			}
 		}
 		
 	}
