@@ -4,6 +4,7 @@ import sys
 import random
 
 def main():
+    # create the Bridges object, set credentials
 #if TESTING
     # command line args provide credentials and server to test on
     args = sys.argv[1:]
@@ -13,9 +14,6 @@ def main():
 #else
     bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
 #endif
-
-    # create the Bridges object, set credentials
-    bridges = Bridges(int(args[0]), args[1], args[2])
 
 
     # get the shakespeare data
