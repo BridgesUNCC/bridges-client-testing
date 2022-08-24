@@ -17,12 +17,6 @@ def main():
     bridges = Bridges(YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY")
 #endif
 
-    # create the Bridges object, set credentials
-
-    bridges = Bridges(int(args[0]), args[1], args[2])
-
-    if len(args) > 3:
-        bridges.connector.set_server(args[3])
 
     #-the function can take 6 parameters
     #-ommiting all parameters will return all results in db
