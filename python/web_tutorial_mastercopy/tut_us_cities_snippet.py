@@ -4,7 +4,6 @@ from bridges.data_src_dependent import data_source
 
 #how to use the USCities Dataset
 def main():
-    args = sys.argv[1:]
 
     # create the Bridges object, set credentials
 #if TESTING
