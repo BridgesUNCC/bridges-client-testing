@@ -4,10 +4,10 @@ import sys
 import random
 
 def main():
-    args = sys.argv[1:]
 
     # create the Bridges object, set credentials
 #if TESTING
+    args = sys.argv[1:]
     # command line args provide credentials and server to test on
     args = sys.argv[1:]
     bridges = Bridges(int(args[0]), args[1], args[2])

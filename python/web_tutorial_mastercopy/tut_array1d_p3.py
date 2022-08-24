@@ -8,10 +8,10 @@ def main():
     # Part 3 of this tutorial describes how to use iterators with arrays
     # We will use the same example array 
 
-    args = sys.argv[1:]
 
     # create the Bridges object, set credentials
 #if TESTING
+    args = sys.argv[1:]
     # command line args provide credentials and server to test on
     bridges = Bridges(int(args[0]), args[1], args[2])
     if len(args) > 3:
