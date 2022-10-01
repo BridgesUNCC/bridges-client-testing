@@ -26,6 +26,8 @@ LANGUAGEHTMLLOG=${HTMLLOG}
 . ./html_functions.sh
 
 
+exit # disabling testing.
+
 check_tools
 
 
