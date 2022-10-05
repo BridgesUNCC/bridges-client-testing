@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
 	for (auto k : elev_data.getData()) 
 			verts.push_back (k);
 //	TerrainMesh terrain(elev_data.getRows(), elev_data.getCols(), verts); 
-	TerrainMesh terrain(15, 15, verts); 
+	TerrainMesh terrain(5, 5, verts); 
 
 
 
@@ -71,7 +71,7 @@ int main(int argc, char **argv) {
 
 	// get JSON
 	const string scene_json = sc.getDataStructureRepresentation();
-//	cout << "scene JSON:  " << scene_json << endl;
+	cout << "scene JSON:  " << scene_json << endl;
 
 	// print the data dimensions  and the firs 10 elevation data values
 	cout << "\tWidth: " << elev_data.getCols() << endl
