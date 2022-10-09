@@ -9,8 +9,6 @@ LANGUAGEHTMLLOG=${HTMLLOG}
 . ./functions.sh
 . ./html_functions.sh
 
-exit #disabling testing
-
 check_tools
 
 clean_html_log
