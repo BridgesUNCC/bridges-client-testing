@@ -34,18 +34,28 @@ struct test: public NonBlockingGame3D {
         vector<float> verts;
         for (auto k : elev_data.getData())
                 verts.push_back (k);
-        TerrainMesh terrain('terr', elev_data.getRows(), elev_data.getCols(), verts);
+        TerrainMesh terrain("terr", elev_data.getRows(), elev_data.getCols(), 
+												verts);
         float position[] = {0., 0., 0.};
+
+		// get the current scene object
+		Scene scene;
         scene.add(terrain);
+		addScene(scene);
     }
     
     virtual void gameLoop() override {
         iTime += 1;
-        for(int i = 0; i < scene.get('terr').getRows(); i++){
-            for(int j = 0; j < scene.get('terr').getCols(); j++){
-                scene.get('terr').vertices[i][j] = sin(iTime + i + j) * 100;
-                scene.get('terr').colors[i][j] = [sin(iTime + i), sin(iTime + i+ j), sin(iTime + j)]
-            }
+		Scene sc = getCurrentScene();
+		vector<float> verts = sc.get("terr").getVertices();
+		vector<float> cols  = sc.get("terr").getColors();
+        for(int i = 0; i < sc.get("terr").getRows(); i++){
+			for(int j = 0; j < sc.get("terr").getCols(); j++){
+				verts.push_back(sin(iTime + i + j) * 100);
+				cols.push_back(sin(iTime + i));
+				cols.push_back(sin(iTime + i+j));
+				cols.push_back(sin(iTime + j));
+			}
         }
     }
 };
