@@ -50,7 +50,7 @@ int main(int argc, char **argv) {
 	for (auto k : elev_data.getData()) 
 			verts.push_back (k);
 //	TerrainMesh terrain(elev_data.getRows(), elev_data.getCols(), verts); 
-	TerrainMesh terrain(5, 5, verts); 
+	TerrainMesh terrain("terr", 5, 5, verts); 
 
 
 
