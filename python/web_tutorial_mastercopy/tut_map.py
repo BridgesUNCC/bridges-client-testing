@@ -1,16 +1,16 @@
 from bridges import *
 
 def main():
-    args = sys.argv[1:]
 
     # create the Bridges object, set credentials
     # if TESTING
     # command line args provide credentials and server to test on
+    args = sys.argv[1:]
     bridges = Bridges(int(args[0]), args[1], args[2])
     if len(args) > 3:
         bridges.connector.set_server(args[3])
     # else
-    bridges = Bridges(ASSIGNMENT_NUMBER, "USER_ID", "API_KEY")
+        bridges = Bridges(ASSIGNMENT_NUMBER, "USER_ID", "API_KEY")
     # endif
 
     #Set the projection to equirectangular. Currently for using the World map

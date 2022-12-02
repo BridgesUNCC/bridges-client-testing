@@ -9,7 +9,6 @@ LANGUAGEHTMLLOG=${HTMLLOG}
 . ./functions.sh
 . ./html_functions.sh
 
-
 check_tools
 
 clean_html_log
