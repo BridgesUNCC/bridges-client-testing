@@ -23,8 +23,7 @@ public class purposefully_breaking {
 		//  set array dimensions, allocate array of elements
 		int arraySize = 1;
 		int SIZE = 17*1000*1000;
-		//int SIZE = 17;
-		
+				
 		Array1D<Integer> arr = new Array1D<Integer> (arraySize);
 
 		// populate the array, with squares of indices
