@@ -15,12 +15,12 @@ using namespace std;
 using namespace bridges;
 using namespace bridges::game;
 
-struct test: public NonBlockingGame3D {
+struct Test3DAPI: public NonBlockingGame3D {
     int frame;
     bool flag;
     double iTime;
     
-    test(int assID, string username, string apikey): NonBlockingGame3D(0, username, apikey){
+    Test3DAPI(int assID, string username, string apikey): NonBlockingGame3D(0, username, apikey){
         frame = 0;
         flag = true;
         iTime = 0.0;
@@ -29,11 +29,15 @@ struct test: public NonBlockingGame3D {
     virtual void initialize() override {
         DataSource ds;
         dataset::ElevationData elev_data;
-        elev_data = ds.getElevationData(33.394759, -122.299805, 42.747012,
-                                        -114.916992, 0.2);
+		elev_data = ds.getElevationData(33.394759, -122.299805, 42.747012,
+											-114.916992, 0.2);
+//		elev_data = ds.getElevationData(33.394759, -122.299805, 36.747012,
+//											-118.916992, 0.2);
         vector<float> verts;
-        for (auto k : elev_data.getData())
-                verts.push_back (k);
+		for (auto v : elev_data.getData()) 
+                verts.push_back (v);
+
+
         TerrainMesh terrain("terr", elev_data.getRows(), elev_data.getCols(), 
 												verts);
         float position[] = {0., 0., 0.};
@@ -59,8 +63,13 @@ struct test: public NonBlockingGame3D {
         }
     }
 };
-int main() {
-    test game(600, "USERNAME", "ID");
-    game.start();
+int main(int argc, char** argv) {
+#if TESTING
+	// command line args provide credentials and server to test on
+	Test3DAPI terrain_navigation(atoi(argv[1]), argv[2], argv[3]);
+#else
+	Test3DAPI terrain_navigation(10, "kalpathi60", "486749122386");
+#endif
+	terrain_navigation.start();
 }
 
