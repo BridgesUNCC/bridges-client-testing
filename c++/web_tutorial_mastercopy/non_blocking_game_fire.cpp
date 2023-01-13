@@ -23,7 +23,8 @@ struct my_game : public NonBlockingGame {
   }
 
   virtual void gameLoop() override {
-    if (keyUpFire()) 
+    //even with the button pressed, X will only appear every 20 frames
+    if (keyUpFire())  
       drawSymbol(0, 0, NamedSymbol::X, NamedColor::black);
     else
       drawSymbol(0, 0, NamedSymbol::none, NamedColor::black);
