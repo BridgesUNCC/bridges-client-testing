@@ -10,16 +10,19 @@ struct my_game : public NonBlockingGame {
   }
 
   virtual void initialize() override {
-      drawSymbol(0, 2, NamedSymbol::F, NamedColor::black);
-  }
+    keyUpSetupFire(20);  // only fire every 20 frames
 
-  virtual void gameLoop() override {
+    // setup display
     for (int r = 0; r < 3; r++) {
       for (int c = 0; c < 3; c++) {
         setBGColor(r, c, NamedColor::white);
       }
     }
 
+    drawSymbol(0, 2, NamedSymbol::F, NamedColor::black);
+  }
+
+  virtual void gameLoop() override {
     if (keyUpFire()) 
       drawSymbol(0, 0, NamedSymbol::X, NamedColor::black);
     else
