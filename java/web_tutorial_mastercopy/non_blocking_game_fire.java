@@ -15,6 +15,7 @@ public class non_blocking_game_fire extends NonBlockingGame {
 	  }
 
       drawSymbol(0, 2, NamedSymbol.F, NamedColor.black);
+      keyUpSetupFire(20);
   }
 
   public void gameLoop() {
