@@ -35,7 +35,11 @@ int main(int argc, char **argv) {
 	catch (std::string s) {
 		std::cerr << "Exception: " << s << "\n";
 	}
+	catch (char const* s) {
+		std::cerr << "Exception: " << s << "\n";
+	}
 
+	
 	// print the data dimensions  and the firs 10 elevation data values
 	cout << "\tWidth: " << elev_data.getCols() << endl
 		<< "\tHeight: " << elev_data.getRows() << endl
