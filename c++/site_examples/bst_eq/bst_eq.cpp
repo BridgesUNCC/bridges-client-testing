@@ -13,14 +13,15 @@ using namespace std;
 
 using namespace bridges;
 
-int max_quakes = 1000;
+int max_quakes = 500;
 
 int main(int argc, char **argv) {
 	string hilite_color = "orange", 
 			def_color = "green",
 			end_color = "red";
 		
-	Bridges *bridges = new Bridges(101, argv[1], argv[2]);
+	Bridges *bridges = new Bridges(137, argv[1], argv[2]);
+cout << argv[1] << "," << argv[2] << endl;
 
 								// read the earth quake  data and build the BST
 	bridges->setTitle("Recent Earthquakes (USGIS Data)");
