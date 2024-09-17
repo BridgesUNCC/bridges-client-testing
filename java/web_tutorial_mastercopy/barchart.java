@@ -23,6 +23,19 @@ public class barchart {
 
 		BarChart bar = new BarChart();
 		bar.setTitle("Bar Chart Example");
+		bar.setSubTitle ("Example illustrating how to build bar charts in Java");
+		bar.setBinsLabel("Country");
+		bar.setSeriesLabel("Population");
+		bar.setBarAlignment("horizontal");
+		bar.setTooltipSuffix(" millions");
+
+		Vector<String> bins = new Vector<String>();
+			bins.add("Africa");
+			bins.add("America");
+			bins.add("Asia");
+			bins.add("Europe");
+
+		bar.setSeriesBins(bins);
 
 		double y1[] = new double[] {10, 100, 40, 23};
 		double y2[] = new double[] {100, 10, 80, 232};
