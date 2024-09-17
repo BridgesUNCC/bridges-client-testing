@@ -1,5 +1,5 @@
 /**
- * Created by Kalpathi Subramanian, 1/30/18
+ * Created by Kalpathi Subramanian, 9/15/2024
  * krs@uncc.edu
  */
 
@@ -31,11 +31,11 @@ int main (int argc, char **argv) {
 	bar.setTitle("Hello World BarChart!");
 	bar.setSubTitle("Woah!");
 	bar.setBinsLabel("Country");
-	bar.setSeriesLabel("Population");
-	bar.setBarAlignment("horizontal");
+	bar.setValueLabel("Population (in millions)");
+	bar.setBarOrientation("horizontal");
 	bar.setTooltipSuffix(" millions");
 
-	vector<string> bins{"africa", "america", "Asia", "Europe"};
+	vector<string> bins{"Africa", "America", "Asia", "Europe"};
 	bar.setSeriesBins(bins);
 
 	vector<double> y1{10, 100, 40, 23};
