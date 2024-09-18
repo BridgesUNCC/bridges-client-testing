@@ -21,7 +21,7 @@ def main():
 
     bc = BarChart()
     bc.title = "Hello World BarChart!"
-    bc.subtitle = "Hello World BarChart!"
+    bc.subtitle = "woah!"
     bc.categories_label = "Continents"
     bc.value_label = "Population (in millions)"
     bc.orientation = "horizontal"
