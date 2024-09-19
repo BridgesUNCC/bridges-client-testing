@@ -3,7 +3,7 @@ import bridges.base.*;
 
 class game_size_test extends NonBlockingGame {
 	public game_size_test(int assignmentnumber, String username, String apikey) {
-		super (assignmentnumber, username,  apikey, 10, 20);
+		super (assignmentnumber, username,  apikey, 10, 10);
 	}
 
 	public void initialize() {
@@ -12,9 +12,9 @@ class game_size_test extends NonBlockingGame {
 				setBGColor(i, j, NamedColor.ivory);
 
 		drawSymbol(0, 0, NamedSymbol.U, NamedColor.red);
-		drawSymbol(0, 19, NamedSymbol.N, NamedColor.green);
-		drawSymbol(9, 0, NamedSymbol.C, NamedColor.blue);
-		drawSymbol(9, 19, NamedSymbol.C, NamedColor.cyan);
+		drawSymbol(0, 9, NamedSymbol.N, NamedColor.green);
+		drawSymbol(9, 9, NamedSymbol.C, NamedColor.blue);
+		drawSymbol(9, 0, NamedSymbol.C, NamedColor.cyan);
 	}
 
 	public void gameLoop() {
