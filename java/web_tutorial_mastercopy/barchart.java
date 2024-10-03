@@ -24,9 +24,9 @@ public class barchart {
 		BarChart bar = new BarChart();
 		bar.setTitle("Bar Chart Example");
 		bar.setSubTitle ("Example illustrating how to build bar charts in Java");
-		bar.setBinsLabel("Country");
-		bar.setSeriesLabel("Population");
-		bar.setBarAlignment("horizontal");
+		bar.setCategoriesLabel("Continent");
+		bar.setValueLabel("Population (in millions)");
+		bar.setBarOrientation("horizontal");
 		bar.setTooltipSuffix(" millions");
 
 		Vector<String> bins = new Vector<String>();
@@ -35,12 +35,13 @@ public class barchart {
 			bins.add("Asia");
 			bins.add("Europe");
 
-		bar.setSeriesBins(bins);
+		bar.setCategories(bins);
 
 		double y1[] = new double[] {10, 100, 40, 23};
 		double y2[] = new double[] {100, 10, 80, 232};
 		bar.addDataSeries("year 1", y1);
 		bar.addDataSeries("year 2", y2);
+
 		bridges.setDataStructure(bar);
 		bridges.visualize();
 	}
