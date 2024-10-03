@@ -23,7 +23,6 @@ def main():
     bridges.set_coord_system_type('albersusa')
     bridges.set_map_overlay(True)
     bridges.set_map(state_info)
-    bridges.set_json_flag(True)
 
     #placeholder for assigning a viz type to BRIDGES
     el0 = DLelement()
