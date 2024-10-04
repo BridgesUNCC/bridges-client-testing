@@ -32,16 +32,18 @@ int main(int argc, char **argv) {
 
 
 	vector<string> states = {"North Carolina","Georgia"};
-	vector<State> state_info = ds.getUSStateCountyData (states);
+	vector<State> map_data = ds.getUSStateCountyMapData (states);
+
+	bridges.setMap(map_data);
 
 	// print info
-	for (auto st : state_info) {
+	for (auto st : map_data) {
 		cout << "State: " << st.getStateName() << "\n";
-		vector<County> counties = st.getCounties();
+		unordered_map<int, County> counties = st.getCounties();
 		int k = 0; 
 		for (auto c : counties) {
 			if (k++ < 10)
-			cout <<  "\t" << c.getCountyName() << endl; 
+			cout <<  "\t" << c.second.getCountyName() << endl; 
 		}
 	}
 
