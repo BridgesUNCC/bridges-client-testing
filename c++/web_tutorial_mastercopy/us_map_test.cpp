@@ -34,6 +34,10 @@ int main(int argc, char **argv) {
 	vector<string> states = {"North Carolina","Georgia"};
 	vector<bridges::dataset::State> map_data = ds.getUSStateCountyMapData (states);
 
+	// now do what needs to be done as part of your assignment
+	// 
+
+	// this will prepare the dataset for visualization
 	bridges.setMap(map_data, ds);
 
 	// print info
