@@ -32,9 +32,9 @@ int main(int argc, char **argv) {
 
 
 	vector<string> states = {"North Carolina","Georgia"};
-	vector<State> map_data = ds.getUSStateCountyMapData (states);
+	vector<bridges::dataset::State> map_data = ds.getUSStateCountyMapData (states);
 
-	bridges.setMap(map_data);
+	bridges.setMap(map_data, ds);
 
 	// print info
 	for (auto st : map_data) {
