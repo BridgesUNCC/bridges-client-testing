@@ -6,6 +6,7 @@ using namespace std;
 #include "DataSource.h"
 #include "data_src/State.h"
 #include "data_src/County.h"
+#include "USMaps.h"
 
 using namespace bridges;
 
@@ -26,7 +27,7 @@ int main(int argc, char **argv) {
 	// set title
 	bridges.setTitle("Accessing US State County Maps");
 
-	DataSource ds (&bridges);
+	DataSource ds(&bridges);
 
 	cout << "Retrieving US State County Map Data" << endl;
 
@@ -34,12 +35,14 @@ int main(int argc, char **argv) {
 	vector<string> states = {"North Carolina","Georgia"};
 	vector<bridges::dataset::State> map_data = ds.getUSStateCountyMapData (states);
 
+	USMaps us_maps;
+	us_maps.setMap(map_data);
+
+	// 
 	// now do what needs to be done as part of your assignment
 	// 
 
 	// this will prepare the dataset for visualization
-	bridges.setMap(map_data, ds);
-
 	// print info
 	for (auto st : map_data) {
 		cout << "State: " << st.getStateName() << "\n";
@@ -50,6 +53,8 @@ int main(int argc, char **argv) {
 			cout <<  "\t" << c.second.getCountyName() << endl; 
 		}
 	}
+
+	bridges.setDataStructure(&us_maps);
 
 	return 0;
 }
