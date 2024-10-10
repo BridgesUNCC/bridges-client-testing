@@ -32,7 +32,7 @@ int main(int argc, char **argv) {
 	cout << "Retrieving US State County Map Data" << endl;
 
 
-	vector<string> states = {"North Carolina","Georgia"};
+	vector<string> states = {"Vermont", "Iowa"};
 	vector<bridges::dataset::State> map_data = ds.getUSStateCountyMapData (states);
 
 	USMaps us_maps;
@@ -46,7 +46,7 @@ int main(int argc, char **argv) {
 	// print info
 	for (auto st : map_data) {
 		cout << "State: " << st.getStateName() << "\n";
-		unordered_map<int, County> counties = st.getCounties();
+		unordered_map<string, County> counties = st.getCounties();
 		int k = 0; 
 		for (auto c : counties) {
 			if (k++ < 10)
@@ -55,6 +55,7 @@ int main(int argc, char **argv) {
 	}
 
 	bridges.setDataStructure(&us_maps);
+	bridges.visualize();
 
 	return 0;
 }
