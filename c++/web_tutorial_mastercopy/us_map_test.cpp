@@ -35,8 +35,7 @@ int main(int argc, char **argv) {
 	vector<string> states = {"Vermont", "Iowa"};
 	vector<bridges::dataset::State> map_data = ds.getUSStateCountyMapData (states);
 
-	USMaps us_maps;
-	us_maps.setMap(map_data);
+	USMap us_maps(map_data);
 
 	// 
 	// now do what needs to be done as part of your assignment
@@ -55,6 +54,7 @@ int main(int argc, char **argv) {
 	}
 
 	bridges.setDataStructure(&us_maps);
+bridges.setJSONFlag(true);
 	bridges.visualize();
 
 	return 0;
