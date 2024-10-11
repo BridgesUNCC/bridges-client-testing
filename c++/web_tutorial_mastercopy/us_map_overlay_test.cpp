@@ -6,7 +6,7 @@ using namespace std;
 #include "DataSource.h"
 #include "data_src/State.h"
 #include "data_src/County.h"
-#include "USMaps.h"
+#include "USMap.h"
 
 using namespace bridges;
 
@@ -32,7 +32,8 @@ int main(int argc, char **argv) {
 	cout << "Retrieving US State County Map Data" << endl;
 
 
-	vector<string> states = {"Vermont", "Iowa", "North Carolina"};
+//	vector<string> states = {"Vermont", "Iowa", "North Carolina"};
+	vector<string> states = {"Vermont"};
 	vector<bridges::dataset::State> map_data = ds.getUSStateCountyMapData (states);
 	USMap us_maps(map_data);
 	bridges.setMap(us_maps);
