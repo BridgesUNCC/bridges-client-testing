@@ -109,6 +109,7 @@ int main(int argc, char **argv) {
 	// set visualizer type
 	bridges.setDataStructure(sc);
 
+
 	// visualize the JSON and Collection
 	bridges.visualize();
 
