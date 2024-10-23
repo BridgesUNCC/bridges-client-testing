@@ -43,7 +43,6 @@ int main(int argc, char **argv) {
 	
 	
 	bridges.setDataStructure(el0);
-//	bridges.setJSONFlag(true);
 	bridges.visualize();
 
 	return 0;
