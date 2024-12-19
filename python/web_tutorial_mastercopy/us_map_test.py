@@ -23,11 +23,11 @@ def main():
     bridges.set_coord_system_type('albersusa')
     bridges.set_map_overlay(True)
     bridges.set_map(state_info)
-    bridges.set_json_flag(True)
 
     #placeholder for assigning a viz type to BRIDGES
     el0 = DLelement()
 
+    bridges.set_json_flag = 1
     #visualizes iowa and california with counties
     bridges.set_data_structure(el0)
     bridges.visualize()
@@ -43,6 +43,7 @@ def main():
         state_info[i].fill_color = 'red'
 
     bridges.visualize()
+    bridges.set_json_flag = 0
 
     #show counties and make color green, stroke black, and width 1.0
     for i in range(len(state_info)):

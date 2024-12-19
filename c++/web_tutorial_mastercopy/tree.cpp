@@ -55,7 +55,6 @@ int main(int argc, char **argv) {
 
 	// provide BRIDGES the  handle to the tree structure
 	bridges.setDataStructure(t0);
-
 	bridges.visualize();
 
 	delete t0;
