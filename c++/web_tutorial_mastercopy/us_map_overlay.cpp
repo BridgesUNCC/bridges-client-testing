@@ -32,8 +32,8 @@ int main(int argc, char **argv) {
 	cout << "Retrieving US State County Map Data" << endl;
 
 
-	vector<string> states = {"Vermont", "Iowa", "North Carolina"};
-	//	vector<string> states = {"Vermont"};
+	// vector<string> states = {"Vermont", "Iowa", "North Carolina"};
+	vector<string> states = {"all"};
 	vector<bridges::dataset::State> map_data = ds.getUSStateCountyMapData (states);
 	{
 	  auto& s = map_data[0];
