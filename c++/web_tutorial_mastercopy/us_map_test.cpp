@@ -33,9 +33,9 @@ int main(int argc, char **argv) {
 
 
 	vector<string> states = {"Vermont", "Iowa"};
-	vector<bridges::dataset::State> map_data = ds.getUSStateCountyMapData (states);
+	vector<bridges::dataset::State> 
+		map_data = ds.getUSStateCountyMapData (states);
 
-	USMap us_maps(map_data);
 
 	// 
 	// now do what needs to be done as part of your assignment
@@ -43,15 +43,18 @@ int main(int argc, char **argv) {
 
 	// this will prepare the dataset for visualization
 	// print info
-	for (auto st : map_data) {
+	for (auto& st : map_data) {
 		cout << "State: " << st.getStateName() << "\n";
 		unordered_map<string, County> counties = st.getCounties();
+		st.setViewCountiesFlag(false);
 		int k = 0; 
 		for (auto c : counties) {
+			c.second.setHideFlag(true);
 			if (k++ < 10)
 			cout <<  "\t" << c.second.getCountyName() << endl; 
 		}
 	}
+	USMap us_maps(map_data);
 
 	bridges.setDataStructure(&us_maps);
 bridges.setJSONFlag(true);

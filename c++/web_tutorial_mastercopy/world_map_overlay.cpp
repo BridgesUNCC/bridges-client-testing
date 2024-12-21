@@ -6,7 +6,7 @@ using namespace std;
 #include "DataSource.h"
 #include "data_src/State.h"
 #include "data_src/County.h"
-#include "USMaps.h"
+#include "USMap.h"
 
 using namespace bridges;
 
