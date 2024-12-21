@@ -32,9 +32,10 @@ int main(int argc, char **argv) {
 	cout << "Retrieving US State County Map Data" << endl;
 
 
-	// vector<string> states = {"Vermont", "Iowa", "North Carolina"};
-	vector<string> states = {"all"};
-	vector<bridges::dataset::State> map_data = ds.getUSStateCountyMapData (states);
+	// case 1 : map and counties  of  a few states
+	bridges.setDescription("3 US states, with/without counties");
+	vector<string> states = {"Vermont", "Iowa", "North Carolina"};
+	vector<bridges::dataset::State> map_data = ds.getUSMapCountyData (states, true);
 	{
 	  auto& s = map_data[0];
 	  s.setViewCountiesFlag(true);
@@ -50,14 +51,28 @@ int main(int argc, char **argv) {
 	    c.second.setFillColor(Color(0,0,25));
 	  }
 	}
+
 	USMap us_maps(map_data);
 	bridges.setMap(us_maps);
 	
 	SLelement<string>  *el0 = new SLelement<string> ("Charlotte", "Go Niners!");
 	el0->setLocation(-80.8431, 35.2271); //35.2271N, 80.8431W
-	
-	
 	bridges.setDataStructure(el0);
+
+	bridges.visualize();
+
+	// case 2:  all states, no counties
+	bridges.setDescription("All US states, No Counties");
+	map_data = ds.getUSMapData (); // all states, no counties
+	us_maps.setStateData(map_data);
+	bridges.setMap (us_maps);
+	bridges.visualize();
+
+	// case 3:  all states, all counties
+	bridges.setDescription("All US states, All Counties");
+	map_data = ds.getUSMapCountyData (); // all states, no counties
+	us_maps.setStateData(map_data);
+	bridges.setMap (us_maps);
 	bridges.visualize();
 
 	return 0;
