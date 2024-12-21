@@ -32,9 +32,24 @@ int main(int argc, char **argv) {
 	cout << "Retrieving US State County Map Data" << endl;
 
 
-//	vector<string> states = {"Vermont", "Iowa", "North Carolina"};
-	vector<string> states = {"Vermont"};
+	vector<string> states = {"Vermont", "Iowa", "North Carolina"};
+	//	vector<string> states = {"Vermont"};
 	vector<bridges::dataset::State> map_data = ds.getUSStateCountyMapData (states);
+	{
+	  auto& s = map_data[0];
+	  s.setViewCountiesFlag(true);
+	  s.setStrokeColor(Color(255,0,0));
+	  s.setFillColor(Color(0,255,0));
+	  s.setViewCountiesFlag(false);
+	}
+	{
+	  auto& s = map_data[1];
+
+	  for (auto& c: s.accessCounties()) {
+	    c.second.setStrokeColor(Color(50,250,50));
+	    c.second.setFillColor(Color(0,0,25));
+	  }
+	}
 	USMap us_maps(map_data);
 	bridges.setMap(us_maps);
 	
