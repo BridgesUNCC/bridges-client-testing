@@ -29,6 +29,7 @@ public class us_map_test {
 		// case 1 : map and counties  of  a few states
 		bridges.setDescription("3 US states, with and without counties");
 		String[] states = {"Vermont", "Iowa", "North Carolina"};
+	//	String[] states = {"North Carolina"};
 		Vector<State> map_data = ds.getUSMapCountyData (states, true);
 
 		State s = map_data.get(0);
