@@ -1,4 +1,5 @@
 import java.util.Vector;
+import java.util.Map;
 import bridges.connect.Bridges;
 import bridges.connect.DataSource;
 import bridges.data_src_dependent.State;
@@ -26,7 +27,7 @@ public class us_map_test {
 		DataSource ds = bridges.getDataSource();
 
 		// case 1 : map and counties  of  a few states
-		bridges.setDescription("3 US states, with/without counties");
+		bridges.setDescription("3 US states, with and without counties");
 		String[] states = {"Vermont", "Iowa", "North Carolina"};
 		Vector<State> map_data = ds.getUSMapCountyData (states, true);
 
@@ -36,16 +37,15 @@ public class us_map_test {
 		s.setFillColor(new Color(0,255,0));
 		s.setViewCountiesFlag(false);
 
-/*
 		{
-			State s = map_data.get(1);
+			s = map_data.get(1);
 
-			for (County c: s.accessCounties()) {
-				c.second.setStrokeColor(Color(50,250,50));
-				c.second.setFillColor(Color(0,0,25));
+			for (Map.Entry<String,County> e: s.accessCounties().entrySet()) {
+				County c = e.getValue();
+				c.setStrokeColor(new Color(50,250,50));
+				c.setFillColor(new Color(0,0,25));
 			}
 		}
-*/
 
 		USMap us_maps = new USMap(map_data);
 		bridges.setMap(us_maps);
@@ -53,8 +53,20 @@ public class us_map_test {
 		SLelement<String>  el0 = new SLelement<String>("Charlotte", "Go Niners!");
 		el0.setLocation(-80.8431, 35.2271); //35.2271N, 80.8431W
 		bridges.setDataStructure(el0);
-		bridges.setJSONFlag(true);
+		bridges.visualize();
 
-//		bridges.visualize();
+		// case 2:  all states, no counties
+		bridges.setDescription("All US states, No Counties");
+		map_data = ds.getUSMapData(); // all states, no counties
+		us_maps.setStateData(map_data);
+		bridges.setMap(us_maps);
+		bridges.visualize();
+
+		// case 3:  all states, all counties
+		bridges.setDescription("All US states, All Counties");
+		map_data = ds.getUSMapCountyData (); // all states, no counties
+		us_maps.setStateData(map_data);
+		bridges.setMap (us_maps);
+		bridges.visualize();
 	}
 }
