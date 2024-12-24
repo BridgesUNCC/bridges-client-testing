@@ -75,5 +75,7 @@ int main(int argc, char **argv) {
 	bridges.setMap (us_maps);
 	bridges.visualize();
 
+	delete el0;
+	
 	return 0;
 }
