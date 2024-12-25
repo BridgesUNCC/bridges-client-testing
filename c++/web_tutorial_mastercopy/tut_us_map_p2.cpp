@@ -51,5 +51,7 @@ int main(int argc, char **argv) {
 	//visualize
 	bridges.visualize();
 
+	delete el0;
+	
 	return 0;
 }
