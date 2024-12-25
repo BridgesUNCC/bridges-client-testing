@@ -10,7 +10,7 @@ using namespace std;
 
 using namespace bridges;
 
-// This program illustrates how to access the data of the US map with state
+// This tutorial illustrates how to access the data of the US map with state
 // boundaries with different colors for states and its boundaries
 // It also illustrates how to draw all the counties 
 int main(int argc, char **argv) {

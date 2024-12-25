@@ -27,7 +27,7 @@ int main(int argc, char **argv) {
 #endif
 
 	// set title
-	bridges.setTitle("Tutorial: Drawing US Map with State Boundaries");
+	bridges.setTitle("Tutorial: Drawing US Map with States and Counties");
 	bridges.setDescription("3 US states, with different attributes");
 
 	// create a data source object
@@ -50,6 +50,7 @@ int main(int argc, char **argv) {
 
 	// the second state  we will draw with counties and set their colors
 	auto s2 = map_data[1];
+	// iterate over the counties
 	for (auto& c: s2.accessCounties()) {
 		c.second.setStrokeColor(Color(50,250,50));
 		c.second.setFillColor(Color(0,0,25));
