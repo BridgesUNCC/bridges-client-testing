@@ -4,8 +4,8 @@ using namespace std;
 
 #include "Bridges.h"
 #include "DataSource.h"
-#include "data_src/State.h"
-#include "data_src/County.h"
+#include "data_src/USState.h"
+#include "data_src/USCounty.h"
 #include "USMap.h"
 
 using namespace bridges;
@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
 	DataSource ds(&bridges);
 	
 	// get us map data - all states and counties
-	vector<bridges::dataset::State> map_data = ds.getUSMapCountyData (); 
+	vector<bridges::dataset::USState> map_data = ds.getUSMapCountyData (); 
 
 	// create a USMap object with the map data
 	USMap us_maps(map_data);

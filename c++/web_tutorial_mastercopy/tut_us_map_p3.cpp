@@ -4,8 +4,8 @@ using namespace std;
 
 #include "Bridges.h"
 #include "DataSource.h"
-#include "data_src/State.h"
-#include "data_src/County.h"
+#include "data_src/USState.h"
+#include "data_src/USCounty.h"
 #include "USMap.h"
 
 using namespace bridges;
@@ -38,7 +38,7 @@ int main(int argc, char **argv) {
 	
 	// get us map data - all states and counties
 	// we also retrieve the counties, using the second argument
-	vector<bridges::dataset::State> map_data = ds.getUSMapCountyData (states, true); 
+	vector<bridges::dataset::USState> map_data = ds.getUSMapCountyData (states, true); 
 
 	// we will draw the first state without counties and set fill and boundary 
 	// colors - use the viewCounties() flag to ignore counties

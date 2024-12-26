@@ -4,8 +4,8 @@ using namespace std;
 
 #include "Bridges.h"
 #include "DataSource.h"
-#include "data_src/State.h"
-#include "data_src/County.h"
+#include "data_src/USState.h"
+#include "data_src/USCounty.h"
 #include "USMap.h"
 
 using namespace bridges;
@@ -33,7 +33,7 @@ int main(int argc, char **argv) {
 
 
 	vector<string> states = {"Vermont", "Iowa"};
-	vector<bridges::dataset::State> 
+	vector<bridges::dataset::USState> 
 		map_data = ds.getUSStateCountyMapData (states);
 
 
@@ -57,7 +57,6 @@ int main(int argc, char **argv) {
 	USMap us_maps(map_data);
 
 	bridges.setDataStructure(&us_maps);
-bridges.setJSONFlag(true);
 	bridges.visualize();
 
 	return 0;

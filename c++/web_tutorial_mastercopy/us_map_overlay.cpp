@@ -4,8 +4,8 @@ using namespace std;
 
 #include "Bridges.h"
 #include "DataSource.h"
-#include "data_src/State.h"
-#include "data_src/County.h"
+#include "data_src/USState.h"
+#include "data_src/USCounty.h"
 #include "USMap.h"
 
 using namespace bridges;
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
 	// case 1 : map and counties  of  a few states
 	bridges.setDescription("3 US states, with/without counties");
 	vector<string> states = {"Vermont", "Iowa", "North Carolina"};
-	vector<bridges::dataset::State> map_data = ds.getUSMapCountyData (states, true);
+	vector<bridges::dataset::USState> map_data = ds.getUSMapCountyData (states, true);
 	{
 	  auto& s = map_data[0];
 	  s.setViewCountiesFlag(true);

@@ -4,14 +4,9 @@ using namespace std;
 
 #include "Bridges.h"
 #include "DataSource.h"
-#include "data_src/State.h"
-#include "data_src/County.h"
-#include "USMap.h"
 
 using namespace bridges;
 
-// this program illustrates how to access the data of the US state county
-// maps and apply attributes to them
 int main(int argc, char **argv) {
 
 	// create bridges object
@@ -25,11 +20,9 @@ int main(int argc, char **argv) {
 #endif
 
 	// set title
-	bridges.setTitle("Accessing US State County Maps");
+	bridges.setTitle("Using World Map overlay");
 
 	DataSource ds(&bridges);
-
-	cout << "Retrieving US State County Map Data" << endl;
 
 	bridges.setMapOverlay(true);
 	bridges.setCoordSystemType("equirectangular");
@@ -40,7 +33,6 @@ int main(int argc, char **argv) {
 	
 	
 	bridges.setDataStructure(el0);
-	bridges.setJSONFlag(true);
 	bridges.visualize();
 
 	return 0;
