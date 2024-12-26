@@ -10,9 +10,8 @@ using namespace std;
 
 using namespace bridges;
 
-// This tutorial illustrates how to access the data of the US map with state
-// boundaries with different colors for states and its boundaries
-// It also illustrates how to draw all the counties 
+// this program illustrates how to access the data of the US state county
+// maps and apply attributes to them
 int main(int argc, char **argv) {
 
 	// create bridges object
@@ -26,23 +25,21 @@ int main(int argc, char **argv) {
 #endif
 
 	// set title
-	bridges.setTitle("Tutorial: Drawing US Map with State Boundariess");
+	bridges.setTitle("Overlaying Data Structure on a US Map");
 	bridges.setDescription("All US states, No Counties");
-
-	// create a data source object
-	DataSource ds(&bridges);
 	
-	// get us map data - all states and counties
-	vector<bridges::dataset::USState> map_data = ds.getUSMapCountyData (); 
+	//Some BRIDGES visualization with location
+	SLelement<string>  *el0 = new SLelement<string> ("Charlotte", "Go Niners!");
+	el0->setLocation(-80.8431, 35.2271); //35.2271N, 80.8431W
+	bridges.setDataStructure(el0);
 
-	// create a USMap object with the map data
+	DataSource ds(&bridges);
+	vector<bridges::dataset::USState> map_data = ds.getUSMapData (); 
 	USMap us_maps(map_data);
-
-	// set the data structure to the map
-	bridges.setDataStructure(&us_maps);
-
-	//visualize
+	bridges.setMap (us_maps);
 	bridges.visualize();
+
+	delete el0;
 	
 	return 0;
 }

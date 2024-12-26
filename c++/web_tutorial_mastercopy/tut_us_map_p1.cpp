@@ -33,24 +33,15 @@ int main(int argc, char **argv) {
 	
 	// get us map data - states and boundaries
 	vector<bridges::dataset::USState> map_data = ds.getUSMapData (); 
-
 	// create a USMap object with the map data
 	USMap us_maps(map_data);
 
-	// pass it to BRIDGES 
-	bridges.setMap (us_maps);
 
-	// Plot Charlotte, NC 
-	SLelement<string>  *el0 = new SLelement<string> ("Charlotte", "Go Niners!");
-	el0->setLocation(-80.8431, 35.2271); //35.2271N, 80.8431W
-
-	// set the data structure
-	bridges.setDataStructure(el0);
+	// set the data structure to the map
+	bridges.setDataStructure(&us_maps);
 
 	//visualize
 	bridges.visualize();
-
-	delete el0;
 	
 	return 0;
 }

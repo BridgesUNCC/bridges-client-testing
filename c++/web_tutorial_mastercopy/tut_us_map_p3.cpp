@@ -43,13 +43,12 @@ int main(int argc, char **argv) {
 	// we will draw the first state without counties and set fill and boundary 
 	// colors - use the viewCounties() flag to ignore counties
 	auto& s = map_data[0];
-	s.setViewCountiesFlag(true);
 	s.setStrokeColor(Color(255,0,0));
 	s.setFillColor(Color(0,255,0));
 	s.setViewCountiesFlag(false);
 
 	// the second state  we will draw with counties and set their colors
-	auto s2 = map_data[1];
+	auto& s2 = map_data[1];
 	// iterate over the counties
 	for (auto& c: s2.accessCounties()) {
 		c.second.setStrokeColor(Color(50,250,50));
@@ -61,20 +60,11 @@ int main(int argc, char **argv) {
 	// create a USMap object with the map data
 	USMap us_maps(map_data);
 
-	// pass it to BRIDGES 
-	bridges.setMap (us_maps);
-
-	// Plot Charlotte, NC 
-	SLelement<string>  *el0 = new SLelement<string> ("Charlotte", "Charlotte, Go Niners!");
-	el0->setLocation(-80.8431, 35.2271); //35.2271N, 80.8431W
-
 	// set the data structure
-	bridges.setDataStructure(el0);
+	bridges.setDataStructure(&us_maps);
 
 	//visualize
 	bridges.visualize();
-
-	delete el0;
 	
 	return 0;
 }
