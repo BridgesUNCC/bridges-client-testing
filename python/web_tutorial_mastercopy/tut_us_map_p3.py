@@ -32,7 +32,7 @@ def main():
     # the second state  we will draw with counties and set their colors
     for c in state_info[1].counties:
         c.stroke_color = Color(50, 250, 50)
-        c.fill_color = Color(0, 0, 25)
+        c.fill_color = Color(0,0,170)
 
     # the third state will use default colors
     
