@@ -25,7 +25,7 @@ public class tut_us_map_p2 {
 		Bridges bridges = new Bridges (YOUR_ASSSIGNMENT_NUMBER, "YOUR_USER_ID", "YOUR_API_KEY");
 #endif
 		// set title, description
-		bridges.setTitle("Tutorial: Drawing US Map with State Boundariess, and State Counties");
+		bridges.setTitle("Tutorial: Drawing US Map with State Boundaries, and State Counties");
 		bridges.setDescription("All US states, All Counties");
 
 		// get data source object

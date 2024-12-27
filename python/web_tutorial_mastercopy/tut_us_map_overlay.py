@@ -26,34 +26,12 @@ def main():
 
     #placeholder for assigning a viz type to BRIDGES
     el0 = DLelement()
+    el0.set_location(-80.8431, 35.2271) # Charlotte, NC: 35.2271N, 80.8431W
 
-    bridges.set_json_flag = 1
     #visualizes iowa and california with counties
     bridges.set_data_structure(el0)
     bridges.visualize()
 
-    #hides all counties and only shows state outline
-    for i in range(len(state_info)):
-        state_info[i].view_counties = False
-
-    bridges.visualize()
-
-    #colors states red
-    for i in range(len(state_info)):
-        state_info[i].fill_color = 'red'
-
-    bridges.visualize()
-    bridges.set_json_flag = 0
-
-    #show counties and make color green, stroke black, and width 1.0
-    for i in range(len(state_info)):
-        state_info[i].view_counties = True
-        for j in range(len(state_info[i].counties)):
-            state_info[i].counties[j].fill_color = 'green'
-            state_info[i].counties[j].stroke_color = 'black'
-            state_info[i].counties[j].width = 1.0
-
-    bridges.visualize()
 
 
 

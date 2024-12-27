@@ -43,10 +43,9 @@ public class tut_us_map_p3 {
 		// fill and boundary colors - use the viewCounties() flag to 
 		// ignore counties
 		USState s = map_data.get(0);
-        s.setViewCountiesFlag(true);
-        s.setStrokeColor(new Color(255,0,0));
-        s.setFillColor(new Color(0,255,0));
-        s.setViewCountiesFlag(false);
+		s.setStrokeColor(new Color(255,0,0));
+		s.setFillColor(new Color(0,255,0));
+		s.setViewCountiesFlag(false);
 
 		// the second state  we will draw with counties and set their colors
 		USState s2 = map_data.get(1);
