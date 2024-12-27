@@ -19,7 +19,13 @@ def main():
     bridges.set_title("Test of US Map with State Boundaries")
 
     #pass no parameters for the whole map
-    state_info = get_map(['iowa', 'california', 'north carolina'])
+    state_info = get_us_map_county_data(['Vermont', 'Iowa', 'North Carolina'])
+    for s in state_info:
+        if s.state_name == "North Carolina":
+            for c in s.counties:
+                if c.geoid == "37119": #access by FIPS code
+                    c.fill_color = Color(0,255,0)
+                
 
     my_map = USMap(state_info)
     bridges.set_map(my_map)
@@ -27,7 +33,8 @@ def main():
     #placeholder for assigning a viz type to BRIDGES
     el0 = DLelement()
     el0.set_location(-80.8431, 35.2271) # Charlotte, NC: 35.2271N, 80.8431W
-
+    el0.size = .5
+    
     #visualizes iowa and california with counties
     bridges.set_data_structure(el0)
     bridges.visualize()
