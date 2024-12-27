@@ -52,7 +52,7 @@ public class tut_us_map_p3 {
 		USState s2 = map_data.get(1);
 
 		// iterate over the counties
-		for (Map.Entry<String,USCounty> e: s2.accessCounties().entrySet()) {
+		for (Map.Entry<String,USCounty> e: s2.getCounties().entrySet()) {
 			USCounty c = e.getValue();
 			c.setStrokeColor(new Color(50,250,50));
 			c.setFillColor(new Color(0,0,25));
