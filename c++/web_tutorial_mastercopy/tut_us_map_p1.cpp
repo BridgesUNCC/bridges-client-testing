@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
 #endif
 
 	// set title
-	bridges.setTitle("Tutorial: Drawing US Map with State Boundariess");
+	bridges.setTitle("Tutorial: Drawing US Map with State Boundaries");
 	bridges.setDescription("All US states, No Counties");
 
 	// create a data source object
