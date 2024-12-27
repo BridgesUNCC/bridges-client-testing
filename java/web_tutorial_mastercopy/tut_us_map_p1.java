@@ -1,9 +1,9 @@
-import java.util.Vector;
+import java.util.ArrayList;
 import java.util.Map;
 import bridges.connect.Bridges;
 import bridges.connect.DataSource;
-import bridges.data_src_dependent.State;
-import bridges.data_src_dependent.County;
+import bridges.data_src_dependent.USState;
+import bridges.data_src_dependent.USCounty;
 import bridges.base.SLelement;
 import bridges.base.USMap;
 import bridges.base.Color;
@@ -30,7 +30,7 @@ public class tut_us_map_p1 {
 		DataSource ds = bridges.getDataSource();
 
 		// get us map data - states and boundaries
-		Vector<State> map_data = ds.getUSMapData ();
+		ArrayList<USState> map_data = ds.getUSMapData ();
 
 		// create a USMap object with the map data
 		USMap us_maps = new USMap(map_data);
