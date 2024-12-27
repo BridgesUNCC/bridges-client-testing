@@ -61,9 +61,15 @@ public class tut_us_map_p3 {
 		// create a USMap object with the map data
 		USMap us_maps = new USMap(map_data);
 
+		// pass it to BRIDGES
+		bridges.setMap(us_maps);
+    
+		// Plot Charlotte, NC 
+		SLelement<String>  el0 = new SLelement<String>("Charlotte", "Go Niners!");
+		el0.setLocation(-80.8431, 35.2271); //35.2271N, 80.8431W
 
 		// set data structure
-		bridges.setDataStructure(us_maps);
+		bridges.setDataStructure(el0);
 
 		// visualize
 		bridges.visualize();
