@@ -1,10 +1,4 @@
-import java.util.ArrayList;
-import java.util.Map;
 import bridges.connect.Bridges;
-import bridges.connect.DataSource;
-import bridges.data_src_dependent.USState;
-import bridges.data_src_dependent.USCounty;
-import bridges.base.SLelement;
 import bridges.base.WorldMap;
 
 
