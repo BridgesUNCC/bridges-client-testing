@@ -35,5 +35,7 @@ int main(int argc, char **argv) {
 	bridges.setDataStructure(el0);
 	bridges.visualize();
 
+	delete el0;
+	
 	return 0;
 }
