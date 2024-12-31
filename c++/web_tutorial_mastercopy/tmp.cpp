@@ -33,34 +33,19 @@ int main(int argc, char **argv) {
 
 
 	// case 1 : map and counties  of  a few states
-	bridges.setDescription("3 US states, with/without counties");
-	vector<string> states = {"Vermont", "Iowa", "North Carolina"};
-	vector<bridges::dataset::USState> map_data = ds.getUSMapCountyData (states, true);
-	{
-	  auto& s = map_data[0];
-	  s.setViewCountiesFlag(true);
-	  s.setStrokeColor(Color(255,0,0));
-	  s.setFillColor(Color(0,255,0));
-	  s.setViewCountiesFlag(false);
-	}
-	{
-	  auto& s = map_data[1];
 
-	  for (auto& c: s.accessCounties()) {
-	    c.second.setStrokeColor(Color(50,250,50));
-	    c.second.setFillColor(Color(0,0,25));
-	  }
-	}
-
-	USMap us_maps(map_data);
-	bridges.setMap(us_maps);
+	bridges.setMap("world");
+	bridges.setCoordSystemType("albersusa");
+	bridges.setMapOverlay(true);
 	
 	SLelement<string>  *el0 = new SLelement<string> ("Charlotte", "Go Niners!");
 	el0->setLocation(-80.8431, 35.2271); //35.2271N, 80.8431W
 
-	for (int k = 0; k < 200; k++) {
+	for (int k = 0; k < 50; k++) {
 		if (k) {
 			SLelement<string>  *el = new SLelement<string> ("Charlotte", "Go Niners!");
+			el->setLocation(-80.8431, 35.2271); //35.2271N, 80.8431W
+
 			el->setNext(el0);
 			el0 = el;
 		}
