@@ -28,14 +28,8 @@ int main(int argc, char **argv) {
 	
 	bridges.setMap(wm);
 	
-	SLelement<string>  *el0 = new SLelement<string> ("Charlotte", "Go Niners!");
-	el0->setLocation(-80.8431, 35.2271); //35.2271N, 80.8431W
-	
-	
-	bridges.setDataStructure(el0);
+	bridges.setDataStructure(&wm);
 	bridges.visualize();
-
-	delete el0;
 	
 	return 0;
 }
