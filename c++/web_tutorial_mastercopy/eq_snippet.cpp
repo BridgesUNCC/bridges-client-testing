@@ -32,14 +32,15 @@ int main(int argc, char **argv) {
 	DataSource ds (&bridges);
 	vector<EarthquakeUSGS> eq_list = ds.getEarthquakeUSGSData(max_quakes);
 
-	// print the first quake record
+	// print the first few quake records
 	for (int k = 0; k < 10; k++) {
 		cout << "Earthquake " << k << ": \n";
-		cout << "\tMagnitude:" << eq_list[0].getMagnitude() << endl
-		<< "\tDate:" << eq_list[0].getDateStr() << endl
-		<< "\tLocation: " <<  eq_list[0].getLocation() << endl
-		<< "\tLat/Long:"  << eq_list[0].getLatit() << "," <<
-		eq_list[0].getLongit() << endl;
+		const auto& eq = eq_list[k];
+		cout << "\tMagnitude:" << eq.getMagnitude() << endl
+		<< "\tDate:" << eq.getDateStr() << endl
+		<< "\tLocation: " <<  eq.getLocation() << endl
+		<< "\tLat/Long:"  << eq.getLatit() << "," <<
+		eq.getLongit() << endl;
 	}
 
 
