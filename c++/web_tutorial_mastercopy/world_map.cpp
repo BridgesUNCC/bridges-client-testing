@@ -24,9 +24,17 @@ int main(int argc, char **argv) {
 	bridges.setTitle("Using World Map overlay");
 
 	DataSource ds(&bridges);
-	WorldMap wm;
+	 vector<string> countries = {"Australia", "Germany", "France", "Spain", "United States of America"};
+	vector<Country>  wm_data = ds.getWorldMapData({countries});
+//	vector<Country>  wm_data = ds.getWorldMapData();
+
+	for (auto k = 0; k < wm_data.size(); k++) {
+		wm_data[k].setFillColor(Color("lightblue"));
+		wm_data[k].setStrokeColor(Color("green"));
+		wm_data[k].setStrokeWidth(1.);
+	}
 	
-	bridges.setMap(wm);
+	WorldMap wm (wm_data);
 	
 	bridges.setDataStructure(&wm);
 	bridges.visualize();
