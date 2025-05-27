@@ -10,7 +10,6 @@ using namespace std;
 
 using namespace bridges;
 
-int max_quakes = 100;
 
 // This program fragment illustrates how to access the USGS earthquake data
 int main(int argc, char **argv) {
@@ -30,10 +29,12 @@ int main(int argc, char **argv) {
 
 	// read the earth quake  data
 	DataSource ds (&bridges);
+	int max_quakes = 100;
 	vector<EarthquakeUSGS> eq_list = ds.getEarthquakeUSGSData(max_quakes);
 
+	std::cout<<"Retrieved recent "<<eq_list.size()<<" Earthquakes\n";
 	// print the first few quake records
-	for (int k = 0; k < 10; k++) {
+	for (int k = 0; k < 3; k++) {
 		cout << "Earthquake " << k << ": \n";
 		const auto& eq = eq_list[k];
 		cout << "\tMagnitude:" << eq.getMagnitude() << endl
@@ -43,6 +44,18 @@ int main(int argc, char **argv) {
 		eq.getLongit() << endl;
 	}
 
+	eq_list = ds.getEarthquakeUSGSData(); //This is a different code path
+	std::cout<<"Retrieved all "<<eq_list.size()<<" Earthquakes\n";
+	// print the first few quake records
+	for (int k = 0; k < 3; k++) {
+		cout << "Earthquake " << k << ": \n";
+		const auto& eq = eq_list[k];
+		cout << "\tMagnitude:" << eq.getMagnitude() << endl
+		<< "\tDate:" << eq.getDateStr() << endl
+		<< "\tLocation: " <<  eq.getLocation() << endl
+		<< "\tLat/Long:"  << eq.getLatit() << "," <<
+		eq.getLongit() << endl;
+	}
 
 	return 0;
 }
