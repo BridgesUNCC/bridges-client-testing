@@ -31,8 +31,8 @@ def main():
     a1 = "Kevin_Bacon_(I)"
     a2 = "Denzel_Washington"
 
-    g.add_vertex(a1, "")
-    g.add_vertex(a2, "")
+    g.add_vertex(a1, "Kevin Bacon")
+    g.add_vertex(a2, "Denzel Washington")
 
     g.get_vertex(a1).color = "red"
     g.get_vertex(a1).size = 30
@@ -93,6 +93,7 @@ def main():
             g.get_visualizer(to).color = "orange"
 
     # Pass the graph object to BRIDGES
+    bridges.element_label_flag = True
     bridges.set_data_structure(g)
     # visualize the graph
     bridges.visualize()
