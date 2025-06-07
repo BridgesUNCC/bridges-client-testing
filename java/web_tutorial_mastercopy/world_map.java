@@ -38,5 +38,3 @@ public class world_map {
 		bridges.visualize();
 	}
 }
-	}
-}
