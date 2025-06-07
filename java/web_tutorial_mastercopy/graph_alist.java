@@ -104,6 +104,8 @@ public class graph_alist {
 
 		// Pass the graph object to BRIDGES
 		bridges.setDataStructure(g);
+bridges.setLabelFlag(true);
+bridges.setJSONFlag(true);
 
 		// Finaly we call the visualize function
 		bridges.visualize();
