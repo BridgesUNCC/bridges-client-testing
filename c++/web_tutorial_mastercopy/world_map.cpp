@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
 	bridges.setTitle("Using World Map overlay");
 
 	DataSource ds(&bridges);
-	 vector<string> countries = {"Australia", "Germany", "France", "Spain", "United States of America"};
+	 vector<string> countries = {"Falkland Islands", "Australia", "Germany", "France", "Spain", "United States of America"};
 	vector<Country>  wm_data = ds.getWorldMapData({countries});
 //	vector<Country>  wm_data = ds.getWorldMapData();
 
