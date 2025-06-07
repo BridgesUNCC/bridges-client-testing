@@ -23,8 +23,8 @@ public class tut_world_map_p3 {
 												"YOUR_API_KEY");
 #endif
 		// set title, description
-		bridges.setTitle("Tutorial: Drawing US Map with State Boundaries");
-		bridges.setDescription("All US states, No Counties");
+		bridges.setTitle("Tutorial: Demonstrating overlaying World Map with Cities at their locations");
+		bridges.setDescription("Uses graph vertices and lat/long coords to locate the cities");
 
 		// get data source object
 		DataSource ds = bridges.getDataSource();
@@ -35,15 +35,16 @@ public class tut_world_map_p3 {
 
 		GraphAdjListSimple<String> gr = new GraphAdjListSimple<String>();
 
-		gr.addVertex("Charlotte", "Charlotte,NC");
+		gr.addVertex("Charlotte", "Charlotte,NC, USA");
 			gr.getVertex("Charlotte").setLocation(-80.8431, 35.2271);
 			gr.getVertex("Charlotte").setColor(new Color("crimson"));
 			gr.getVertex("Charlotte").setSize(2.);
+			gr.getVertex("Charlotte").setLabel("Charlotte, NC");
 		gr.addVertex("Paris", "Paris, France");
 			gr.getVertex("Paris").setLocation(2.3514, 48.8576);
 			gr.getVertex("Paris").setColor(new Color("crimson"));
 			gr.getVertex("Paris").setSize(2.);
-		gr.addVertex("Berlin", "Paris, France");
+		gr.addVertex("Berlin", "Berlin, Germany");
 			gr.getVertex("Berlin").setLocation(13.4, 52.52);
 			gr.getVertex("Berlin").setColor(new Color("crimson"));
 			gr.getVertex("Berlin").setSize(2.);
@@ -62,6 +63,8 @@ public class tut_world_map_p3 {
 
 
 		WorldMap wm = new WorldMap(wm_data);
+		bridges.setMap(wm);
+		bridges.setLabelFlag(true);
 
 		// set data structure
 		bridges.setDataStructure(gr);
