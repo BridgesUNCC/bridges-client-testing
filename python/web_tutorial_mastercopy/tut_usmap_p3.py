@@ -40,12 +40,9 @@ def main():
         
     my_map = USMap(state_info)
     
-    bridges.set_json_flag(True)
     #visualizes iowa and california with counties
     bridges.set_data_structure(my_map)
     bridges.visualize()
-
-
 
 
 if __name__ == '__main__':
