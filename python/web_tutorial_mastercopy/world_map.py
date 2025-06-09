@@ -18,7 +18,8 @@ def main():
     # set title, description
     bridges.set_title("World Map Using BRIDGES")
 
-    country_data = get_world_map_data(['Australia', 'Germany', 'France'])
+    #country_data = get_world_map_data(['Australia', 'Germany', 'France'])
+    country_data = get_world_map_data()
     wm = WorldMap(country_data)
     
     #visualizes world map
