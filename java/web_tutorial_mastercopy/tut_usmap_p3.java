@@ -14,7 +14,7 @@ import bridges.base.Color;
 // Here we select 3 states and draw them with different attributes with or 
 // without counties
 
-public class tut_us_map_p3 {
+public class tut_usmap_p3 {
 	public static void main(String[] args) throws Exception {
 
 		// create Bridges object

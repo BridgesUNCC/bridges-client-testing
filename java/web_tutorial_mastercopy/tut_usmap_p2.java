@@ -13,7 +13,7 @@ import bridges.base.Color;
 // boundaries with different colors for states and its boundaries
 // It also illustrates how to draw all the counties 
 
-public class tut_us_map_p2 {
+public class tut_usmap_p2 {
 	public static void main(String[] args) throws Exception {
 
 		// create Bridges object

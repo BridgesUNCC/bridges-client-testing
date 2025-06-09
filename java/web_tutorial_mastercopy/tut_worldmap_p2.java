@@ -9,7 +9,7 @@ import bridges.base.Color;
 
 // This tutorial illustrates how to access the data of the World map with 
 // boundaries; the countries are filled with default color
-public class tut_world_map_p2 {
+public class tut_worldmap_p2 {
 	public static void main(String[] args) throws Exception {
 
 		// create Bridges object

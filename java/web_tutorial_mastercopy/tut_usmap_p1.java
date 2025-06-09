@@ -11,7 +11,7 @@ import bridges.base.Color;
 
 // This tutorial illustrates how to access the data of the US map with state
 // boundaries with different colors for states and its boundaries
-public class tut_us_map_p1 {
+public class tut_usmap_p1 {
 	public static void main(String[] args) throws Exception {
 
 		// create Bridges object
