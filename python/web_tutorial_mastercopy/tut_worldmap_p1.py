@@ -1,7 +1,7 @@
 from bridges.bridges import *
 from bridges.data_src_dependent import *
 from bridges.dl_element import *
-from bridges.us_map import *
+from bridges.world_map import *
 
 def main():
     # create the Bridges object, set credentials
@@ -16,21 +16,16 @@ def main():
 #endif
 
     # set title, description
-    bridges.set_title("Tutorial: Drawing US Map with State Boundaries, and State Counties")
-    bridges.set_description("All US States, All Counties")
+    bridges.set_title("World Map Using BRIDGES")
+    bridges.set_description("Draws all countries and their boundaries in a default color")
 
-    #pass no parameters for the whole map
-    state_info = get_us_map_county_data()
+    # with no arguments to the function, gets all countries of the world
+    country_data = get_world_map_data()
+    wm = WorldMap(country_data)
 
-    my_map = USMap(state_info)
-
-
-    #visualizes iowa and california with counties
-    bridges.set_data_structure(my_map)
+    #visualizes world map
+    bridges.set_data_structure(wm)
     bridges.visualize()
-
-
-
 
 if __name__ == '__main__':
     main()

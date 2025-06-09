@@ -20,7 +20,8 @@ def main():
     bridges.set_description("3 US  states, with or without Counties, with varied coloring")
 
     #pass no parameters for the whole map
-    state_info = get_us_map_county_data(['Vermont', 'Iowa', 'North Carolina'], True)
+    #state_info = get_us_map_county_data(['Vermont', 'Iowa', 'North Carolina'], True)
+    state_info = get_us_map_county_data(['Vermont', 'Iowa', 'North Carolina'], False)
 
     # we will draw the first state without counties and set 
     # fill and boundary colors - use the viewCounties() flag to 
@@ -39,6 +40,7 @@ def main():
         
     my_map = USMap(state_info)
     
+    bridges.set_json_flag(True)
     #visualizes iowa and california with counties
     bridges.set_data_structure(my_map)
     bridges.visualize()
