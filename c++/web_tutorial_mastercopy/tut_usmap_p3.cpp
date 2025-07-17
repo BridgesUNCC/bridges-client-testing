@@ -42,20 +42,28 @@ int main(int argc, char **argv) {
 
 	// we will draw the first state without counties and set fill and boundary 
 	// colors - use the viewCounties() flag to ignore counties
-	auto& s = map_data[0];
-	s.setStrokeColor(Color(255,0,0));
-	s.setFillColor(Color(0,255,0));
-	s.setViewCountiesFlag(false);
 
-	// the second state  we will draw with counties and set their colors
-	auto& s2 = map_data[1];
-	// iterate over the counties
-	for (auto& c: s2.accessCounties()) {
-		c.second.setStrokeColor(Color(50,250,50));
-		c.second.setFillColor(Color(0,0,25));
+	for (int k = 0; k < 3; k++) {
+		cout << "State:" << map_data[k].getStateName() << endl;
+		auto& s = map_data[k];
+		if (map_data[k].getStateName() == "Iowa") {
+			s.setStrokeColor(Color(255,0,0,100));
+			s.setFillColor(Color(0,255,0));
+			s.setViewCountiesFlag(false);
+		}
+		else if (map_data[k].getStateName() == "North Carolina") {
+			auto& s = map_data[k];
+			// iterate over the counties
+			for (auto& c: s.accessCounties()) {
+				c.second.setStrokeColor(Color(50,250,50));
+				c.second.setFillColor(Color(0,0,255, 100));
+			}
+		}
+		else {
+			;
+			// the third state will use default colors
+		}
 	}
-
-	// the third state will use default colors
 
 	// create a USMap object with the map data
 	USMap us_maps(map_data);
