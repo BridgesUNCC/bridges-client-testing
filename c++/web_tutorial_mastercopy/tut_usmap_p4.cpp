@@ -10,12 +10,13 @@ using namespace std;
 #include "SymbolCollection.h"
 #include "Circle.h"
 #include "Rectangle.h"
+#include "Text.h"
 #include "USMap.h"
 
 using namespace bridges;
 
 // this program illustrates how to access the data of the US state county
-// maps and apply attributes to them
+// maps and also draw symbols using the Bridges shape collection 
 int main(int argc, char **argv) {
 
 	// create bridges object
@@ -30,6 +31,7 @@ int main(int argc, char **argv) {
 
 	// set title
 	bridges.setTitle("Accessing US State County Maps Example with Symbols");
+	bridges.setDescription("Example illustrates map data working with Bridges shape collection symbols");
 
 	DataSource ds(&bridges);
 
@@ -39,19 +41,42 @@ int main(int argc, char **argv) {
 	USMap us_maps(map_data);
 	bridges.setMap(us_maps);
 	
-	// use a circle symbol
+	// create a circle symbol
 	SymbolCollection sc;
-		Circle c(-80.8431, 35.2271, 15.);
+		Circle c(-80.8431, 35.2271, 7.);
 		c.setStrokeColor("red");
 		c.setFillColor("cyan");
+
+	Text l;
+		float loc[2] = {-79.8431, 35.2271};
+		l.setAnchorLocation(loc);
+		l.setFontSize(18.0f);
+		l.setStrokeWidth(1.0f);
+		l.setText("Charlotte");
+		l.setStrokeColor("purple");
+		l.setOpacity(1.0f);
+    sc.addSymbol(l);
+
+
+	// create a rectangle symbol
 	sc.addSymbol(c);
-		Rectangle r(-82.998, 39.96, 25., 25.);
+		Rectangle r(-82.998, 39.96, 10., 10.);
 		r.setStrokeColor("red");
 		r.setFillColor("lightgreen");
 	sc.addSymbol(r);
-		
-	bridges.setDataStructure(sc);
 
+	Text l2;
+		float loc2[2] = {-81.998, 39.96};
+		l2.setAnchorLocation(loc2);
+		l2.setFontSize(18.0f);
+		l2.setStrokeWidth(1.0f);
+		l2.setText("Columbus");
+		l2.setStrokeColor("purple");
+		l2.setOpacity(1.0f);
+    sc.addSymbol(l2);
+		
+	// set data structure, visualize
+	bridges.setDataStructure(sc);
 	bridges.visualize();
 
 	return 0;
