@@ -13,6 +13,10 @@ using namespace std;
 #include "Text.h"
 #include "USMap.h"
 
+
+#include "Polyline.h"
+#include "Polygon.h"
+
 using namespace bridges;
 
 // this program illustrates how to access the data of the US state county
@@ -43,7 +47,7 @@ int main(int argc, char **argv) {
 	
 	// create a circle symbol
 	SymbolCollection sc;
-		Circle c(-80.8431, 35.2271, 7.);
+		Circle c(-80.8431, 35.2271, 1.);
 		c.setStrokeColor("red");
 		c.setFillColor("cyan");
 
@@ -60,10 +64,24 @@ int main(int argc, char **argv) {
 
 	// create a rectangle symbol
 	sc.addSymbol(c);
-		Rectangle r(-82.998, 39.96, 10., 10.);
+		Rectangle r(-82.998, 39.96, 1., 1.);
 		r.setStrokeColor("red");
 		r.setFillColor("lightgreen");
 	sc.addSymbol(r);
+
+
+/*
+	Polygon p2;
+		p2.addPoint(-83, 40);
+		p2.addPoint(-83+10, 40);
+		p2.addPoint(-83+10, 40+10);
+		p2.addPoint(-83, 40+10);
+		p2.setStrokeColor("black");
+		p2.setStrokeWidth(0.5f);
+		p2.setOpacity(1.0f);
+	sc.addSymbol(p2);
+*/
+
 
 	Text l2;
 		float loc2[2] = {-81.998, 39.96};
@@ -74,7 +92,31 @@ int main(int argc, char **argv) {
 		l2.setStrokeColor("purple");
 		l2.setOpacity(1.0f);
     sc.addSymbol(l2);
-		
+	
+	Polyline p3;
+		p3.addPoint(-80, 41);
+		p3.addPoint(-85, 41);
+		p3.setStrokeColor("magenta");
+		p3.setStrokeWidth(0.5f);
+		p3.setOpacity(1.0f);
+	sc.addSymbol(p3);
+
+/*
+	Polyline p4;
+		p4.addPoint(-80, 41);
+        p4.addPoint(-81, 41);
+        p4.addPoint(-82, 41);
+
+        p4.addPoint(-83, 41);
+        p4.addPoint(-84, 41);
+		p4.addPoint(-85, 41);
+		p4.setStrokeColor("red");
+		p4.setStrokeWidth(0.5f);
+		p4.setOpacity(1.0f);
+	sc.addSymbol(p4);
+*/
+
+	
 	// set data structure, visualize
 	bridges.setDataStructure(sc);
 	bridges.visualize();
