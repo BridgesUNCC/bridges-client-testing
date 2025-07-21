@@ -70,19 +70,6 @@ int main(int argc, char **argv) {
 	sc.addSymbol(r);
 
 
-/*
-	Polygon p2;
-		p2.addPoint(-83, 40);
-		p2.addPoint(-83+10, 40);
-		p2.addPoint(-83+10, 40+10);
-		p2.addPoint(-83, 40+10);
-		p2.setStrokeColor("black");
-		p2.setStrokeWidth(0.5f);
-		p2.setOpacity(1.0f);
-	sc.addSymbol(p2);
-*/
-
-
 	Text l2;
 		float loc2[2] = {-81.998, 39.96};
 		l2.setAnchorLocation(loc2);
@@ -101,22 +88,6 @@ int main(int argc, char **argv) {
 		p3.setOpacity(1.0f);
 	sc.addSymbol(p3);
 
-/*
-	Polyline p4;
-		p4.addPoint(-80, 41);
-        p4.addPoint(-81, 41);
-        p4.addPoint(-82, 41);
-
-        p4.addPoint(-83, 41);
-        p4.addPoint(-84, 41);
-		p4.addPoint(-85, 41);
-		p4.setStrokeColor("red");
-		p4.setStrokeWidth(0.5f);
-		p4.setOpacity(1.0f);
-	sc.addSymbol(p4);
-*/
-
-	
 	// set data structure, visualize
 	bridges.setDataStructure(sc);
 	bridges.visualize();
