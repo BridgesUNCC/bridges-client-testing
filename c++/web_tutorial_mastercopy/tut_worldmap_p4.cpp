@@ -49,7 +49,7 @@ int main(int argc, char **argv) {
 	Text l;
 		float loc[2] = {-79.8431, 35.2271};
 		l.setAnchorLocation(loc);
-		l.setFontSize(12.0f);
+		l.setFontSize(10.0f);
 		l.setStrokeWidth(1.0f);
 		l.setText("Charlotte");
 		l.setStrokeColor("purple");
@@ -64,7 +64,7 @@ int main(int argc, char **argv) {
 	Text l2;
 		float loc2[2] = {3.3514, 48.8576};
 		l2.setAnchorLocation(loc2);
-		l2.setFontSize(12.0f);
+		l2.setFontSize(10.0f);
 		l2.setStrokeWidth(1.0f);
 		l2.setText("Paris");
 		l2.setStrokeColor("purple");
@@ -79,12 +79,27 @@ int main(int argc, char **argv) {
 	Text l3;
 		float loc3[2] = {14.4, 52.52};
 		l3.setAnchorLocation(loc3);
-		l3.setFontSize(12.0f);
+		l3.setFontSize(10.0f);
 		l3.setStrokeWidth(1.0f);
 		l3.setText("Berlin");
 		l3.setStrokeColor("purple");
-		l2.setOpacity(1.0f);
+		l3.setOpacity(1.0f);
     sc.addSymbol(l3);
+
+	Circle c4(77.208, 28.614, 1.);
+		c4.setStrokeColor("red");
+		c4.setFillColor("cyan");
+	sc.addSymbol(c4);
+
+	Text l4;
+		float loc4[2] = {78.208, 28.614};
+		l4.setAnchorLocation(loc4);
+		l4.setFontSize(10.0f);
+		l4.setStrokeWidth(1.0f);
+		l4.setText("New Delhi");
+		l4.setStrokeColor("purple");
+		l4.setOpacity(1.0f);
+    sc.addSymbol(l4);
 	
 	// add the world map
 	vector<Country>  wm_data = ds.getWorldMapData();
