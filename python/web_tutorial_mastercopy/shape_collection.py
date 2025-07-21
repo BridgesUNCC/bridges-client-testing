@@ -75,7 +75,7 @@ def main():
     l.set_anchor_location(0, 25)
     l.font_size = 12
     l.stroke_width = 1.0
-    l.label = "test label"
+    l.text = "test label"
     l.stroke_color = "purple"
     sc.add_symbol(l)
 
