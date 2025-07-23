@@ -16,7 +16,10 @@ html_log_header Python
 
 cd ../python/web_tutorial_testing
 
-SRCS="$(grep -l "if __name__ == \"__main__\":" *.py | sort -V ) $(grep -l "if __name__ == \'__main__\':" *.py | sort -V )"
+S1=$(grep -l "if __name__ == \"__main__\":" *.py )
+S2=$(grep -l "if __name__ == '__main__':" *.py)
+
+SRCS=$(echo "$S1 $S2"  | sort -V )
 
 cd -
 
