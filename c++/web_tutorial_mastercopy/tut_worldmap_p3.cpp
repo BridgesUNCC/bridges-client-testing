@@ -59,7 +59,9 @@ int main(int argc, char **argv) {
 
 	// add the world map
 	vector<Country>  wm_data = ds.getWorldMapData();
-	WorldMap wm (wm_data);
+
+	//specify worldmap  as overlay
+	WorldMap wm;
 	bridges.setMap(wm);
 
 	// visualize
