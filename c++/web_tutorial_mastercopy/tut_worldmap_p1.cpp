@@ -30,11 +30,14 @@ int main(int argc, char **argv) {
 	DataSource ds(&bridges);
 
 	// the following call without arguments will get the data for all countries. Alternately
-	// you can specify that with an argument such {"all"}
-	vector<Country>  wm_data = ds.getWorldMapData();
+	// you can specify that with an argument such {"all"}.
+	// This construct allow for styling the countries
+	// vector<Country>  wm_data = ds.getWorldMapData();
 
 	// declare the world map object with the map data	
-	WorldMap wm(wm_data);
+	WorldMap wm;
+
+	bridges.setMap(wm);
 	
 	// visualize
 	bridges.setDataStructure(&wm);

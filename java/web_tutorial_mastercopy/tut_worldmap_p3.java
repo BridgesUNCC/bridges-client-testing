@@ -29,10 +29,6 @@ public class tut_worldmap_p3 {
 		// get data source object
 		DataSource ds = bridges.getDataSource();
 
-		// specify a few countries to change their fill colors
-		// get us map data - states and boundaries
-		ArrayList<Country> wm_data = ds.getWorldMapData ();
-
 		GraphAdjListSimple<String> gr = new GraphAdjListSimple<String>();
 
 		gr.addVertex("Charlotte", "Charlotte,NC, USA");
@@ -62,7 +58,7 @@ public class tut_worldmap_p3 {
 			gr.getVertex("Esperanza Station, Antarctica").setSize(2.);
 
 
-		WorldMap wm = new WorldMap(wm_data);
+		WorldMap wm = new WorldMap();
 		bridges.setMap(wm);
 		bridges.setLabelFlag(true);
 

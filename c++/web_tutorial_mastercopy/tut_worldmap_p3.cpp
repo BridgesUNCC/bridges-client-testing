@@ -57,10 +57,9 @@ int main(int argc, char **argv) {
 		gr.getVertex("Esperanza Station, Antarctica")->setColor("crimson");
 		gr.getVertex("Esperanza Station, Antarctica")->setSize(2.);
 
-	// add the world map
-	vector<Country>  wm_data = ds.getWorldMapData();
 
-	//specify worldmap  as overlay
+	// This construct does not allow for styling the countries. But it still
+	//shows the worldmap  as overlay
 	WorldMap wm;
 	bridges.setMap(wm);
 

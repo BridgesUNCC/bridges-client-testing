@@ -21,9 +21,10 @@ def main():
 
     # with no arguments to the function, gets all countries of the world
     country_data = get_world_map_data()
-    wm = WorldMap(country_data)
+    wm = WorldMap()
 
     #visualizes world map
+    bridges.set_map(wm);
     bridges.set_data_structure(wm)
     bridges.visualize()
 
