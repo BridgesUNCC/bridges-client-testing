@@ -28,11 +28,11 @@ public class tut_worldmap_p1 {
 		DataSource ds = bridges.getDataSource();
 
 		// get us map data - states and boundaries
-		ArrayList<Country> wm_data = ds.getWorldMapData ();
 
-		WorldMap wm = new WorldMap(wm_data);
+		WorldMap wm = new WorldMap();
 
 		// set data structure
+		bridges.setMap(wm);
 		bridges.setDataStructure(wm);
 
 		// visualize
