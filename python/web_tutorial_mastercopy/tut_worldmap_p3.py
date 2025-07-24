@@ -22,7 +22,7 @@ def main():
 
     # with no arguments to the function, gets all countries of the world
     country_data = get_world_map_data()
-    wm = WorldMap(country_data)
+    wm = WorldMap()
 
 	# lets add  a points to the map to illustrate how to identify cities 
     # we will use graph vertices for this
