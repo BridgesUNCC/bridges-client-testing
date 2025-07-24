@@ -39,6 +39,7 @@ int main(int argc, char **argv) {
 	BinTreeElement<int> *t13 = new BinTreeElement<int>(13, "7\nK");
 	BinTreeElement<int> *t14 = new BinTreeElement<int>(14, "24\nM");
 
+
 	// form the links
 	t0->setLeft(t1);
 	t0->setRight(t2);
@@ -71,6 +72,7 @@ int main(int argc, char **argv) {
 	bridges.setDataStructure(t0);
 
 	// visualize
+	bridges.setJSONFlag(true);
 	bridges.visualize();
 
 	// freeing memory
