@@ -22,20 +22,20 @@ def main():
 
     # build the tree
     t0 = BinTreeElement(label="306", e=0)
-    t1 = BinTreeElement(label="120\\nE", e=1)
+    t1 = BinTreeElement(label="120\nE", e=1)
     t2 = BinTreeElement(label="186", e=2)
     t3 = BinTreeElement(label="79", e=3)
-    t4 = BinTreeElement(label="37\\nU", e=4)
-    t5 = BinTreeElement(label="42\\nD", e=5)
-    t6 = BinTreeElement(label="42\\nL", e=6)
+    t4 = BinTreeElement(label="37\nU", e=4)
+    t5 = BinTreeElement(label="42\nD", e=5)
+    t6 = BinTreeElement(label="42\nL", e=6)
     t7 = BinTreeElement(label="107", e=7)
     t8 = BinTreeElement(label="65", e=8)
-    t9 = BinTreeElement(label="32\\nC", e=9)
+    t9 = BinTreeElement(label="32\nC", e=9)
     t10 = BinTreeElement(label="33", e=10)
     t11 = BinTreeElement(label="9", e=11)
-    t12 = BinTreeElement(label="2\\nZ", e=12)
-    t13 = BinTreeElement(label="7\\nK", e=13)
-    t14 = BinTreeElement(label="24\\nM", e=14)
+    t12 = BinTreeElement(label="2\nZ", e=12)
+    t13 = BinTreeElement(label="7\nK", e=13)
+    t14 = BinTreeElement(label="24\nM", e=14)
 
     t0.left = t1
     t0.right = t2
