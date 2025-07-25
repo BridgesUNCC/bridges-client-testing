@@ -71,7 +71,6 @@ int main(int argc, char **argv) {
 	bridges.setDataStructure(t0);
 
 	// visualize
-	bridges.setJSONFlag(true);
 	bridges.visualize();
 
 	// freeing memory
