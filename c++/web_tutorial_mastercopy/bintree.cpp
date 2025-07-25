@@ -56,9 +56,8 @@ int main(int argc, char **argv) {
 	t11->setLeft(t12);
 	t11->setRight(t13);
 
-
-	t0->setColor("red");
 	// color the leaf nodes that represent the code letters
+	t0->setColor("red");
 	t1->setColor("orange");
 	t4->setColor("orange");
 	t5->setColor("orange");
