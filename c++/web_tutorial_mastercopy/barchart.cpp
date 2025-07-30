@@ -29,7 +29,7 @@ int main (int argc, char **argv) {
 
 	BarChart bar;
 	bar.setTitle("Hello World BarChart!");
-	bar.setSubTitle("Woah!");
+	bar.setSubTitle("My cool BarChart!");
 	bar.setCategoriesLabel("Continents");
 	bar.setValueLabel("Population (in millions)");
 	bar.setBarOrientation("horizontal");
