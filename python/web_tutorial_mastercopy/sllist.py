@@ -41,8 +41,13 @@ def main():
     el0.get_link_visualizer(el1).color = "green"
     el3.get_link_visualizer(el4).color = "magenta"
 
+    # set link label
+    el2.get_link_visualizer(el3).set_label("Gladys->Karol")
+
+	# turn on element and link labels
     bridges.element_label_flag = True
     bridges.link_label_flag = True
+
     # visualize
     bridges.set_data_structure(el0)
     bridges.visualize()

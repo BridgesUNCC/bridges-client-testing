@@ -1,7 +1,7 @@
 import bridges.connect.Bridges;
 import bridges.base.TreeElement;
 
-public class tree {
+public class tut_tree_p1 {
 	public static void main(String[] args) throws Exception {
 
 
@@ -37,6 +37,8 @@ public class tree {
 		t2.addChild(t5);
 		t2.addChild(t6);
 		t3.addChild(t7);
+
+		bridges.setElementLabelFlag(true);
 
 		bridges.setTitle("A General Tree Example");
 

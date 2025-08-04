@@ -53,10 +53,8 @@ int main(int argc, char **argv) {
 	t0->getLinkVisualizer(t4)->setColor("orange");
 	t0->getLinkVisualizer(t4)->setThickness(2.0f);
 
-	// turn on labels
-	bridges.setElementLabelFlag(true);
-
 	// provide BRIDGES the  handle to the tree structure
+	bridges.setElementLabelFlag(true);
 	bridges.setDataStructure(t0);
 	bridges.visualize();
 
