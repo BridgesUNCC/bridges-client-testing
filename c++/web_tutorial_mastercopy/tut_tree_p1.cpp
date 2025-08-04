@@ -40,10 +40,13 @@ int main(int argc, char **argv) {
 	t2->addChild(t6);
 	t3->addChild(t7);
 
+	// display the labels
+	bridges.setElementLabelFlag(true);
 
 	// provide BRIDGES the  handle to the tree structure
 	bridges.setDataStructure(t0);
 	bridges.visualize();
+
 
 	delete t0;
 	delete t2;
