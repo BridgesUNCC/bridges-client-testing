@@ -42,33 +42,19 @@ int main(int argc, char **argv) {
 
 	// form the links
 	t0->setLeft(t1);
-	t0->getLinkVisualizer(t1)->setLabel("0");
 	t0->setRight(t2);
-	t0->getLinkVisualizer(t2)->setLabel("1");
 	t2->setLeft(t3);
-	t2->getLinkVisualizer(t3)->setLabel("0");
 	t2->setRight(t7);
-	t2->getLinkVisualizer(t7)->setLabel("1");
 	t3->setLeft(t4);
-	t3->getLinkVisualizer(t4)->setLabel("0");
 	t3->setRight(t5);
-	t3->getLinkVisualizer(t5)->setLabel("1");
 	t7->setLeft(t6);
-	t7->getLinkVisualizer(t6)->setLabel("0");
 	t7->setRight(t8);
-	t7->getLinkVisualizer(t8)->setLabel("1");
 	t8->setLeft(t9);
-	t8->getLinkVisualizer(t9)->setLabel("0");
 	t8->setRight(t10);
-	t8->getLinkVisualizer(t10)->setLabel("1");
 	t10->setLeft(t11);
-	t10->getLinkVisualizer(t11)->setLabel("0");
 	t10->setRight(t14);
-	t10->getLinkVisualizer(t14)->setLabel("1");
 	t11->setLeft(t12);
-	t11->getLinkVisualizer(t12)->setLabel("0");
 	t11->setRight(t13);
-	t11->getLinkVisualizer(t13)->setLabel("1");
 
 	// color the leaf nodes that represent the code letters
 	t0->setColor("red");

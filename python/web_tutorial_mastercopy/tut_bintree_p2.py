@@ -52,8 +52,6 @@ def main():
     t11.left = t12
     t11.right = t13
 
-    t0.get_link_visualizer(t1).set_label("TEST")
-
     # color the leaf nodes to represent the code letters
     t0.color = "red"
     t1.color = "orange"

@@ -17,8 +17,8 @@ def main():
 #endif
 
     # set title, description
-    bridges.set_title("World Map Using BRIDGES")
-    bridges.set_description("Draws all countries and their boundaries in a default color")
+    bridges.set_title("Overlay cities on a World Map ")
+    bridges.set_description("Draws all countries and place some cities on the map")
 
     # with no arguments to the function, gets all countries of the world
     country_data = get_world_map_data()

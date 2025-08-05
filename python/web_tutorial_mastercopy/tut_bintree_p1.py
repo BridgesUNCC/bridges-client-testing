@@ -17,8 +17,7 @@ def main():
 
     # title, description
     bridges.set_title("A Huffman Coding (Binary) Tree Example")
-    bridges.set_description("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2 "
-            + "Root is set to red and leaf nodes are set to orange.")
+    bridges.set_description("[Binary Tree Application]: Huffman tree coding the symbols C, D, E, K, L, M, U, Z with frequencies 32, 42, 120, 7, 42, 24, 37, 2 ")
 
     # build the tree
     t0 = BinTreeElement(label="306", e=0)
@@ -51,19 +50,6 @@ def main():
     t10.right = t14
     t11.left = t12
     t11.right = t13
-
-    t0.get_link_visualizer(t1).set_label("TEST")
-
-    # color the leaf nodes to represent the code letters
-    t0.color = "red"
-    t1.color = "orange"
-    t4.color = "orange"
-    t5.color = "orange"
-    t6.color = "orange"
-    t9.color = "orange"
-    t12.color = "orange"
-    t13.color = "orange"
-    t14.color = "orange"
 
     # set visualizer type
     bridges.set_data_structure(t0)

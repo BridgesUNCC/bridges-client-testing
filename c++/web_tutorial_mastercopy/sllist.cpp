@@ -71,6 +71,10 @@ int main (int argc, char **argv) {
 	// set link label
 	el2->getLinkVisualizer(el3)->setLabel("Gladys_to_Karol");
 
+    // turn on labels
+	bridges.setElementLabelFlag(1);
+	bridges.setLinkLabelFlag(1);
+
 	bridges.setDataStructure(el0);
 	bridges.visualize();
 

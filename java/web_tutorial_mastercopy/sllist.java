@@ -74,6 +74,9 @@ public class sllist {
 		// set link label
 		el2.getLinkVisualizer(el3).setLabel("Gladys_to_Karol");
 
+		bridges.setElementLabelFlag(true);
+		bridges.setLinkLabelFlag(true);
+
 		bridges.setDataStructure(el0);
 		bridges.visualize();
 	}
