@@ -84,6 +84,10 @@ int main(int argc, char **argv) {
 	// provide BRIDGES the  handle to the tree structure
 	bridges.setDataStructure(t0);
 
+	// turn labels on
+	bridges.setElementLabelFlag(true);
+	bridges.setLinkLabelFlag(true);
+
 	// visualize
 	bridges.visualize();
 
