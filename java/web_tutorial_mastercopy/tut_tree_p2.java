@@ -1,7 +1,7 @@
 import bridges.connect.Bridges;
 import bridges.base.TreeElement;
 
-public class tree {
+public class tut_tree_p2 {
 	public static void main(String[] args) throws Exception {
 
 
