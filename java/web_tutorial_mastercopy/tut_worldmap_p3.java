@@ -60,7 +60,7 @@ public class tut_worldmap_p3 {
 
 		WorldMap wm = new WorldMap();
 		bridges.setMap(wm);
-		bridges.setLabelFlag(true);
+		bridges.setElementLabelFlag(true);
 
 		// set data structure
 		bridges.setDataStructure(gr);

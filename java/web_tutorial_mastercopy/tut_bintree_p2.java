@@ -2,7 +2,7 @@ import bridges.connect.Bridges;
 import bridges.base.BinTreeElement;
 
 
-public class bintree {
+public class tut_bintree_p2 {
 	public static void main(String[] args) throws Exception {
 
 
