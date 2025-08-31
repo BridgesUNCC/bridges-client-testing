@@ -28,18 +28,19 @@ def main():
     bridges.set_data_structure(plot)
     bridges.visualize()
 
-    x2 = [2, 15.2,  40];
-    y2 = [4, 30.5, 400.99];
-    plot.set_data_series("2", x2, y2);
-    bridges.visualize();
+    x2 = [2, 15.2,  40]
+    y2 = [4, 30.5, 400.99]
+    plot.set_data_series("2", x2, y2)
+    plot.set_linewidth("2", 0) #show datapoint only
+    bridges.visualize()
 
     plot.logarithmicx = True
-    bridges.visualize();
+    bridges.visualize()
 
-    plot.mouse_track = True;
-    plot.logarithmicy = True;
+    plot.mouse_track = True
+    plot.logarithmicy = True
 
-    bridges.visualize();
+    bridges.visualize()
 
 
 if __name__ == "__main__":

@@ -104,7 +104,7 @@ int main(int argc, char **argv) {
 
 	cout << "Testing  Getting Moby Dick text..\n";
 
-	string moby_dick_str = ds.getGutenbergBookText(2701);
+	string moby_dick_str = ds.getGutenbergBookText(2702);
 
 	cout << "Moby Dick: Size : " << moby_dick_str.size() << "chars.\n";
 	cout << "First 300 chars..\n";
