@@ -24,12 +24,14 @@ int main(int argc, char **argv) {
 	vector<double> x1{1, 3, 5, 20};
 	vector<double> y1{2, 3, 5, 20};
 	plot.setDataSeries("1", x1, y1);
+    plot.setLineWidth("1", 5);
 	bridges.setDataStructure(plot);
 	bridges.visualize();
 
 	vector<double> x2{2., 15.2, 40.};
 	vector<double> y2{4., 30.5, 400.99};
 	plot.setDataSeries("2", x2, y2);
+    plot.setLineWidth("2", 8);
 	bridges.visualize();
 
 
