@@ -25,13 +25,15 @@ def main():
     x1 = [1, 3, 5, 20]
     y1 = [2, 3, 5, 20]
     plot.set_data_series("1", x1, y1)
+    plot.set_linewidth("1", 0) 
     bridges.set_data_structure(plot)
     bridges.visualize()
 
     x2 = [2, 15.2,  40]
     y2 = [4, 30.5, 400.99]
     plot.set_data_series("2", x2, y2)
-    plot.set_linewidth("2", 0) #show datapoint only
+    plot.set_linewidth("1", 5) 
+    plot.set_linewidth("2", 8) #show datapoint only
     bridges.visualize()
 
     plot.logarithmicx = True
